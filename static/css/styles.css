@@ -1,0 +1,179 @@
+:root {
+  --barilla-blue: #0e2e5c;
+  --barilla-red: #ce0037;
+  --barilla-white: #ffffff;
+  --light-blue: #e6f2ff;
+  --light-gray: #f0f0f0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #F5F5F5; /* Set to light gray background */
+  color: var(--barilla-blue);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  margin: 0;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+#chat-container {
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  height: 80vh; /* Increased height */
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#chat-header {
+  background-color: var(--barilla-blue);
+  display: flex;
+  align-items: center;
+  padding: 15px; /* Increased padding */
+  border-top-left-radius: 8px;
+  border-top-right-radius: 8px;
+}
+
+#chat-header img {
+  max-width: 80px;
+  height: auto;
+  margin-right: 15px;
+}
+
+#chat-title {
+  color: var(--barilla-white);
+  font-size: 1.2rem;  /* Reduced font size */
+  flex-grow: 1;
+  text-align: left;  /* Left align */
+  font-weight: bold;
+  margin-left: 15px;
+}
+
+#chat-messages {
+  height: 400px; /* or whatever height you want */
+  overflow-y: auto;
+  border: 1px solid #ccc;
+  padding: 10px;
+  background-color: white; /* White background for the chatbot window */
+  flex-grow: 1; /* Allow messages to take up remaining space */
+  margin-bottom: 20px; /* Add space below the messages */
+  font-size: 14px; /* Adjust this value as needed */
+  line-height: 1.4; /* Improves readability for smaller text */
+}
+
+#chat-messages .message {
+  margin-bottom: 10px;
+  padding: 5px 10px;
+  border-radius: 5px;
+  max-width: 80%;
+}
+
+#chat-messages .message p {
+  margin: 0; /* Removes default paragraph margins */
+}
+
+#chat-messages .message ul,
+#chat-messages .message ol {
+  padding-left: 20px; /* Adjusts indentation for lists */
+  margin: 5px 0; /* Adds a small margin above and below lists */
+}
+
+#chat-messages .user-message {
+  background-color: var(--light-gray); /* Light gray for user messages */
+  color: var(--barilla-blue); /* Keep text color as barilla blue */
+  text-align: right;
+  margin-left: auto;
+}
+
+#chat-messages .bot-message {
+  background-color: var(--light-blue);
+  color: var(--barilla-blue);
+  text-align: left;
+  margin-right: auto;
+}
+
+.message {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-radius: 8px;
+  max-width: 80%;
+}
+
+.user-message {
+  background-color: var(--light-gray); /* Light gray for user messages */
+  color: var(--barilla-blue); /* Keep text color as barilla blue */
+  text-align: right;
+  margin-left: auto;
+}
+
+.bot-message {
+  background-color: var(--light-blue); /* Light blue for assistant messages */
+  color: var(--barilla-blue); /* Keep text color as barilla blue */
+  align-self: flex-start;
+  margin-right: auto;
+}
+
+.assistant-message {
+  background-color: #f0f0f0;
+}
+
+#user-input-container {
+  display: flex;
+  padding: 10px;
+  border-top: 1px solid #e0e0e0;
+  margin-top: auto;
+}
+
+#user-input {
+  flex-grow: 1;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+  font-size: 1rem;
+  color: var(--barilla-blue);
+}
+
+#user-input::placeholder {
+  color: rgba(14, 46, 92, 0.7);
+}
+
+#send-button {
+  margin-left: 10px;
+  padding: 5px 10px;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease;
+}
+
+#send-button:hover {
+  background-color: #a8002c; /* A darker shade of Barilla red */
+}
+
+@keyframes typing {
+  0% { opacity: .2; }
+  20% { opacity: 1; }
+  100% { opacity: .2; }
+}
+
+.typing-animation span {
+  animation: typing 1.4s infinite;
+  animation-fill-mode: both;
+}
+
+.typing-animation span:nth-child(2) {
+  animation-delay: .2s;
+}
+
+.typing-animation span:nth-child(3) {
+  animation-delay: .4s;
+}
