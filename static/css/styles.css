@@ -32,6 +32,7 @@ body {
 }
 
 #chat-header {
+  position: relative;
   background-color: var(--barilla-blue);
   display: flex;
   align-items: center;
@@ -156,7 +157,7 @@ body {
 }
 
 #send-button:hover {
-  background-color: #a8002c;
+  opacity: 0.8;
 }
 
 @keyframes typing {
@@ -261,11 +262,11 @@ body #chat-container #chat-messages table tr:hover {
 }
 
 #chat-messages .message .disclaimer {
-    font-size: 10px !important;
-    color: #666 !important;
-    margin-top: 20px !important;
-    padding-top: 10px !important;
-    border-top: 1px solid #ccc !important;
+    font-size:8px;
+    color: #666;
+    margin-top: 20px;
+    padding-top: 10px;
+    border-top: 1px solid #ccc;
 }
 
 #chat-controls {
@@ -285,4 +286,39 @@ body #chat-container #chat-messages table tr:hover {
 #loading-indicator {
   margin-left: 10px;
   color: #666;
+}
+
+#refresh-button {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: var(--barilla-white);
+  font-size: 24px;
+  cursor: pointer;
+  padding: 5px;
+  transition: transform 0.3s ease;
+}
+
+#refresh-button:hover {
+  transform: translateY(-50%) rotate(180deg);
+}
+
+#refresh-link {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    text-decoration: none;
+    font-size: 14px;
+    background-color: red;
+    padding: 5px;
+    z-index: 9999;
+}
+
+#refresh-link:hover {
+    opacity: 0.8;
 }

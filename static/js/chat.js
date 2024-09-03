@@ -1,13 +1,11 @@
 console.log("chat.js is loading...");
 
 $(document).ready(function () {
-  console.log("chat.js has loaded and jQuery is ready");
-
   let abortController = null;
+  let currentThread = null;
 
   function addMessage(sender, message) {
-    console.log(`Adding message from ${sender}: ${message}`);
-    const messageClass = sender === "You" ? "user-message" : "bot-message"; // No change needed here
+    const messageClass = sender === "You" ? "user-message" : "bot-message";
     $("#chat-messages").append(
       `<div class="message ${messageClass}"><strong>${sender}:</strong> <span class="message-content">${message}</span></div>`
     );
@@ -15,7 +13,6 @@ $(document).ready(function () {
   }
 
   function showTypingIndicator() {
-    console.log("Showing typing indicator");
     $("#chat-messages").append(
       '<div id="typing-indicator" class="message bot-message"><strong>Chatbot:</strong> <span class="typing-animation">Thinking<span>.</span><span>.</span><span>.</span></span></div>'
     );
@@ -23,15 +20,12 @@ $(document).ready(function () {
   }
 
   function removeTypingIndicator() {
-    console.log("Removing typing indicator");
     $("#typing-indicator").remove();
   }
 
   function sendMessage() {
     var userMessage = $("#user-input").val();
-    console.log("User input value:", userMessage);
     if (userMessage.trim() !== "") {
-      console.log("Sending message:", userMessage);
       addMessage("You", userMessage);
       $("#user-input").val("");
 
@@ -41,7 +35,10 @@ $(document).ready(function () {
         url: "/chat",
         method: "POST",
         contentType: "application/json",
-        data: JSON.stringify({ message: userMessage }),
+        data: JSON.stringify({
+          message: userMessage,
+          thread_id: currentThread,
+        }),
         xhrFields: {
           onprogress: function (e) {
             removeTypingIndicator();
@@ -51,7 +48,9 @@ $(document).ready(function () {
               if (line.startsWith("data: ")) {
                 try {
                   var data = JSON.parse(line.substring(6));
-                  console.log("Received data:", data);
+                  if (data.thread_id) {
+                    currentThread = data.thread_id;
+                  }
                   if (data.full_response) {
                     if ($("#current-response").length === 0) {
                       $("#chat-messages").append(
@@ -65,7 +64,6 @@ $(document).ready(function () {
                       $("#chat-messages")[0].scrollHeight
                     );
                   } else if (data.error) {
-                    console.error("Error from server:", data.error);
                     addMessage("Chatbot", "An error occurred: " + data.error);
                   }
                 } catch (error) {
@@ -81,21 +79,19 @@ $(document).ready(function () {
           },
         },
         complete: function () {
-          console.log("AJAX request completed");
           removeTypingIndicator();
           $("#current-response").removeAttr("id");
+          resetButton();
         },
         error: function (xhr, status, error) {
-          console.error("An error occurred:", error);
           removeTypingIndicator();
           addMessage(
             "Chatbot",
             "An error occurred while processing your request."
           );
+          resetButton();
         },
       });
-    } else {
-      console.log("User message is empty");
     }
   }
 
@@ -115,26 +111,68 @@ $(document).ready(function () {
     }
   });
 
-  console.log("Adding initial message");
+  function cancelRequest() {
+    if (abortController) {
+      abortController.abort();
+      abortController = null;
+    }
+    removeTypingIndicator();
+    resetButton();
+  }
+
+  function resetButton() {
+    const button = document.getElementById("send-button");
+    button.textContent = "Send";
+    button.style.backgroundColor = "";
+  }
+
+  function refreshChat(e) {
+    console.log("refreshChat function called");
+    e.preventDefault(); // Prevent the default link behavior
+    cancelRequest();
+    $("#chat-messages").empty();
+    currentThread = null;
+    addMessage(
+      "Chatbot",
+      "Welcome to the Barilla Retail Media Planning assistant. How can I help you today?"
+    );
+    console.log("Chat refreshed");
+  }
+
+  // Use the refresh-link instead of a button
+  $("#refresh-link").click(function (e) {
+    e.preventDefault();
+    console.log("Refresh link clicked");
+
+    // Cancel any ongoing request
+    if (abortController) {
+      abortController.abort();
+      abortController = null;
+    }
+
+    // Clear chat messages
+    $("#chat-messages").empty();
+
+    // Reset the current thread
+    currentThread = null;
+
+    // Add the welcome message back
+    addMessage(
+      "Chatbot",
+      "Welcome to the Barilla Retail Media Planning assistant. How can I help you today?"
+    );
+
+    console.log("Chat refreshed");
+  });
+
+  console.log("Document ready, event listeners set up");
+
+  // Initial welcome message
   addMessage(
     "Chatbot",
     "Welcome to the Barilla Retail Media Planning assistant. How can I help you today?"
   );
 });
-
-function formatMarkdown(markdown) {
-  // Your existing markdown parsing logic here
-
-  // After parsing, wrap tables in a div
-  formattedHtml = formattedHtml.replace(
-    /<table>/g,
-    '<div class="table-wrapper"><table>'
-  );
-  formattedHtml = formattedHtml.replace(/<\/table>/g, "</table></div>");
-
-  return formattedHtml;
-}
-
 function processMessage(message) {
   let mainContent = message;
   let disclaimer = "";
@@ -148,102 +186,4 @@ function processMessage(message) {
   }
 
   return { mainContent, disclaimer };
-}
-
-function addMessageToChat(message, isUser) {
-  const messageDiv = document.createElement("div");
-  messageDiv.classList.add("message", isUser ? "user-message" : "bot-message");
-
-  if (!isUser) {
-    const { mainContent, disclaimer } = processMessage(message);
-
-    const contentP = document.createElement("p");
-    contentP.innerHTML = mainContent;
-    messageDiv.appendChild(contentP);
-
-    if (disclaimer) {
-      const disclaimerDiv = document.createElement("div");
-      disclaimerDiv.classList.add("disclaimer");
-      disclaimerDiv.innerHTML = disclaimer;
-      messageDiv.appendChild(disclaimerDiv);
-    }
-  } else {
-    messageDiv.innerHTML = message;
-  }
-
-  document.getElementById("chat-messages").appendChild(messageDiv);
-}
-
-async function sendMessage() {
-  const userInput = document.getElementById("user-input").value;
-  if (!userInput.trim()) return;
-
-  addMessageToChat(userInput, true);
-  document.getElementById("user-input").value = "";
-
-  const button = document.getElementById("send-button");
-  button.textContent = "Cancel";
-  button.style.backgroundColor = "#ff4d4d"; // Red color for cancel
-
-  abortController = new AbortController();
-
-  try {
-    const response = await fetch("/chat", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ message: userInput }),
-      signal: abortController.signal,
-    });
-
-    if (!response.ok) throw new Error("Network response was not ok");
-
-    const reader = response.body.getReader();
-    const decoder = new TextDecoder();
-    let assistantMessage = "";
-
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      assistantMessage += decoder.decode(value);
-      // Update the chat with partial responses if desired
-    }
-
-    addMessageToChat(assistantMessage, false);
-
-    // Force refresh after a short delay to ensure the message is displayed
-    setTimeout(forceRefresh, 1000);
-  } catch (error) {
-    if (error.name === "AbortError") {
-      addMessageToChat("Request was cancelled", false);
-    } else {
-      addMessageToChat("An error occurred", false);
-      console.error("Error:", error);
-    }
-  } finally {
-    resetButton();
-  }
-}
-
-function cancelRequest() {
-  if (abortController) {
-    abortController.abort();
-    abortController = null;
-  }
-  fetch("/cancel", { method: "POST" })
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((error) => console.error("Error:", error));
-  resetButton();
-}
-
-function resetButton() {
-  const button = document.getElementById("send-button");
-  button.textContent = "Send";
-  button.style.backgroundColor = ""; // Reset to default color
-}
-
-function forceRefresh() {
-  location.reload(true);
 }

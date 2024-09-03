@@ -3,8 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>AI-assisted Scenario Planning Tool</title>
-    <link rel="stylesheet" href="/static/css/styles.css">
+    <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+    <meta http-equiv="Pragma" content="no-cache">
+    <meta http-equiv="Expires" content="0">
+    <title>Barilla Retail Media Planner</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}?t={{ timestamp }}">
     <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <style>
@@ -39,14 +42,15 @@
         <div id="chat-header">
             <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Barilla Logo">
             <div id="chat-title">Barilla Retail Media Planner</div>
+            <a href="#" id="refresh-link">REFRESH</a>
         </div>
         <div id="chat-messages"></div>
-        <div id="user-input-container">
-            <input type="text" id="user-input" placeholder="Type your message here...">
+        <div id="chat-controls">
+            <input type="text" id="user-input" placeholder="Type your message...">
             <button id="send-button">Send</button>
         </div>
     </div>
     <!-- Include your external script here -->
-    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/chat.js') }}?t={{ timestamp }}"></script>
 </body>
 </html>

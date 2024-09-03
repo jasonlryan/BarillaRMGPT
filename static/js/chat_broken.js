@@ -120,6 +120,22 @@ $(document).ready(function () {
     "Chatbot",
     "Welcome to the Barilla Retail Media Planning assistant. How can I help you today?"
   );
+
+  $("#refresh-link").click(function (e) {
+    e.preventDefault();
+
+    // Clear the chat messages
+    $("#chat-messages").empty();
+
+    // Add the initial welcome message
+    addMessage(
+      "Chatbot",
+      "Welcome to the Barilla Retail Media Planning assistant. How can I help you today?"
+    );
+
+    // Clear the user input
+    $("#user-input").val("");
+  });
 });
 
 function formatMarkdown(markdown) {
