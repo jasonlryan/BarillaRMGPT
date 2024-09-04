@@ -322,3 +322,23 @@ body #chat-container #chat-messages table tr:hover {
 #refresh-link:hover {
     opacity: 0.8;
 }
+
+.ai-generated-chart {
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0;
+}
+
+.chart-download-link {
+  display: inline-block;
+  margin-bottom: 20px;
+  padding: 5px 10px;
+  background-color: #007bff;
+  color: white;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+.chart-download-link:hover {
+  background-color: #0056b3;
+}

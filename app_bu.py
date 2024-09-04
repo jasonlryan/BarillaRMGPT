@@ -7,7 +7,6 @@ import time
 import logging
 import sys
 from flask_session import Session  # Import Flask-Session
-from werkzeug.exceptions import RequestTimeout
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -97,9 +96,6 @@ def chat():
                     yield f"data: {json.dumps({'event': 'run_completed'})}\n\n"
                     break
 
-        except GeneratorExit:
-            # This exception is raised when the client closes the connection
-            logger.info("Client closed the connection")
         except Exception as e:
             logger.error(f"Error in chat: {str(e)}", exc_info=True)
             yield f"data: {json.dumps({'error': str(e)})}\n\n"
@@ -107,11 +103,6 @@ def chat():
     response = Response(stream_with_context(generate()), mimetype='text/event-stream')
     logger.info(f"Session thread_id at end: {session.get('thread_id')}")
     return response
-
-@app.errorhandler(RequestTimeout)
-def handle_timeout(error):
-    logger.info("Request timed out")
-    return 'Request timed out', 408
 
 @app.route('/test')
 def test():

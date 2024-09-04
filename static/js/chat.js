@@ -3,6 +3,9 @@ console.log("chat.js is loading...");
 $(document).ready(function () {
   let abortController = null;
   let currentThread = null;
+  let currentThreadId = null;
+  let isRunActive = false;
+  let currentAbortController = null;
 
   function addMessage(sender, message) {
     const messageClass = sender === "You" ? "user-message" : "bot-message";
@@ -24,12 +27,14 @@ $(document).ready(function () {
   }
 
   function sendMessage() {
+    if (isRunActive) return; // Prevent sending if a run is active
+
     var userMessage = $("#user-input").val();
     if (userMessage.trim() !== "") {
       addMessage("You", userMessage);
       $("#user-input").val("");
-
       showTypingIndicator();
+      disableSendButton();
 
       $.ajax({
         url: "/chat",
@@ -37,7 +42,7 @@ $(document).ready(function () {
         contentType: "application/json",
         data: JSON.stringify({
           message: userMessage,
-          thread_id: currentThread,
+          thread_id: currentThreadId,
         }),
         xhrFields: {
           onprogress: function (e) {
@@ -48,8 +53,15 @@ $(document).ready(function () {
               if (line.startsWith("data: ")) {
                 try {
                   var data = JSON.parse(line.substring(6));
-                  if (data.thread_id) {
-                    currentThread = data.thread_id;
+                  if (data.event === "thread_created") {
+                    currentThreadId = data.thread_id;
+                    console.log("New thread created:", currentThreadId);
+                  } else if (data.event === "run_started") {
+                    isRunActive = true;
+                    disableSendButton();
+                  } else if (data.event === "run_completed") {
+                    isRunActive = false;
+                    enableSendButton();
                   }
                   if (data.full_response) {
                     if ($("#current-response").length === 0) {
@@ -65,6 +77,7 @@ $(document).ready(function () {
                     );
                   } else if (data.error) {
                     addMessage("Chatbot", "An error occurred: " + data.error);
+                    enableSendButton();
                   }
                 } catch (error) {
                   console.error(
@@ -78,10 +91,11 @@ $(document).ready(function () {
             });
           },
         },
+        signal: currentAbortController.signal,
         complete: function () {
           removeTypingIndicator();
           $("#current-response").removeAttr("id");
-          resetButton();
+          enableSendButton();
         },
         error: function (xhr, status, error) {
           removeTypingIndicator();
@@ -89,35 +103,38 @@ $(document).ready(function () {
             "Chatbot",
             "An error occurred while processing your request."
           );
-          resetButton();
+          enableSendButton();
         },
       });
     }
   }
 
-  $("#send-button").click(function () {
-    if (this.textContent === "Send") {
-      sendMessage();
-      this.textContent = "Cancel";
-      this.style.backgroundColor = "#ff4d4d";
-    } else {
-      cancelRequest();
+  function stopGenerating() {
+    if (window.currentRequest) {
+      window.currentRequest.abort();
+      window.currentRequest = null;
+      removeTypingIndicator();
+      resetButton();
     }
+  }
+
+  $("#send-button").click(function () {
+    sendMessage();
   });
 
   $("#user-input").keypress(function (e) {
-    if (e.which == 13) {
+    if (e.which == 13 && !isRunActive) {
       sendMessage();
     }
   });
 
   function cancelRequest() {
-    if (abortController) {
-      abortController.abort();
-      abortController = null;
+    if (window.currentRequest) {
+      window.currentRequest.abort();
+      window.currentRequest = null;
+      removeTypingIndicator();
+      resetButton();
     }
-    removeTypingIndicator();
-    resetButton();
   }
 
   function resetButton() {
@@ -156,11 +173,39 @@ $(document).ready(function () {
     // Reset the current thread
     currentThread = null;
 
+    // Reset the current thread ID
+    currentThreadId = null;
+
     // Add the welcome message back
     addMessage(
       "Chatbot",
       "Welcome to the Barilla Retail Media Planning assistant. How can I help you today?"
     );
+
+    // Make a POST request to reset the thread
+    $.post("/reset_thread");
+
+    console.log("Chat refreshed");
+  });
+
+  $("#refresh-button").click(function (e) {
+    e.preventDefault();
+    console.log("Refresh button clicked");
+
+    // Reset the thread ID
+    currentThreadId = null;
+
+    // Clear chat messages
+    $("#chat-messages").empty();
+
+    // Add the welcome message back
+    addMessage(
+      "Chatbot",
+      "Welcome to the Barilla Retail Media Planning assistant. How can I help you today?"
+    );
+
+    // Make a POST request to reset the thread
+    $.post("/reset_thread");
 
     console.log("Chat refreshed");
   });
@@ -173,6 +218,7 @@ $(document).ready(function () {
     "Welcome to the Barilla Retail Media Planning assistant. How can I help you today?"
   );
 });
+
 function processMessage(message) {
   let mainContent = message;
   let disclaimer = "";
@@ -186,4 +232,12 @@ function processMessage(message) {
   }
 
   return { mainContent, disclaimer };
+}
+
+function disableSendButton() {
+  $("#send-button").prop("disabled", true).css("opacity", "0.5");
+}
+
+function enableSendButton() {
+  $("#send-button").prop("disabled", false).css("opacity", "1");
 }

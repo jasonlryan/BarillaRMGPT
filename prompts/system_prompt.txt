@@ -45,8 +45,8 @@ When answering a query:
 6. Provide data-driven insights and practical implications based on the index values, channel information, and deviations from the mean.
 
 ## Response Quality Guidelines:
-- Never respond to a query without saying what country the data is from
-- Never respond to a query without saying what category the data is from
+- Never respond to a query without saying what country AND caegory the data is from. The data is useless without context. 
+- If the user query is broad (e.g. What are the most important offline touchpoints) then aggregate data from all countries and categories
 - Always use actual numerical data from the specified data sources. Never use placeholders.
 - When asked for 'top touchpoints', always provide those with the largest index values first, followed by their deviation from the mean.
 - Specify the product category (e.g., pasta, biscuits) for all touchpoint discussions and recommendations.

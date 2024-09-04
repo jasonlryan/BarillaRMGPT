@@ -1,13 +1,13 @@
 console.log("chat.js is loading...");
 
 $(document).ready(function () {
-  console.log("chat.js has loaded and jQuery is ready");
-
   let abortController = null;
+  let currentThread = null;
+  let currentThreadId = null;
+  let isRunActive = false;
 
   function addMessage(sender, message) {
-    console.log(`Adding message from ${sender}: ${message}`);
-    const messageClass = sender === "You" ? "user-message" : "bot-message"; // No change needed here
+    const messageClass = sender === "You" ? "user-message" : "bot-message";
     $("#chat-messages").append(
       `<div class="message ${messageClass}"><strong>${sender}:</strong> <span class="message-content">${message}</span></div>`
     );
@@ -15,7 +15,6 @@ $(document).ready(function () {
   }
 
   function showTypingIndicator() {
-    console.log("Showing typing indicator");
     $("#chat-messages").append(
       '<div id="typing-indicator" class="message bot-message"><strong>Chatbot:</strong> <span class="typing-animation">Thinking<span>.</span><span>.</span><span>.</span></span></div>'
     );
@@ -23,25 +22,27 @@ $(document).ready(function () {
   }
 
   function removeTypingIndicator() {
-    console.log("Removing typing indicator");
     $("#typing-indicator").remove();
   }
 
   function sendMessage() {
+    if (isRunActive) return; // Prevent sending if a run is active
+
     var userMessage = $("#user-input").val();
-    console.log("User input value:", userMessage);
     if (userMessage.trim() !== "") {
-      console.log("Sending message:", userMessage);
       addMessage("You", userMessage);
       $("#user-input").val("");
-
       showTypingIndicator();
+      disableSendButton();
 
       $.ajax({
         url: "/chat",
         method: "POST",
         contentType: "application/json",
-        data: JSON.stringify({ message: userMessage }),
+        data: JSON.stringify({
+          message: userMessage,
+          thread_id: currentThreadId,
+        }),
         xhrFields: {
           onprogress: function (e) {
             removeTypingIndicator();
@@ -51,7 +52,16 @@ $(document).ready(function () {
               if (line.startsWith("data: ")) {
                 try {
                   var data = JSON.parse(line.substring(6));
-                  console.log("Received data:", data);
+                  if (data.event === "thread_created") {
+                    currentThreadId = data.thread_id;
+                    console.log("New thread created:", currentThreadId);
+                  } else if (data.event === "run_started") {
+                    isRunActive = true;
+                    disableSendButton();
+                  } else if (data.event === "run_completed") {
+                    isRunActive = false;
+                    enableSendButton();
+                  }
                   if (data.full_response) {
                     if ($("#current-response").length === 0) {
                       $("#chat-messages").append(
@@ -65,8 +75,8 @@ $(document).ready(function () {
                       $("#chat-messages")[0].scrollHeight
                     );
                   } else if (data.error) {
-                    console.error("Error from server:", data.error);
                     addMessage("Chatbot", "An error occurred: " + data.error);
+                    enableSendButton();
                   }
                 } catch (error) {
                   console.error(
@@ -81,75 +91,131 @@ $(document).ready(function () {
           },
         },
         complete: function () {
-          console.log("AJAX request completed");
           removeTypingIndicator();
           $("#current-response").removeAttr("id");
+          enableSendButton();
         },
         error: function (xhr, status, error) {
-          console.error("An error occurred:", error);
           removeTypingIndicator();
           addMessage(
             "Chatbot",
             "An error occurred while processing your request."
           );
+          enableSendButton();
         },
       });
-    } else {
-      console.log("User message is empty");
+    }
+  }
+
+  function stopGenerating() {
+    if (window.currentRequest) {
+      window.currentRequest.abort();
+      window.currentRequest = null;
+      removeTypingIndicator();
+      resetButton();
     }
   }
 
   $("#send-button").click(function () {
-    if (this.textContent === "Send") {
-      sendMessage();
-      this.textContent = "Cancel";
-      this.style.backgroundColor = "#ff4d4d";
-    } else {
-      cancelRequest();
-    }
+    sendMessage();
   });
 
   $("#user-input").keypress(function (e) {
-    if (e.which == 13) {
+    if (e.which == 13 && !isRunActive) {
       sendMessage();
     }
   });
 
-  console.log("Adding initial message");
-  addMessage(
-    "Chatbot",
-    "Welcome to the Barilla Retail Media Planning assistant. How can I help you today?"
-  );
+  function cancelRequest() {
+    if (window.currentRequest) {
+      window.currentRequest.abort();
+      window.currentRequest = null;
+      removeTypingIndicator();
+      resetButton();
+    }
+  }
 
+  function resetButton() {
+    const button = document.getElementById("send-button");
+    button.textContent = "Send";
+    button.style.backgroundColor = "";
+  }
+
+  function refreshChat(e) {
+    console.log("refreshChat function called");
+    e.preventDefault(); // Prevent the default link behavior
+    cancelRequest();
+    $("#chat-messages").empty();
+    currentThread = null;
+    addMessage(
+      "Chatbot",
+      "Welcome to the Barilla Retail Media Planning assistant. How can I help you today?"
+    );
+    console.log("Chat refreshed");
+  }
+
+  // Use the refresh-link instead of a button
   $("#refresh-link").click(function (e) {
     e.preventDefault();
+    console.log("Refresh link clicked");
 
-    // Clear the chat messages
+    // Cancel any ongoing request
+    if (abortController) {
+      abortController.abort();
+      abortController = null;
+    }
+
+    // Clear chat messages
     $("#chat-messages").empty();
 
-    // Add the initial welcome message
+    // Reset the current thread
+    currentThread = null;
+
+    // Reset the current thread ID
+    currentThreadId = null;
+
+    // Add the welcome message back
     addMessage(
       "Chatbot",
       "Welcome to the Barilla Retail Media Planning assistant. How can I help you today?"
     );
 
-    // Clear the user input
-    $("#user-input").val("");
+    // Make a POST request to reset the thread
+    $.post("/reset_thread");
+
+    console.log("Chat refreshed");
   });
-});
 
-function formatMarkdown(markdown) {
-  // Your existing markdown parsing logic here
+  $("#refresh-button").click(function (e) {
+    e.preventDefault();
+    console.log("Refresh button clicked");
 
-  // After parsing, wrap tables in a div
-  formattedHtml = formattedHtml.replace(
-    /<table>/g,
-    '<div class="table-wrapper"><table>'
+    // Reset the thread ID
+    currentThreadId = null;
+
+    // Clear chat messages
+    $("#chat-messages").empty();
+
+    // Add the welcome message back
+    addMessage(
+      "Chatbot",
+      "Welcome to the Barilla Retail Media Planning assistant. How can I help you today?"
+    );
+
+    // Make a POST request to reset the thread
+    $.post("/reset_thread");
+
+    console.log("Chat refreshed");
+  });
+
+  console.log("Document ready, event listeners set up");
+
+  // Initial welcome message
+  addMessage(
+    "Chatbot",
+    "Welcome to the Barilla Retail Media Planning assistant. How can I help you today?"
   );
-  formattedHtml = formattedHtml.replace(/<\/table>/g, "</table></div>");
-
-  return formattedHtml;
-}
+});
 
 function processMessage(message) {
   let mainContent = message;
@@ -166,100 +232,10 @@ function processMessage(message) {
   return { mainContent, disclaimer };
 }
 
-function addMessageToChat(message, isUser) {
-  const messageDiv = document.createElement("div");
-  messageDiv.classList.add("message", isUser ? "user-message" : "bot-message");
-
-  if (!isUser) {
-    const { mainContent, disclaimer } = processMessage(message);
-
-    const contentP = document.createElement("p");
-    contentP.innerHTML = mainContent;
-    messageDiv.appendChild(contentP);
-
-    if (disclaimer) {
-      const disclaimerDiv = document.createElement("div");
-      disclaimerDiv.classList.add("disclaimer");
-      disclaimerDiv.innerHTML = disclaimer;
-      messageDiv.appendChild(disclaimerDiv);
-    }
-  } else {
-    messageDiv.innerHTML = message;
-  }
-
-  document.getElementById("chat-messages").appendChild(messageDiv);
+function disableSendButton() {
+  $("#send-button").prop("disabled", true).css("opacity", "0.5");
 }
 
-async function sendMessage() {
-  const userInput = document.getElementById("user-input").value;
-  if (!userInput.trim()) return;
-
-  addMessageToChat(userInput, true);
-  document.getElementById("user-input").value = "";
-
-  const button = document.getElementById("send-button");
-  button.textContent = "Cancel";
-  button.style.backgroundColor = "#ff4d4d"; // Red color for cancel
-
-  abortController = new AbortController();
-
-  try {
-    const response = await fetch("/chat", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({ message: userInput }),
-      signal: abortController.signal,
-    });
-
-    if (!response.ok) throw new Error("Network response was not ok");
-
-    const reader = response.body.getReader();
-    const decoder = new TextDecoder();
-    let assistantMessage = "";
-
-    while (true) {
-      const { done, value } = await reader.read();
-      if (done) break;
-      assistantMessage += decoder.decode(value);
-      // Update the chat with partial responses if desired
-    }
-
-    addMessageToChat(assistantMessage, false);
-
-    // Force refresh after a short delay to ensure the message is displayed
-    setTimeout(forceRefresh, 1000);
-  } catch (error) {
-    if (error.name === "AbortError") {
-      addMessageToChat("Request was cancelled", false);
-    } else {
-      addMessageToChat("An error occurred", false);
-      console.error("Error:", error);
-    }
-  } finally {
-    resetButton();
-  }
-}
-
-function cancelRequest() {
-  if (abortController) {
-    abortController.abort();
-    abortController = null;
-  }
-  fetch("/cancel", { method: "POST" })
-    .then((response) => response.json())
-    .then((data) => console.log(data))
-    .catch((error) => console.error("Error:", error));
-  resetButton();
-}
-
-function resetButton() {
-  const button = document.getElementById("send-button");
-  button.textContent = "Send";
-  button.style.backgroundColor = ""; // Reset to default color
-}
-
-function forceRefresh() {
-  location.reload(true);
+function enableSendButton() {
+  $("#send-button").prop("disabled", false).css("opacity", "1");
 }
