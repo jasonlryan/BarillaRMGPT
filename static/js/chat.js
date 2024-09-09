@@ -5,7 +5,6 @@ $(document).ready(function () {
   let currentThread = null;
   let currentThreadId = null;
   let isRunActive = false;
-  let currentAbortController = null;
 
   function addMessage(sender, message) {
     const messageClass = sender === "You" ? "user-message" : "bot-message";
@@ -27,10 +26,14 @@ $(document).ready(function () {
   }
 
   function sendMessage() {
-    if (isRunActive) return; // Prevent sending if a run is active
+    if (isRunActive) {
+      console.log("A message is already being processed. Please wait.");
+      return;
+    }
 
     var userMessage = $("#user-input").val();
     if (userMessage.trim() !== "") {
+      isRunActive = true;
       addMessage("You", userMessage);
       $("#user-input").val("");
       showTypingIndicator();
@@ -53,7 +56,12 @@ $(document).ready(function () {
               if (line.startsWith("data: ")) {
                 try {
                   var data = JSON.parse(line.substring(6));
-                  if (data.event === "thread_created") {
+                  if (data.event === "waiting_for_previous_run") {
+                    showTypingIndicator();
+                    $("#typing-indicator .message-content").text(
+                      "Waiting for previous response to complete..."
+                    );
+                  } else if (data.event === "thread_created") {
                     currentThreadId = data.thread_id;
                     console.log("New thread created:", currentThreadId);
                   } else if (data.event === "run_started") {
@@ -91,11 +99,11 @@ $(document).ready(function () {
             });
           },
         },
-        signal: currentAbortController.signal,
         complete: function () {
           removeTypingIndicator();
           $("#current-response").removeAttr("id");
           enableSendButton();
+          isRunActive = false;
         },
         error: function (xhr, status, error) {
           removeTypingIndicator();
@@ -104,6 +112,7 @@ $(document).ready(function () {
             "An error occurred while processing your request."
           );
           enableSendButton();
+          isRunActive = false;
         },
       });
     }
@@ -192,6 +201,11 @@ $(document).ready(function () {
     e.preventDefault();
     console.log("Refresh button clicked");
 
+    if (abortController) {
+      abortController.abort();
+      abortController = null;
+    }
+
     // Reset the thread ID
     currentThreadId = null;
 
@@ -240,4 +254,16 @@ function disableSendButton() {
 
 function enableSendButton() {
   $("#send-button").prop("disabled", false).css("opacity", "1");
+}
+
+function disableInput() {
+  $("#user-input").prop("disabled", true);
+  $("#send-button").prop("disabled", true);
+  isRunActive = true;
+}
+
+function enableInput() {
+  $("#user-input").prop("disabled", false);
+  $("#send-button").prop("disabled", false);
+  isRunActive = false;
 }

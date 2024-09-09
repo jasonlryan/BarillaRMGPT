@@ -289,21 +289,27 @@ body #chat-container #chat-messages table tr:hover {
 }
 
 #refresh-button {
-  position: absolute;
-  right: 15px;
-  top: 50%;
-  transform: translateY(-50%);
-  background: none;
+  background-color: #ED1C24; /* Barilla red */
+  color: white;
   border: none;
-  color: var(--barilla-white);
-  font-size: 24px;
+  padding: 10px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
   cursor: pointer;
-  padding: 5px;
-  transition: transform 0.3s ease;
+  border-radius: 4px;
+  transition: background-color 0.3s;
 }
 
 #refresh-button:hover {
-  transform: translateY(-50%) rotate(180deg);
+  background-color: #C41017; /* Darker red on hover */
+}
+
+/* Remove any spinning animation if it exists */
+#refresh-button {
+  animation: none;
 }
 
 #refresh-link {

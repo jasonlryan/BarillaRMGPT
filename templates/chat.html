@@ -42,7 +42,7 @@
         <div id="chat-header">
             <img src="{{ url_for('static', filename='images/logo.png') }}" alt="Barilla Logo">
             <div id="chat-title">Barilla Retail Media Planner</div>
-            <a href="#" id="refresh-link">REFRESH</a>
+            <button id="refresh-button">REFRESH</button>
         </div>
         <div id="chat-messages"></div>
         <div id="chat-controls">
@@ -51,6 +51,16 @@
         </div>
     </div>
     <!-- Include your external script here -->
-    <script src="{{ url_for('static', filename='js/chat.js') }}?t={{ timestamp }}"></script>
+    <script src="{{ url_for('static', filename='js/chat.js') }}"></script>
+    <script>
+        console.log("HTML script tag executed");
+        $(document).ready(function() {
+            console.log("jQuery document ready fired");
+            $("#refresh-link").on("click", function(e) {
+                console.log("Refresh link clicked (inline script)");
+                e.preventDefault();
+            });
+        });
+    </script>
 </body>
 </html>

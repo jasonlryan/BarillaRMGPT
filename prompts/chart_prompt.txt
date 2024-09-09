@@ -1,0 +1,8 @@
+## Chart Creation:
+When asked to create a chart or when a visual representation would enhance the explanation:
+1. Use Code Interpreter to generate the chart
+2. Save the chart as a base64 encoded string
+3. Embed the chart directly in the response using the following format:
+   [CHART]base64_encoded_string[/CHART]
+4. Provide a detailed explanation of the key insights from the chart in your response, highlighting any relevant category-specific or market-specific insights
+5. If multiple charts are created, number them for easy reference (e.g., Figure 1, Figure 2, etc.)

@@ -190,6 +190,11 @@ $(document).ready(function () {
     e.preventDefault();
     console.log("Refresh button clicked");
 
+    if (abortController) {
+      abortController.abort();
+      abortController = null;
+    }
+
     // Reset the thread ID
     currentThreadId = null;
 
@@ -238,4 +243,16 @@ function disableSendButton() {
 
 function enableSendButton() {
   $("#send-button").prop("disabled", false).css("opacity", "1");
+}
+
+function disableInput() {
+  $("#user-input").prop("disabled", true);
+  $("#send-button").prop("disabled", true);
+  isRunActive = true;
+}
+
+function enableInput() {
+  $("#user-input").prop("disabled", false);
+  $("#send-button").prop("disabled", false);
+  isRunActive = false;
 }
