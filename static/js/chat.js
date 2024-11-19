@@ -16,7 +16,7 @@ $(document).ready(function () {
 
   function showTypingIndicator() {
     $("#chat-messages").append(
-      '<div id="typing-indicator" class="message bot-message"><strong>Chatbot:</strong> <span class="typing-animation">Thinking<span>.</span><span>.</span><span>.</span></span></div>'
+      '<div id="typing-indicator" class="message bot-message"><strong>Retail Media Assistant:</strong> <span class="typing-animation">Thinking<span>.</span><span>.</span><span>.</span></span></div>'
     );
     $("#chat-messages").scrollTop($("#chat-messages")[0].scrollHeight);
   }
@@ -74,7 +74,7 @@ $(document).ready(function () {
                   if (data.full_response) {
                     if ($("#current-response").length === 0) {
                       $("#chat-messages").append(
-                        '<div id="current-response" class="message bot-message"><strong>Chatbot:</strong> <span class="message-content"></span></div>'
+                        '<div id="current-response" class="message bot-message"><strong>Retail Media Assistant:</strong> <span class="message-content"></span></div>'
                       );
                     }
                     $("#current-response .message-content").html(
@@ -84,7 +84,10 @@ $(document).ready(function () {
                       $("#chat-messages")[0].scrollHeight
                     );
                   } else if (data.error) {
-                    addMessage("Chatbot", "An error occurred: " + data.error);
+                    addMessage(
+                      "Retail Media Assistant",
+                      "An error occurred: " + data.error
+                    );
                     enableSendButton();
                   }
                 } catch (error) {
@@ -108,7 +111,7 @@ $(document).ready(function () {
         error: function (xhr, status, error) {
           removeTypingIndicator();
           addMessage(
-            "Chatbot",
+            "Retail Media Assistant",
             "An error occurred while processing your request."
           );
           enableSendButton();
@@ -158,10 +161,7 @@ $(document).ready(function () {
     cancelRequest();
     $("#chat-messages").empty();
     currentThread = null;
-    addMessage(
-      "Chatbot",
-      "Welcome to the Barilla Retail Media Planning assistant. How can I help you today?"
-    );
+    addMessage("Retail Media Assistant", "How can I help you today?");
     console.log("Chat refreshed");
   }
 
@@ -186,10 +186,7 @@ $(document).ready(function () {
     currentThreadId = null;
 
     // Add the welcome message back
-    addMessage(
-      "Chatbot",
-      "Welcome to the Barilla Retail Media Planning assistant. How can I help you today?"
-    );
+    addMessage("Retail Media Assistant", "How can I help you today?");
 
     // Make a POST request to reset the thread
     $.post("/reset_thread");
@@ -213,10 +210,7 @@ $(document).ready(function () {
     $("#chat-messages").empty();
 
     // Add the welcome message back
-    addMessage(
-      "Chatbot",
-      "Welcome to the Barilla Retail Media Planning assistant. How can I help you today?"
-    );
+    addMessage("Retail Media Assistant", "How can I help you today?");
 
     // Make a POST request to reset the thread
     $.post("/reset_thread");
@@ -226,44 +220,57 @@ $(document).ready(function () {
 
   console.log("Document ready, event listeners set up");
 
-  // Initial welcome message
-  addMessage(
-    "Chatbot",
-    "Welcome to the Barilla Retail Media Planning assistant. How can I help you today?"
-  );
-});
+  // Display the welcome message
+  const welcomeMessage = `
+  Welcome to the Barilla Retail Media Planning Assistant!<br><br>
 
-function processMessage(message) {
-  let mainContent = message;
-  let disclaimer = "";
+  I am here to help you develop and implement data-driven media plans tailored to Barilla's retail media strategies. My role includes:<br><br>
 
-  const disclaimerIndex = message.indexOf(
-    "Disclaimer: This information is generated"
-  );
-  if (disclaimerIndex !== -1) {
-    mainContent = message.substring(0, disclaimerIndex).trim();
-    disclaimer = message.substring(disclaimerIndex);
+  - <strong>Providing insights</strong> into the top-performing media touchpoints for various product categories and countries.<br>
+  - <strong>Offering practical recommendations</strong> to help you optimize your marketing campaigns.<br>
+  - <strong>Helping you interpret key metrics</strong> like Index and Deviation from Mean to assess touchpoint effectiveness.<br><br>
+
+  <strong>Important Disclaimer on AI-Generated Responses:</strong><br><br>
+
+  While I aim to deliver accurate insights based on the data provided, it’s important to note that as an AI assistant, I may occasionally provide information that could be incorrect or based on inferred reasoning. If data for a specific product category or country is unavailable, I will inform you and suggest available alternatives where possible. I am prohibited from inventing or fabricating data, and all insights are derived strictly from existing datasets. However, always verify critical information before making decisions.<br><br>
+
+  Please let me know how I can assist you today!
+`;
+
+  addMessage("Retail Media Assistant", welcomeMessage);
+
+  function processMessage(message) {
+    let mainContent = message;
+    let disclaimer = "";
+
+    const disclaimerIndex = message.indexOf(
+      "Disclaimer: This information is generated"
+    );
+    if (disclaimerIndex !== -1) {
+      mainContent = message.substring(0, disclaimerIndex).trim();
+      disclaimer = message.substring(disclaimerIndex);
+    }
+
+    return { mainContent, disclaimer };
   }
 
-  return { mainContent, disclaimer };
-}
+  function disableSendButton() {
+    $("#send-button").prop("disabled", true).css("opacity", "0.5");
+  }
 
-function disableSendButton() {
-  $("#send-button").prop("disabled", true).css("opacity", "0.5");
-}
+  function enableSendButton() {
+    $("#send-button").prop("disabled", false).css("opacity", "1");
+  }
 
-function enableSendButton() {
-  $("#send-button").prop("disabled", false).css("opacity", "1");
-}
+  function disableInput() {
+    $("#user-input").prop("disabled", true);
+    $("#send-button").prop("disabled", true);
+    isRunActive = true;
+  }
 
-function disableInput() {
-  $("#user-input").prop("disabled", true);
-  $("#send-button").prop("disabled", true);
-  isRunActive = true;
-}
-
-function enableInput() {
-  $("#user-input").prop("disabled", false);
-  $("#send-button").prop("disabled", false);
-  isRunActive = false;
-}
+  function enableInput() {
+    $("#user-input").prop("disabled", false);
+    $("#send-button").prop("disabled", false);
+    isRunActive = false;
+  }
+});

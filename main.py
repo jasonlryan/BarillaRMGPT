@@ -6,6 +6,7 @@ import json
 import time
 import logging
 import sys
+import secrets
 from flask_session import Session  # Import Flask-Session
 
 # Set up logging
@@ -25,7 +26,7 @@ client = OpenAI(api_key=api_key, project=project_id)
 
 # Create Flask app
 app = Flask(__name__)
-app.secret_key = 'a_very_secret_key_12345'  # Replace with your own secret key
+app.secret_key = secrets.token_hex(32)
 app.config['SESSION_TYPE'] = 'filesystem'  # Ensure session type is set
 app.config['SESSION_PERMANENT'] = False  # Ensure sessions are not permanent
 app.config['SESSION_USE_SIGNER'] = True  # Sign the session cookies

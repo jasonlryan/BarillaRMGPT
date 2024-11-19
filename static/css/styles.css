@@ -1,6 +1,6 @@
 :root {
-  --barilla-blue: #0e2e5c;
-  --barilla-red: #ce0037;
+  --barilla-blue: #162763;
+  --barilla-red: #AB0022;
   --barilla-white: #ffffff;
   --light-blue: #e6f2ff;
   --light-gray: #f0f0f0;
@@ -289,7 +289,7 @@ body #chat-container #chat-messages table tr:hover {
 }
 
 #refresh-button {
-  background-color: #ED1C24; /* Barilla red */
+  background-color: #AB0022; /* Barilla red */
   color: white;
   border: none;
   padding: 10px 20px;
