@@ -15,6 +15,7 @@ import {
   ArrowUp,
   ArrowDown,
 } from "lucide-react";
+import axios from "axios";
 
 export default function BarillaPlannerComponent() {
   const [messages, setMessages] = useState([
@@ -44,21 +45,25 @@ export default function BarillaPlannerComponent() {
     scrollToBottom();
   }, [messages]);
 
-  const handleSendMessage = (e: React.FormEvent) => {
+  const handleSendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
     if (inputMessage.trim() === "") return;
 
-    const newMessages = [
-      ...messages,
-      { role: "user", content: inputMessage },
-      {
-        role: "assistant",
-        content:
-          "Thank you for your message. As a mock-up, I can acknowledge your input but cannot provide a contextual response. How else can I assist you today?",
-      },
-    ];
-    setMessages(newMessages);
-    setInputMessage("");
+    try {
+      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/chat`, {
+        message: inputMessage
+      });
+
+      // Add the response to chat history
+      setMessages(prev => [...prev, 
+        { role: "user", content: inputMessage },
+        { role: "assistant", content: response.data.response }
+      ]);
+      
+      setInputMessage("");
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
 
   return (

@@ -8,6 +8,7 @@ import logging
 import sys
 import secrets
 from flask_session import Session  # Import Flask-Session
+from flask_cors import CORS  # Add this import
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -26,6 +27,13 @@ client = OpenAI(api_key=api_key, project=project_id)
 
 # Create Flask app
 app = Flask(__name__)
+CORS(app, resources={
+    r"/*": {
+        "origins": ["http://localhost:3002"],  # Your frontend URL
+        "methods": ["GET", "POST"],
+        "allow_headers": ["Content-Type"]
+    }
+})
 app.secret_key = secrets.token_hex(32)
 app.config['SESSION_TYPE'] = 'filesystem'  # Ensure session type is set
 app.config['SESSION_PERMANENT'] = False  # Ensure sessions are not permanent
