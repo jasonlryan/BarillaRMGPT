@@ -20,22 +20,20 @@ import { chatConfig, IconName } from "@/config/chat-config";
 import * as Icons from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+import ChatInput from "./ChatInput";
 
 interface Message {
   role: "user" | "assistant";
   content: string;
 }
 
-const handleError = (error: unknown) => {
-  if (error instanceof Error) {
-    console.error("Error:", error.message);
-  } else {
-    console.error("An unknown error occurred:", error);
-  }
-};
-
 const getIcon = (iconName: IconName) => {
-  return Icons[iconName];
+  const IconComponent = Icons[iconName];
+  if (!IconComponent) {
+    console.warn(`Icon ${iconName} not found`);
+    return Icons.HelpCircle; // Fallback icon
+  }
+  return IconComponent;
 };
 
 export default function BarillaPlannerComponent() {
@@ -90,6 +88,19 @@ export default function BarillaPlannerComponent() {
       scrollToBottom();
     }
   }, [messages, autoScroll]);
+
+  const handleError = (error: unknown) => {
+    const errorMessage =
+      error instanceof Error ? error.message : "An unknown error occurred";
+    setMessages((prev) => [
+      ...prev,
+      {
+        role: "assistant",
+        content: `⚠️ Error: ${errorMessage}. Please try again.`,
+      },
+    ]);
+    console.error("Error:", error);
+  };
 
   const handleSendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -283,8 +294,10 @@ export default function BarillaPlannerComponent() {
 
   // Add a cleanup function
   const cleanResponse = (text: string) => {
-    // Remove source citations with regex
-    return text.replace(/【.*?†source】/g, "");
+    return text
+      .replace(/【.*?†source】/g, "")
+      .replace(/\[\d+\.\d+†source\]/g, "")
+      .trim();
   };
 
   return (
@@ -380,6 +393,48 @@ export default function BarillaPlannerComponent() {
                                 className="p-4 rounded-lg overflow-x-auto"
                               />
                             ),
+                            h1: (props) => (
+                              <h1
+                                {...props}
+                                className="text-xl font-bold mb-4 text-white"
+                              />
+                            ),
+                            h2: (props) => (
+                              <h2
+                                {...props}
+                                className="text-lg font-bold mb-3 text-white"
+                              />
+                            ),
+                            h3: (props) => (
+                              <h3
+                                {...props}
+                                className="text-base font-bold mb-2 text-yellow-400"
+                              />
+                            ),
+                            h4: (props) => (
+                              <h4
+                                {...props}
+                                className="text-base font-semibold mb-2 text-blue-100"
+                              />
+                            ),
+                            ul: (props) => (
+                              <ul {...props} className="space-y-2 my-4" />
+                            ),
+                            li: (props) => (
+                              <li {...props} className="flex gap-2 items-start">
+                                <span className="text-yellow-400 mt-1">•</span>
+                                <span className="flex-1">{props.children}</span>
+                              </li>
+                            ),
+                            strong: (props) => (
+                              <strong
+                                {...props}
+                                className="text-yellow-400 font-semibold"
+                              />
+                            ),
+                            p: (props) => (
+                              <p {...props} className="mb-4 last:mb-0" />
+                            ),
                           }}
                         >
                           {message.content}
@@ -427,6 +482,7 @@ export default function BarillaPlannerComponent() {
                 type="text"
                 data-form-type="other"
                 aria-label="Chat input"
+                suppressHydrationWarning={true}
                 className="flex-grow bg-blue-700/50 border-blue-600 text-white placeholder-blue-300"
               />
               <Button
