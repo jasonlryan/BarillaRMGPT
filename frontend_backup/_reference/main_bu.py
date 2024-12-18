@@ -9,7 +9,6 @@ import sys
 import secrets
 from flask_session import Session  # Import Flask-Session
 from flask_cors import CORS  # Add this import
-import re
 
 # Set up logging
 logging.basicConfig(level=logging.INFO)
@@ -24,23 +23,15 @@ assistant_id = os.getenv("OPENAI_ASSISTANT_ID")
 project_id = os.getenv("OPENAI_PROJECT_ID")
 
 # Set up OpenAI client
-try:
-    client = OpenAI(api_key=api_key, project=project_id)
-    # Test the client
-    client.beta.threads.create()
-    logger.info("OpenAI client initialized successfully")
-except Exception as e:
-    logger.error("Failed to initialize OpenAI client: %s", str(e), exc_info=True)
+client = OpenAI(api_key=api_key, project=project_id)
 
 # Create Flask app
 app = Flask(__name__)
 CORS(app, resources={
     r"/*": {
-        "origins": ["http://localhost:3000", "http://localhost:3001"],  # Allow both ports
+        "origins": ["http://localhost:3002"],  # Your frontend URL
         "methods": ["GET", "POST"],
-        "allow_headers": ["Content-Type"],
-        "expose_headers": ["Content-Type"],
-        "supports_credentials": True
+        "allow_headers": ["Content-Type"]
     }
 })
 app.secret_key = secrets.token_hex(32)
@@ -51,10 +42,6 @@ app.config['SESSION_FILE_DIR'] = './flask_session/'  # Directory to store sessio
 
 # Initialize the session
 Session(app)
-
-def clean_response(text: str) -> str:
-    # Remove source citations
-    return re.sub(r'【.*?†source】', '', text)
 
 @app.route('/')
 def home():
@@ -125,7 +112,6 @@ def chat():
 
     response = Response(stream_with_context(generate()), mimetype='text/event-stream')
     logger.info(f"Session thread_id at end: {session.get('thread_id')}")
-    response = clean_response(response)
     return response
 
 @app.route('/test')
@@ -139,9 +125,4 @@ def reset_thread():
     return '', 204
 
 if __name__ == "__main__":
-    app.run(debug=True, port=5000)
-
-# After loading environment variables
-logger.info("API Key present: %s", bool(api_key))
-logger.info("Assistant ID present: %s", bool(assistant_id))
-logger.info("Project ID present: %s", bool(project_id))
+    app.run(debug=True)

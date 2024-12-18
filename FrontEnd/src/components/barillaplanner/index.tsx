@@ -16,22 +16,50 @@ import {
   ArrowDown,
 } from "lucide-react";
 import axios from "axios";
+import { chatConfig, IconName } from "@/config/chat-config";
+import * as Icons from "lucide-react";
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
+interface Message {
+  role: "user" | "assistant";
+  content: string;
+}
+
+const handleError = (error: unknown) => {
+  if (error instanceof Error) {
+    console.error("Error:", error.message);
+  } else {
+    console.error("An unknown error occurred:", error);
+  }
+};
+
+const getIcon = (iconName: IconName) => {
+  return Icons[iconName];
+};
 
 export default function BarillaPlannerComponent() {
-  const [messages, setMessages] = useState([
+  const [messages, setMessages] = useState<Message[]>([
     {
       role: "assistant",
-      content:
-        "Welcome to the Barilla Retail Media Planning Assistant! How can I help you today?",
+      content: chatConfig.welcomeMessage,
     },
   ]);
-  const [inputMessage, setInputMessage] = useState("");
+  const [input, setInput] = useState("");
   const chatContainerRef = useRef<HTMLDivElement>(null);
+  const [autoScroll, setAutoScroll] = useState(true);
+  const [showScrollButtons, setShowScrollButtons] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [isStreaming, setIsStreaming] = useState(false);
 
   const scrollToBottom = () => {
     if (chatContainerRef.current) {
-      chatContainerRef.current.scrollTop =
-        chatContainerRef.current.scrollHeight;
+      setTimeout(() => {
+        chatContainerRef.current?.scrollTo({
+          top: chatContainerRef.current.scrollHeight,
+          behavior: "smooth",
+        });
+      }, 100);
     }
   };
 
@@ -41,29 +69,222 @@ export default function BarillaPlannerComponent() {
     }
   };
 
+  const handleScroll = () => {
+    if (chatContainerRef.current) {
+      const { scrollTop, scrollHeight, clientHeight } =
+        chatContainerRef.current;
+      const isAtBottom = scrollHeight - scrollTop - clientHeight < 50;
+
+      setShowScrollButtons(scrollHeight > clientHeight);
+
+      if (!isAtBottom) {
+        setAutoScroll(false);
+      } else {
+        setAutoScroll(true);
+      }
+    }
+  };
+
   useEffect(() => {
-    scrollToBottom();
-  }, [messages]);
+    if (autoScroll) {
+      scrollToBottom();
+    }
+  }, [messages, autoScroll]);
 
   const handleSendMessage = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (inputMessage.trim() === "") return;
+    if (!input.trim()) return;
 
     try {
-      const response = await axios.post(`${process.env.NEXT_PUBLIC_API_URL}/chat`, {
-        message: inputMessage
+      console.log("Sending message:", input);
+      setIsLoading(true);
+      setIsStreaming(false);
+
+      const userMessage: Message = {
+        role: "user",
+        content: input,
+      };
+      const loadingMessage: Message = {
+        role: "assistant",
+        content: "...",
+      };
+      setMessages((prev) => [...prev, userMessage, loadingMessage]);
+      setInput("");
+
+      const response = await fetch("http://localhost:5000/chat", {
+        method: "POST",
+        mode: "cors",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: input,
+        }),
       });
 
-      // Add the response to chat history
-      setMessages(prev => [...prev, 
-        { role: "user", content: inputMessage },
-        { role: "assistant", content: response.data.response }
-      ]);
-      
-      setInputMessage("");
-    } catch (error) {
-      console.error('Error:', error);
+      const reader = response.body?.getReader();
+
+      if (reader) {
+        setIsStreaming(true);
+        let currentMessage = "";
+        const decoder = new TextDecoder("utf-8");
+
+        while (true) {
+          const { value, done } = await reader.read();
+          if (done) break;
+
+          const text = decoder.decode(value);
+          console.log("Decoded text:", text);
+
+          const lines = text.split("\n");
+          for (const line of lines) {
+            if (line.startsWith("data: ")) {
+              try {
+                const data = JSON.parse(line.slice(6));
+                console.log("Parsed data:", data);
+                if (data.token) {
+                  currentMessage += data.token;
+                  const assistantMessage: Message = {
+                    role: "assistant",
+                    content: cleanResponse(currentMessage),
+                  };
+                  setMessages((prev) => {
+                    const lastMessage = prev[prev.length - 1];
+                    if (lastMessage.role === "assistant") {
+                      return [...prev.slice(0, -1), assistantMessage];
+                    }
+                    return [...prev, assistantMessage];
+                  });
+                }
+              } catch (error: unknown) {
+                handleError(error);
+              }
+            }
+          }
+        }
+      }
+    } catch (error: unknown) {
+      handleError(error);
+    } finally {
+      setIsLoading(false);
+      setIsStreaming(false);
     }
+  };
+
+  const handleRefresh = async () => {
+    try {
+      setMessages([
+        {
+          role: "assistant",
+          content: chatConfig.welcomeMessage,
+        },
+      ]);
+
+      await fetch("http://localhost:5000/reset_thread", {
+        method: "POST",
+        mode: "cors",
+        credentials: "include",
+      });
+    } catch (error) {
+      console.error("Error refreshing chat:", error);
+    }
+  };
+
+  const LoadingDots = () => (
+    <div className="flex space-x-2">
+      <div className="w-2 h-2 bg-blue-300 rounded-full animate-[bounce_1s_infinite]"></div>
+      <div className="w-2 h-2 bg-blue-300 rounded-full animate-[bounce_1s_infinite_0.2s]"></div>
+      <div className="w-2 h-2 bg-blue-300 rounded-full animate-[bounce_1s_infinite_0.4s]"></div>
+    </div>
+  );
+
+  const handleStarterClick = async (text: string) => {
+    try {
+      // Store the text temporarily
+      const messageText = text;
+
+      // Clear input first (to match normal send behavior)
+      setInput("");
+
+      // Add user message immediately
+      const userMessage: Message = {
+        role: "user",
+        content: messageText,
+      };
+      const loadingMessage: Message = {
+        role: "assistant",
+        content: "...",
+      };
+      setMessages((prev) => [...prev, userMessage, loadingMessage]);
+
+      // Start loading state
+      setIsLoading(true);
+      setIsStreaming(false);
+
+      // Send to backend
+      const response = await fetch("http://localhost:5000/chat", {
+        method: "POST",
+        mode: "cors",
+        credentials: "include",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          message: messageText,
+        }),
+      });
+
+      // Handle streaming response (same as handleSendMessage)
+      const reader = response.body?.getReader();
+      if (reader) {
+        setIsStreaming(true);
+        let currentMessage = "";
+        const decoder = new TextDecoder("utf-8");
+
+        while (true) {
+          const { value, done } = await reader.read();
+          if (done) break;
+
+          const text = decoder.decode(value);
+          const lines = text.split("\n");
+          for (const line of lines) {
+            if (line.startsWith("data: ")) {
+              try {
+                const data = JSON.parse(line.slice(6));
+                if (data.token) {
+                  currentMessage += data.token;
+                  const assistantMessage: Message = {
+                    role: "assistant",
+                    content: cleanResponse(currentMessage),
+                  };
+                  setMessages((prev) => {
+                    const lastMessage = prev[prev.length - 1];
+                    if (lastMessage.role === "assistant") {
+                      return [...prev.slice(0, -1), assistantMessage];
+                    }
+                    return [...prev, assistantMessage];
+                  });
+                }
+              } catch (error: unknown) {
+                handleError(error);
+              }
+            }
+          }
+        }
+      }
+    } catch (error) {
+      console.error("Error handling starter click:", error);
+    } finally {
+      setIsLoading(false);
+      setIsStreaming(false);
+    }
+  };
+
+  // Add a cleanup function
+  const cleanResponse = (text: string) => {
+    // Remove source citations with regex
+    return text.replace(/【.*?†source】/g, "");
   };
 
   return (
@@ -75,10 +296,11 @@ export default function BarillaPlannerComponent() {
             alt="Barilla logo"
             className="h-12 w-auto"
           />
-          <h1 className="text-2xl font-bold">Barilla Retail Media Planner</h1>
+          <h1 className="text-2xl font-bold">Barilla Retail Media Assistant</h1>
         </div>
         <Button
           variant="outline"
+          onClick={handleRefresh}
           className="bg-blue-100 text-blue-900 hover:bg-blue-200 hover:text-blue-950"
         >
           <RefreshCw className="mr-2 h-4 w-4" /> Refresh
@@ -90,74 +312,130 @@ export default function BarillaPlannerComponent() {
           <CardHeader className="flex-none">
             <CardTitle>Chat with Retail Media Assistant</CardTitle>
           </CardHeader>
-          <CardContent className="flex-1 flex flex-col min-h-0 p-4">
-            <div
-              ref={chatContainerRef}
-              className="flex-1 overflow-y-auto mb-4 p-4 bg-blue-700/50 rounded-lg"
-            >
-              <div className="mb-4">
-                <p className="mb-4">
-                  Welcome to the Barilla Retail Media Planning Assistant!
-                </p>
-                <p className="mb-4">
-                  I am here to help you develop and implement data-driven media
-                  plans tailored to Barilla's retail media strategies. My role
-                  includes:
-                </p>
-                <ul className="list-disc list-inside mb-4">
-                  <li>
-                    Providing insights into top-performing media touchpoints for
-                    various product categories and countries.
-                  </li>
-                  <li>
-                    Offering practical recommendations to help you optimize your
-                    marketing campaigns.
-                  </li>
-                  <li>
-                    Helping you interpret key metrics like Index and Deviation
-                    from Mean to assess touchpoint effectiveness.
-                  </li>
-                </ul>
-                <p>Please let me know how I can assist you today!</p>
-              </div>
-              {messages.map((message, index) => (
-                <div
-                  key={index}
-                  className={`mb-4 ${
-                    message.role === "user" ? "text-right" : "text-left"
-                  }`}
-                >
-                  <span
-                    className={`inline-block p-2 rounded-lg ${
-                      message.role === "user" ? "bg-blue-600" : "bg-blue-500"
+          <CardContent className="flex-1 flex flex-col min-h-0">
+            <div className="relative flex-1 flex flex-col min-h-0">
+              <div
+                ref={chatContainerRef}
+                onScroll={handleScroll}
+                className="flex-1 overflow-y-auto p-4 bg-blue-700/50 rounded-lg"
+              >
+                {messages.map((message, index) => (
+                  <div
+                    key={index}
+                    className={`mb-4 ${
+                      message.role === "assistant"
+                        ? "flex justify-start"
+                        : "flex justify-end"
                     }`}
                   >
-                    {message.content}
-                  </span>
+                    <div
+                      className={`max-w-[80%] rounded-2xl px-4 py-2 ${
+                        message.role === "assistant"
+                          ? "bg-blue-600/70 text-white rounded-tl-none"
+                          : "bg-white/10 text-blue-100 rounded-tr-none"
+                      }`}
+                    >
+                      {isLoading &&
+                      index === messages.length - 1 &&
+                      message.role === "assistant" &&
+                      message.content === "..." ? (
+                        <LoadingDots />
+                      ) : (
+                        <ReactMarkdown
+                          className="prose prose-invert max-w-none prose-pre:bg-blue-900/50 prose-pre:border prose-pre:border-blue-700"
+                          remarkPlugins={[remarkGfm]}
+                          components={{
+                            table: (props) => (
+                              <div className="overflow-x-auto my-4">
+                                <table
+                                  {...props}
+                                  className="border-collapse border border-blue-700 w-full"
+                                />
+                              </div>
+                            ),
+                            thead: (props) => (
+                              <thead {...props} className="bg-blue-900/50" />
+                            ),
+                            th: (props) => (
+                              <th
+                                {...props}
+                                className="border border-blue-700 px-4 py-2 text-left"
+                              />
+                            ),
+                            td: (props) => (
+                              <td
+                                {...props}
+                                className="border border-blue-700 px-4 py-2"
+                              />
+                            ),
+                            code: (props) => (
+                              <code
+                                {...props}
+                                className="bg-blue-900/50 rounded px-1"
+                              />
+                            ),
+                            pre: (props) => (
+                              <pre
+                                {...props}
+                                className="p-4 rounded-lg overflow-x-auto"
+                              />
+                            ),
+                          }}
+                        >
+                          {message.content}
+                        </ReactMarkdown>
+                      )}
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              {showScrollButtons && (
+                <div className="absolute right-4 bottom-4 flex flex-col gap-2">
+                  <Button
+                    size="icon"
+                    variant="outline"
+                    onClick={scrollToTop}
+                    className="bg-blue-600/70 hover:bg-blue-600"
+                  >
+                    <ArrowUp className="h-4 w-4" />
+                  </Button>
+                  <Button
+                    size="icon"
+                    variant="outline"
+                    onClick={scrollToBottom}
+                    className="bg-blue-600/70 hover:bg-blue-600"
+                  >
+                    <ArrowDown className="h-4 w-4" />
+                  </Button>
                 </div>
-              ))}
+              )}
             </div>
-            <div className="flex-none">
-              <form
-                onSubmit={handleSendMessage}
-                className="flex items-center space-x-2"
+            <form
+              onSubmit={handleSendMessage}
+              className="flex-none mt-4 flex items-center space-x-2"
+            >
+              <Input
+                value={input}
+                onChange={(e) => setInput(e.target.value)}
+                placeholder="Type your message..."
+                autoComplete="off"
+                autoCorrect="off"
+                autoCapitalize="off"
+                spellCheck="false"
+                name="chat-input"
+                type="text"
+                data-form-type="other"
+                aria-label="Chat input"
+                className="flex-grow bg-blue-700/50 border-blue-600 text-white placeholder-blue-300"
+              />
+              <Button
+                type="submit"
+                className="bg-[#E31837] text-white hover:bg-[#E31837]/90"
               >
-                <Input
-                  placeholder="Type your message..."
-                  className="flex-grow bg-blue-700/50 border-blue-600 text-white placeholder-blue-300"
-                  value={inputMessage}
-                  onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
-                    setInputMessage(e.target.value)
-                  }
-                />
-                <Button
-                  type="submit"
-                  className="bg-[#E31837] text-white hover:bg-[#E31837]/90"
-                >
-                  <Send className="h-4 w-4" />
-                </Button>
-              </form>
-            </div>
+                <Send className="h-4 w-4" />
+              </Button>
+            </form>
           </CardContent>
         </Card>
 
@@ -171,72 +449,25 @@ export default function BarillaPlannerComponent() {
             </CardHeader>
             <CardContent>
               <ul className="space-y-2">
-                <li>
-                  <Button
-                    variant="ghost"
-                    className="w-full justify-start text-left hover:bg-blue-700/50 text-blue-100 h-auto min-h-[2.5rem] py-2 px-3"
-                  >
-                    <div className="flex gap-3 items-start">
-                      <Pizza className="h-5 w-5 flex-shrink-0 mt-0.5 text-yellow-400" />
-                      <span className="flex-1 whitespace-normal">
-                        Analyze top-performing media channels for pasta products
-                      </span>
-                    </div>
-                  </Button>
-                </li>
-                <li>
-                  <Button
-                    variant="ghost"
-                    className="w-full justify-start text-left hover:bg-blue-700/50 text-blue-100 h-auto min-h-[2.5rem] py-2 px-3"
-                  >
-                    <div className="flex gap-3 items-start">
-                      <Utensils className="h-5 w-5 flex-shrink-0 mt-0.5 text-yellow-400" />
-                      <span className="flex-1 whitespace-normal">
-                        Optimize campaign for sauce category in the US market
-                      </span>
-                    </div>
-                  </Button>
-                </li>
-                <li>
-                  <Button
-                    variant="ghost"
-                    className="w-full justify-start text-left hover:bg-blue-700/50 text-blue-100 h-auto min-h-[2.5rem] py-2 px-3"
-                  >
-                    <div className="flex gap-3 items-start">
-                      <Flag className="h-5 w-5 flex-shrink-0 mt-0.5 text-yellow-400" />
-                      <span className="flex-1 whitespace-normal">
-                        Interpret key metrics for Italian market performance
-                      </span>
-                    </div>
-                  </Button>
-                </li>
-                <li>
-                  <Button
-                    variant="ghost"
-                    className="w-full justify-start text-left hover:bg-blue-700/50 text-blue-100 h-auto min-h-[2.5rem] py-2 px-3"
-                  >
-                    <div className="flex gap-3 items-start">
-                      <Heart className="h-5 w-5 flex-shrink-0 mt-0.5 text-yellow-400" />
-                      <span className="flex-1 whitespace-normal">
-                        Suggest targeting strategies for health-conscious
-                        consumers
-                      </span>
-                    </div>
-                  </Button>
-                </li>
-                <li>
-                  <Button
-                    variant="ghost"
-                    className="w-full justify-start text-left hover:bg-blue-700/50 text-blue-100 h-auto min-h-[2.5rem] py-2 px-3"
-                  >
-                    <div className="flex gap-3 items-start">
-                      <Globe className="h-5 w-5 flex-shrink-0 mt-0.5 text-yellow-400" />
-                      <span className="flex-1 whitespace-normal">
-                        Compare media effectiveness across different regions
-                      </span>
-                    </div>
-                  </Button>
-                </li>
+                {chatConfig.conversationStarters.map((starter, index) => (
+                  <li key={index}>
+                    <Button
+                      variant="ghost"
+                      onClick={() => handleStarterClick(starter.text)}
+                      className="w-full justify-start text-left hover:bg-blue-700/50 text-blue-100 h-auto min-h-[2.5rem] py-2 px-3 group"
+                    >
+                      <div className="flex gap-3 items-start">
+                        {React.createElement(getIcon(starter.icon), {
+                          className:
+                            "h-5 w-5 flex-shrink-0 mt-0.5 text-yellow-400",
+                        })}
+                        <span className="flex-1 whitespace-normal group-hover:text-yellow-400">
+                          {starter.text}
+                        </span>
+                      </div>
+                    </Button>
+                  </li>
+                ))}
               </ul>
             </CardContent>
           </Card>
@@ -246,17 +477,7 @@ export default function BarillaPlannerComponent() {
               <CardTitle>Important Disclaimer</CardTitle>
             </CardHeader>
             <CardContent>
-              <p className="text-sm text-blue-100">
-                While I aim to deliver accurate insights based on the data
-                provided, it's important to note that as an AI assistant, I may
-                occasionally provide information that could be incorrect or
-                based on inferred reasoning. If data for a specific product
-                category or country is unavailable, I will inform you and
-                suggest available alternatives where possible. I am prohibited
-                from inventing or fabricating data, and all insights are derived
-                strictly from existing datasets. However, always verify critical
-                information before making decisions.
-              </p>
+              <p className="text-sm text-blue-100">{chatConfig.disclaimer}</p>
             </CardContent>
           </Card>
         </div>

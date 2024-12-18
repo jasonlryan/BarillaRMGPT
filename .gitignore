@@ -7,6 +7,7 @@ not_used/
 prompts/
 outputs/
 
+
 # Ignore virtual environment directory
 venv/
 app.yaml.DS_Store
