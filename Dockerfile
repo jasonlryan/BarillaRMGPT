@@ -1,8 +1,14 @@
-FROM python:3.12.4-slim
+FROM python:3.12-slim
 WORKDIR /app
-COPY . /app
-RUN pip install --no-cache-dir -r requirements.txt
-RUN pip check
+COPY requirements.txt .
+RUN pip install -r requirements.txt
+COPY . .
 EXPOSE 8080
-ENV FLASK_APP=main.py
-CMD ["gunicorn", "--bind", "0.0.0.0:8080", "main:app"]
+ENV PORT=8080
+CMD exec gunicorn \
+    --bind :$PORT \
+    --workers 1 \
+    --threads 8 \
+    --timeout 0 \
+    --worker-class gthread \
+    main:app

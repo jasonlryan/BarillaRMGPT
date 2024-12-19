@@ -1,13 +1,29 @@
 # Ignore environment variables file
 .env
+.env.production
+.env.local
+.env.development
 
 # Ignore directories
 scripts/
 not_used/
 prompts/
 outputs/
-
+__pycache__/
+flask_session/
+/tmp/
 
 # Ignore virtual environment directory
 venv/
-app.yaml.DS_Store
+
+# System files
+.DS_Store
+*.pyc
+
+# Deployment files
+app.yaml
+
+# Documentation (optional)
+*.md
+!README.md
+!user_guide.md

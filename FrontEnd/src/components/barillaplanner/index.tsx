@@ -16,25 +16,40 @@ import {
   ArrowDown,
 } from "lucide-react";
 import axios from "axios";
-import { chatConfig, IconName } from "@/config/chat-config";
+import { chatConfig } from "@/config/chat-config";
 import * as Icons from "lucide-react";
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
 import ChatInput from "./ChatInput";
+import type { LucideIcon } from "lucide-react";
+import type { LucideProps } from "lucide-react";
 
 interface Message {
   role: "user" | "assistant";
   content: string;
 }
 
-const getIcon = (iconName: IconName) => {
-  const IconComponent = Icons[iconName];
+const getIcon = (iconName: string) => {
+  const IconComponent = Icons[iconName as keyof typeof Icons];
   if (!IconComponent) {
     console.warn(`Icon ${iconName} not found`);
-    return Icons.HelpCircle; // Fallback icon
+    return Icons.HelpCircle;
   }
-  return IconComponent;
+  return IconComponent as LucideIcon;
 };
+
+const getApiUrl = () => {
+  if (typeof window === "undefined") return "";
+
+  const hostname = window.location.hostname;
+  const isLocalhost = hostname === "localhost" || hostname === "127.0.0.1";
+
+  return isLocalhost
+    ? "http://localhost:8080"
+    : "https://barilla-backend-tp3puay2aq-uc.a.run.app";
+};
+
+const API_URL = getApiUrl();
 
 export default function BarillaPlannerComponent() {
   const [messages, setMessages] = useState<Message[]>([
@@ -122,7 +137,7 @@ export default function BarillaPlannerComponent() {
       setMessages((prev) => [...prev, userMessage, loadingMessage]);
       setInput("");
 
-      const response = await fetch("http://localhost:5000/chat", {
+      const response = await fetch(`${API_URL}/chat`, {
         method: "POST",
         mode: "cors",
         credentials: "include",
@@ -192,7 +207,7 @@ export default function BarillaPlannerComponent() {
         },
       ]);
 
-      await fetch("http://localhost:5000/reset_thread", {
+      await fetch(`${API_URL}/reset_thread`, {
         method: "POST",
         mode: "cors",
         credentials: "include",
@@ -234,7 +249,7 @@ export default function BarillaPlannerComponent() {
       setIsStreaming(false);
 
       // Send to backend
-      const response = await fetch("http://localhost:5000/chat", {
+      const response = await fetch(`${API_URL}/chat`, {
         method: "POST",
         mode: "cors",
         credentials: "include",
@@ -469,6 +484,7 @@ export default function BarillaPlannerComponent() {
             <form
               onSubmit={handleSendMessage}
               className="flex-none mt-4 flex items-center space-x-2"
+              suppressHydrationWarning={true}
             >
               <Input
                 value={input}
@@ -487,6 +503,7 @@ export default function BarillaPlannerComponent() {
               />
               <Button
                 type="submit"
+                suppressHydrationWarning={true}
                 className="bg-[#E31837] text-white hover:bg-[#E31837]/90"
               >
                 <Send className="h-4 w-4" />

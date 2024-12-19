@@ -1,5 +1,5 @@
 // Define available icons
-export type IconName = "UtensilsCrossed" | "Utensils" | "Flag" | "Heart" | "Globe" | "Sparkles" | "Send" | "RefreshCw" | "Wheat" | "Bowl";
+type IconName = string;
 
 export const chatConfig = {
   welcomeMessage: `Welcome to the Barilla Retail Media Planning Assistant!

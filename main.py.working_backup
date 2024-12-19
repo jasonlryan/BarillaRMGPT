@@ -17,6 +17,12 @@ logger = logging.getLogger(__name__)
 # Force reload of environment variables
 load_dotenv(override=True)
 
+# Clear any proxy settings that might interfere with OpenAI
+if 'HTTP_PROXY' in os.environ: del os.environ['HTTP_PROXY']
+if 'HTTPS_PROXY' in os.environ: del os.environ['HTTPS_PROXY']
+if 'http_proxy' in os.environ: del os.environ['http_proxy']
+if 'https_proxy' in os.environ: del os.environ['https_proxy']
+
 # Log environment setup
 logger.info("Environment setup:")
 logger.info(f"API Key length: {len(os.getenv('OPENAI_API_KEY', ''))} chars")
@@ -31,13 +37,7 @@ def init_openai():
     global client
     try:
         logger.info("Attempting to initialize OpenAI client...")
-        from openai import OpenAI
-        logger.info(f"OpenAI SDK Version: {openai.__version__}")
-        # Initialize client first
-        client = OpenAI(api_key=os.getenv("OPENAI_API_KEY"))
-        # Then set headers
-        client._custom_headers = {"OpenAI-Beta": "assistants=v2"}
-        logger.info("OpenAI client headers: %s", client._custom_headers)
+        openai.api_key = os.getenv("OPENAI_API_KEY")
         logger.info("OpenAI client initialized successfully")
         return True
     except Exception as e:
@@ -106,7 +106,7 @@ def home():
 
 @app.route('/chat', methods=['POST'])
 def chat():
-    global client
+    global client  # Use the initialized client
     def generate():
         try:
             message = request.json.get('message', '')
@@ -115,41 +115,37 @@ def chat():
             thread_id = session.get('thread_id')
             logger.info(f"Received thread_id from client: {thread_id}")
             
-            # Create thread if needed
             if not thread_id:
-                thread = client.beta.threads.create()
+                thread = openai.beta.threads.create()
                 thread_id = thread.id
                 session['thread_id'] = thread_id
                 logger.info(f"Created new thread_id: {thread_id}")
             
-            # Add message to thread
-            client.beta.threads.messages.create(
+            openai.beta.threads.messages.create(
                 thread_id=thread_id,
                 role="user",
                 content=message
             )
             
-            # Create and monitor run
-            run = client.beta.threads.runs.create(
+            run = openai.beta.threads.runs.create(
                 thread_id=thread_id,
-                assistant_id=assistant_id
+                assistant_id=assistant_id,
+                stream=True
             )
             
-            # Wait for run to complete
-            while True:
-                run_status = client.beta.threads.runs.retrieve(
-                    thread_id=thread_id,
-                    run_id=run.id
-                )
-                if run_status.status == 'completed':
+            full_response = ""
+            for event in run:
+                event_type = event.__class__.__name__
+                if event_type == "ThreadMessageDelta":
+                    if hasattr(event.data, 'delta') and hasattr(event.data.delta, 'content'):
+                        for content_delta in event.data.delta.content:
+                            if content_delta.type == 'text':
+                                token = content_delta.text.value
+                                full_response += token
+                                yield f"data: {json.dumps({'token': token, 'full_response': full_response})}\n\n"
+                elif event_type == "RunCompleted":
+                    yield f"data: {json.dumps({'event': 'run_completed'})}\n\n"
                     break
-                time.sleep(0.5)
-            
-            # Get messages after run completes
-            messages = client.beta.threads.messages.list(thread_id=thread_id)
-            for msg in messages:
-                if msg.role == "assistant":
-                    yield f"data: {json.dumps({'token': msg.content[0].text.value})}\n\n"
             
         except Exception as e:
             logger.error(f"Error in chat: {str(e)}", exc_info=True)

@@ -1,8 +1,8 @@
 #!/bin/bash
 
-# Check and kill processes on port 5000
-echo "Checking for processes on port 5000..."
-lsof -ti:5000 | xargs kill -9 2>/dev/null || true
+# Check and kill processes on port 8080
+echo "Checking for processes on port 8080..."
+lsof -ti:8080 | xargs kill -9 2>/dev/null || true
 
 # Start Python backend
 echo "Starting Python backend..."

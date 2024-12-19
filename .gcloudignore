@@ -22,3 +22,41 @@ flask_session/
 outputs/
 prompts/
 scripts/
+
+# Development files
+*.pyc
+*.pyo
+*.pyd
+.Python
+.env
+.env.local
+.env.*
+env/
+pip-log.txt
+pip-delete-this-directory.txt
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*.cover
+*.log
+
+# Frontend related
+frontend/
+frontend_backup/
+node_modules/
+npm-debug.log
+
+# IDE specific files
+.idea/
+.vscode/
+*.swp
+*.swo
+.DS_Store
+
+# Documentation
+*.md
+LICENSE
+README*

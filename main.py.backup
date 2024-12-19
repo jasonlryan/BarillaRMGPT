@@ -23,15 +23,22 @@ assistant_id = os.getenv("OPENAI_ASSISTANT_ID")
 project_id = os.getenv("OPENAI_PROJECT_ID")
 
 # Set up OpenAI client
-client = OpenAI(api_key=api_key, project=project_id)
+try:
+    client = OpenAI(api_key=api_key, project=project_id)
+    # Test the client
+    client.beta.threads.create()
+    logger.info("OpenAI client initialized successfully")
+except Exception as e:
+    logger.error("Failed to initialize OpenAI client: %s", str(e), exc_info=True)
 
 # Create Flask app
 app = Flask(__name__)
 CORS(app, resources={
     r"/*": {
-        "origins": ["http://localhost:3002"],  # Your frontend URL
-        "methods": ["GET", "POST"],
-        "allow_headers": ["Content-Type"]
+        "origins": ["https://barilla-frontend-tp3puay2aq-uc.a.run.app"],
+        "methods": ["GET", "POST", "OPTIONS"],
+        "allow_headers": ["*"],
+        "expose_headers": ["Content-Type"],
     }
 })
 app.secret_key = secrets.token_hex(32)
@@ -50,46 +57,30 @@ def home():
 
 @app.route('/chat', methods=['POST'])
 def chat():
-    user_message = request.json['message']
-    thread_id = request.json.get('thread_id')
-    logger.info(f"Received thread_id from client: {thread_id}")
-
     def generate():
-        nonlocal thread_id
         try:
+            message = request.json.get('message', '')
+            logger.info(f"Received message: {message}")
+            
+            thread_id = session.get('thread_id')
+            logger.info(f"Received thread_id from client: {thread_id}")
+            
             if not thread_id:
                 thread = client.beta.threads.create()
                 thread_id = thread.id
-                session['thread_id'] = thread_id  # Store thread_id in session
-                session.modified = True  # Ensure session is marked as modified
-                logger.info(f"Created new thread with ID: {thread_id}")
-                logger.info(f"Session thread_id after creation: {session.get('thread_id')}")
-                yield f"data: {json.dumps({'event': 'thread_created', 'thread_id': thread_id})}\n\n"
-            else:
-                logger.info(f"Using existing thread with ID: {thread_id}")
-
-            # Check for any active runs and wait for them to complete
-            while True:
-                runs = client.beta.threads.runs.list(thread_id=thread_id)
-                active_runs = [run for run in runs.data if run.status in ['queued', 'in_progress']]
-                if not active_runs:
-                    break
-                logger.info("Waiting for previous run to complete...")
-                time.sleep(1)
-                yield f"data: {json.dumps({'event': 'waiting_for_previous_run'})}\n\n"
-
-            # Add the new message
+                session['thread_id'] = thread_id
+                logger.info(f"Created new thread_id: {thread_id}")
+            
             client.beta.threads.messages.create(
                 thread_id=thread_id,
                 role="user",
-                content=user_message
+                content=message
             )
-
-            # Create and stream the new run
+            
             run = client.beta.threads.runs.create(
                 thread_id=thread_id,
                 assistant_id=assistant_id,
-                stream=True
+                stream=True  # Enable streaming
             )
             
             full_response = ""
@@ -101,11 +92,11 @@ def chat():
                             if content_delta.type == 'text':
                                 token = content_delta.text.value
                                 full_response += token
-                                yield f"data: {json.dumps({'token': token, 'full_response': full_response, 'thread_id': thread_id})}\n\n"
+                                yield f"data: {json.dumps({'token': token, 'full_response': full_response})}\n\n"
                 elif event_type == "RunCompleted":
                     yield f"data: {json.dumps({'event': 'run_completed'})}\n\n"
                     break
-
+            
         except Exception as e:
             logger.error(f"Error in chat: {str(e)}", exc_info=True)
             yield f"data: {json.dumps({'error': str(e)})}\n\n"
@@ -124,5 +115,23 @@ def reset_thread():
         del session['thread_id']
     return '', 204
 
+@app.errorhandler(500)
+def handle_500(e):
+    return jsonify(error=str(e)), 500, {
+        'Access-Control-Allow-Origin': 'http://localhost:3000',
+        'Access-Control-Allow-Credentials': 'true'
+    }
+
+@app.route('/api/config', methods=['GET'])
+def get_config():
+    return jsonify({
+        'apiUrl': request.url_root.rstrip('/')  # Returns the current backend URL
+    })
+
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True, port=5000)
+
+# After loading environment variables
+logger.info("API Key present: %s", bool(api_key))
+logger.info("Assistant ID present: %s", bool(assistant_id))
+logger.info("Project ID present: %s", bool(project_id))
