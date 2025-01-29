@@ -52,12 +52,8 @@ const getApiUrl = () => {
 const API_URL = getApiUrl();
 
 export default function BarillaPlannerComponent() {
-  const [messages, setMessages] = useState<Message[]>([
-    {
-      role: "assistant",
-      content: chatConfig.welcomeMessage,
-    },
-  ]);
+  const [messages, setMessages] = useState<Message[]>([]);
+  const messageCache = useRef<{ [key: string]: Message }>({});
   const [input, setInput] = useState("");
   const chatContainerRef = useRef<HTMLDivElement>(null);
   const [autoScroll, setAutoScroll] = useState(true);
@@ -173,7 +169,7 @@ export default function BarillaPlannerComponent() {
                   currentMessage += data.token;
                   const assistantMessage: Message = {
                     role: "assistant",
-                    content: cleanResponse(currentMessage),
+                    content: currentMessage,
                   };
                   setMessages((prev) => {
                     const lastMessage = prev[prev.length - 1];
@@ -282,7 +278,7 @@ export default function BarillaPlannerComponent() {
                   currentMessage += data.token;
                   const assistantMessage: Message = {
                     role: "assistant",
-                    content: cleanResponse(currentMessage),
+                    content: currentMessage,
                   };
                   setMessages((prev) => {
                     const lastMessage = prev[prev.length - 1];
@@ -313,6 +309,49 @@ export default function BarillaPlannerComponent() {
       .replace(/【.*?†source】/g, "")
       .replace(/\[\d+\.\d+†source\]/g, "")
       .trim();
+  };
+
+  const handleStreamResponse = async (response: Response) => {
+    const reader = response.body?.getReader();
+    if (!reader) return;
+
+    const decoder = new TextDecoder();
+    let buffer = "";
+
+    try {
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) break;
+
+        buffer += decoder.decode(value, { stream: true });
+        const lines = buffer.split("\n");
+        buffer = lines.pop() || "";
+
+        for (const line of lines) {
+          if (line.startsWith("data: ")) {
+            try {
+              const data = JSON.parse(line.slice(6));
+              if (data.token) {
+                setMessages((prev) => {
+                  const lastMsg = prev[prev.length - 1];
+                  if (lastMsg?.role === "assistant") {
+                    return [
+                      ...prev.slice(0, -1),
+                      { ...lastMsg, content: lastMsg.content + data.token },
+                    ];
+                  }
+                  return [...prev, { role: "assistant", content: data.token }];
+                });
+              }
+            } catch (e) {
+              console.error("Error parsing SSE data:", e);
+            }
+          }
+        }
+      }
+    } finally {
+      reader.releaseLock();
+    }
   };
 
   return (

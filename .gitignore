@@ -27,3 +27,4 @@ app.yaml
 *.md
 !README.md
 !user_guide.md
+.DS_Store
