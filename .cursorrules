@@ -54,4 +54,10 @@
     - Before removing ANY code
     - Before changing ANY existing functionality
     - Before modifying ANY configuration
-    - Before restructuring ANY directories 
+    - Before restructuring ANY directories
+
+11. **API IMPLEMENTATION**
+    - NEVER switch from OpenAI Assistant API to other APIs
+    - Maintain Assistant API integration
+    - Optimize within Assistant API constraints
+    - Any improvements must work with Assistant API 

@@ -54,6 +54,74 @@ export default function BarillaPlannerComponent() {
   const [showScrollButtons, setShowScrollButtons] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isStreaming, setIsStreaming] = useState(false);
+  const performanceMetrics = useRef<{
+    requestStart: number;
+    streamStart: number;
+    messageCount: number;
+    totalTokens: number;
+    lastUpdateTime: number;
+  }>({
+    requestStart: 0,
+    streamStart: 0,
+    messageCount: 0,
+    totalTokens: 0,
+    lastUpdateTime: 0,
+  });
+
+  // Performance monitoring functions
+  const logPerformance = (metric: string, value: number) => {
+    console.log(`📊 Performance - ${metric}: ${value}ms`);
+  };
+
+  const startPerformanceTracking = () => {
+    performanceMetrics.current = {
+      ...performanceMetrics.current,
+      requestStart: performance.now(),
+      messageCount: messages.length,
+    };
+  };
+
+  const trackStreamPerformance = (tokenCount: number) => {
+    const now = performance.now();
+    if (!performanceMetrics.current.streamStart) {
+      performanceMetrics.current.streamStart = now;
+    }
+
+    performanceMetrics.current.totalTokens += tokenCount;
+
+    // Log streaming metrics every 50 tokens
+    if (performanceMetrics.current.totalTokens % 50 === 0) {
+      const streamDuration = now - performanceMetrics.current.streamStart;
+      const tokensPerSecond =
+        (performanceMetrics.current.totalTokens / streamDuration) * 1000;
+      logPerformance("Tokens per second", Math.round(tokensPerSecond));
+    }
+
+    // Track UI update performance
+    const timeSinceLastUpdate = now - performanceMetrics.current.lastUpdateTime;
+    if (timeSinceLastUpdate > 100) {
+      // Log slow UI updates
+      logPerformance("Slow UI update detected", timeSinceLastUpdate);
+    }
+    performanceMetrics.current.lastUpdateTime = now;
+  };
+
+  const finishPerformanceTracking = () => {
+    const endTime = performance.now();
+    const totalDuration = endTime - performanceMetrics.current.requestStart;
+    const streamDuration = endTime - performanceMetrics.current.streamStart;
+
+    logPerformance("Total request duration", Math.round(totalDuration));
+    logPerformance("Stream duration", Math.round(streamDuration));
+    logPerformance(
+      "Total tokens processed",
+      performanceMetrics.current.totalTokens
+    );
+
+    // Reset metrics
+    performanceMetrics.current.totalTokens = 0;
+    performanceMetrics.current.streamStart = 0;
+  };
 
   // Initialize welcome message
   useEffect(() => {
@@ -117,83 +185,61 @@ export default function BarillaPlannerComponent() {
     console.error("Error:", error);
   };
 
-  const handleSendMessage = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim()) return;
+  const handleStreamResponse = async (
+    response: Response,
+    initialMessage: string
+  ) => {
+    const reader = response.body?.getReader();
+    if (!reader) return;
+
+    setIsStreaming(true);
+    let currentMessage = "";
+    const decoder = new TextDecoder("utf-8");
+    let buffer = ""; // Add buffer for incomplete chunks
 
     try {
-      console.log("🚀 Starting message send:", input);
-      setIsLoading(true);
-      setIsStreaming(false);
+      while (true) {
+        const { value, done } = await reader.read();
+        if (done) {
+          console.log("✅ Stream complete");
+          break;
+        }
 
-      const userMessage: Message = {
-        role: "user",
-        content: input,
-      };
-      const loadingMessage: Message = {
-        role: "assistant",
-        content: "...",
-      };
-      setMessages((prev) => [...prev, userMessage, loadingMessage]);
-      setInput("");
+        // Decode and handle any buffered data
+        const text = decoder.decode(value, { stream: true });
+        buffer += text;
+        const lines = buffer.split("\n\n");
+        buffer = lines.pop() || ""; // Keep the last incomplete chunk
 
-      console.log("📤 Sending request to:", `${API_URL}/chat`);
-      const response = await fetch(`${API_URL}/chat`, {
-        method: "POST",
-        mode: "cors",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          message: input,
-        }),
-      });
+        for (const line of lines) {
+          const trimmedLine = line.trim();
+          if (trimmedLine.startsWith("data: ")) {
+            try {
+              const data = JSON.parse(trimmedLine.slice(5));
+              if (data.token) {
+                currentMessage += data.token;
+                trackStreamPerformance(data.token.length);
 
-      console.log(
-        "📥 Response received:",
-        response.status,
-        response.statusText
-      );
-      const reader = response.body?.getReader();
-
-      if (reader) {
-        console.log("🎯 Starting stream reading");
-        setIsStreaming(true);
-        let currentMessage = "";
-        const decoder = new TextDecoder("utf-8");
-
-        while (true) {
-          const { value, done } = await reader.read();
-          if (done) {
-            console.log("✅ Stream complete");
-            break;
-          }
-
-          const text = decoder.decode(value);
-          console.log("🔍 Decoded text:", text);
-
-          const lines = text.split("\n");
-          for (const line of lines) {
-            if (line.startsWith("data: ")) {
-              try {
-                const data = JSON.parse(line.slice(6));
-                console.log("📦 Parsed data:", data);
-                if (data.token) {
-                  currentMessage += data.token;
-                  const assistantMessage: Message = {
-                    role: "assistant",
-                    content: currentMessage,
-                  };
-                  setMessages((prev) => {
-                    const lastMessage = prev[prev.length - 1];
-                    if (lastMessage.role === "assistant") {
-                      return [...prev.slice(0, -1), assistantMessage];
+                // Update message with minimal React state updates
+                setMessages((prev) => {
+                  const lastMessage = prev[prev.length - 1];
+                  if (lastMessage?.role === "assistant") {
+                    // Only update if content has changed
+                    if (lastMessage.content !== currentMessage) {
+                      return [
+                        ...prev.slice(0, -1),
+                        { ...lastMessage, content: currentMessage },
+                      ];
                     }
-                    return [...prev, assistantMessage];
-                  });
-                }
-              } catch (error: unknown) {
+                  }
+                  return prev;
+                });
+              }
+            } catch (error: unknown) {
+              if (
+                error instanceof Error &&
+                !error.message.includes("Unexpected end of JSON input")
+              ) {
                 console.error("❌ Error parsing stream data:", error);
                 handleError(error);
               }
@@ -201,13 +247,66 @@ export default function BarillaPlannerComponent() {
           }
         }
       }
-    } catch (error: unknown) {
+    } catch (error) {
+      console.error("❌ Stream error:", error);
+      handleError(error);
+    } finally {
+      setIsStreaming(false);
+      reader.releaseLock();
+    }
+  };
+
+  const sendMessage = async (messageText: string) => {
+    try {
+      setIsLoading(true);
+      startPerformanceTracking();
+
+      // Add user message and loading placeholder
+      const userMessage: Message = { role: "user", content: messageText };
+      const loadingMessage: Message = { role: "assistant", content: "..." };
+      setMessages((prev) => [...prev, userMessage, loadingMessage]);
+
+      const response = await fetch(`${API_URL}/chat`, {
+        method: "POST",
+        mode: "cors",
+        credentials: "include",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ message: messageText }),
+      });
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! status: ${response.status}`);
+      }
+
+      await handleStreamResponse(response, messageText);
+    } catch (error) {
       console.error("❌ Request failed:", error);
       handleError(error);
     } finally {
       setIsLoading(false);
-      setIsStreaming(false);
+      finishPerformanceTracking();
     }
+  };
+
+  const handleSendMessage = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim()) return;
+
+    const messageText = input;
+    setInput(""); // Clear input immediately
+    await sendMessage(messageText);
+  };
+
+  const handleStarterClick = async (text: string) => {
+    await sendMessage(text);
+  };
+
+  // Add a cleanup function
+  const cleanResponse = (text: string) => {
+    return text
+      .replace(/【.*?†source】/g, "")
+      .replace(/\[\d+\.\d+†source\]/g, "")
+      .trim();
   };
 
   const handleRefresh = async () => {
@@ -236,139 +335,6 @@ export default function BarillaPlannerComponent() {
       <div className="w-2 h-2 bg-blue-300 rounded-full animate-[bounce_1s_infinite_0.4s]"></div>
     </div>
   );
-
-  const handleStarterClick = async (text: string) => {
-    try {
-      // Store the text temporarily
-      const messageText = text;
-
-      // Clear input first (to match normal send behavior)
-      setInput("");
-
-      // Add user message immediately
-      const userMessage: Message = {
-        role: "user",
-        content: messageText,
-      };
-      const loadingMessage: Message = {
-        role: "assistant",
-        content: "...",
-      };
-      setMessages((prev) => [...prev, userMessage, loadingMessage]);
-
-      // Start loading state
-      setIsLoading(true);
-      setIsStreaming(false);
-
-      // Send to backend
-      const response = await fetch(`${API_URL}/chat`, {
-        method: "POST",
-        mode: "cors",
-        credentials: "include",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({
-          message: messageText,
-        }),
-      });
-
-      // Handle streaming response (same as handleSendMessage)
-      const reader = response.body?.getReader();
-      if (reader) {
-        setIsStreaming(true);
-        let currentMessage = "";
-        const decoder = new TextDecoder("utf-8");
-
-        while (true) {
-          const { value, done } = await reader.read();
-          if (done) break;
-
-          const text = decoder.decode(value);
-          const lines = text.split("\n");
-          for (const line of lines) {
-            if (line.startsWith("data: ")) {
-              try {
-                const data = JSON.parse(line.slice(6));
-                if (data.token) {
-                  currentMessage += data.token;
-                  const assistantMessage: Message = {
-                    role: "assistant",
-                    content: currentMessage,
-                  };
-                  setMessages((prev) => {
-                    const lastMessage = prev[prev.length - 1];
-                    if (lastMessage.role === "assistant") {
-                      return [...prev.slice(0, -1), assistantMessage];
-                    }
-                    return [...prev, assistantMessage];
-                  });
-                }
-              } catch (error: unknown) {
-                handleError(error);
-              }
-            }
-          }
-        }
-      }
-    } catch (error) {
-      console.error("Error handling starter click:", error);
-    } finally {
-      setIsLoading(false);
-      setIsStreaming(false);
-    }
-  };
-
-  // Add a cleanup function
-  const cleanResponse = (text: string) => {
-    return text
-      .replace(/【.*?†source】/g, "")
-      .replace(/\[\d+\.\d+†source\]/g, "")
-      .trim();
-  };
-
-  const handleStreamResponse = async (response: Response) => {
-    const reader = response.body?.getReader();
-    if (!reader) return;
-
-    const decoder = new TextDecoder();
-    let buffer = "";
-
-    try {
-      while (true) {
-        const { value, done } = await reader.read();
-        if (done) break;
-
-        buffer += decoder.decode(value, { stream: true });
-        const lines = buffer.split("\n");
-        buffer = lines.pop() || "";
-
-        for (const line of lines) {
-          if (line.startsWith("data: ")) {
-            try {
-              const data = JSON.parse(line.slice(6));
-              if (data.token) {
-                setMessages((prev) => {
-                  const lastMsg = prev[prev.length - 1];
-                  if (lastMsg?.role === "assistant") {
-                    return [
-                      ...prev.slice(0, -1),
-                      { ...lastMsg, content: lastMsg.content + data.token },
-                    ];
-                  }
-                  return [...prev, { role: "assistant", content: data.token }];
-                });
-              }
-            } catch (e) {
-              console.error("Error parsing SSE data:", e);
-            }
-          }
-        }
-      }
-    } finally {
-      reader.releaseLock();
-    }
-  };
 
   return (
     <div className="h-screen flex flex-col bg-gradient-to-b from-blue-950 to-blue-900 text-white overflow-hidden">
@@ -487,19 +453,19 @@ export default function BarillaPlannerComponent() {
                                 className="text-base font-semibold mb-2 text-blue-100"
                               />
                             ),
-                            ul: ({ ordered, node, className, ...props }) => (
-                              <ul {...props} className={className} />
+                            ul: ({ ordered, className, ...props }) => (
+                              <ul className={className} {...props} />
                             ),
-                            ol: ({ ordered, node, className, ...props }) => (
+                            ol: ({ ordered, className, ...props }) => (
                               <ol
-                                {...props}
                                 className={`list-decimal space-y-2 my-4 ml-4 ${
                                   className || ""
                                 }`}
+                                {...props}
                               />
                             ),
-                            li: ({ ordered, node, className, ...props }) => (
-                              <li {...props} className={className} />
+                            li: ({ ordered, className, ...props }) => (
+                              <li className={className} {...props} />
                             ),
                             strong: (props) => (
                               <strong

@@ -20,6 +20,7 @@ export default async function handler(req: NextRequest) {
 
   try {
     console.log('🔵 API: Starting chat request');
+    const startTime = Date.now();
     const { message } = await req.json();
 
     // Get or create thread ID from session
@@ -52,40 +53,76 @@ export default async function handler(req: NextRequest) {
     // Start streaming in the background
     (async () => {
       try {
+        const POLLING_INTERVAL = 150;
+        const STREAM_CHUNK_SIZE = 3; // Stream 3 characters at a time for smooth appearance
+        let lastStatus = '';
+        let lastContent = '';
+        
+        // Helper function to stream content in small chunks
+        const streamInChunks = async (content: string) => {
+          for (let i = 0; i < content.length; i += STREAM_CHUNK_SIZE) {
+            const chunk = content.slice(i, Math.min(i + STREAM_CHUNK_SIZE, content.length));
+            await writer.write(
+              new TextEncoder().encode(`data: ${JSON.stringify({ token: chunk })}\n\n`)
+            );
+            // Small delay between chunks for more natural appearance
+            await new Promise(resolve => setTimeout(resolve, 5));
+          }
+        };
+        
         while (true) {
           const runStatus = await openai.beta.threads.runs.retrieve(
             threadId,
             run.id
           );
 
-          if (runStatus.status === 'completed') {
-            // Get the assistant's messages
-            const messages = await openai.beta.threads.messages.list(threadId);
-            const lastMessage = messages.data[0];
+          // Only log when status changes
+          if (runStatus.status !== lastStatus) {
+            console.log(`🔵 API: Run status - ${runStatus.status}`);
+            lastStatus = runStatus.status;
+          }
 
-            if (lastMessage.role === 'assistant') {
-              // Stream each character of the message
-              const content = lastMessage.content[0].text.value;
-              for (const char of content) {
-                await writer.write(
-                  new TextEncoder().encode(`data: ${JSON.stringify({ token: char })}\n\n`)
-                );
+          // Check messages while in progress or completed
+          if (runStatus.status === 'in_progress' || runStatus.status === 'completed') {
+            const messages = await openai.beta.threads.messages.list(threadId);
+            const latestMessage = messages.data[0];
+
+            if (latestMessage?.role === 'assistant' && latestMessage?.content?.[0]) {
+              const messageContent = latestMessage.content[0];
+              
+              if ('text' in messageContent && messageContent.text.value) {
+                const currentContent = messageContent.text.value;
+                
+                // Only stream the new content
+                if (currentContent !== lastContent) {
+                  const newContent = currentContent.slice(lastContent.length);
+                  if (newContent.length > 0) {
+                    console.log('🔵 API: New content length:', newContent.length);
+                    await streamInChunks(newContent);
+                  }
+                  lastContent = currentContent;
+                }
               }
             }
+          }
+
+          if (runStatus.status === 'completed') {
+            const timeToComplete = Date.now() - startTime;
+            console.log(`🔵 API: Run completed in ${timeToComplete}ms`);
             break;
           } else if (runStatus.status === 'failed') {
+            console.error('🔴 API: Run failed');
             throw new Error('Assistant run failed');
           }
 
           // Wait before checking again
-          await new Promise((resolve) => setTimeout(resolve, 500));
+          await new Promise((resolve) => setTimeout(resolve, POLLING_INTERVAL));
         }
       } catch (error) {
         console.error('🔴 API Error:', error);
         await writer.write(
           new TextEncoder().encode(
-            `data: ${JSON.stringify({ error: 'An error occurred' })}\n\n`
-          )
+            `data: ${JSON.stringify({ error: 'An error occurred' })}\n\n`)
         );
       } finally {
         await writer.close();
