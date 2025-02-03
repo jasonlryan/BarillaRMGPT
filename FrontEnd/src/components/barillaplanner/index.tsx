@@ -429,7 +429,7 @@ export default function BarillaPlannerComponent() {
                                 className="border border-blue-700 px-4 py-2 text-left"
                               />
                             ),
-                            td: (props) => (
+                            td: ({ isHeader, ...props }) => (
                               <td
                                 {...props}
                                 className="border border-blue-700 px-4 py-2"
@@ -488,6 +488,12 @@ export default function BarillaPlannerComponent() {
                             ),
                             p: (props) => (
                               <p {...props} className="mb-4 last:mb-0" />
+                            ),
+                            ol: (props) => (
+                              <ol
+                                {...props}
+                                className="list-decimal space-y-2 my-4 ml-4"
+                              />
                             ),
                           }}
                         >
