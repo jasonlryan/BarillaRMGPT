@@ -28,3 +28,4 @@ app.yaml
 !README.md
 !user_guide.md
 .DS_Store
+node_modules

@@ -1,24 +1,41 @@
 {
-  "name": "barilla-node-backend",
-  "version": "1.0.0",
-  "description": "Node.js backend for Barilla RMG",
-  "main": "src/index.js",
+  "name": "src",
+  "version": "0.1.0",
+  "private": true,
   "scripts": {
-    "start": "node src/index.js",
-    "dev": "nodemon src/index.js",
-    "test": "jest"
+    "dev": "next dev",
+    "build": "DISABLE_ESLINT_PLUGIN=true next build",
+    "start": "next start"
   },
   "dependencies": {
-    "express": "^4.18.2",
-    "express-session": "^1.17.3",
-    "cors": "^2.8.5",
-    "dotenv": "^16.3.1",
+    "@radix-ui/react-slot": "^1.1.0",
+    "ai": "^2.2.35",
+    "axios": "^1.7.7",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "dotenv": "^16.4.1",
+    "dotenv-expand": "^10.0.0",
+    "lucide-react": "^0.300.0",
+    "next": "^15.0.3",
     "openai": "^4.28.0",
-    "node-cache": "^5.1.2",
-    "winston": "^3.11.0"
+    "react": "^18",
+    "react-dom": "^18",
+    "react-markdown": "^8.0.0",
+    "remark-gfm": "^3.0.0",
+    "tailwind-merge": "^2.5.4",
+    "tailwindcss-animate": "^1.0.7"
   },
   "devDependencies": {
-    "nodemon": "^3.0.2",
-    "jest": "^29.7.0"
+    "@types/node": "^20",
+    "@types/react": "^18",
+    "@types/react-dom": "^18",
+    "autoprefixer": "^10.4.20",
+    "eslint": "^8",
+    "eslint-config-next": "14.2.16",
+    "@typescript-eslint/eslint-plugin": "^5.0.0",
+    "@typescript-eslint/parser": "^5.0.0",
+    "postcss": "^8.4.49",
+    "tailwindcss": "^3.4.15",
+    "typescript": "^5"
   }
-} 
+}

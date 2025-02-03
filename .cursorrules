@@ -1,0 +1,57 @@
+# Cursor Development Rules for BarillaRMGPT
+
+1. **NEVER DELETE OR MODIFY EXISTING CODE WITHOUT EXPLICIT CONFIRMATION**
+   - No removing styles
+   - No changing existing component structure
+   - No modifying working UI components
+   - Always preserve existing functionality
+
+2. **VERSIONING AND BACKUP**
+   - Before making any significant changes, confirm if we need a backup
+   - Document what changes are being made and where
+   - Keep track of modified files
+
+3. **ADDITIVE CHANGES ONLY**
+   - Add new functionality alongside existing code
+   - Create new files rather than modifying existing ones
+   - Extend functionality instead of replacing it
+
+4. **UI AND STYLING**
+   - NEVER remove or modify existing styles
+   - Keep all Tailwind classes intact
+   - Preserve the existing design system
+   - Add new styles only when creating new components
+
+5. **CONFIGURATION AND ENVIRONMENT**
+   - Never delete configuration files
+   - Keep existing environment variables
+   - Add new variables alongside existing ones
+   - Preserve existing build and deployment settings
+
+6. **DEPENDENCIES**
+   - Never remove existing dependencies
+   - Only add new dependencies when absolutely necessary
+   - Document why new dependencies are needed
+   - Verify compatibility with existing packages
+
+7. **BEFORE MAKING CHANGES**
+   - Understand the existing code thoroughly
+   - Ask for clarification if unsure
+   - Propose changes before implementing them
+   - Get explicit approval for structural changes
+
+8. **ERROR HANDLING**
+   - Preserve existing error handling
+   - Keep all existing logging
+   - Maintain current security measures
+
+9. **DOCUMENTATION**
+   - Keep all existing comments
+   - Document new additions clearly
+   - Preserve existing README files and documentation
+
+10. **ALWAYS ASK FIRST**
+    - Before removing ANY code
+    - Before changing ANY existing functionality
+    - Before modifying ANY configuration
+    - Before restructuring ANY directories 
