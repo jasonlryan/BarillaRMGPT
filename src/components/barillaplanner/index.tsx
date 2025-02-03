@@ -55,6 +55,16 @@ export default function BarillaPlannerComponent() {
   const [isLoading, setIsLoading] = useState(false);
   const [isStreaming, setIsStreaming] = useState(false);
 
+  // Initialize welcome message
+  useEffect(() => {
+    setMessages([
+      {
+        role: "assistant",
+        content: chatConfig.welcomeMessage,
+      },
+    ]);
+  }, []); // Empty dependency array means this runs once on mount
+
   const scrollToBottom = () => {
     if (chatContainerRef.current) {
       setTimeout(() => {
