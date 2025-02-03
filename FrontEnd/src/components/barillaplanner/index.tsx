@@ -471,14 +471,19 @@ export default function BarillaPlannerComponent() {
                                 className="text-base font-semibold mb-2 text-blue-100"
                               />
                             ),
-                            ul: (props) => (
-                              <ul {...props} className="space-y-2 my-4" />
+                            ul: ({ ordered, node, className, ...props }) => (
+                              <ul {...props} className={className} />
                             ),
-                            li: (props) => (
-                              <li {...props} className="flex gap-2 items-start">
-                                <span className="text-yellow-400 mt-1">•</span>
-                                <span className="flex-1">{props.children}</span>
-                              </li>
+                            ol: ({ ordered, node, className, ...props }) => (
+                              <ol
+                                {...props}
+                                className={`list-decimal space-y-2 my-4 ml-4 ${
+                                  className || ""
+                                }`}
+                              />
+                            ),
+                            li: ({ ordered, node, className, ...props }) => (
+                              <li {...props} className={className} />
                             ),
                             strong: (props) => (
                               <strong
@@ -488,12 +493,6 @@ export default function BarillaPlannerComponent() {
                             ),
                             p: (props) => (
                               <p {...props} className="mb-4 last:mb-0" />
-                            ),
-                            ol: (props) => (
-                              <ol
-                                {...props}
-                                className="list-decimal space-y-2 my-4 ml-4"
-                              />
                             ),
                           }}
                         >

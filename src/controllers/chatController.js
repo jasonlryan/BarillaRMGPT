@@ -1,5 +1,4 @@
 const openaiService = require("../services/openaiService");
-const cache = require("../utils/cache");
 
 class ChatController {
   async handleChat(req, res) {
@@ -12,6 +11,7 @@ class ChatController {
     res.setHeader("Content-Type", "text/event-stream");
     res.setHeader("Cache-Control", "no-cache");
     res.setHeader("Connection", "keep-alive");
+    res.setHeader("Access-Control-Allow-Origin", "*");
 
     try {
       // Get or create thread ID from session
@@ -27,25 +27,21 @@ class ChatController {
       // Run the assistant
       const runId = await openaiService.runAssistant(threadId);
 
-      // Wait for completion
-      await openaiService.waitForRunCompletion(threadId, runId);
+      // Flush headers immediately
+      res.flushHeaders();
 
-      // Get messages
-      const messages = await openaiService.getMessages(threadId);
-
-      // Send the latest assistant message
-      const latestMessage = messages[0];
-      if (latestMessage && latestMessage.role === "assistant") {
-        // Send the message content as tokens to match frontend expectations
-        const content = latestMessage.content[0].text.value;
-        res.write(
-          `data: ${JSON.stringify({
-            token: content,
-            done: false,
-          })}\n\n`
-        );
+      // Stream the response
+      for await (const chunk of openaiService.streamResponse(threadId, runId)) {
+        const data = JSON.stringify({
+          token: chunk,
+          done: false,
+        });
+        res.write(`data: ${data}\n\n`);
+        // Ensure the chunk is sent immediately
+        if (res.flush) res.flush();
       }
 
+      // Send completion signal
       res.write(`data: ${JSON.stringify({ done: true })}\n\n`);
       res.end();
     } catch (error) {
