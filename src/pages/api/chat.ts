@@ -1,5 +1,6 @@
 import { NextRequest } from 'next/server';
 import OpenAI from 'openai';
+import type { RunSubmitToolOutputsParams } from 'openai/resources/beta/threads/runs/runs';
 
 // Initialize OpenAI client
 const openai = new OpenAI({
@@ -12,6 +13,22 @@ const activeThreads: { [key: string]: string } = {};
 export const config = {
   runtime: 'edge',
 };
+
+// Type guard for message delta events
+function isMessageDelta(event: any): event is { 
+  event: string; 
+  data: { 
+    delta: { 
+      content: Array<{ type: 'text'; text: { value: string } }> 
+    } 
+  } 
+} {
+  return (
+    event.event === 'thread.message.delta' &&
+    event.data?.delta?.content?.[0]?.type === 'text' &&
+    typeof event.data.delta.content[0].text?.value === 'string'
+  );
+}
 
 export default async function handler(req: NextRequest) {
   if (req.method !== 'POST') {
@@ -40,12 +57,6 @@ export default async function handler(req: NextRequest) {
       content: message,
     });
 
-    // Run the assistant
-    console.log('🔵 API: Running assistant');
-    const run = await openai.beta.threads.runs.create(threadId, {
-      assistant_id: process.env.OPENAI_ASSISTANT_ID!,
-    });
-
     // Create a new TransformStream for streaming
     const stream = new TransformStream();
     const writer = stream.writable.getWriter();
@@ -53,71 +64,45 @@ export default async function handler(req: NextRequest) {
     // Start streaming in the background
     (async () => {
       try {
-        const POLLING_INTERVAL = 150;
-        const STREAM_CHUNK_SIZE = 3; // Stream 3 characters at a time for smooth appearance
-        let lastStatus = '';
-        let lastContent = '';
-        
-        // Helper function to stream content in small chunks
-        const streamInChunks = async (content: string) => {
-          for (let i = 0; i < content.length; i += STREAM_CHUNK_SIZE) {
-            const chunk = content.slice(i, Math.min(i + STREAM_CHUNK_SIZE, content.length));
+        // Create and stream the run
+        console.log('🔵 API: Creating and streaming run');
+        const stream = await openai.beta.threads.runs.createAndStream(
+          threadId,
+          { assistant_id: process.env.OPENAI_ASSISTANT_ID! }
+        );
+
+        console.log('🔵 API: Starting event stream processing');
+        for await (const event of stream) {
+          console.log('🔵 API: Received event:', JSON.stringify(event));
+          
+          // Handle message deltas
+          if (isMessageDelta(event)) {
+            const content = event.data.delta.content[0].text.value;
+            console.log('🔵 API: Streaming content:', content);
             await writer.write(
-              new TextEncoder().encode(`data: ${JSON.stringify({ token: chunk })}\n\n`)
+              new TextEncoder().encode(`data: ${JSON.stringify({ token: content })}\n\n`)
             );
-            // Small delay between chunks for more natural appearance
-            await new Promise(resolve => setTimeout(resolve, 5));
           }
-        };
-        
-        while (true) {
-          const runStatus = await openai.beta.threads.runs.retrieve(
-            threadId,
-            run.id
-          );
-
-          // Only log when status changes
-          if (runStatus.status !== lastStatus) {
-            console.log(`🔵 API: Run status - ${runStatus.status}`);
-            lastStatus = runStatus.status;
-          }
-
-          // Check messages while in progress or completed
-          if (runStatus.status === 'in_progress' || runStatus.status === 'completed') {
-            const messages = await openai.beta.threads.messages.list(threadId);
-            const latestMessage = messages.data[0];
-
-            if (latestMessage?.role === 'assistant' && latestMessage?.content?.[0]) {
-              const messageContent = latestMessage.content[0];
-              
-              if ('text' in messageContent && messageContent.text.value) {
-                const currentContent = messageContent.text.value;
-                
-                // Only stream the new content
-                if (currentContent !== lastContent) {
-                  const newContent = currentContent.slice(lastContent.length);
-                  if (newContent.length > 0) {
-                    console.log('🔵 API: New content length:', newContent.length);
-                    await streamInChunks(newContent);
-                  }
-                  lastContent = currentContent;
-                }
-              }
+          
+          // Handle run status updates
+          if ('event' in event) {
+            if (event.event === 'thread.run.created') {
+              console.log('🔵 API: Run created');
+            } else if (event.event === 'thread.run.queued') {
+              console.log('🔵 API: Run queued');
+            } else if (event.event === 'thread.run.in_progress') {
+              console.log('🔵 API: Run in progress');
+            } else if (event.event === 'thread.run.completed') {
+              console.log('🔵 API: Run completed');
+              const timeToComplete = Date.now() - startTime;
+              console.log(`🔵 API: Run completed in ${timeToComplete}ms`);
+            } else if (event.event === 'thread.run.failed') {
+              console.error('🔴 API: Run failed');
+              throw new Error('Assistant run failed');
             }
           }
-
-          if (runStatus.status === 'completed') {
-            const timeToComplete = Date.now() - startTime;
-            console.log(`🔵 API: Run completed in ${timeToComplete}ms`);
-            break;
-          } else if (runStatus.status === 'failed') {
-            console.error('🔴 API: Run failed');
-            throw new Error('Assistant run failed');
-          }
-
-          // Wait before checking again
-          await new Promise((resolve) => setTimeout(resolve, POLLING_INTERVAL));
         }
+        console.log('🔵 API: Event stream ended');
       } catch (error) {
         console.error('🔴 API Error:', error);
         await writer.write(

@@ -54,6 +54,7 @@ export default function BarillaPlannerComponent() {
   const [showScrollButtons, setShowScrollButtons] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isStreaming, setIsStreaming] = useState(false);
+  const lastUserInteractionRef = useRef<number>(0);
   const performanceMetrics = useRef<{
     requestStart: number;
     streamStart: number;
@@ -133,44 +134,70 @@ export default function BarillaPlannerComponent() {
     ]);
   }, []); // Empty dependency array means this runs once on mount
 
-  const scrollToBottom = () => {
-    if (chatContainerRef.current) {
-      setTimeout(() => {
-        chatContainerRef.current?.scrollTo({
-          top: chatContainerRef.current.scrollHeight,
-          behavior: "smooth",
-        });
-      }, 100);
+  // Improved scroll handling
+  const scrollToBottom = (force = false) => {
+    if (!chatContainerRef.current) return;
+
+    const timeSinceLastInteraction =
+      Date.now() - lastUserInteractionRef.current;
+    const shouldSmooth = timeSinceLastInteraction > 100;
+
+    if (autoScroll || force) {
+      chatContainerRef.current.scrollTo({
+        top: chatContainerRef.current.scrollHeight,
+        behavior: shouldSmooth ? "smooth" : "auto",
+      });
     }
   };
 
-  const scrollToTop = () => {
+  const handleScrollToBottom = (e: React.MouseEvent) => {
+    e.preventDefault();
+    scrollToBottom(true);
+  };
+
+  const handleScrollToTop = (e: React.MouseEvent) => {
+    e.preventDefault();
     if (chatContainerRef.current) {
       chatContainerRef.current.scrollTop = 0;
     }
   };
 
+  // Enhanced scroll event handler
   const handleScroll = () => {
-    if (chatContainerRef.current) {
-      const { scrollTop, scrollHeight, clientHeight } =
-        chatContainerRef.current;
-      const isAtBottom = scrollHeight - scrollTop - clientHeight < 50;
+    if (!chatContainerRef.current) return;
 
-      setShowScrollButtons(scrollHeight > clientHeight);
+    const { scrollTop, scrollHeight, clientHeight } = chatContainerRef.current;
+    const isAtBottom = scrollHeight - scrollTop - clientHeight < 50;
+    const hasOverflow = scrollHeight > clientHeight;
 
-      if (!isAtBottom) {
-        setAutoScroll(false);
-      } else {
-        setAutoScroll(true);
-      }
+    setShowScrollButtons(hasOverflow);
+
+    // Only update autoScroll if user has interacted
+    const timeSinceLastInteraction =
+      Date.now() - lastUserInteractionRef.current;
+    if (timeSinceLastInteraction > 100) {
+      // Debounce user interaction
+      setAutoScroll(isAtBottom);
     }
   };
 
+  // Track user interaction with chat container
+  const handleChatInteraction = () => {
+    lastUserInteractionRef.current = Date.now();
+  };
+
+  // Update useEffect for message changes
   useEffect(() => {
-    if (autoScroll) {
-      scrollToBottom();
+    scrollToBottom();
+  }, [messages]);
+
+  // Add scroll restoration on streaming state change
+  useEffect(() => {
+    if (!isStreaming) {
+      // When streaming ends, do a final scroll to bottom
+      scrollToBottom(true);
     }
-  }, [messages, autoScroll]);
+  }, [isStreaming]);
 
   const handleError = (error: unknown) => {
     const errorMessage =
@@ -197,6 +224,9 @@ export default function BarillaPlannerComponent() {
     const decoder = new TextDecoder("utf-8");
     let buffer = ""; // Add buffer for incomplete chunks
 
+    // Add the initial assistant message
+    setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
+
     try {
       while (true) {
         const { value, done } = await reader.read();
@@ -220,39 +250,25 @@ export default function BarillaPlannerComponent() {
                 currentMessage += data.token;
                 trackStreamPerformance(data.token.length);
 
-                // Update message with minimal React state updates
+                // Update the last message's content with the accumulated text
                 setMessages((prev) => {
-                  const lastMessage = prev[prev.length - 1];
-                  if (lastMessage?.role === "assistant") {
-                    // Only update if content has changed
-                    if (lastMessage.content !== currentMessage) {
-                      return [
-                        ...prev.slice(0, -1),
-                        { ...lastMessage, content: currentMessage },
-                      ];
-                    }
-                  }
-                  return prev;
+                  const newMessages = [...prev];
+                  newMessages[newMessages.length - 1].content = currentMessage;
+                  return newMessages;
                 });
               }
-            } catch (error: unknown) {
-              if (
-                error instanceof Error &&
-                !error.message.includes("Unexpected end of JSON input")
-              ) {
-                console.error("❌ Error parsing stream data:", error);
-                handleError(error);
-              }
+            } catch (e) {
+              console.error("Error parsing stream data:", e);
             }
           }
         }
       }
     } catch (error) {
-      console.error("❌ Stream error:", error);
+      console.error("Error reading stream:", error);
       handleError(error);
     } finally {
       setIsStreaming(false);
-      reader.releaseLock();
+      finishPerformanceTracking();
     }
   };
 
@@ -261,15 +277,13 @@ export default function BarillaPlannerComponent() {
       setIsLoading(true);
       startPerformanceTracking();
 
-      // Add user message and loading placeholder
+      // Add user message
       const userMessage: Message = { role: "user", content: messageText };
-      const loadingMessage: Message = { role: "assistant", content: "..." };
-      setMessages((prev) => [...prev, userMessage, loadingMessage]);
+      const assistantMessage: Message = { role: "assistant", content: "" };
+      setMessages((prev) => [...prev, userMessage, assistantMessage]);
 
       const response = await fetch(`${API_URL}/chat`, {
         method: "POST",
-        mode: "cors",
-        credentials: "include",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: messageText }),
       });
@@ -366,6 +380,8 @@ export default function BarillaPlannerComponent() {
               <div
                 ref={chatContainerRef}
                 onScroll={handleScroll}
+                onClick={handleChatInteraction}
+                onTouchStart={handleChatInteraction}
                 className="flex-1 overflow-y-auto p-4 bg-blue-700/50 rounded-lg"
               >
                 {messages.map((message, index) => (
@@ -384,11 +400,12 @@ export default function BarillaPlannerComponent() {
                           : "bg-white/10 text-blue-100 rounded-tr-none"
                       }`}
                     >
-                      {isLoading &&
-                      index === messages.length - 1 &&
-                      message.role === "assistant" &&
-                      message.content === "..." ? (
-                        <LoadingDots />
+                      {message.role === "assistant" &&
+                      message.content === "" ? (
+                        <div className="flex items-center space-x-2 text-blue-300">
+                          <LoadingDots />
+                          <span className="text-sm">Thinking...</span>
+                        </div>
                       ) : (
                         <ReactMarkdown
                           className="prose prose-invert max-w-none prose-pre:bg-blue-900/50 prose-pre:border prose-pre:border-blue-700"
@@ -417,68 +434,9 @@ export default function BarillaPlannerComponent() {
                                 className="border border-blue-700 px-4 py-2"
                               />
                             ),
-                            code: (props) => (
-                              <code
-                                {...props}
-                                className="bg-blue-900/50 rounded px-1"
-                              />
-                            ),
-                            pre: (props) => (
-                              <pre
-                                {...props}
-                                className="p-4 rounded-lg overflow-x-auto"
-                              />
-                            ),
-                            h1: (props) => (
-                              <h1
-                                {...props}
-                                className="text-xl font-bold mb-4 text-white"
-                              />
-                            ),
-                            h2: (props) => (
-                              <h2
-                                {...props}
-                                className="text-lg font-bold mb-3 text-white"
-                              />
-                            ),
-                            h3: (props) => (
-                              <h3
-                                {...props}
-                                className="text-base font-bold mb-2 text-yellow-400"
-                              />
-                            ),
-                            h4: (props) => (
-                              <h4
-                                {...props}
-                                className="text-base font-semibold mb-2 text-blue-100"
-                              />
-                            ),
-                            ul: ({ ordered, className, ...props }) => (
-                              <ul className={className} {...props} />
-                            ),
-                            ol: ({ ordered, className, ...props }) => (
-                              <ol
-                                className={`list-decimal space-y-2 my-4 ml-4 ${
-                                  className || ""
-                                }`}
-                                {...props}
-                              />
-                            ),
-                            li: ({ ordered, className, ...props }) => (
-                              <li className={className} {...props} />
-                            ),
-                            strong: (props) => (
-                              <strong
-                                {...props}
-                                className="text-yellow-400 font-semibold"
-                              />
-                            ),
-                            p: (props) => (
-                              <p {...props} className="mb-4 last:mb-0" />
-                            ),
                           }}
                         >
-                          {message.content}
+                          {message.content || " "}
                         </ReactMarkdown>
                       )}
                     </div>
@@ -491,7 +449,7 @@ export default function BarillaPlannerComponent() {
                   <Button
                     size="icon"
                     variant="outline"
-                    onClick={scrollToTop}
+                    onClick={handleScrollToTop}
                     className="bg-blue-600/70 hover:bg-blue-600"
                   >
                     <ArrowUp className="h-4 w-4" />
@@ -499,7 +457,7 @@ export default function BarillaPlannerComponent() {
                   <Button
                     size="icon"
                     variant="outline"
-                    onClick={scrollToBottom}
+                    onClick={handleScrollToBottom}
                     className="bg-blue-600/70 hover:bg-blue-600"
                   >
                     <ArrowDown className="h-4 w-4" />
