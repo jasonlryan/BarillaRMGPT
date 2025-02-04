@@ -128,20 +128,10 @@ export default function BarillaPlannerComponent() {
 
   // Initialize welcome message
   useEffect(() => {
-    const formattedWelcomeMessage = `# Welcome to the Barilla Retail Media Planning Assistant!
-
-I am here to help you develop and implement data-driven media plans tailored to Barilla's retail media strategies. My role includes:
-
-* Providing insights into top-performing media touchpoints for various product categories and countries
-* Offering practical recommendations to help you optimize your marketing campaigns
-* Helping you interpret key metrics like Index and Deviation from Mean to assess touchpoint effectiveness
-
-Please let me know how I can assist you today!`;
-
     setMessages([
       {
         role: "assistant",
-        content: formattedWelcomeMessage,
+        content: chatConfig.welcomeMessage,
       },
     ]);
   }, []);
@@ -407,21 +397,11 @@ Please let me know how I can assist you today!`;
 
       await response.json();
 
-      // Set formatted welcome message
-      const formattedWelcomeMessage = `# Welcome to the Barilla Retail Media Planning Assistant!
-
-I can provide:
-
-* Insights into top-performing media touchpoints for various product categories and countries
-* Practical recommendations for optimizing retail media campaigns
-* General information about planning and evaluaition using the PDJ.
-
-How I can help you today?`;
-
+      // Set welcome message from config
       setMessages([
         {
           role: "assistant",
-          content: formattedWelcomeMessage,
+          content: chatConfig.welcomeMessage,
         },
       ]);
     } catch (error) {
@@ -429,20 +409,10 @@ How I can help you today?`;
         handleError(error);
       }
       // Ensure welcome message is shown even if reset fails
-      const formattedWelcomeMessage = `# Welcome to the Barilla Retail Media Planning Assistant!
-
-I can provide:
-
-* Insights into top-performing media touchpoints for various product categories and countries
-* Practical recommendations for optimizing retail media campaigns
-* General information about planning and evaluaition using the PDJ.
-
-How I can help you today?`;
-
       setMessages([
         {
           role: "assistant",
-          content: formattedWelcomeMessage,
+          content: chatConfig.welcomeMessage,
         },
       ]);
     }
@@ -525,12 +495,29 @@ How I can help you today?`;
                                 {...props}
                               />
                             ),
-                            ol: ({ node, ordered, ...rest }) => (
-                              <ol
-                                className="markdown-container ol list-decimal pl-4"
-                                {...rest}
-                              />
-                            ),
+                            ol: ({
+                              node,
+                              children,
+                              ...props
+                            }: {
+                              node: any;
+                              children: React.ReactNode;
+                              [key: string]: any;
+                            }) => {
+                              // Cast props to any to safely delete optional properties
+                              const safeProps = props as any;
+                              delete safeProps.ordered;
+                              delete safeProps.depth;
+
+                              return (
+                                <ol
+                                  className="markdown-container ol list-decimal pl-4"
+                                  {...props}
+                                >
+                                  {children}
+                                </ol>
+                              );
+                            },
                             li: ({ node, ...props }) => (
                               <li
                                 className="markdown-container li"
@@ -597,45 +584,40 @@ How I can help you today?`;
             </div>
             <form
               onSubmit={handleSendMessage}
-              className="flex-none mt-4 flex items-center space-x-2"
+              className="flex-none mt-4 flex flex-col space-y-1"
               suppressHydrationWarning={true}
             >
-              <Input
-                value={input}
-                onChange={(e) => setInput(e.target.value)}
-                placeholder={
-                  isLoading || isStreaming
-                    ? "Please wait..."
-                    : "Type your message..."
-                }
-                disabled={isLoading || isStreaming}
-                autoComplete="off"
-                autoCorrect="off"
-                autoCapitalize="off"
-                spellCheck="false"
-                name="chat-input"
-                type="text"
-                data-form-type="other"
-                aria-label="Chat input"
-                suppressHydrationWarning={true}
-                className={`chat-input ${
-                  isLoading || isStreaming
-                    ? "opacity-50 cursor-not-allowed"
-                    : ""
-                }`}
-              />
-              <Button
-                type="submit"
-                suppressHydrationWarning={true}
-                disabled={isLoading || isStreaming || !input.trim()}
-                className={`bg-[#E31837] text-white hover:bg-[#E31837]/90 ${
-                  isLoading || isStreaming || !input.trim()
-                    ? "opacity-50 cursor-not-allowed"
-                    : ""
-                }`}
-              >
-                <Send className="h-4 w-4" />
-              </Button>
+              <div className="flex items-center space-x-2">
+                <ChatInput
+                  value={input}
+                  onChange={(e) => setInput(e.target.value)}
+                  onSubmit={handleSendMessage}
+                  placeholder={
+                    isLoading || isStreaming
+                      ? "Please wait..."
+                      : "Type your message..."
+                  }
+                  disabled={isLoading || isStreaming}
+                  autoComplete="off"
+                  autoCorrect="off"
+                  className="flex-1"
+                />
+                <Button
+                  type="submit"
+                  suppressHydrationWarning={true}
+                  disabled={isLoading || isStreaming || !input.trim()}
+                  className={`bg-[#E31837] text-white hover:bg-[#E31837]/90 ${
+                    isLoading || isStreaming || !input.trim()
+                      ? "opacity-50 cursor-not-allowed"
+                      : ""
+                  }`}
+                >
+                  <Send className="h-4 w-4" />
+                </Button>
+              </div>
+              <div className="text-xs text-gray-400 pl-1">
+                Use Shift+Enter for a new line
+              </div>
             </form>
           </CardContent>
         </Card>

@@ -1,32 +1,44 @@
 "use client";
-import { Input } from "@/components/ui/input";
-import { ChangeEvent } from "react";
+import { Textarea } from "@/components/ui/textarea";
+import { ChangeEvent, KeyboardEvent } from "react";
 
 interface ChatInputProps {
   value: string;
-  onChange: (e: ChangeEvent<HTMLInputElement>) => void;
+  onChange: (e: ChangeEvent<HTMLTextAreaElement>) => void;
+  onSubmit: (e: React.FormEvent) => void;
   placeholder?: string;
-  isHeader?: boolean; // Explicitly declare it to document its existence
+  isHeader?: boolean;
   className?: string;
-  // Allow additional standard HTML input props
   [key: string]: any;
 }
 
 export default function ChatInput({
   value,
   onChange,
+  onSubmit,
   placeholder,
   className,
-  isHeader, // Destructure but don't use it
+  isHeader,
   ...props
 }: ChatInputProps) {
-  // Filter out any other potential custom props that shouldn't reach DOM
   const { customProp1, customProp2, ...filteredProps } = props;
 
+  const handleKeyDown = (e: KeyboardEvent<HTMLTextAreaElement>) => {
+    if (e.key === "Enter") {
+      // Only prevent default and submit if it's a plain Enter
+      // Let Shift+Enter behave naturally
+      if (!e.shiftKey) {
+        e.preventDefault();
+        onSubmit(e);
+      }
+    }
+  };
+
   return (
-    <Input
+    <Textarea
       value={value}
       onChange={onChange}
+      onKeyDown={handleKeyDown}
       placeholder={placeholder}
       className={className}
       {...filteredProps}
