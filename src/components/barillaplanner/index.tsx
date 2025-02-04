@@ -23,6 +23,7 @@ import remarkGfm from "remark-gfm";
 import ChatInput from "./ChatInput";
 import type { LucideIcon } from "lucide-react";
 import type { LucideProps } from "lucide-react";
+import "./streaming-styles.css";
 
 interface Message {
   role: "user" | "assistant";
@@ -54,6 +55,7 @@ export default function BarillaPlannerComponent() {
   const [showScrollButtons, setShowScrollButtons] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [isStreaming, setIsStreaming] = useState(false);
+  const abortControllerRef = useRef<AbortController | null>(null);
   const lastUserInteractionRef = useRef<number>(0);
   const performanceMetrics = useRef<{
     requestStart: number;
@@ -126,13 +128,23 @@ export default function BarillaPlannerComponent() {
 
   // Initialize welcome message
   useEffect(() => {
+    const formattedWelcomeMessage = `# Welcome to the Barilla Retail Media Planning Assistant!
+
+I am here to help you develop and implement data-driven media plans tailored to Barilla's retail media strategies. My role includes:
+
+* Providing insights into top-performing media touchpoints for various product categories and countries
+* Offering practical recommendations to help you optimize your marketing campaigns
+* Helping you interpret key metrics like Index and Deviation from Mean to assess touchpoint effectiveness
+
+Please let me know how I can assist you today!`;
+
     setMessages([
       {
         role: "assistant",
-        content: chatConfig.welcomeMessage,
+        content: formattedWelcomeMessage,
       },
     ]);
-  }, []); // Empty dependency array means this runs once on mount
+  }, []);
 
   // Improved scroll handling
   const scrollToBottom = (force = false) => {
@@ -219,13 +231,9 @@ export default function BarillaPlannerComponent() {
     const reader = response.body?.getReader();
     if (!reader) return;
 
-    setIsStreaming(true);
     let currentMessage = "";
     const decoder = new TextDecoder("utf-8");
     let buffer = ""; // Add buffer for incomplete chunks
-
-    // Add the initial assistant message
-    setMessages((prev) => [...prev, { role: "assistant", content: "" }]);
 
     try {
       while (true) {
@@ -233,6 +241,11 @@ export default function BarillaPlannerComponent() {
         if (done) {
           console.log("✅ Stream complete");
           break;
+        }
+
+        // Start streaming on first chunk
+        if (!isStreaming) {
+          setIsStreaming(true);
         }
 
         // Decode and handle any buffered data
@@ -253,7 +266,17 @@ export default function BarillaPlannerComponent() {
                 // Update the last message's content with the accumulated text
                 setMessages((prev) => {
                   const newMessages = [...prev];
-                  newMessages[newMessages.length - 1].content = currentMessage;
+                  if (
+                    newMessages[newMessages.length - 1].role === "assistant"
+                  ) {
+                    newMessages[newMessages.length - 1].content =
+                      currentMessage;
+                  } else {
+                    newMessages.push({
+                      role: "assistant",
+                      content: currentMessage,
+                    });
+                  }
                   return newMessages;
                 });
               }
@@ -272,20 +295,42 @@ export default function BarillaPlannerComponent() {
     }
   };
 
+  const handleSendMessage = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!input.trim() || isLoading || isStreaming) return;
+
+    const messageText = input;
+    setInput(""); // Clear input immediately
+    await sendMessage(messageText);
+  };
+
+  const handleStarterClick = async (text: string) => {
+    if (isLoading || isStreaming) return;
+    await sendMessage(text);
+  };
+
   const sendMessage = async (messageText: string) => {
+    if (isLoading || isStreaming) return;
+
     try {
       setIsLoading(true);
       startPerformanceTracking();
 
-      // Add user message
-      const userMessage: Message = { role: "user", content: messageText };
-      const assistantMessage: Message = { role: "assistant", content: "" };
-      setMessages((prev) => [...prev, userMessage, assistantMessage]);
+      // Create new abort controller for this request
+      abortControllerRef.current = new AbortController();
+
+      // Add user message and empty assistant message
+      setMessages((prev) => [
+        ...prev,
+        { role: "user", content: messageText },
+        { role: "assistant", content: "" },
+      ]);
 
       const response = await fetch(`${API_URL}/chat`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ message: messageText }),
+        signal: abortControllerRef.current.signal,
       });
 
       if (!response.ok) {
@@ -294,25 +339,17 @@ export default function BarillaPlannerComponent() {
 
       await handleStreamResponse(response, messageText);
     } catch (error) {
-      console.error("❌ Request failed:", error);
-      handleError(error);
+      if (error instanceof Error && error.name === "AbortError") {
+        console.log("Request was aborted");
+      } else {
+        console.error("❌ Request failed:", error);
+        handleError(error);
+      }
     } finally {
       setIsLoading(false);
       finishPerformanceTracking();
+      abortControllerRef.current = null;
     }
-  };
-
-  const handleSendMessage = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!input.trim()) return;
-
-    const messageText = input;
-    setInput(""); // Clear input immediately
-    await sendMessage(messageText);
-  };
-
-  const handleStarterClick = async (text: string) => {
-    await sendMessage(text);
   };
 
   // Add a cleanup function
@@ -325,20 +362,53 @@ export default function BarillaPlannerComponent() {
 
   const handleRefresh = async () => {
     try {
+      // Abort any ongoing stream
+      if (abortControllerRef.current) {
+        abortControllerRef.current.abort();
+        abortControllerRef.current = null;
+      }
+
+      // Reset all state first
+      setIsLoading(false);
+      setIsStreaming(false);
+      setInput("");
+      setAutoScroll(true);
+      setMessages([]); // Clear messages immediately
+
+      // Reset performance metrics
+      performanceMetrics.current = {
+        requestStart: 0,
+        streamStart: 0,
+        messageCount: 0,
+        totalTokens: 0,
+        lastUpdateTime: 0,
+      };
+
+      // Then reset the backend thread
+      const response = await fetch(`${API_URL}/reset_thread`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      });
+
+      if (!response.ok) {
+        throw new Error(`Failed to reset thread: ${response.status}`);
+      }
+
+      // Force reload the page to ensure a completely fresh state with new thread ID
+      window.location.reload();
+    } catch (error) {
+      console.error("Error refreshing chat:", error);
+      handleError(error);
+      // Ensure welcome message is shown even if reset fails
       setMessages([
         {
           role: "assistant",
           content: chatConfig.welcomeMessage,
         },
       ]);
-
-      await fetch(`${API_URL}/reset_thread`, {
-        method: "POST",
-        mode: "cors",
-        credentials: "include",
-      });
-    } catch (error) {
-      console.error("Error refreshing chat:", error);
     }
   };
 
@@ -382,7 +452,7 @@ export default function BarillaPlannerComponent() {
                 onScroll={handleScroll}
                 onClick={handleChatInteraction}
                 onTouchStart={handleChatInteraction}
-                className="flex-1 overflow-y-auto p-4 bg-blue-700/50 rounded-lg"
+                className="chat-container"
               >
                 {messages.map((message, index) => (
                   <div
@@ -394,51 +464,75 @@ export default function BarillaPlannerComponent() {
                     }`}
                   >
                     <div
-                      className={`max-w-[80%] rounded-2xl px-4 py-2 ${
+                      className={`streaming-message ${
                         message.role === "assistant"
-                          ? "bg-blue-600/70 text-white rounded-tl-none"
-                          : "bg-white/10 text-blue-100 rounded-tr-none"
+                          ? "assistant-message"
+                          : "user-message"
                       }`}
                     >
                       {message.role === "assistant" &&
-                      message.content === "" ? (
-                        <div className="flex items-center space-x-2 text-blue-300">
+                      message.content === "" &&
+                      isLoading &&
+                      !isStreaming ? (
+                        <div className="loading-container">
                           <LoadingDots />
                           <span className="text-sm">Thinking...</span>
                         </div>
-                      ) : (
+                      ) : message.content ? (
                         <ReactMarkdown
-                          className="prose prose-invert max-w-none prose-pre:bg-blue-900/50 prose-pre:border prose-pre:border-blue-700"
+                          className="markdown-container"
                           remarkPlugins={[remarkGfm]}
                           components={{
-                            table: (props) => (
-                              <div className="overflow-x-auto my-4">
-                                <table
-                                  {...props}
-                                  className="border-collapse border border-blue-700 w-full"
-                                />
-                              </div>
-                            ),
-                            thead: (props) => (
-                              <thead {...props} className="bg-blue-900/50" />
-                            ),
-                            th: (props) => (
-                              <th
+                            ul: ({ node, ...props }) => (
+                              <ul
+                                className="markdown-container ul"
                                 {...props}
-                                className="border border-blue-700 px-4 py-2 text-left"
                               />
                             ),
-                            td: (props) => (
-                              <td
+                            ol: ({ node, ...props }) => (
+                              <ol
+                                className="markdown-container ol"
                                 {...props}
-                                className="border border-blue-700 px-4 py-2"
+                              />
+                            ),
+                            li: ({ node, ...props }) => (
+                              <li
+                                className="markdown-container li"
+                                {...props}
+                              />
+                            ),
+                            p: ({ node, ...props }) => (
+                              <p className="markdown-container p" {...props} />
+                            ),
+                            h1: ({ node, ...props }) => (
+                              <h1
+                                className="markdown-container h1 text-yellow-400"
+                                {...props}
+                              />
+                            ),
+                            h2: ({ node, ...props }) => (
+                              <h2
+                                className="markdown-container h2 text-yellow-400"
+                                {...props}
+                              />
+                            ),
+                            h3: ({ node, ...props }) => (
+                              <h3
+                                className="markdown-container h3 text-yellow-400"
+                                {...props}
+                              />
+                            ),
+                            strong: ({ node, ...props }) => (
+                              <strong
+                                className="text-yellow-400 font-bold"
+                                {...props}
                               />
                             ),
                           }}
                         >
-                          {message.content || " "}
+                          {message.content}
                         </ReactMarkdown>
-                      )}
+                      ) : null}
                     </div>
                   </div>
                 ))}
@@ -473,7 +567,12 @@ export default function BarillaPlannerComponent() {
               <Input
                 value={input}
                 onChange={(e) => setInput(e.target.value)}
-                placeholder="Type your message..."
+                placeholder={
+                  isLoading || isStreaming
+                    ? "Please wait..."
+                    : "Type your message..."
+                }
+                disabled={isLoading || isStreaming}
                 autoComplete="off"
                 autoCorrect="off"
                 autoCapitalize="off"
@@ -483,12 +582,21 @@ export default function BarillaPlannerComponent() {
                 data-form-type="other"
                 aria-label="Chat input"
                 suppressHydrationWarning={true}
-                className="flex-grow bg-blue-700/50 border-blue-600 text-white placeholder-blue-300"
+                className={`chat-input ${
+                  isLoading || isStreaming
+                    ? "opacity-50 cursor-not-allowed"
+                    : ""
+                }`}
               />
               <Button
                 type="submit"
                 suppressHydrationWarning={true}
-                className="bg-[#E31837] text-white hover:bg-[#E31837]/90"
+                disabled={isLoading || isStreaming || !input.trim()}
+                className={`bg-[#E31837] text-white hover:bg-[#E31837]/90 ${
+                  isLoading || isStreaming || !input.trim()
+                    ? "opacity-50 cursor-not-allowed"
+                    : ""
+                }`}
               >
                 <Send className="h-4 w-4" />
               </Button>
@@ -511,7 +619,12 @@ export default function BarillaPlannerComponent() {
                     <Button
                       variant="ghost"
                       onClick={() => handleStarterClick(starter.text)}
-                      className="w-full justify-start text-left hover:bg-blue-700/50 text-blue-100 h-auto min-h-[2.5rem] py-2 px-3 group"
+                      disabled={isLoading || isStreaming}
+                      className={`w-full justify-start text-left hover:bg-blue-700/50 text-blue-100 h-auto min-h-[2.5rem] py-2 px-3 group ${
+                        isLoading || isStreaming
+                          ? "opacity-50 cursor-not-allowed"
+                          : ""
+                      }`}
                     >
                       <div className="flex gap-3 items-start">
                         {React.createElement(getIcon(starter.icon), {
