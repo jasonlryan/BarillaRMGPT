@@ -1,20 +1,14 @@
 import { NextRequest } from 'next/server';
 import OpenAI from 'openai';
-import type { RunSubmitToolOutputsParams } from 'openai/resources/beta/threads/runs/runs';
 
-// Initialize OpenAI client
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
-
-// Store active threads
-const activeThreads: { [key: string]: string } = {};
 
 export const config = {
   runtime: 'edge',
 };
 
-// Type guard for message delta events
 function isMessageDelta(event: any): event is { 
   event: string; 
   data: { 
@@ -36,22 +30,16 @@ export default async function handler(req: NextRequest) {
   }
 
   try {
-    console.log('🔵 API: Starting chat request');
-    const startTime = Date.now();
     const { message } = await req.json();
 
     // Get or create thread ID from session
-    let threadId = activeThreads[req.cookies.get('sessionId')?.value || ''];
+    let threadId = req.cookies.get('threadId')?.value;
     if (!threadId) {
-      console.log('🔵 API: Creating new thread');
       const thread = await openai.beta.threads.create();
       threadId = thread.id;
-      // In a real app, store this in a database
-      activeThreads[req.cookies.get('sessionId')?.value || ''] = threadId;
     }
 
     // Add the user's message to the thread
-    console.log('🔵 API: Adding message to thread');
     await openai.beta.threads.messages.create(threadId, {
       role: "user",
       content: message,
@@ -63,54 +51,38 @@ export default async function handler(req: NextRequest) {
 
     // Start streaming in the background
     (async () => {
+      let isStreamClosed = false;
       try {
-        // Create and stream the run
-        console.log('🔵 API: Creating and streaming run');
         const stream = await openai.beta.threads.runs.createAndStream(
           threadId,
           { assistant_id: process.env.OPENAI_ASSISTANT_ID! }
         );
 
-        console.log('🔵 API: Starting event stream processing');
         for await (const event of stream) {
-          console.log('🔵 API: Received event:', JSON.stringify(event));
+          if (isStreamClosed) break;
           
           // Handle message deltas
           if (isMessageDelta(event)) {
             const content = event.data.delta.content[0].text.value;
-            console.log('🔵 API: Streaming content:', content);
             await writer.write(
               new TextEncoder().encode(`data: ${JSON.stringify({ token: content })}\n\n`)
             );
           }
-          
-          // Handle run status updates
-          if ('event' in event) {
-            if (event.event === 'thread.run.created') {
-              console.log('🔵 API: Run created');
-            } else if (event.event === 'thread.run.queued') {
-              console.log('🔵 API: Run queued');
-            } else if (event.event === 'thread.run.in_progress') {
-              console.log('🔵 API: Run in progress');
-            } else if (event.event === 'thread.run.completed') {
-              console.log('🔵 API: Run completed');
-              const timeToComplete = Date.now() - startTime;
-              console.log(`🔵 API: Run completed in ${timeToComplete}ms`);
-            } else if (event.event === 'thread.run.failed') {
-              console.error('🔴 API: Run failed');
-              throw new Error('Assistant run failed');
-            }
-          }
         }
-        console.log('🔵 API: Event stream ended');
       } catch (error) {
-        console.error('🔴 API Error:', error);
-        await writer.write(
-          new TextEncoder().encode(
-            `data: ${JSON.stringify({ error: 'An error occurred' })}\n\n`)
-        );
+        if (!isStreamClosed) {
+          await writer.write(
+            new TextEncoder().encode(
+              `data: ${JSON.stringify({ error: 'An error occurred' })}\n\n`)
+          );
+        }
       } finally {
-        await writer.close();
+        isStreamClosed = true;
+        try {
+          await writer.close();
+        } catch (e) {
+          // Ignore errors from closing an already closed writer
+        }
       }
     })();
 
@@ -122,7 +94,6 @@ export default async function handler(req: NextRequest) {
       },
     });
   } catch (error) {
-    console.error('🔴 API Error:', error);
     return new Response(JSON.stringify({ error: 'An error occurred' }), {
       status: 500,
       headers: { 'Content-Type': 'application/json' },

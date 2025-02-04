@@ -224,6 +224,16 @@ Please let me know how I can assist you today!`;
     console.error("Error:", error);
   };
 
+  // Add a cleanup function
+  const cleanResponse = (text: string) => {
+    return text
+      .replace(/【.*?†source】/g, "") // Remove source markers
+      .replace(/\[\d+\.\d+†source\]/g, "") // Remove numbered source markers
+      .replace(/\[\d+†source\]/g, "") // Remove simple numbered source markers
+      .replace(/【\d+:\d+†source】/g, "") // Remove indexed source markers
+      .trim();
+  };
+
   const handleStreamResponse = async (
     response: Response,
     initialMessage: string
@@ -238,10 +248,7 @@ Please let me know how I can assist you today!`;
     try {
       while (true) {
         const { value, done } = await reader.read();
-        if (done) {
-          console.log("✅ Stream complete");
-          break;
-        }
+        if (done) break;
 
         // Start streaming on first chunk
         if (!isStreaming) {
@@ -263,32 +270,36 @@ Please let me know how I can assist you today!`;
                 currentMessage += data.token;
                 trackStreamPerformance(data.token.length);
 
-                // Update the last message's content with the accumulated text
+                // Clean and update the message content
+                const cleanedMessage = cleanResponse(currentMessage);
+
+                // Update the last message's content with the cleaned text
                 setMessages((prev) => {
                   const newMessages = [...prev];
                   if (
                     newMessages[newMessages.length - 1].role === "assistant"
                   ) {
                     newMessages[newMessages.length - 1].content =
-                      currentMessage;
+                      cleanedMessage;
                   } else {
                     newMessages.push({
                       role: "assistant",
-                      content: currentMessage,
+                      content: cleanedMessage,
                     });
                   }
                   return newMessages;
                 });
               }
             } catch (e) {
-              console.error("Error parsing stream data:", e);
+              // Ignore JSON parse errors from incomplete chunks
             }
           }
         }
       }
     } catch (error) {
-      console.error("Error reading stream:", error);
-      handleError(error);
+      if (error instanceof Error && error.name !== "AbortError") {
+        handleError(error);
+      }
     } finally {
       setIsStreaming(false);
       finishPerformanceTracking();
@@ -339,10 +350,7 @@ Please let me know how I can assist you today!`;
 
       await handleStreamResponse(response, messageText);
     } catch (error) {
-      if (error instanceof Error && error.name === "AbortError") {
-        console.log("Request was aborted");
-      } else {
-        console.error("❌ Request failed:", error);
+      if (error instanceof Error && error.name !== "AbortError") {
         handleError(error);
       }
     } finally {
@@ -352,20 +360,17 @@ Please let me know how I can assist you today!`;
     }
   };
 
-  // Add a cleanup function
-  const cleanResponse = (text: string) => {
-    return text
-      .replace(/【.*?†source】/g, "")
-      .replace(/\[\d+\.\d+†source\]/g, "")
-      .trim();
-  };
-
   const handleRefresh = async () => {
     try {
       // Abort any ongoing stream
       if (abortControllerRef.current) {
-        abortControllerRef.current.abort();
-        abortControllerRef.current = null;
+        try {
+          await abortControllerRef.current.abort();
+        } catch (e) {
+          // Ignore abort errors
+        } finally {
+          abortControllerRef.current = null;
+        }
       }
 
       // Reset all state first
@@ -384,7 +389,7 @@ Please let me know how I can assist you today!`;
         lastUpdateTime: 0,
       };
 
-      // Then reset the backend thread
+      // Reset the backend thread
       const response = await fetch(`${API_URL}/reset_thread`, {
         method: "POST",
         headers: {
@@ -394,19 +399,50 @@ Please let me know how I can assist you today!`;
       });
 
       if (!response.ok) {
-        throw new Error(`Failed to reset thread: ${response.status}`);
+        const errorData = await response.json();
+        throw new Error(
+          errorData.error || `Failed to reset thread: ${response.status}`
+        );
       }
 
-      // Force reload the page to ensure a completely fresh state with new thread ID
-      window.location.reload();
-    } catch (error) {
-      console.error("Error refreshing chat:", error);
-      handleError(error);
-      // Ensure welcome message is shown even if reset fails
+      await response.json();
+
+      // Set formatted welcome message
+      const formattedWelcomeMessage = `# Welcome to the Barilla Retail Media Planning Assistant!
+
+I can provide:
+
+* Insights into top-performing media touchpoints for various product categories and countries
+* Practical recommendations for optimizing retail media campaigns
+* General information about planning and evaluaition using the PDJ.
+
+How I can help you today?`;
+
       setMessages([
         {
           role: "assistant",
-          content: chatConfig.welcomeMessage,
+          content: formattedWelcomeMessage,
+        },
+      ]);
+    } catch (error) {
+      if (!(error instanceof DOMException && error.name === "AbortError")) {
+        handleError(error);
+      }
+      // Ensure welcome message is shown even if reset fails
+      const formattedWelcomeMessage = `# Welcome to the Barilla Retail Media Planning Assistant!
+
+I can provide:
+
+* Insights into top-performing media touchpoints for various product categories and countries
+* Practical recommendations for optimizing retail media campaigns
+* General information about planning and evaluaition using the PDJ.
+
+How I can help you today?`;
+
+      setMessages([
+        {
+          role: "assistant",
+          content: formattedWelcomeMessage,
         },
       ]);
     }
