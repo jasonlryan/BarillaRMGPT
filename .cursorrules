@@ -61,3 +61,9 @@
     - Maintain Assistant API integration
     - Optimize within Assistant API constraints
     - Any improvements must work with Assistant API 
+
+12. **GIT COMMITS AND PUSHES**
+    - NEVER automatically push commits to any branch
+    - Show all changes and wait for approval before committing
+    - Get explicit confirmation before pushing commits
+    - Document all changes that will be included in the commit 

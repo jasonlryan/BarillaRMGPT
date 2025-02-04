@@ -9,16 +9,24 @@ export default function Home() {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
+    // Clear any existing login state
+    localStorage.removeItem("isLoggedIn");
     const loginStatus = localStorage.getItem("isLoggedIn");
     setIsLoggedIn(loginStatus === "true");
     setIsLoading(false);
   }, []);
+
+  // For debugging
+  useEffect(() => {
+    console.log("Login state:", { isLoggedIn, isLoading });
+  }, [isLoggedIn, isLoading]);
 
   if (isLoading) {
     return null;
   }
 
   if (!isLoggedIn) {
+    console.log("Rendering login component");
     return <Login onLogin={() => setIsLoggedIn(true)} />;
   }
 

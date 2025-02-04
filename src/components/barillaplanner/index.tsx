@@ -525,10 +525,10 @@ How I can help you today?`;
                                 {...props}
                               />
                             ),
-                            ol: ({ node, ordered, ...props }) => (
+                            ol: ({ node, ordered, ...rest }) => (
                               <ol
-                                className="markdown-container ol"
-                                {...props}
+                                className="markdown-container ol list-decimal pl-4"
+                                {...rest}
                               />
                             ),
                             li: ({ node, ...props }) => (
