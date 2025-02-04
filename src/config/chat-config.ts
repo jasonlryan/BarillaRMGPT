@@ -2,13 +2,15 @@
 type IconName = string;
 
 export const chatConfig = {
-  welcomeMessage: `Welcome to the Barilla Retail Media Planning Assistant!
+  welcomeMessage: `# Welcome to the Barilla Retail Media Planning Assistant!
 
 I can provide: 
 
 • Insights into top-performing media touchpoints for various product categories and countries.
+
 • Practical recommendations for optimizing retail media campaigns.
-• General information about planning and evaluaiton using the PDJ.
+
+• General information about planning and evaluation using the PDJ.
 
 How I can help you today?`,
 
