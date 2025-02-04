@@ -35,5 +35,5 @@ How I can help you today?`,
     }
   ],
 
-  disclaimer: `I am instructed to only provide responses from existing datasets. However, as an AI assistant, I may occasionally provide information that could be incorrect or based on inferred reasoning. Always verify critical information before making decisions. If data for a specific product category or country is unavailable, I will inform you and suggest available alternatives where possible.`
+  disclaimer: `I am instructed to only provide responses from Barilla datasets. However, as an AI assistant I sometiumes make mistakes. Always verify critical information before making decisions. If data for a specific product category or country is unavailable, I will inform you and suggest available alternatives where possible.`
 }; 
