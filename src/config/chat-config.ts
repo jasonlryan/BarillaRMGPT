@@ -12,6 +12,12 @@ I can provide:
 
 How I can help you today?`,
 
+  loginConfig: {
+    password: 'rmgpt2025',
+    message: 'Welcome to Barilla Retail Media GPT. Please enter the password to continue.',
+    errorMessage: 'Incorrect password. Please try again.'
+  },
+
   conversationStarters: [
     {
       icon: "Wheat" as IconName,

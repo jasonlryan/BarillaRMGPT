@@ -525,7 +525,7 @@ How I can help you today?`;
                                 {...props}
                               />
                             ),
-                            ol: ({ node, ...props }) => (
+                            ol: ({ node, ordered, ...props }) => (
                               <ol
                                 className="markdown-container ol"
                                 {...props}
