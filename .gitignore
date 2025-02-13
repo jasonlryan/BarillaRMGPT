@@ -5,6 +5,7 @@
 .env.development
 
 # Ignore directories
+temp_backup/
 scripts/
 not_used/
 prompts/
