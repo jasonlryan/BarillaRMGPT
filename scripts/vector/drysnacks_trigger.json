@@ -1,0 +1,63 @@
+{
+  "_instructions": {
+    "description": "Dry snacks purchase trigger data for Italian market",
+    "dataCharacteristics": {
+      "marketCoverage": {
+        "core": [
+          "Italy"
+        ]
+      },
+      "dataHandling": {
+        "rules": [
+          "All percentages are converted to decimals (0-1)",
+          "Empty or invalid values are skipped",
+          "Net relative values preserved for each trigger"
+        ]
+      }
+    }
+  },
+  "jrn_trigger": {
+    "I had a craving for sweet snacks": {
+      "Italy": 0.26039999999999996
+    },
+    "I noticed it in store while I was shopping for other things": {
+      "Italy": 0.1565
+    },
+    "It was part of my planned grocery shopping": {
+      "Italy": 0.1291
+    },
+    "I noticed I had run out": {
+      "Italy": 0.09269999999999999
+    },
+    "I noticed a promotion on a leaflet from the store": {
+      "Italy": 0.0738
+    },
+    "I was asked to buy it by someone in my household": {
+      "Italy": 0.0738
+    },
+    "I was hungry": {
+      "Italy": 0.059800000000000006
+    },
+    "I was writing a shopping list": {
+      "Italy": 0.0588
+    },
+    "I was planning to be out all day or travelling": {
+      "Italy": 0.024900000000000002
+    },
+    "My children were hungry": {
+      "Italy": 0.0212
+    },
+    "I was planning ahead for when snacks might be needed (e.g. birthday party)": {
+      "Italy": 0.0152
+    },
+    "I had visitors coming to my home": {
+      "Italy": 0.0152
+    },
+    "I had a recipe that needed certain biscuits": {
+      "Italy": 0.0115
+    },
+    "I was visiting someone": {
+      "Italy": 0.0072
+    }
+  }
+}

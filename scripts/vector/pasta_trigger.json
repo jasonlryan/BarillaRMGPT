@@ -1,0 +1,222 @@
+{
+  "_instructions": {
+    "description": "Pasta purchase trigger data across markets",
+    "dataCharacteristics": {
+      "marketCoverage": {
+        "core": [
+          "Australia",
+          "France",
+          "Germany",
+          "Greece",
+          "Switzerland",
+          "United States"
+        ],
+        "additional": [
+          "Turkey",
+          "Italy"
+        ]
+      },
+      "inconsistencies": {
+        "marketSpecific": {
+          "Turkey": [
+            "I was discussing food at home and it reminded me to buy",
+            "I was inspired to try a recipe I saw on a cookings show",
+            "I was inspired to try a recipe I saw online, on social media or through influencers"
+          ],
+          "Italy": [
+            "Pasta is always on my shopping list",
+            "I bought a premium ingredient to go with pasta",
+            "I needed to prepare pasta dish for a meal out with my family or friends"
+          ]
+        },
+        "missingData": "Some triggers have incomplete market coverage. Markets with no data are excluded."
+      },
+      "dataHandling": {
+        "rules": [
+          "Countries with no data for a trigger are excluded (no zero/null values)",
+          "Market-specific triggers are preserved with their limited market data",
+          "All percentages are converted to decimals (0-1)",
+          "Empty or invalid values are skipped"
+        ]
+      }
+    }
+  },
+  "jrn_trigger": {
+    "I wanted to stock-up": {
+      "Australia": 0.23850000000000002,
+      "France": 0.23879999999999998,
+      "Germany": 0.218,
+      "Greece": 0.2774,
+      "Switzerland": 0.3222,
+      "United States": 0.1813,
+      "Turkey": 0.12279999999999999,
+      "Italy": 0.2865
+    },
+    "I discovered I had run out": {
+      "Australia": 0.1605,
+      "France": 0.1741,
+      "Germany": 0.1991,
+      "Greece": 0.1754,
+      "Switzerland": 0.20620000000000002,
+      "United States": 0.1249,
+      "Turkey": 0.24960000000000002,
+      "Italy": 0.1038
+    },
+    "I was preparing my shopping list": {
+      "Australia": 0.1561,
+      "France": 0.2173,
+      "Germany": 0.1379,
+      "Greece": 0.1241,
+      "Switzerland": 0.07200000000000001,
+      "United States": 0.1456,
+      "Turkey": 0.1553
+    },
+    "I was making meal plans for the next week": {
+      "Australia": 0.1463,
+      "France": 0.1041,
+      "Germany": 0.10710000000000001,
+      "Greece": 0.10949999999999999,
+      "Switzerland": 0.0622,
+      "United States": 0.1794,
+      "Turkey": 0.0489
+    },
+    "I needed to prepare lunch/ dinner for my family at home": {
+      "Australia": 0.12,
+      "France": 0.0504,
+      "Germany": 0.081,
+      "Greece": 0.09849999999999999,
+      "Switzerland": 0.0781,
+      "United States": 0.1369,
+      "Turkey": 0.1408,
+      "Italy": 0.0765
+    },
+    "I noticed a promotion on the store leaflet/circular": {
+      "Australia": 0.0288,
+      "France": 0.04650000000000001,
+      "Germany": 0.0242,
+      "Greece": 0.036699999999999997,
+      "Switzerland": 0.0538,
+      "United States": 0.044800000000000006,
+      "Turkey": 0.016,
+      "Italy": 0.07730000000000001
+    },
+    "I noticed it in store while buying something else": {
+      "Australia": 0.0254,
+      "France": 0.0288,
+      "Germany": 0.042199999999999994,
+      "Greece": 0.0332,
+      "Switzerland": 0.0455,
+      "United States": 0.0323,
+      "Turkey": 0.0265,
+      "Italy": 0.0327
+    },
+    "I was asked to buy it by someone in my household": {
+      "Australia": 0.022400000000000003,
+      "France": 0.0288,
+      "Germany": 0.0403,
+      "Greece": 0.0332,
+      "Switzerland": 0.0288,
+      "United States": 0.0178,
+      "Turkey": 0.0409
+    },
+    "I wanted to replicate a recipe I saw (book, tv, internet, magazine, etc.)": {
+      "Australia": 0.022400000000000003,
+      "France": 0.0235,
+      "Germany": 0.0403,
+      "Greece": 0.0146,
+      "Switzerland": 0.0288,
+      "United States": 0.04,
+      "Italy": 0.0161
+    },
+    "I wanted to replicate a recipe I tried at friends' home/ in a restaurant": {
+      "Australia": 0.0161,
+      "France": 0.0158,
+      "Germany": 0.028399999999999998,
+      "Greece": 0.0126,
+      "Switzerland": 0.0129,
+      "United States": 0.0149,
+      "Turkey": 0.024,
+      "Italy": 0.0128
+    },
+    "I had guests coming and I wanted something practical": {
+      "Australia": 0.0141,
+      "France": 0.0077,
+      "Germany": 0.019,
+      "Greece": 0.0231,
+      "Switzerland": 0.0235,
+      "United States": 0.0154,
+      "Italy": 0.009899999999999999
+    },
+    "I noticed it being advertised": {
+      "Australia": 0.0137,
+      "France": 0.0072,
+      "Germany": 0.0242,
+      "Greece": 0.005,
+      "Switzerland": 0.0152,
+      "United States": 0.0265,
+      "Italy": 0.0103
+    },
+    "I needed it for a lunchbox at work": {
+      "Australia": 0.010700000000000001,
+      "France": 0.0206,
+      "Germany": 0.011399999999999999,
+      "Greece": 0.0216,
+      "Switzerland": 0.019,
+      "United States": 0.0043,
+      "Italy": 0.0091
+    },
+    "I saw it on promotion from a store email": {
+      "Australia": 0.0098,
+      "France": 0.0197,
+      "Germany": 0.0085,
+      "Greece": 0.003,
+      "Switzerland": 0.009899999999999999,
+      "United States": 0.0183
+    },
+    "I had guests coming and I wanted to impress them": {
+      "Australia": 0.0078000000000000005,
+      "France": 0.0062,
+      "Germany": 0.0137,
+      "Greece": 0.0161,
+      "Switzerland": 0.013600000000000001,
+      "United States": 0.013999999999999999,
+      "Italy": 0.015300000000000001
+    },
+    "I needed it for my children's lunchbox": {
+      "Australia": 0.0073,
+      "France": 0.0106,
+      "Germany": 0.004699999999999999,
+      "Greece": 0.0161,
+      "Switzerland": 0.0083,
+      "United States": 0.0034000000000000002,
+      "Italy": 0.0116
+    },
+    "I was discussing food at home and it reminded me to buy": {
+      "Turkey": 0.060899999999999996
+    },
+    "I was inspired to try a recipe I saw on a cookings show": {
+      "Turkey": 0.049400000000000006
+    },
+    "I was inspired to try a recipe I saw online, on social media or through influencers": {
+      "Turkey": 0.029500000000000002
+    },
+    "I noticed it being advertised on TV, Posters, Social Media etc": {
+      "Turkey": 0.017
+    },
+    "I was planning for an upcoming event": {
+      "Turkey": 0.0115
+    },
+    "I was prompted by a communication from a store (by email, app or notification)": {
+      "Turkey": 0.006999999999999999
+    },
+    "Pasta is always on my shopping list": {
+      "Italy": 0.322
+    },
+    "I bought a premium ingredient to go with pasta": {
+      "Italy": 0.010700000000000001
+    },
+    "I needed to prepare pasta dish for a meal out with my family or friends": {
+      "Italy": 0.0054
+    }
+  }
+}

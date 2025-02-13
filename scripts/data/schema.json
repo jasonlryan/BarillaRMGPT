@@ -1,0 +1,67 @@
+{
+  "version": "1.0",
+  "dataTypes": {
+    "triggers": {
+      "description": "Purchase trigger data across different product categories",
+      "categories": {
+        "pasta_trigger": {
+          "description": "Pasta purchase triggers by market",
+          "source": "pasta_trigger.csv",
+          "markets": {
+            "core": ["Australia", "France", "Germany", "Greece", "Switzerland", "United States"],
+            "additional": ["Turkey", "Italy"]
+          },
+          "dataInconsistencies": {
+            "marketSpecificTriggers": {
+              "Turkey": [
+                "I was discussing food at home and it reminded me to buy",
+                "I was inspired to try a recipe I saw on a cookings show",
+                "I was inspired to try a recipe I saw online, on social media or through influencers"
+              ],
+              "Italy": [
+                "Pasta is always on my shopping list",
+                "I bought a premium ingredient to go with pasta",
+                "I needed to prepare pasta dish for a meal out with my family or friends"
+              ]
+            },
+            "missingData": {
+              "description": "Some triggers have incomplete market coverage",
+              "handling": "Markets with no data are excluded from trigger entries"
+            }
+          }
+        },
+        "biscuits_trigger": {
+          "description": "Biscuit purchase triggers by market",
+          "source": "biscuit_trigger.csv",
+          "markets": {
+            "core": ["France", "Germany", "Greece"]
+          },
+          "dataConsistency": "All markets have complete data for all triggers"
+        }
+      },
+      "dataFormat": {
+        "input": "CSV with percentage values",
+        "output": "JSON with decimal values",
+        "structure": {
+          "jrn_trigger": {
+            "type": "object",
+            "properties": {
+              "trigger_text": {
+                "type": "object",
+                "properties": {
+                  "country": "decimal (0-1)"
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "dataHandlingRules": {
+    "percentageConversion": "All percentage values are converted to decimals (0-1)",
+    "missingData": "Countries with no data are excluded (no zero/null values)",
+    "marketSpecific": "Market-specific triggers are preserved with their limited market data",
+    "validation": "Empty or invalid values are skipped during processing"
+  }
+} 

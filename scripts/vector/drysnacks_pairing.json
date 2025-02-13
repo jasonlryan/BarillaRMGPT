@@ -1,0 +1,48 @@
+{
+  "_instructions": {
+    "description": "Dry snacks pairing preferences for Italian market",
+    "dataCharacteristics": {
+      "marketCoverage": {
+        "core": [
+          "Italy"
+        ]
+      },
+      "dataHandling": {
+        "rules": [
+          "All percentages are converted to decimals (0-1)",
+          "Empty or invalid values are skipped",
+          "Net relative values preserved for each pairing"
+        ]
+      }
+    }
+  },
+  "ctm_planned_pairing": {
+    "With coffee": {
+      "Italy": 0.4304
+    },
+    "On their own": {
+      "Italy": 0.2243
+    },
+    "With tea": {
+      "Italy": 0.2021
+    },
+    "With milk": {
+      "Italy": 0.17120000000000002
+    },
+    "With a chilled beverage (juice, tea, soda)": {
+      "Italy": 0.16570000000000001
+    },
+    "With yoghurt": {
+      "Italy": 0.0611
+    },
+    "With fruit": {
+      "Italy": 0.028900000000000002
+    },
+    "As part of a recipe": {
+      "Italy": 0.0262
+    },
+    "Something else, not listed here": {
+      "Italy": 0.0209
+    }
+  }
+}

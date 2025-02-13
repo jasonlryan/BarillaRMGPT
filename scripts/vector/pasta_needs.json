@@ -1,0 +1,189 @@
+{
+  "_instructions": {
+    "description": "Pasta needs and consideration data across markets",
+    "dataCharacteristics": {
+      "marketCoverage": {
+        "core": [
+          "Australia",
+          "France",
+          "Germany",
+          "Greece",
+          "Switzerland",
+          "United States",
+          "Turkey"
+        ]
+      },
+      "dataHandling": {
+        "rules": [
+          "All percentages are converted to decimals (0-1)",
+          "Empty or invalid values are skipped",
+          "Net relative values preserved for each need statement"
+        ]
+      }
+    }
+  },
+  "cnt_needs": {
+    "I want to prepare a meal quickly": {
+      "Australia": 0.34590000000000004,
+      "France": 0.39520000000000005,
+      "Germany": 0.3175,
+      "Greece": 0.5176,
+      "Switzerland": 0.3419,
+      "United States": 0.3211,
+      "Turkey": 0.3674
+    },
+    "I want a good value for money meal": {
+      "Australia": 0.2927,
+      "France": 0.20579999999999998,
+      "Germany": 0.2218,
+      "Greece": 0.2075,
+      "Switzerland": 0.2047,
+      "United States": 0.25120000000000003,
+      "Turkey": 0.1583
+    },
+    "I want to make a filling meal": {
+      "Australia": 0.2776,
+      "France": 0.16399999999999998,
+      "Germany": 0.18719999999999998,
+      "Greece": 0.1935,
+      "Switzerland": 0.1531,
+      "United States": 0.29460000000000003,
+      "Turkey": 0.24309999999999998
+    },
+    "I crave Italian food": {
+      "Australia": 0.2351,
+      "France": 0.1165,
+      "Germany": 0.2948,
+      "Greece": 0.13019999999999998,
+      "Switzerland": 0.2608,
+      "United States": 0.40159999999999996,
+      "Turkey": 0.12380000000000001
+    },
+    "I need something everyone likes": {
+      "Australia": 0.22440000000000002,
+      "France": 0.2638,
+      "Germany": 0.2469,
+      "Greece": 0.2804,
+      "Switzerland": 0.235,
+      "United States": 0.2382,
+      "Turkey": 0.1578
+    },
+    "I'm planning meals for the week": {
+      "Australia": 0.1868,
+      "France": 0.0906,
+      "Germany": 0.16210000000000002,
+      "Greece": 0.10400000000000001,
+      "Switzerland": 0.1114,
+      "United States": 0.1938,
+      "Turkey": 0.08839999999999999
+    },
+    "I need to cook for myself": {
+      "Australia": 0.13119999999999998,
+      "France": 0.1362,
+      "Germany": 0.18530000000000002,
+      "Greece": 0.1362,
+      "Switzerland": 0.2009,
+      "United States": 0.1128,
+      "Turkey": 0.17920000000000003
+    },
+    "I need something versatile": {
+      "Australia": 0.1161,
+      "France": 0.0748,
+      "Germany": 0.1109,
+      "Greece": 0.195,
+      "Switzerland": 0.056100000000000004,
+      "United States": 0.1013,
+      "Turkey": 0.07490000000000001
+    },
+    "I can't think of anything else to cook": {
+      "Australia": 0.10779999999999999,
+      "France": 0.21289999999999998,
+      "Germany": 0.12369999999999999,
+      "Greece": 0.1709,
+      "Switzerland": 0.13720000000000002,
+      "United States": 0.09789999999999999,
+      "Turkey": 0.2566
+    },
+    "I need to stock up on food for the house": {
+      "Australia": 0.10679999999999999,
+      "France": 0.13,
+      "Germany": 0.1038,
+      "Greece": 0.19649999999999998,
+      "Switzerland": 0.2168,
+      "United States": 0.1268,
+      "Turkey": 0.18420000000000003
+    },
+    "I want to have a healthy meal": {
+      "Australia": 0.0917,
+      "France": 0.0753,
+      "Germany": 0.0678,
+      "Greece": 0.0452,
+      "Switzerland": 0.069,
+      "United States": 0.08199999999999999,
+      "Turkey": 0.08439999999999999
+    },
+    "I need something for the children": {
+      "Australia": 0.0771,
+      "France": 0.0978,
+      "Germany": 0.0645,
+      "Greece": 0.1025,
+      "Switzerland": 0.0955,
+      "United States": 0.06509999999999999,
+      "Turkey": 0.1298
+    },
+    "I need the energy/refuel": {
+      "Australia": 0.0707,
+      "France": 0.1305,
+      "Germany": 0.0706,
+      "Greece": 0.0789,
+      "Switzerland": 0.094,
+      "United States": 0.044800000000000006,
+      "Turkey": 0.0709
+    },
+    "I want something indulgent; a treat": {
+      "Australia": 0.0541,
+      "France": 0.1659,
+      "Germany": 0.1464,
+      "Greece": 0.1477,
+      "Switzerland": 0.1069,
+      "United States": 0.0839,
+      "Turkey": 0.1193
+    },
+    "I'm using up my leftovers": {
+      "Australia": 0.038,
+      "France": 0.059500000000000004,
+      "Germany": 0.049800000000000004,
+      "Greece": 0.042199999999999994,
+      "Switzerland": 0.0478,
+      "United States": 0.037599999999999995,
+      "Turkey": 0.027999999999999997
+    },
+    "I feel nostalgic for home": {
+      "Australia": 0.022400000000000003,
+      "France": 0.012,
+      "Germany": 0.0123,
+      "Greece": 0.0121,
+      "Switzerland": 0.0227,
+      "United States": 0.0371,
+      "Turkey": 0
+    },
+    "I have guests coming, so I can impress them": {
+      "Australia": 0.0171,
+      "France": 0.0144,
+      "Germany": 0.0275,
+      "Greece": 0.021099999999999997,
+      "Switzerland": 0.022000000000000002,
+      "United States": 0.0246,
+      "Turkey": 0.029500000000000002
+    },
+    "I need something late at night": {
+      "Australia": 0.0161,
+      "France": 0.12369999999999999,
+      "Germany": 0.0431,
+      "Greece": 0.042199999999999994,
+      "Switzerland": 0.0629,
+      "United States": 0.0149,
+      "Turkey": 0.1118
+    }
+  }
+}

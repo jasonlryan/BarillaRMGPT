@@ -1,0 +1,82 @@
+{
+  "_instructions": {
+    "description": "Pasta consumption occasion data across markets",
+    "dataCharacteristics": {
+      "marketCoverage": {
+        "core": [
+          "Australia",
+          "France",
+          "Germany",
+          "Greece",
+          "Switzerland",
+          "United States"
+        ]
+      },
+      "dataHandling": {
+        "rules": [
+          "All percentages are converted to decimals (0-1)",
+          "Empty or invalid values are skipped",
+          "Net relative values preserved for each occasion"
+        ]
+      }
+    }
+  },
+  "ctm_when_usage": {
+    "As an everyday main meal": {
+      "Australia": 0.698,
+      "France": 0.5031,
+      "Germany": 0.6995,
+      "Greece": 0.6955,
+      "Switzerland": 0.5959,
+      "United States": 0.6663
+    },
+    "As a quick and easy meal/snack": {
+      "Australia": 0.1517,
+      "France": 0.15439999999999998,
+      "Germany": 0.12990000000000002,
+      "Greece": 0.1613,
+      "Switzerland": 0.1471,
+      "United States": 0.1625
+    },
+    "For feeding a large group": {
+      "Australia": 0.0405,
+      "France": 0.0513,
+      "Germany": 0.0204,
+      "Greece": 0.0492,
+      "Switzerland": 0.0318,
+      "United States": 0.043899999999999995
+    },
+    "As a side dish to the main meal": {
+      "Australia": 0.0346,
+      "France": 0.1736,
+      "Germany": 0.1014,
+      "Greece": 0.0407,
+      "Switzerland": 0.12960000000000002,
+      "United States": 0.0641
+    },
+    "For my lunchbox": {
+      "Australia": 0.0341,
+      "France": 0.0475,
+      "Germany": 0.0104,
+      "Greece": 0.0206,
+      "Switzerland": 0.0425,
+      "United States": 0.0154
+    },
+    "For a special occasion with guests for food": {
+      "Australia": 0.029300000000000003,
+      "France": 0.0187,
+      "Germany": 0.0332,
+      "Greece": 0.0246,
+      "Switzerland": 0.0364,
+      "United States": 0.04190000000000001
+    },
+    "For someone else's lunchbox": {
+      "Australia": 0.011699999999999999,
+      "France": 0.0513,
+      "Germany": 0.0052,
+      "Greece": 0.008,
+      "Switzerland": 0.0167,
+      "United States": 0.0058
+    }
+  }
+}

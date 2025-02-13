@@ -1,0 +1,698 @@
+[
+  {
+    "category": "meat_sauce",
+    "trigger": "I had a craving for spaghetti bolognese",
+    "country": "France",
+    "response_rate": 0.2465
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I discovered I had run out",
+    "country": "France",
+    "response_rate": 0.16469999999999999
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I needed to make a quick meal",
+    "country": "France",
+    "response_rate": 0.12869999999999998
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I had a craving for a pasta meal",
+    "country": "France",
+    "response_rate": 0.11230000000000001
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I was making food plans for the next few days",
+    "country": "France",
+    "response_rate": 0.0981
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I was writing my shopping list",
+    "country": "France",
+    "response_rate": 0.057800000000000004
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I noticed it in store while buying something else",
+    "country": "France",
+    "response_rate": 0.0382
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I saw a price promotion for the brand",
+    "country": "France",
+    "response_rate": 0.0382
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I was asked to buy it",
+    "country": "France",
+    "response_rate": 0.0371
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I got a discount coupon",
+    "country": "France",
+    "response_rate": 0.0174
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I got a discount through a store loyalty card",
+    "country": "France",
+    "response_rate": 0.0174
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I saw the brand advertised on TV",
+    "country": "France",
+    "response_rate": 0.012
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I saw the brand on social media",
+    "country": "France",
+    "response_rate": 0.0098
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I wanted to try something new",
+    "country": "France",
+    "response_rate": 0.0087
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I read about it in a magazine/online magazine",
+    "country": "France",
+    "response_rate": 0.0076
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I tried a sample out of home",
+    "country": "France",
+    "response_rate": 0.0055000000000000005
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I needed to make a quick meal",
+    "country": "Italy",
+    "response_rate": 0.1812
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I discovered I had run out",
+    "country": "Italy",
+    "response_rate": 0.1743
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I was making food plans for the next few days",
+    "country": "Italy",
+    "response_rate": 0.1101
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I had a craving for a pasta meal",
+    "country": "Italy",
+    "response_rate": 0.10779999999999999
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I noticed it in store while buying something else",
+    "country": "Italy",
+    "response_rate": 0.1009
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I wanted to try something new",
+    "country": "Italy",
+    "response_rate": 0.078
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I saw a price promotion for the brand",
+    "country": "Italy",
+    "response_rate": 0.0665
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I saw the brand advertised on TV",
+    "country": "Italy",
+    "response_rate": 0.039
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I was writing my shopping list",
+    "country": "Italy",
+    "response_rate": 0.036699999999999997
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I was asked to buy it",
+    "country": "Italy",
+    "response_rate": 0.0298
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I got a discount through a store loyalty card",
+    "country": "Italy",
+    "response_rate": 0.0275
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I got a discount coupon",
+    "country": "Italy",
+    "response_rate": 0.0206
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I read about it in a magazine/online magazine",
+    "country": "Italy",
+    "response_rate": 0.0183
+  },
+  {
+    "category": "meat_sauce",
+    "trigger": "I saw the brand on social media",
+    "country": "Italy",
+    "response_rate": 0.0092
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I had a craving for a pasta meal",
+    "country": "France",
+    "response_rate": 0.2633
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I discovered I had run out",
+    "country": "France",
+    "response_rate": 0.1752
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I was making food plans for the next few days",
+    "country": "France",
+    "response_rate": 0.1265
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I needed to make a quick meal",
+    "country": "France",
+    "response_rate": 0.1009
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I noticed it in store while buying something else",
+    "country": "France",
+    "response_rate": 0.0754
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I was writing my shopping list",
+    "country": "France",
+    "response_rate": 0.0545
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I wanted to try something new",
+    "country": "France",
+    "response_rate": 0.0499
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I saw a price promotion for the brand",
+    "country": "France",
+    "response_rate": 0.036000000000000004
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I was asked to buy it",
+    "country": "France",
+    "response_rate": 0.0313
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I saw the brand advertised on TV",
+    "country": "France",
+    "response_rate": 0.0302
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I got a discount coupon",
+    "country": "France",
+    "response_rate": 0.0197
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I got a discount through a store loyalty card",
+    "country": "France",
+    "response_rate": 0.0151
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I saw the brand on social media",
+    "country": "France",
+    "response_rate": 0.0116
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I read about it in a magazine/online magazine",
+    "country": "France",
+    "response_rate": 0.0104
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I had a craving for a pasta meal",
+    "country": "Germany",
+    "response_rate": 0.23600000000000002
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I discovered I had run out",
+    "country": "Germany",
+    "response_rate": 0.153
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I needed to make a quick meal",
+    "country": "Germany",
+    "response_rate": 0.12
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I was making food plans for the next few days",
+    "country": "Germany",
+    "response_rate": 0.10800000000000001
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I saw a price promotion for the brand",
+    "country": "Germany",
+    "response_rate": 0.075
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I wanted to try something new",
+    "country": "Germany",
+    "response_rate": 0.07
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I noticed it in store while buying something else",
+    "country": "Germany",
+    "response_rate": 0.055999999999999994
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I was writing my shopping list",
+    "country": "Germany",
+    "response_rate": 0.043
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I was asked to buy it",
+    "country": "Germany",
+    "response_rate": 0.027000000000000003
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I saw the brand advertised on TV",
+    "country": "Germany",
+    "response_rate": 0.026000000000000002
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I got a discount through a store loyalty card",
+    "country": "Germany",
+    "response_rate": 0.023
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I saw the brand on social media",
+    "country": "Germany",
+    "response_rate": 0.023
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I read about it in a magazine/online magazine",
+    "country": "Germany",
+    "response_rate": 0.022000000000000002
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I got a discount coupon",
+    "country": "Germany",
+    "response_rate": 0.018000000000000002
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I discovered I had run out",
+    "country": "Italy",
+    "response_rate": 0.21739999999999998
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I needed to make a quick meal",
+    "country": "Italy",
+    "response_rate": 0.16620000000000001
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I had a craving for a pasta meal",
+    "country": "Italy",
+    "response_rate": 0.1588
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I noticed it in store while buying something else",
+    "country": "Italy",
+    "response_rate": 0.1165
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I was making food plans for the next few days",
+    "country": "Italy",
+    "response_rate": 0.09269999999999999
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I saw a price promotion for the brand",
+    "country": "Italy",
+    "response_rate": 0.0742
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I was writing my shopping list",
+    "country": "Italy",
+    "response_rate": 0.038599999999999995
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I was asked to buy it",
+    "country": "Italy",
+    "response_rate": 0.0326
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I wanted to try something new",
+    "country": "Italy",
+    "response_rate": 0.0319
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I saw the brand advertised on TV",
+    "country": "Italy",
+    "response_rate": 0.0245
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I got a discount coupon",
+    "country": "Italy",
+    "response_rate": 0.0178
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I got a discount through a store loyalty card",
+    "country": "Italy",
+    "response_rate": 0.0141
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I saw the brand on social media",
+    "country": "Italy",
+    "response_rate": 0.0089
+  },
+  {
+    "category": "pesto_sauce",
+    "trigger": "I read about it in a magazine/online magazine",
+    "country": "Italy",
+    "response_rate": 0.0059
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I discovered I had run out",
+    "country": "France",
+    "response_rate": 0.1862
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I had a craving for a pasta meal",
+    "country": "France",
+    "response_rate": 0.15439999999999998
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I needed to make a quick meal",
+    "country": "France",
+    "response_rate": 0.13470000000000001
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "A particular meal came to mind",
+    "country": "France",
+    "response_rate": 0.1336
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I was making food plans for the next few days",
+    "country": "France",
+    "response_rate": 0.1249
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I saw a price promotion for the brand",
+    "country": "France",
+    "response_rate": 0.0581
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I was writing my shopping list",
+    "country": "France",
+    "response_rate": 0.0504
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I noticed it in store while buying something else",
+    "country": "France",
+    "response_rate": 0.0361
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I saw the brand advertised on TV",
+    "country": "France",
+    "response_rate": 0.0285
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I wanted to try something new",
+    "country": "France",
+    "response_rate": 0.0263
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I was asked to buy it",
+    "country": "France",
+    "response_rate": 0.0263
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I tried a sample out of home",
+    "country": "France",
+    "response_rate": 0.012
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I got a discount coupon",
+    "country": "France",
+    "response_rate": 0.009899999999999999
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I got a discount through a store loyalty card",
+    "country": "France",
+    "response_rate": 0.009899999999999999
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I saw the brand on social media",
+    "country": "France",
+    "response_rate": 0.0066
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I read about it in a magazine/online magazine",
+    "country": "France",
+    "response_rate": 0.0022
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I needed to make a quick meal",
+    "country": "Germany",
+    "response_rate": 0.2288
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I had a craving for a pasta meal",
+    "country": "Germany",
+    "response_rate": 0.1888
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I discovered I had run out",
+    "country": "Germany",
+    "response_rate": 0.1518
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I was making food plans for the next few days",
+    "country": "Germany",
+    "response_rate": 0.0959
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I saw a price promotion for the brand",
+    "country": "Germany",
+    "response_rate": 0.0649
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I noticed it in store while buying something else",
+    "country": "Germany",
+    "response_rate": 0.058899999999999994
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I wanted to try something new",
+    "country": "Germany",
+    "response_rate": 0.0509
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I was writing my shopping list",
+    "country": "Germany",
+    "response_rate": 0.0509
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I was asked to buy it",
+    "country": "Germany",
+    "response_rate": 0.024
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I got a discount coupon",
+    "country": "Germany",
+    "response_rate": 0.022000000000000002
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I saw the brand advertised on TV",
+    "country": "Germany",
+    "response_rate": 0.021
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I read about it in a magazine/online magazine",
+    "country": "Germany",
+    "response_rate": 0.017
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I got a discount through a store loyalty card",
+    "country": "Germany",
+    "response_rate": 0.013999999999999999
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I saw the brand on social media",
+    "country": "Germany",
+    "response_rate": 0.011000000000000001
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I needed to make a quick meal",
+    "country": "Italy",
+    "response_rate": 0.18789999999999998
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I discovered I had run out",
+    "country": "Italy",
+    "response_rate": 0.1663
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I noticed it in store while buying something else",
+    "country": "Italy",
+    "response_rate": 0.1216
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I had a craving for a pasta meal",
+    "country": "Italy",
+    "response_rate": 0.1014
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I was making food plans for the next few days",
+    "country": "Italy",
+    "response_rate": 0.0962
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I saw a price promotion for the brand",
+    "country": "Italy",
+    "response_rate": 0.08199999999999999
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I wanted to try something new",
+    "country": "Italy",
+    "response_rate": 0.0664
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I was writing my shopping list",
+    "country": "Italy",
+    "response_rate": 0.038
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I saw the brand advertised on TV",
+    "country": "Italy",
+    "response_rate": 0.0365
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I got a discount coupon",
+    "country": "Italy",
+    "response_rate": 0.0298
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I got a discount through a store loyalty card",
+    "country": "Italy",
+    "response_rate": 0.0291
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I was asked to buy it",
+    "country": "Italy",
+    "response_rate": 0.0239
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I read about it in a magazine/online magazine",
+    "country": "Italy",
+    "response_rate": 0.011200000000000002
+  },
+  {
+    "category": "red_sauce",
+    "trigger": "I saw the brand on social media",
+    "country": "Italy",
+    "response_rate": 0.0097
+  }
+]

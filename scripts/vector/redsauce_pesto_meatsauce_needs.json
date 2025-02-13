@@ -1,0 +1,914 @@
+[
+  {
+    "category": "meat_sauce",
+    "need": "I need to make a quick and easy meal",
+    "country": "France",
+    "response_rate": 0.3446
+  },
+  {
+    "category": "meat_sauce",
+    "need": "I have a craving for spaghetti bolognese",
+    "country": "France",
+    "response_rate": 0.31620000000000004
+  },
+  {
+    "category": "meat_sauce",
+    "need": "I want something to go with pasta",
+    "country": "France",
+    "response_rate": 0.3086
+  },
+  {
+    "category": "meat_sauce",
+    "need": "I need something easy to prepare",
+    "country": "France",
+    "response_rate": 0.2824
+  },
+  {
+    "category": "meat_sauce",
+    "need": "I don't have time to make a sauce from scratch",
+    "country": "France",
+    "response_rate": 0.2672
+  },
+  {
+    "category": "meat_sauce",
+    "need": "I need something that can stay in the cupboard for longer",
+    "country": "France",
+    "response_rate": 0.1974
+  },
+  {
+    "category": "meat_sauce",
+    "need": "I need an easy meal for the children",
+    "country": "France",
+    "response_rate": 0.1298
+  },
+  {
+    "category": "meat_sauce",
+    "need": "When I need a good value for money option",
+    "country": "France",
+    "response_rate": 0.1298
+  },
+  {
+    "category": "meat_sauce",
+    "need": "I have a particular meal in mind",
+    "country": "France",
+    "response_rate": 0.12539999999999998
+  },
+  {
+    "category": "meat_sauce",
+    "need": "I have a craving for Italian food",
+    "country": "France",
+    "response_rate": 0.1112
+  },
+  {
+    "category": "meat_sauce",
+    "need": "I need something versatile",
+    "country": "France",
+    "response_rate": 0.1014
+  },
+  {
+    "category": "meat_sauce",
+    "need": "I need something for an everyday meal",
+    "country": "France",
+    "response_rate": 0.1003
+  },
+  {
+    "category": "meat_sauce",
+    "need": "I need something others in the house can cook easily",
+    "country": "France",
+    "response_rate": 0.09269999999999999
+  },
+  {
+    "category": "meat_sauce",
+    "need": "I need to stock up on food",
+    "country": "France",
+    "response_rate": 0.0665
+  },
+  {
+    "category": "meat_sauce",
+    "need": "Something not on this list",
+    "country": "France",
+    "response_rate": 0.0033
+  },
+  {
+    "category": "meat_sauce",
+    "need": "I need to make a quick and easy meal",
+    "country": "Italy",
+    "response_rate": 0.39049999999999996
+  },
+  {
+    "category": "meat_sauce",
+    "need": "I need something easy to prepare",
+    "country": "Italy",
+    "response_rate": 0.3193
+  },
+  {
+    "category": "meat_sauce",
+    "need": "I don't have time to make a sauce from scratch",
+    "country": "Italy",
+    "response_rate": 0.312
+  },
+  {
+    "category": "meat_sauce",
+    "need": "I want something to go with pasta",
+    "country": "Italy",
+    "response_rate": 0.2391
+  },
+  {
+    "category": "meat_sauce",
+    "need": "I need something that can stay in the cupboard for longer",
+    "country": "Italy",
+    "response_rate": 0.2245
+  },
+  {
+    "category": "meat_sauce",
+    "need": "I have a craving for a pasta meal",
+    "country": "Italy",
+    "response_rate": 0.1843
+  },
+  {
+    "category": "meat_sauce",
+    "need": "I need something versatile",
+    "country": "Italy",
+    "response_rate": 0.1825
+  },
+  {
+    "category": "meat_sauce",
+    "need": "When I need a good value for money option",
+    "country": "Italy",
+    "response_rate": 0.1697
+  },
+  {
+    "category": "meat_sauce",
+    "need": "I need something for an everyday meal",
+    "country": "Italy",
+    "response_rate": 0.1679
+  },
+  {
+    "category": "meat_sauce",
+    "need": "I need something others in the house can cook easily",
+    "country": "Italy",
+    "response_rate": 0.1533
+  },
+  {
+    "category": "meat_sauce",
+    "need": "I need to stock up on food",
+    "country": "Italy",
+    "response_rate": 0.1478
+  },
+  {
+    "category": "meat_sauce",
+    "need": "I have a particular meal in mind",
+    "country": "Italy",
+    "response_rate": 0.1259
+  },
+  {
+    "category": "meat_sauce",
+    "need": "I need an easy meal for the children",
+    "country": "Italy",
+    "response_rate": 0.0693
+  },
+  {
+    "category": "meat_sauce",
+    "need": "Something not on this list",
+    "country": "Italy",
+    "response_rate": 0.0036
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I want something to go with pasta",
+    "country": "France",
+    "response_rate": 0.3701
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I have a craving for a pasta meal",
+    "country": "France",
+    "response_rate": 0.326
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need to make a quick and easy meal",
+    "country": "France",
+    "response_rate": 0.2993
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need something easy to prepare",
+    "country": "France",
+    "response_rate": 0.2564
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I have a craving for Italian food",
+    "country": "France",
+    "response_rate": 0.24480000000000002
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I have a particular meal in mind",
+    "country": "France",
+    "response_rate": 0.18789999999999998
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need something that can stay in the cupboard for longer",
+    "country": "France",
+    "response_rate": 0.1555
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need something versatile",
+    "country": "France",
+    "response_rate": 0.145
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "When I need a good value for money option",
+    "country": "France",
+    "response_rate": 0.1241
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I can't make it myself or takes too long to make",
+    "country": "France",
+    "response_rate": 0.1125
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need something for an everyday meal",
+    "country": "France",
+    "response_rate": 0.11019999999999999
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need an easy meal for the children",
+    "country": "France",
+    "response_rate": 0.0754
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need to stock up on food",
+    "country": "France",
+    "response_rate": 0.065
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need something others in the house can cook easily",
+    "country": "France",
+    "response_rate": 0.0638
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "Something not on this list",
+    "country": "France",
+    "response_rate": 0.008100000000000001
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need to make a quick and easy meal",
+    "country": "Germany",
+    "response_rate": 0.3333
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I want something to go with pasta",
+    "country": "Germany",
+    "response_rate": 0.3201
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I have a craving for Italian food",
+    "country": "Germany",
+    "response_rate": 0.31679999999999997
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need something easy to prepare",
+    "country": "Germany",
+    "response_rate": 0.27699999999999997
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I have a particular meal in mind",
+    "country": "Germany",
+    "response_rate": 0.2539
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need to stock up on food",
+    "country": "Germany",
+    "response_rate": 0.1578
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need something that can stay in the cupboard for longer",
+    "country": "Germany",
+    "response_rate": 0.1534
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I don't have time to make a sauce from scratch",
+    "country": "Germany",
+    "response_rate": 0.1479
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "When I need a good value for money option",
+    "country": "Germany",
+    "response_rate": 0.1358
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need something for an everyday meal",
+    "country": "Germany",
+    "response_rate": 0.13470000000000001
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need something versatile",
+    "country": "Germany",
+    "response_rate": 0.12140000000000001
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need something others in the house can cook easily",
+    "country": "Germany",
+    "response_rate": 0.12029999999999999
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "When I have a BBQ or an occasion at home coming up",
+    "country": "Germany",
+    "response_rate": 0.096
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need something as a salad dressing; topping for bread; for marinating (meat, fish vegetables).",
+    "country": "Germany",
+    "response_rate": 0.09050000000000001
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need an easy meal for the children",
+    "country": "Germany",
+    "response_rate": 0.0883
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "Something not on this list",
+    "country": "Germany",
+    "response_rate": 0.0088
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need to make a quick and easy meal",
+    "country": "Italy",
+    "response_rate": 0.4451
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need something easy to prepare",
+    "country": "Italy",
+    "response_rate": 0.35009999999999997
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I want something to go with pasta",
+    "country": "Italy",
+    "response_rate": 0.2901
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I have a craving for a pasta meal",
+    "country": "Italy",
+    "response_rate": 0.21960000000000002
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "When I need a good value for money option",
+    "country": "Italy",
+    "response_rate": 0.184
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need something for an everyday meal",
+    "country": "Italy",
+    "response_rate": 0.1728
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need something versatile",
+    "country": "Italy",
+    "response_rate": 0.1588
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need something others in the house can cook easily",
+    "country": "Italy",
+    "response_rate": 0.1424
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need something that can stay in the cupboard for longer",
+    "country": "Italy",
+    "response_rate": 0.1409
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I can't make it myself or takes too long to make",
+    "country": "Italy",
+    "response_rate": 0.1358
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I have a particular meal in mind",
+    "country": "Italy",
+    "response_rate": 0.1231
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need an easy meal for the children",
+    "country": "Italy",
+    "response_rate": 0.1001
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "I need to stock up on food",
+    "country": "Italy",
+    "response_rate": 0.0764
+  },
+  {
+    "category": "pesto_sauce",
+    "need": "Something not on this list",
+    "country": "Italy",
+    "response_rate": 0.0059
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need to make a quick and easy meal",
+    "country": "France",
+    "response_rate": 0.3322
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need to make a quick and easy meal",
+    "country": "France",
+    "response_rate": 0.3048
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need something easy to prepare",
+    "country": "France",
+    "response_rate": 0.30260000000000004
+  },
+  {
+    "category": "red_sauce",
+    "need": "I want something to go with pasta",
+    "country": "France",
+    "response_rate": 0.2993
+  },
+  {
+    "category": "red_sauce",
+    "need": "I want to make a pasta sauce",
+    "country": "France",
+    "response_rate": 0.2621
+  },
+  {
+    "category": "red_sauce",
+    "need": "I don't have time to make a sauce from scratch",
+    "country": "France",
+    "response_rate": 0.25329999999999997
+  },
+  {
+    "category": "red_sauce",
+    "need": "I have a particular meal in mind",
+    "country": "France",
+    "response_rate": 0.2398
+  },
+  {
+    "category": "red_sauce",
+    "need": "I have a craving for a pasta meal",
+    "country": "France",
+    "response_rate": 0.2357
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need something easy to prepare",
+    "country": "France",
+    "response_rate": 0.2323
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need something that can stay in the cupboard for longer",
+    "country": "France",
+    "response_rate": 0.2305
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need something that can stay in the cupboard for longer",
+    "country": "France",
+    "response_rate": 0.2127
+  },
+  {
+    "category": "red_sauce",
+    "need": "I have a craving for a pasta meal",
+    "country": "France",
+    "response_rate": 0.20629999999999998
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need something versatile",
+    "country": "France",
+    "response_rate": 0.1877
+  },
+  {
+    "category": "red_sauce",
+    "need": "It's an ingredient I use a lot",
+    "country": "France",
+    "response_rate": 0.184
+  },
+  {
+    "category": "red_sauce",
+    "need": "I have a particular meal in mind",
+    "country": "France",
+    "response_rate": 0.16670000000000001
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need something versatile",
+    "country": "France",
+    "response_rate": 0.159
+  },
+  {
+    "category": "red_sauce",
+    "need": "When I need a good value for money option",
+    "country": "France",
+    "response_rate": 0.1425
+  },
+  {
+    "category": "red_sauce",
+    "need": "I have a craving for Italian food",
+    "country": "France",
+    "response_rate": 0.1371
+  },
+  {
+    "category": "red_sauce",
+    "need": "When I need a good value for money option",
+    "country": "France",
+    "response_rate": 0.132
+  },
+  {
+    "category": "red_sauce",
+    "need": "I have a craving for Italian food",
+    "country": "France",
+    "response_rate": 0.1283
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need an easy meal for the children",
+    "country": "France",
+    "response_rate": 0.1096
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need something others in the house can cook easily",
+    "country": "France",
+    "response_rate": 0.09759999999999999
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need something for an everyday meal",
+    "country": "France",
+    "response_rate": 0.09210000000000002
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need to stock up on food",
+    "country": "France",
+    "response_rate": 0.0836
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need to stock up on food",
+    "country": "France",
+    "response_rate": 0.08109999999999999
+  },
+  {
+    "category": "red_sauce",
+    "need": "Something not on this list",
+    "country": "France",
+    "response_rate": 0.039
+  },
+  {
+    "category": "red_sauce",
+    "need": "Something not on this list",
+    "country": "France",
+    "response_rate": 0.0055000000000000005
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need to make a quick and easy meal",
+    "country": "Germany",
+    "response_rate": 0.39659999999999995
+  },
+  {
+    "category": "red_sauce",
+    "need": "I have a particular meal in mind",
+    "country": "Germany",
+    "response_rate": 0.35350000000000004
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need to make a quick and easy meal",
+    "country": "Germany",
+    "response_rate": 0.33399999999999996
+  },
+  {
+    "category": "red_sauce",
+    "need": "I don't have time to make a sauce from scratch",
+    "country": "Germany",
+    "response_rate": 0.3097
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need something easy to prepare",
+    "country": "Germany",
+    "response_rate": 0.2857
+  },
+  {
+    "category": "red_sauce",
+    "need": "I want to make a pasta sauce",
+    "country": "Germany",
+    "response_rate": 0.2832
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need something easy to prepare",
+    "country": "Germany",
+    "response_rate": 0.2637
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need something that can stay in the cupboard for longer",
+    "country": "Germany",
+    "response_rate": 0.2637
+  },
+  {
+    "category": "red_sauce",
+    "need": "I want something to go with pasta",
+    "country": "Germany",
+    "response_rate": 0.2587
+  },
+  {
+    "category": "red_sauce",
+    "need": "I have a craving for Italian food",
+    "country": "Germany",
+    "response_rate": 0.2324
+  },
+  {
+    "category": "red_sauce",
+    "need": "I have a particular meal in mind",
+    "country": "Germany",
+    "response_rate": 0.22579999999999997
+  },
+  {
+    "category": "red_sauce",
+    "need": "It's an ingredient I use a lot",
+    "country": "Germany",
+    "response_rate": 0.207
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need to stock up on food",
+    "country": "Germany",
+    "response_rate": 0.1998
+  },
+  {
+    "category": "red_sauce",
+    "need": "I have a craving for Italian food",
+    "country": "Germany",
+    "response_rate": 0.19579999999999997
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need something that can stay in the cupboard for longer",
+    "country": "Germany",
+    "response_rate": 0.1818
+  },
+  {
+    "category": "red_sauce",
+    "need": "When I need a good value for money option",
+    "country": "Germany",
+    "response_rate": 0.1602
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need to stock up on food",
+    "country": "Germany",
+    "response_rate": 0.1484
+  },
+  {
+    "category": "red_sauce",
+    "need": "When I need a good value for money option",
+    "country": "Germany",
+    "response_rate": 0.1469
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need something for an everyday meal",
+    "country": "Germany",
+    "response_rate": 0.1349
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need an easy meal for the children",
+    "country": "Germany",
+    "response_rate": 0.1119
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need something others in the house can cook easily",
+    "country": "Germany",
+    "response_rate": 0.1119
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need something versatile",
+    "country": "Germany",
+    "response_rate": 0.09960000000000001
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need something versatile",
+    "country": "Germany",
+    "response_rate": 0.0719
+  },
+  {
+    "category": "red_sauce",
+    "need": "When I have a BBQ or an occasion at home coming up",
+    "country": "Germany",
+    "response_rate": 0.058899999999999994
+  },
+  {
+    "category": "red_sauce",
+    "need": "Something not on this list",
+    "country": "Germany",
+    "response_rate": 0.0215
+  },
+  {
+    "category": "red_sauce",
+    "need": "Something not on this list",
+    "country": "Germany",
+    "response_rate": 0.005
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need to make a quick and easy meal",
+    "country": "Italy",
+    "response_rate": 0.4019
+  },
+  {
+    "category": "red_sauce",
+    "need": "I want to make a pasta sauce",
+    "country": "Italy",
+    "response_rate": 0.35590000000000005
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need something easy to prepare",
+    "country": "Italy",
+    "response_rate": 0.3296
+  },
+  {
+    "category": "red_sauce",
+    "need": "It's an ingredient I use a lot",
+    "country": "Italy",
+    "response_rate": 0.3234
+  },
+  {
+    "category": "red_sauce",
+    "need": "I don't have time to make a sauce from scratch",
+    "country": "Italy",
+    "response_rate": 0.3214
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need something that can stay in the cupboard for longer",
+    "country": "Italy",
+    "response_rate": 0.2528
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need to make a quick and easy meal",
+    "country": "Italy",
+    "response_rate": 0.2401
+  },
+  {
+    "category": "red_sauce",
+    "need": "I want something to go with pasta",
+    "country": "Italy",
+    "response_rate": 0.23420000000000002
+  },
+  {
+    "category": "red_sauce",
+    "need": "I have a craving for a pasta meal",
+    "country": "Italy",
+    "response_rate": 0.23309999999999997
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need something that can stay in the cupboard for longer",
+    "country": "Italy",
+    "response_rate": 0.2237
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need something easy to prepare",
+    "country": "Italy",
+    "response_rate": 0.2133
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need to stock up on food",
+    "country": "Italy",
+    "response_rate": 0.19920000000000002
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need something for an everyday meal",
+    "country": "Italy",
+    "response_rate": 0.1857
+  },
+  {
+    "category": "red_sauce",
+    "need": "When I need a good value for money option",
+    "country": "Italy",
+    "response_rate": 0.18359999999999999
+  },
+  {
+    "category": "red_sauce",
+    "need": "When I need a good value for money option",
+    "country": "Italy",
+    "response_rate": 0.1797
+  },
+  {
+    "category": "red_sauce",
+    "need": "I have a craving for a pasta meal",
+    "country": "Italy",
+    "response_rate": 0.1655
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need something versatile",
+    "country": "Italy",
+    "response_rate": 0.1655
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need something others in the house can cook easily",
+    "country": "Italy",
+    "response_rate": 0.1588
+  },
+  {
+    "category": "red_sauce",
+    "need": "I have a particular meal in mind",
+    "country": "Italy",
+    "response_rate": 0.1568
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need something versatile",
+    "country": "Italy",
+    "response_rate": 0.14550000000000002
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need to stock up on food",
+    "country": "Italy",
+    "response_rate": 0.13720000000000002
+  },
+  {
+    "category": "red_sauce",
+    "need": "I have a particular meal in mind",
+    "country": "Italy",
+    "response_rate": 0.0999
+  },
+  {
+    "category": "red_sauce",
+    "need": "I need an easy meal for the children",
+    "country": "Italy",
+    "response_rate": 0.0738
+  },
+  {
+    "category": "red_sauce",
+    "need": "Something not on this list",
+    "country": "Italy",
+    "response_rate": 0.0311
+  },
+  {
+    "category": "red_sauce",
+    "need": "Something not on this list",
+    "country": "Italy",
+    "response_rate": 0.0037
+  }
+]

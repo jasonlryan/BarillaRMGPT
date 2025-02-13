@@ -1,0 +1,64 @@
+{
+  "ctm_occasion_in_mind": {
+    "A snack inbetween meals": {
+      "France": 0.1797,
+      "Germany": 0.11199999999999999,
+      "Greece": 0.1996,
+      "net_relative": 0.1638
+    },
+    "As a distraction for children": {
+      "France": 0.1563,
+      "Germany": 0.1133,
+      "Greece": 0.0333,
+      "net_relative": 0.1009
+    },
+    "To have with guests visiting": {
+      "France": 0.1406,
+      "Germany": 0.083,
+      "Greece": 0.11460000000000001,
+      "net_relative": 0.1127
+    },
+    "With a coffee/tea": {
+      "France": 0.138,
+      "Germany": 0.1107,
+      "Greece": 0.20329999999999998,
+      "net_relative": 0.1507
+    },
+    "On the couch watching TV": {
+      "France": 0.125,
+      "Germany": 0.2121,
+      "Greece": 0.0832,
+      "net_relative": 0.1401
+    },
+    "Dessert": {
+      "France": 0.0729,
+      "Germany": 0.1225,
+      "Greece": 0.1165,
+      "net_relative": 0.10400000000000001
+    },
+    "To put in a lunchbox": {
+      "France": 0.0547,
+      "Germany": 0.0817,
+      "Greece": 0.1091,
+      "net_relative": 0.0818
+    },
+    "On-the-go": {
+      "France": 0.0547,
+      "Germany": 0.0501,
+      "Greece": 0.037000000000000005,
+      "net_relative": 0.0472
+    },
+    "To take to someone's home": {
+      "France": 0.0417,
+      "Germany": 0.0738,
+      "Greece": 0.0351,
+      "net_relative": 0.050199999999999995
+    },
+    "While working": {
+      "France": 0.0365,
+      "Germany": 0.0408,
+      "Greece": 0.0684,
+      "net_relative": 0.048600000000000004
+    }
+  }
+}

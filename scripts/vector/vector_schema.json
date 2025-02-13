@@ -1,0 +1,422 @@
+{
+  "version": "1.0",
+  "vectorFiles": {
+    "biscuits_data.json": {
+      "description": "Biscuit touchpoint performance data",
+      "structure": {
+        "country": "string",
+        "stage": "string",
+        "touchpoint": "string",
+        "channel": "string (Digital|Offline|Hybrid)",
+        "index": "decimal (0-n)",
+        "deviation from mean": "decimal",
+        "category average index": "decimal"
+      },
+      "markets": ["France", "Germany", "Greece"],
+      "dataConsistency": "Complete data across all markets"
+    },
+    "biscuits_trigger_occasion.json": {
+      "description": "Combined biscuit purchase triggers and consumption occasions",
+      "sections": {
+        "jrn_trigger": {
+          "description": "Purchase trigger data",
+          "structure": {
+            "trigger_text": {
+              "France": "decimal (0-1)",
+              "Germany": "decimal (0-1)",
+              "Greece": "decimal (0-1)",
+              "net_relative": "decimal (0-1)"
+            }
+          }
+        },
+        "ctm_occasion_in_mind": {
+          "description": "Consumption occasion data",
+          "structure": {
+            "occasion_text": {
+              "France": "decimal (0-1)",
+              "Germany": "decimal (0-1)",
+              "Greece": "decimal (0-1)",
+              "net_relative": "decimal (0-1)"
+            }
+          }
+        }
+      },
+      "dataConsistency": "Complete data across all markets"
+    },
+    "biscuits_trigger.json": {
+      "description": "Biscuit purchase triggers only",
+      "structure": {
+        "jrn_trigger": {
+          "trigger_text": {
+            "France": "decimal (0-1)",
+            "Germany": "decimal (0-1)",
+            "Greece": "decimal (0-1)",
+            "net_relative": "decimal (0-1)"
+          }
+        }
+      },
+      "markets": ["France", "Germany", "Greece"],
+      "dataConsistency": "Complete data across all markets"
+    },
+    "biscuits_occasion.json": {
+      "description": "Biscuit consumption occasions only",
+      "structure": {
+        "ctm_occasion_in_mind": {
+          "occasion_text": {
+            "France": "decimal (0-1)",
+            "Germany": "decimal (0-1)",
+            "Greece": "decimal (0-1)",
+            "net_relative": "decimal (0-1)"
+          }
+        }
+      },
+      "markets": ["France", "Germany", "Greece"],
+      "dataConsistency": "Complete data across all markets"
+    },
+    "pasta_trigger.json": {
+      "description": "Pasta purchase triggers with market-specific variations",
+      "structure": {
+        "_instructions": {
+          "description": "string",
+          "dataCharacteristics": {
+            "marketCoverage": {
+              "core": ["string"],
+              "additional": ["string"]
+            },
+            "inconsistencies": {
+              "marketSpecific": {
+                "country": ["string"]
+              },
+              "missingData": "string"
+            },
+            "dataHandling": {
+              "rules": ["string"]
+            }
+          }
+        },
+        "jrn_trigger": {
+          "trigger_text": {
+            "country": "decimal (0-1)"
+          }
+        }
+      },
+      "markets": {
+        "core": ["Australia", "France", "Germany", "Greece", "Switzerland", "United States"],
+        "additional": ["Turkey", "Italy"]
+      },
+      "dataInconsistencies": true,
+      "handlingRules": [
+        "Countries with no data are excluded",
+        "Market-specific triggers preserved",
+        "Percentages converted to decimals",
+        "Empty/invalid values skipped"
+      ]
+    },
+    "pasta_data.json": {
+      "description": "Pasta touchpoint performance data",
+      "structure": {
+        "country": "string",
+        "stage": "string",
+        "touchpoint": "string",
+        "channel": "string (Digital|Offline|Hybrid)",
+        "index": "decimal (0-n)",
+        "deviation from mean": "decimal",
+        "category average index": "decimal"
+      },
+      "markets": ["Australia", "France", "Austria", "Germany", "Greece", "Switzerland", "United States"],
+      "dataConsistency": "Complete data across all markets"
+    },
+    "redsauce_data.json": {
+      "description": "Red sauce touchpoint performance data",
+      "structure": {
+        "country": "string",
+        "stage": "string",
+        "touchpoint": "string",
+        "channel": "string (Digital|Offline|Hybrid)",
+        "index": "decimal (0-n)",
+        "deviation from mean": "decimal",
+        "category average index": "decimal"
+      },
+      "markets": ["France", "Germany", "Italy"],
+      "dataConsistency": "Complete data across all markets"
+    },
+    "meatsauce_data.json": {
+      "description": "Meat sauce touchpoint performance data",
+      "structure": {
+        "country": "string",
+        "stage": "string",
+        "touchpoint": "string",
+        "channel": "string (Digital|Offline|Hybrid)",
+        "index": "decimal (0-n)",
+        "deviation from mean": "decimal",
+        "category average index": "decimal"
+      },
+      "markets": ["France", "Italy"],
+      "dataConsistency": "Complete data across all markets"
+    },
+    "pestosauce_data.json": {
+      "description": "Pesto sauce touchpoint performance data",
+      "structure": {
+        "country": "string",
+        "stage": "string",
+        "touchpoint": "string",
+        "channel": "string (Digital|Offline|Hybrid)",
+        "index": "decimal (0-n)",
+        "deviation from mean": "decimal",
+        "category average index": "decimal"
+      },
+      "markets": ["France", "Germany", "Italy"],
+      "dataConsistency": "Complete data across all markets"
+    },
+    "drysnacks_data.json": {
+      "description": "Dry snacks touchpoint performance data",
+      "structure": {
+        "country": "string",
+        "stage": "string",
+        "touchpoint": "string",
+        "channel": "string (Digital|Offline|Hybrid)",
+        "index": "decimal (0-n)",
+        "deviation from mean": "decimal",
+        "category average index": "decimal"
+      },
+      "markets": ["Italy"],
+      "dataConsistency": "Complete data for Italian market"
+    },
+    "pasta_occasion.json": {
+      "description": "Pasta consumption occasions by market",
+      "structure": {
+        "_instructions": {
+          "description": "string",
+          "dataCharacteristics": {
+            "marketCoverage": {
+              "core": ["string"]
+            },
+            "dataHandling": {
+              "rules": ["string"]
+            }
+          }
+        },
+        "ctm_when_usage": {
+          "occasion_text": {
+            "Australia": "decimal (0-1)",
+            "France": "decimal (0-1)",
+            "Germany": "decimal (0-1)",
+            "Greece": "decimal (0-1)",
+            "Switzerland": "decimal (0-1)",
+            "United States": "decimal (0-1)"
+          }
+        }
+      },
+      "markets": ["Australia", "France", "Germany", "Greece", "Switzerland", "United States"],
+      "dataConsistency": "Complete data across all markets"
+    },
+    "pasta_needs.json": {
+      "description": "Pasta needs and consideration data across markets",
+      "structure": {
+        "_instructions": {
+          "description": "string",
+          "dataCharacteristics": {
+            "marketCoverage": {
+              "core": ["string"]
+            },
+            "dataHandling": {
+              "rules": ["string"]
+            }
+          }
+        },
+        "cnt_needs": {
+          "need_statement": {
+            "Australia": "decimal (0-1)",
+            "France": "decimal (0-1)",
+            "Germany": "decimal (0-1)",
+            "Greece": "decimal (0-1)",
+            "Switzerland": "decimal (0-1)",
+            "United States": "decimal (0-1)",
+            "Turkey": "decimal (0-1)"
+          }
+        }
+      },
+      "markets": ["Australia", "France", "Germany", "Greece", "Switzerland", "United States", "Turkey"],
+      "dataConsistency": "Complete data across all markets"
+    },
+    "pasta_inspiration.json": {
+      "description": "Pasta recipe inspiration sources across markets",
+      "structure": {
+        "_instructions": {
+          "description": "string",
+          "dataCharacteristics": {
+            "marketCoverage": {
+              "core": ["string"],
+              "inconsistent": ["string"]
+            },
+            "inconsistencies": {
+              "marketSpecific": {
+                "Switzerland": {
+                  "uniqueCategories": ["string"],
+                  "missingData": ["string"],
+                  "mapping": {
+                    "source": "string"
+                  }
+                }
+              },
+              "missingData": "string"
+            },
+            "dataHandling": {
+              "rules": ["string"]
+            }
+          }
+        },
+        "ctm_inspiration_source": {
+          "source_text": {
+            "Australia": "decimal (0-1)",
+            "France": "decimal (0-1)",
+            "Germany": "decimal (0-1)",
+            "Greece": "decimal (0-1)",
+            "Switzerland": "decimal (0-1)",
+            "United States": "decimal (0-1)"
+          }
+        }
+      },
+      "markets": {
+        "core": ["Australia", "France", "Germany", "Greece", "United States"],
+        "inconsistent": ["Switzerland"]
+      },
+      "dataInconsistencies": true,
+      "handlingRules": [
+        "Swiss market has unique categories",
+        "Some categories missing data for Switzerland",
+        "Swiss categories mapped to common categories where possible",
+        "Empty/invalid values skipped"
+      ]
+    },
+    "redsauce_pesto_meatsauce_triggers.json": {
+      "description": "Purchase triggers across sauce categories",
+      "categories": ["red sauce", "pesto sauce", "meat sauce"],
+      "structure": {
+        "category": "string (red_sauce|pesto_sauce|meat_sauce)",
+        "trigger": "string",
+        "country": "string",
+        "response_rate": "decimal (0-1)"
+      },
+      "relationships": {
+        "red_sauce": {
+          "performance_data": "redsauce_data.json",
+          "relationship_type": "category_touchpoints"
+        },
+        "pesto_sauce": {
+          "performance_data": "pestosauce_data.json",
+          "relationship_type": "category_touchpoints"
+        },
+        "meat_sauce": {
+          "performance_data": "meatsauce_data.json",
+          "relationship_type": "category_touchpoints"
+        }
+      },
+      "markets": ["France", "Germany", "Italy"],
+      "dataConsistency": "Complete trigger data across all sauce categories"
+    },
+    "redsauce_pesto_meatsauce_needs.json": {
+      "description": "Consumer needs across sauce categories",
+      "categories": ["red sauce", "pesto sauce", "meat sauce"],
+      "structure": {
+        "category": "string (red_sauce|pesto_sauce|meat_sauce)",
+        "need": "string",
+        "country": "string",
+        "response_rate": "decimal (0-1)"
+      },
+      "relationships": {
+        "red_sauce": {
+          "performance_data": "redsauce_data.json",
+          "trigger_data": "redsauce_pesto_meatsauce_triggers.json",
+          "relationship_type": "category_insights"
+        },
+        "pesto_sauce": {
+          "performance_data": "pestosauce_data.json",
+          "trigger_data": "redsauce_pesto_meatsauce_triggers.json",
+          "relationship_type": "category_insights"
+        },
+        "meat_sauce": {
+          "performance_data": "meatsauce_data.json",
+          "trigger_data": "redsauce_pesto_meatsauce_triggers.json",
+          "relationship_type": "category_insights"
+        }
+      },
+      "markets": ["France", "Germany", "Italy"],
+      "dataConsistency": "Complete needs data across all sauce categories"
+    },
+    "drysnacks_trigger.json": {
+      "description": "Dry snacks purchase triggers data",
+      "structure": {
+        "_instructions": {
+          "description": "string",
+          "dataCharacteristics": {
+            "marketCoverage": {
+              "core": ["string"]
+            },
+            "dataHandling": {
+              "rules": ["string"]
+            }
+          }
+        },
+        "jrn_trigger": {
+          "trigger_text": {
+            "Italy": "decimal (0-1)"
+          }
+        }
+      },
+      "relationships": {
+        "performance_data": "drysnacks_data.json",
+        "relationship_type": "category_insights"
+      },
+      "markets": ["Italy"],
+      "dataConsistency": "Complete trigger data for Italian market"
+    },
+    "drysnacks_pairing.json": {
+      "description": "Dry snacks pairing preferences data",
+      "structure": {
+        "_instructions": {
+          "description": "string",
+          "dataCharacteristics": {
+            "marketCoverage": {
+              "core": ["string"]
+            },
+            "dataHandling": {
+              "rules": ["string"]
+            }
+          }
+        },
+        "ctm_planned_pairing": {
+          "pairing_text": {
+            "Italy": "decimal (0-1)"
+          }
+        }
+      },
+      "relationships": {
+        "performance_data": "drysnacks_data.json",
+        "trigger_data": "drysnacks_trigger.json",
+        "relationship_type": "category_insights"
+      },
+      "markets": ["Italy"],
+      "dataConsistency": "Complete pairing data for Italian market"
+    }
+  },
+  "commonDataRules": {
+    "percentageHandling": "All percentage values are converted to decimals",
+    "missingData": "Excluded from output (no zero/null values)",
+    "validation": "Empty or invalid values are skipped during processing",
+    "decimalPrecision": "Original precision maintained from source data"
+  },
+  "aiInstructions": {
+    "dataUsage": [
+      "Always check _instructions section when present for file-specific handling rules",
+      "Respect market-specific data limitations and inconsistencies",
+      "Do not assume zero values for missing data points",
+      "Maintain awareness of market coverage differences between files"
+    ],
+    "dataInterpretation": [
+      "Consider market-specific context when analyzing triggers",
+      "Account for varying market coverage when comparing across categories",
+      "Note that some metrics are relative to category averages"
+    ]
+  }
+} 
