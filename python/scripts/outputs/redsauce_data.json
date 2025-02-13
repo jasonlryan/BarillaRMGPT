@@ -1,0 +1,1409 @@
+[
+    {
+      "country": "France",
+      "stage": "Consideration",
+      "touchpoint": "Brand's website",
+      "channel": "Offline",
+      "index": 0.437,
+      "deviation from mean": 0.001,
+      "category average index": 0.496
+    },
+    {
+      "country": "France",
+      "stage": "Consideration",
+      "touchpoint": "Digital coupon",
+      "channel": "Offline",
+      "index": 0.461,
+      "deviation from mean": 0.025,
+      "category average index": 0.5
+    },
+    {
+      "country": "France",
+      "stage": "Consideration",
+      "touchpoint": "Experts/ influencers",
+      "channel": "Offline",
+      "index": 0.451,
+      "deviation from mean": 0.015,
+      "category average index": 0.47
+    },
+    {
+      "country": "France",
+      "stage": "Consideration",
+      "touchpoint": "Food App",
+      "channel": "Offline",
+      "index": 0.484,
+      "deviation from mean": 0.048,
+      "category average index": 0.664
+    },
+    {
+      "country": "France",
+      "stage": "Consideration",
+      "touchpoint": "Friends/ family",
+      "channel": "Hybrid",
+      "index": 0.764,
+      "deviation from mean": 0.295,
+      "category average index": 0.623
+    },
+    {
+      "country": "France",
+      "stage": "Consideration",
+      "touchpoint": "Loyalty card",
+      "channel": "Hybrid",
+      "index": 0.569,
+      "deviation from mean": 0.1,
+      "category average index": 0.517
+    },
+    {
+      "country": "France",
+      "stage": "Consideration",
+      "touchpoint": "Newspaper/ magazine advert",
+      "channel": "Offline",
+      "index": 0.393,
+      "deviation from mean": -0.043,
+      "category average index": 0.515
+    },
+    {
+      "country": "France",
+      "stage": "Consideration",
+      "touchpoint": "Newspaper/ magazine article",
+      "channel": "Offline",
+      "index": 0.49,
+      "deviation from mean": 0.054,
+      "category average index": 0.328
+    },
+    {
+      "country": "France",
+      "stage": "Consideration",
+      "touchpoint": "Ooh advert",
+      "channel": "Offline",
+      "index": 0.397,
+      "deviation from mean": -0.039,
+      "category average index": 0.439
+    },
+    {
+      "country": "France",
+      "stage": "Consideration",
+      "touchpoint": "Physical Store",
+      "channel": "Offline",
+      "index": 0.548,
+      "deviation from mean": 0.112,
+      "category average index": 0.632
+    },
+    {
+      "country": "France",
+      "stage": "Consideration",
+      "touchpoint": "Push notification",
+      "channel": "Digital",
+      "index": 0.385,
+      "deviation from mean": -0.15,
+      "category average index": 0.435
+    },
+    {
+      "country": "France",
+      "stage": "Consideration",
+      "touchpoint": "Retailer circular",
+      "channel": "Offline",
+      "index": 0.627,
+      "deviation from mean": 0.191,
+      "category average index": 0.787
+    },
+    {
+      "country": "France",
+      "stage": "Consideration",
+      "touchpoint": "Retailer email / newsletter",
+      "channel": "Hybrid",
+      "index": 0.344,
+      "deviation from mean": -0.125,
+      "category average index": 0.457
+    },
+    {
+      "country": "France",
+      "stage": "Consideration",
+      "touchpoint": "Retailer's Magazine",
+      "channel": "Offline",
+      "index": 0.468,
+      "deviation from mean": 0.032,
+      "category average index": 0.566
+    },
+    {
+      "country": "France",
+      "stage": "Consideration",
+      "touchpoint": "Retailer's website",
+      "channel": "Digital",
+      "index": 0.461,
+      "deviation from mean": -0.074,
+      "category average index": 0.504
+    },
+    {
+      "country": "France",
+      "stage": "Consideration",
+      "touchpoint": "Sampling",
+      "channel": "Offline",
+      "index": 0.411,
+      "deviation from mean": -0.025,
+      "category average index": 0.462
+    },
+    {
+      "country": "France",
+      "stage": "Consideration",
+      "touchpoint": "Search engine",
+      "channel": "Digital",
+      "index": 0.448,
+      "deviation from mean": -0.087,
+      "category average index": 0.509
+    },
+    {
+      "country": "France",
+      "stage": "Consideration",
+      "touchpoint": "Shopping List",
+      "channel": "Offline",
+      "index": 1.0,
+      "deviation from mean": 0.564,
+      "category average index": 1.0
+    },
+    {
+      "country": "France",
+      "stage": "Consideration",
+      "touchpoint": "Social networks",
+      "channel": "Digital",
+      "index": 0.525,
+      "deviation from mean": -0.01,
+      "category average index": 0.501
+    },
+    {
+      "country": "France",
+      "stage": "Consideration",
+      "touchpoint": "Specialist website",
+      "channel": "Digital",
+      "index": 0.418,
+      "deviation from mean": -0.117,
+      "category average index": 0.486
+    },
+    {
+      "country": "France",
+      "stage": "Consideration",
+      "touchpoint": "Traditional coupon",
+      "channel": "Offline",
+      "index": 0.508,
+      "deviation from mean": 0.072,
+      "category average index": 0.537
+    },
+    {
+      "country": "France",
+      "stage": "Consideration",
+      "touchpoint": "Tv advert",
+      "channel": "Offline",
+      "index": 0.443,
+      "deviation from mean": 0.007,
+      "category average index": 0.493
+    },
+    {
+      "country": "France",
+      "stage": "Consideration",
+      "touchpoint": "Video sharing platform",
+      "channel": "Digital",
+      "index": 0.481,
+      "deviation from mean": -0.054,
+      "category average index": 0.523
+    },
+    {
+      "country": "France",
+      "stage": "Selection",
+      "touchpoint": "Aisle",
+      "channel": "Offline",
+      "index": 0.976,
+      "deviation from mean": 0.54,
+      "category average index": 0.976
+    },
+    {
+      "country": "France",
+      "stage": "Selection",
+      "touchpoint": "Complementary goods (online)",
+      "channel": "Digital",
+      "index": 0.0,
+      "deviation from mean": -0.535,
+      "category average index": 0.174
+    },
+    {
+      "country": "France",
+      "stage": "Selection",
+      "touchpoint": "Complementary goods aisle",
+      "channel": "Offline",
+      "index": 0.746,
+      "deviation from mean": 0.31,
+      "category average index": 0.785
+    },
+    {
+      "country": "France",
+      "stage": "Selection",
+      "touchpoint": "Delivery Page",
+      "channel": "Digital",
+      "index": 0.0,
+      "deviation from mean": -0.535,
+      "category average index": 0.176
+    },
+    {
+      "country": "France",
+      "stage": "Selection",
+      "touchpoint": "Favourites page",
+      "channel": "Digital",
+      "index": 0.0,
+      "deviation from mean": -0.535,
+      "category average index": 0.149
+    },
+    {
+      "country": "France",
+      "stage": "Selection",
+      "touchpoint": "Free standing display unit",
+      "channel": "Offline",
+      "index": 0.437,
+      "deviation from mean": 0.001,
+      "category average index": 0.462
+    },
+    {
+      "country": "France",
+      "stage": "Selection",
+      "touchpoint": "Friends/ family",
+      "channel": "Hybrid",
+      "index": 0.502,
+      "deviation from mean": 0.032,
+      "category average index": 0.539
+    },
+    {
+      "country": "France",
+      "stage": "Selection",
+      "touchpoint": "Gondola end",
+      "channel": "Offline",
+      "index": 0.505,
+      "deviation from mean": 0.069,
+      "category average index": 0.503
+    },
+    {
+      "country": "France",
+      "stage": "Selection",
+      "touchpoint": "In-store screen",
+      "channel": "Offline",
+      "index": 0.36,
+      "deviation from mean": -0.076,
+      "category average index": 0.422
+    },
+    {
+      "country": "France",
+      "stage": "Selection",
+      "touchpoint": "Loyalty card",
+      "channel": "Hybrid",
+      "index": 0.58,
+      "deviation from mean": 0.111,
+      "category average index": 0.559
+    },
+    {
+      "country": "France",
+      "stage": "Selection",
+      "touchpoint": "Mobile Phone",
+      "channel": "Digital",
+      "index": 0.413,
+      "deviation from mean": -0.122,
+      "category average index": 0.304
+    },
+    {
+      "country": "France",
+      "stage": "Selection",
+      "touchpoint": "On pack promotion",
+      "channel": "Offline",
+      "index": 0.563,
+      "deviation from mean": 0.127,
+      "category average index": 0.36
+    },
+    {
+      "country": "France",
+      "stage": "Selection",
+      "touchpoint": "On-line advert",
+      "channel": "Digital",
+      "index": 0.0,
+      "deviation from mean": -0.535,
+      "category average index": 0.154
+    },
+    {
+      "country": "France",
+      "stage": "Selection",
+      "touchpoint": "Online deal/ promotion",
+      "channel": "Digital",
+      "index": 0.0,
+      "deviation from mean": -0.535,
+      "category average index": 0.169
+    },
+    {
+      "country": "France",
+      "stage": "Selection",
+      "touchpoint": "Packaging",
+      "channel": "Offline",
+      "index": 0.729,
+      "deviation from mean": 0.293,
+      "category average index": 0.779
+    },
+    {
+      "country": "France",
+      "stage": "Selection",
+      "touchpoint": "Product display",
+      "channel": "Offline",
+      "index": 0.458,
+      "deviation from mean": 0.022,
+      "category average index": 0.497
+    },
+    {
+      "country": "France",
+      "stage": "Selection",
+      "touchpoint": "Promo stand",
+      "channel": "Offline",
+      "index": 0.597,
+      "deviation from mean": 0.161,
+      "category average index": 0.643
+    },
+    {
+      "country": "France",
+      "stage": "Selection",
+      "touchpoint": "Push notification",
+      "channel": "Digital",
+      "index": 0.429,
+      "deviation from mean": -0.106,
+      "category average index": 0.474
+    },
+    {
+      "country": "France",
+      "stage": "Selection",
+      "touchpoint": "Retailer circular",
+      "channel": "Offline",
+      "index": 0.539,
+      "deviation from mean": 0.103,
+      "category average index": 0.591
+    },
+    {
+      "country": "France",
+      "stage": "Selection",
+      "touchpoint": "Shelf",
+      "channel": "Offline",
+      "index": 0.74,
+      "deviation from mean": 0.304,
+      "category average index": 0.819
+    },
+    {
+      "country": "France",
+      "stage": "Selection",
+      "touchpoint": "Shelf communication",
+      "channel": "Offline",
+      "index": 0.472,
+      "deviation from mean": 0.036,
+      "category average index": 0.494
+    },
+    {
+      "country": "France",
+      "stage": "Selection",
+      "touchpoint": "Traditional coupon",
+      "channel": "Offline",
+      "index": 0.517,
+      "deviation from mean": 0.081,
+      "category average index": 0.536
+    },
+    {
+      "country": "Germany",
+      "stage": "Consideration",
+      "touchpoint": "Brand's website",
+      "channel": "Offline",
+      "index": 0.552,
+      "deviation from mean": -0.013,
+      "category average index": 0.496
+    },
+    {
+      "country": "Germany",
+      "stage": "Consideration",
+      "touchpoint": "Digital coupon",
+      "channel": "Offline",
+      "index": 0.514,
+      "deviation from mean": -0.052,
+      "category average index": 0.5
+    },
+    {
+      "country": "Germany",
+      "stage": "Consideration",
+      "touchpoint": "Experts/ influencers",
+      "channel": "Offline",
+      "index": 0.502,
+      "deviation from mean": -0.063,
+      "category average index": 0.47
+    },
+    {
+      "country": "Germany",
+      "stage": "Consideration",
+      "touchpoint": "Food App",
+      "channel": "Offline",
+      "index": 0.894,
+      "deviation from mean": 0.329,
+      "category average index": 0.664
+    },
+    {
+      "country": "Germany",
+      "stage": "Consideration",
+      "touchpoint": "Friends/ family",
+      "channel": "Hybrid",
+      "index": 0.495,
+      "deviation from mean": -0.052,
+      "category average index": 0.623
+    },
+    {
+      "country": "Germany",
+      "stage": "Consideration",
+      "touchpoint": "Loyalty card",
+      "channel": "Hybrid",
+      "index": 0.518,
+      "deviation from mean": -0.029,
+      "category average index": 0.517
+    },
+    {
+      "country": "Germany",
+      "stage": "Consideration",
+      "touchpoint": "Newspaper/ magazine advert",
+      "channel": "Offline",
+      "index": 0.626,
+      "deviation from mean": 0.061,
+      "category average index": 0.515
+    },
+    {
+      "country": "Germany",
+      "stage": "Consideration",
+      "touchpoint": "Newspaper/ magazine article",
+      "channel": "Offline",
+      "index": 0.493,
+      "deviation from mean": -0.072,
+      "category average index": 0.328
+    },
+    {
+      "country": "Germany",
+      "stage": "Consideration",
+      "touchpoint": "Ooh advert",
+      "channel": "Offline",
+      "index": 0.47,
+      "deviation from mean": -0.095,
+      "category average index": 0.439
+    },
+    {
+      "country": "Germany",
+      "stage": "Consideration",
+      "touchpoint": "Physical Store",
+      "channel": "Offline",
+      "index": 0.621,
+      "deviation from mean": 0.056,
+      "category average index": 0.632
+    },
+    {
+      "country": "Germany",
+      "stage": "Consideration",
+      "touchpoint": "Push notification",
+      "channel": "Digital",
+      "index": 0.465,
+      "deviation from mean": -0.213,
+      "category average index": 0.435
+    },
+    {
+      "country": "Germany",
+      "stage": "Consideration",
+      "touchpoint": "Retailer circular",
+      "channel": "Offline",
+      "index": 0.855,
+      "deviation from mean": 0.29,
+      "category average index": 0.787
+    },
+    {
+      "country": "Germany",
+      "stage": "Consideration",
+      "touchpoint": "Retailer email / newsletter",
+      "channel": "Hybrid",
+      "index": 0.533,
+      "deviation from mean": -0.013,
+      "category average index": 0.457
+    },
+    {
+      "country": "Germany",
+      "stage": "Consideration",
+      "touchpoint": "Retailer's Magazine",
+      "channel": "Offline",
+      "index": 0.564,
+      "deviation from mean": -0.002,
+      "category average index": 0.566
+    },
+    {
+      "country": "Germany",
+      "stage": "Consideration",
+      "touchpoint": "Retailer's website",
+      "channel": "Digital",
+      "index": 0.571,
+      "deviation from mean": -0.107,
+      "category average index": 0.504
+    },
+    {
+      "country": "Germany",
+      "stage": "Consideration",
+      "touchpoint": "Sampling",
+      "channel": "Offline",
+      "index": 0.489,
+      "deviation from mean": -0.077,
+      "category average index": 0.462
+    },
+    {
+      "country": "Germany",
+      "stage": "Consideration",
+      "touchpoint": "Search engine",
+      "channel": "Digital",
+      "index": 0.575,
+      "deviation from mean": -0.103,
+      "category average index": 0.509
+    },
+    {
+      "country": "Germany",
+      "stage": "Consideration",
+      "touchpoint": "Shopping List",
+      "channel": "Offline",
+      "index": 1.0,
+      "deviation from mean": 0.435,
+      "category average index": 1.0
+    },
+    {
+      "country": "Germany",
+      "stage": "Consideration",
+      "touchpoint": "Social networks",
+      "channel": "Digital",
+      "index": 0.531,
+      "deviation from mean": -0.146,
+      "category average index": 0.501
+    },
+    {
+      "country": "Germany",
+      "stage": "Consideration",
+      "touchpoint": "Specialist website",
+      "channel": "Digital",
+      "index": 0.564,
+      "deviation from mean": -0.114,
+      "category average index": 0.486
+    },
+    {
+      "country": "Germany",
+      "stage": "Consideration",
+      "touchpoint": "Traditional coupon",
+      "channel": "Offline",
+      "index": 0.576,
+      "deviation from mean": 0.011,
+      "category average index": 0.537
+    },
+    {
+      "country": "Germany",
+      "stage": "Consideration",
+      "touchpoint": "Tv advert",
+      "channel": "Offline",
+      "index": 0.527,
+      "deviation from mean": -0.038,
+      "category average index": 0.493
+    },
+    {
+      "country": "Germany",
+      "stage": "Consideration",
+      "touchpoint": "Video sharing platform",
+      "channel": "Digital",
+      "index": 0.59,
+      "deviation from mean": -0.088,
+      "category average index": 0.523
+    },
+    {
+      "country": "Germany",
+      "stage": "Selection",
+      "touchpoint": "Aisle",
+      "channel": "Offline",
+      "index": 0.976,
+      "deviation from mean": 0.411,
+      "category average index": 0.976
+    },
+    {
+      "country": "Germany",
+      "stage": "Selection",
+      "touchpoint": "Complementary goods (online)",
+      "channel": "Digital",
+      "index": 0.521,
+      "deviation from mean": -0.157,
+      "category average index": 0.174
+    },
+    {
+      "country": "Germany",
+      "stage": "Selection",
+      "touchpoint": "Complementary goods aisle",
+      "channel": "Offline",
+      "index": 0.873,
+      "deviation from mean": 0.308,
+      "category average index": 0.785
+    },
+    {
+      "country": "Germany",
+      "stage": "Selection",
+      "touchpoint": "Delivery Page",
+      "channel": "Digital",
+      "index": 0.527,
+      "deviation from mean": -0.151,
+      "category average index": 0.176
+    },
+    {
+      "country": "Germany",
+      "stage": "Selection",
+      "touchpoint": "Favourites page",
+      "channel": "Digital",
+      "index": 0.448,
+      "deviation from mean": -0.23,
+      "category average index": 0.149
+    },
+    {
+      "country": "Germany",
+      "stage": "Selection",
+      "touchpoint": "Free standing display unit",
+      "channel": "Offline",
+      "index": 0.522,
+      "deviation from mean": -0.043,
+      "category average index": 0.462
+    },
+    {
+      "country": "Germany",
+      "stage": "Selection",
+      "touchpoint": "Friends/ family",
+      "channel": "Hybrid",
+      "index": 0.607,
+      "deviation from mean": 0.06,
+      "category average index": 0.539
+    },
+    {
+      "country": "Germany",
+      "stage": "Selection",
+      "touchpoint": "Gondola end",
+      "channel": "Offline",
+      "index": 0.528,
+      "deviation from mean": -0.037,
+      "category average index": 0.503
+    },
+    {
+      "country": "Germany",
+      "stage": "Selection",
+      "touchpoint": "In-store screen",
+      "channel": "Offline",
+      "index": 0.502,
+      "deviation from mean": -0.063,
+      "category average index": 0.422
+    },
+    {
+      "country": "Germany",
+      "stage": "Selection",
+      "touchpoint": "Loyalty card",
+      "channel": "Hybrid",
+      "index": 0.509,
+      "deviation from mean": -0.038,
+      "category average index": 0.559
+    },
+    {
+      "country": "Germany",
+      "stage": "Selection",
+      "touchpoint": "Mobile Phone",
+      "channel": "Digital",
+      "index": 0.498,
+      "deviation from mean": -0.18,
+      "category average index": 0.304
+    },
+    {
+      "country": "Germany",
+      "stage": "Selection",
+      "touchpoint": "On pack promotion",
+      "channel": "Offline",
+      "index": 0.517,
+      "deviation from mean": -0.048,
+      "category average index": 0.36
+    },
+    {
+      "country": "Germany",
+      "stage": "Selection",
+      "touchpoint": "On-line advert",
+      "channel": "Digital",
+      "index": 0.462,
+      "deviation from mean": -0.215,
+      "category average index": 0.154
+    },
+    {
+      "country": "Germany",
+      "stage": "Selection",
+      "touchpoint": "Online deal/ promotion",
+      "channel": "Digital",
+      "index": 0.508,
+      "deviation from mean": -0.169,
+      "category average index": 0.169
+    },
+    {
+      "country": "Germany",
+      "stage": "Selection",
+      "touchpoint": "Packaging",
+      "channel": "Offline",
+      "index": 0.861,
+      "deviation from mean": 0.295,
+      "category average index": 0.779
+    },
+    {
+      "country": "Germany",
+      "stage": "Selection",
+      "touchpoint": "Product display",
+      "channel": "Offline",
+      "index": 0.573,
+      "deviation from mean": 0.008,
+      "category average index": 0.497
+    },
+    {
+      "country": "Germany",
+      "stage": "Selection",
+      "touchpoint": "Promo stand",
+      "channel": "Offline",
+      "index": 0.685,
+      "deviation from mean": 0.12,
+      "category average index": 0.643
+    },
+    {
+      "country": "Germany",
+      "stage": "Selection",
+      "touchpoint": "Push notification",
+      "channel": "Digital",
+      "index": 0.529,
+      "deviation from mean": -0.148,
+      "category average index": 0.474
+    },
+    {
+      "country": "Germany",
+      "stage": "Selection",
+      "touchpoint": "Retailer circular",
+      "channel": "Offline",
+      "index": 0.621,
+      "deviation from mean": 0.056,
+      "category average index": 0.591
+    },
+    {
+      "country": "Germany",
+      "stage": "Selection",
+      "touchpoint": "Shelf",
+      "channel": "Offline",
+      "index": 0.952,
+      "deviation from mean": 0.387,
+      "category average index": 0.819
+    },
+    {
+      "country": "Germany",
+      "stage": "Selection",
+      "touchpoint": "Shelf communication",
+      "channel": "Offline",
+      "index": 0.524,
+      "deviation from mean": -0.041,
+      "category average index": 0.494
+    },
+    {
+      "country": "Germany",
+      "stage": "Selection",
+      "touchpoint": "Traditional coupon",
+      "channel": "Offline",
+      "index": 0.521,
+      "deviation from mean": -0.044,
+      "category average index": 0.536
+    },
+    {
+      "country": "Italy",
+      "stage": "Consideration",
+      "touchpoint": "Retailer circular",
+      "channel": "Offline",
+      "index": 1.0,
+      "deviation from mean": 0.483,
+      "category average index": 1.0
+    },
+    {
+      "country": "Italy",
+      "stage": "Consideration",
+      "touchpoint": "Retailer's website",
+      "channel": "Digital",
+      "index": 0.69,
+      "deviation from mean": 0.211,
+      "category average index": 0.69
+    },
+    {
+      "country": "Italy",
+      "stage": "Consideration",
+      "touchpoint": "Friends/ family",
+      "channel": "Hybrid",
+      "index": 0.635,
+      "deviation from mean": 0.098,
+      "category average index": 0.635
+    },
+    {
+      "country": "Italy",
+      "stage": "Consideration",
+      "touchpoint": "Recipes Website",
+      "channel": "Digital",
+      "index": 0.6,
+      "deviation from mean": 0.12,
+      "category average index": 0.6
+    },
+    {
+      "country": "Italy",
+      "stage": "Consideration",
+      "touchpoint": "House Organ",
+      "channel": "Offline",
+      "index": 0.573,
+      "deviation from mean": 0.056,
+      "category average index": 0.573
+    },
+    {
+      "country": "Italy",
+      "stage": "Consideration",
+      "touchpoint": "Tv advert",
+      "channel": "Offline",
+      "index": 0.504,
+      "deviation from mean": -0.013,
+      "category average index": 0.504
+    },
+    {
+      "country": "Italy",
+      "stage": "Consideration",
+      "touchpoint": "Promo aggregator",
+      "channel": "Digital",
+      "index": 0.548,
+      "deviation from mean": 0.068,
+      "category average index": 0.548
+    },
+    {
+      "country": "Italy",
+      "stage": "Consideration",
+      "touchpoint": "Social networks",
+      "channel": "Digital",
+      "index": 0.496,
+      "deviation from mean": 0.017,
+      "category average index": 0.496
+    },
+    {
+      "country": "Italy",
+      "stage": "Consideration",
+      "touchpoint": "Shopping centre billboards",
+      "channel": "Offline",
+      "index": 0.515,
+      "deviation from mean": -0.002,
+      "category average index": 0.515
+    },
+    {
+      "country": "Italy",
+      "stage": "Consideration",
+      "touchpoint": "Search engine",
+      "channel": "Digital",
+      "index": 0.55,
+      "deviation from mean": 0.07,
+      "category average index": 0.55
+    },
+    {
+      "country": "Italy",
+      "stage": "Consideration",
+      "touchpoint": "Retailer's advert",
+      "channel": "Offline",
+      "index": 0.466,
+      "deviation from mean": -0.051,
+      "category average index": 0.466
+    },
+    {
+      "country": "Italy",
+      "stage": "Consideration",
+      "touchpoint": "Car park banner",
+      "channel": "Offline",
+      "index": 0.462,
+      "deviation from mean": -0.055,
+      "category average index": 0.462
+    },
+    {
+      "country": "Italy",
+      "stage": "Consideration",
+      "touchpoint": "Newspaper/ magazine article",
+      "channel": "Offline",
+      "index": 0.486,
+      "deviation from mean": -0.032,
+      "category average index": 0.486
+    },
+    {
+      "country": "Italy",
+      "stage": "Consideration",
+      "touchpoint": "Food Website/ Blog",
+      "channel": "Digital",
+      "index": 0.496,
+      "deviation from mean": 0.016,
+      "category average index": 0.496
+    },
+    {
+      "country": "Italy",
+      "stage": "Consideration",
+      "touchpoint": "Store staff",
+      "channel": "Offline",
+      "index": 0.458,
+      "deviation from mean": -0.06,
+      "category average index": 0.458
+    },
+    {
+      "country": "Italy",
+      "stage": "Consideration",
+      "touchpoint": "Brand's website",
+      "channel": "Digital",
+      "index": 0.534,
+      "deviation from mean": 0.054,
+      "category average index": 0.534
+    },
+    {
+      "country": "Italy",
+      "stage": "Consideration",
+      "touchpoint": "Newspaper/ magazine advert",
+      "channel": "Offline",
+      "index": 0.457,
+      "deviation from mean": -0.061,
+      "category average index": 0.457
+    },
+    {
+      "country": "Italy",
+      "stage": "Consideration",
+      "touchpoint": "Specialised press",
+      "channel": "Offline",
+      "index": 0.494,
+      "deviation from mean": -0.023,
+      "category average index": 0.494
+    },
+    {
+      "country": "Italy",
+      "stage": "Consideration",
+      "touchpoint": "Video sharing platform",
+      "channel": "Digital",
+      "index": 0.504,
+      "deviation from mean": 0.025,
+      "category average index": 0.504
+    },
+    {
+      "country": "Italy",
+      "stage": "Consideration",
+      "touchpoint": "Push notification",
+      "channel": "Digital",
+      "index": 0.474,
+      "deviation from mean": -0.005,
+      "category average index": 0.474
+    },
+    {
+      "country": "Italy",
+      "stage": "Consideration",
+      "touchpoint": "Retailer's email/ newsletter",
+      "channel": "Digital",
+      "index": 0.472,
+      "deviation from mean": -0.007,
+      "category average index": 0.472
+    },
+    {
+      "country": "Italy",
+      "stage": "Consideration",
+      "touchpoint": "In-store radio",
+      "channel": "Offline",
+      "index": 0.445,
+      "deviation from mean": -0.073,
+      "category average index": 0.445
+    },
+    {
+      "country": "Italy",
+      "stage": "Consideration",
+      "touchpoint": "Retailer's SMS",
+      "channel": "Digital",
+      "index": 0.461,
+      "deviation from mean": -0.019,
+      "category average index": 0.461
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Shelf",
+      "channel": "Offline",
+      "index": 0.955,
+      "deviation from mean": 0.482,
+      "category average index": 0.955
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Packaging",
+      "channel": "Offline",
+      "index": 0.701,
+      "deviation from mean": 0.228,
+      "category average index": 0.701
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Promo stand",
+      "channel": "Offline",
+      "index": 0.646,
+      "deviation from mean": 0.173,
+      "category average index": 0.646
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Retailer circular",
+      "channel": "Offline",
+      "index": 0.637,
+      "deviation from mean": 0.164,
+      "category average index": 0.637
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Promo aisle",
+      "channel": "Offline",
+      "index": 0.647,
+      "deviation from mean": 0.174,
+      "category average index": 0.647
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Complementary goods aisle",
+      "channel": "Offline",
+      "index": 0.575,
+      "deviation from mean": 0.102,
+      "category average index": 0.575
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "On pack promotion",
+      "channel": "Offline",
+      "index": 0.574,
+      "deviation from mean": 0.101,
+      "category average index": 0.574
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Special pastas display",
+      "channel": "Offline",
+      "index": 0.537,
+      "deviation from mean": 0.064,
+      "category average index": 0.537
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Loyalty card",
+      "channel": "Hybrid",
+      "index": 0.547,
+      "deviation from mean": 0.048,
+      "category average index": 0.547
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Shelf Communication material",
+      "channel": "Offline",
+      "index": 0.536,
+      "deviation from mean": 0.063,
+      "category average index": 0.536
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Gondola end",
+      "channel": "Offline",
+      "index": 0.524,
+      "deviation from mean": 0.051,
+      "category average index": 0.524
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Shelf strip",
+      "channel": "Offline",
+      "index": 0.525,
+      "deviation from mean": 0.052,
+      "category average index": 0.525
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Product display",
+      "channel": "Offline",
+      "index": 0.478,
+      "deviation from mean": 0.005,
+      "category average index": 0.478
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "FSDU/ Expo",
+      "channel": "Offline",
+      "index": 0.473,
+      "deviation from mean": 0.0,
+      "category average index": 0.473
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Shopping centre billboards",
+      "channel": "Offline",
+      "index": 0.454,
+      "deviation from mean": -0.019,
+      "category average index": 0.454
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Crowner",
+      "channel": "Offline",
+      "index": 0.462,
+      "deviation from mean": -0.011,
+      "category average index": 0.462
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Friends/ family",
+      "channel": "Hybrid",
+      "index": 0.457,
+      "deviation from mean": -0.041,
+      "category average index": 0.457
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Traditional coupon",
+      "channel": "Offline",
+      "index": 0.477,
+      "deviation from mean": 0.004,
+      "category average index": 0.477
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Trolley panel",
+      "channel": "Offline",
+      "index": 0.418,
+      "deviation from mean": -0.055,
+      "category average index": 0.418
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Search engine",
+      "channel": "Digital",
+      "index": 0.448,
+      "deviation from mean": -0.059,
+      "category average index": 0.448
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Store staff",
+      "channel": "Offline",
+      "index": 0.459,
+      "deviation from mean": -0.014,
+      "category average index": 0.459
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Recipe Leaflet/ Display",
+      "channel": "Offline",
+      "index": 0.412,
+      "deviation from mean": -0.061,
+      "category average index": 0.412
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Security shrouds",
+      "channel": "Offline",
+      "index": 0.422,
+      "deviation from mean": -0.051,
+      "category average index": 0.422
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Push notification",
+      "channel": "Digital",
+      "index": 0.444,
+      "deviation from mean": -0.063,
+      "category average index": 0.444
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Floor graphics",
+      "channel": "Offline",
+      "index": 0.375,
+      "deviation from mean": -0.098,
+      "category average index": 0.375
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Comparison engine",
+      "channel": "Digital",
+      "index": 0.452,
+      "deviation from mean": -0.055,
+      "category average index": 0.452
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Promo page",
+      "channel": "Digital",
+      "index": 0.473,
+      "deviation from mean": -0.033,
+      "category average index": 0.473
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Retailer's advert",
+      "channel": "Offline",
+      "index": 0.473,
+      "deviation from mean": 0.0,
+      "category average index": 0.473
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Pasta category page",
+      "channel": "Digital",
+      "index": 0.506,
+      "deviation from mean": -0.001,
+      "category average index": 0.506
+    },
+    {
+      "country": "Italy",
+      "stage": "Selection",
+      "touchpoint": "Check-out and delivery page",
+      "channel": "Digital",
+      "index": 0.505,
+      "deviation from mean": -0.002,
+      "category average index": 0.505
+    },
+    {
+        "country": "Italy",
+        "stage": "Selection",
+        "touchpoint": "Search box/ menu",
+        "channel": "Digital",
+        "index": 0.483,
+        "deviation from mean": -0.024,
+        "category average index": 0.483
+      },
+      {
+        "country": "Italy",
+        "stage": "Selection",
+        "touchpoint": "Purchase history/ saved list",
+        "channel": "Digital",
+        "index": 0.403,
+        "deviation from mean": -0.104,
+        "category average index": 0.403
+      },
+      {
+        "country": "Italy",
+        "stage": "Selection",
+        "touchpoint": "Product suggestion",
+        "channel": "Digital",
+        "index": 0.436,
+        "deviation from mean": -0.071,
+        "category average index": 0.436
+      },
+      {
+        "country": "Italy",
+        "stage": "Selection",
+        "touchpoint": "Brand store",
+        "channel": "Digital",
+        "index": 0.459,
+        "deviation from mean": -0.048,
+        "category average index": 0.459
+      },
+      {
+        "country": "Italy",
+        "stage": "Selection",
+        "touchpoint": "Click-to-buy button",
+        "channel": "Digital",
+        "index": 0.367,
+        "deviation from mean": -0.140,
+        "category average index": 0.367
+      },
+      {
+        "country": "Italy",
+        "stage": "Selection",
+        "touchpoint": "Digital coupon",
+        "channel": "Digital",
+        "index": 0.481,
+        "deviation from mean": -0.026,
+        "category average index": 0.481
+      },
+      {
+        "country": "Italy",
+        "stage": "Selection",
+        "touchpoint": "Online store banner",
+        "channel": "Digital",
+        "index": 0.469,
+        "deviation from mean": -0.038,
+        "category average index": 0.469
+      },
+      {
+        "country": "Italy",
+        "stage": "Selection",
+        "touchpoint": "Social networks",
+        "channel": "Digital",
+        "index": 0.435,
+        "deviation from mean": -0.072,
+        "category average index": 0.435
+      },
+      {
+        "country": "Italy",
+        "stage": "Selection",
+        "touchpoint": "Consumers' ratings and reviews",
+        "channel": "Digital",
+        "index": 0.480,
+        "deviation from mean": -0.027,
+        "category average index": 0.480
+      },
+      {
+        "country": "Italy",
+        "stage": "Selection",
+        "touchpoint": "Complementary goods page",
+        "channel": "Digital",
+        "index": 0.423,
+        "deviation from mean": -0.084,
+        "category average index": 0.423
+      },
+      {
+        "country": "Italy",
+        "stage": "Selection",
+        "touchpoint": "Pasta Category Banner",
+        "channel": "Digital",
+        "index": 0.423,
+        "deviation from mean": -0.084,
+        "category average index": 0.423
+      },
+      {
+        "country": "Italy",
+        "stage": "Selection",
+        "touchpoint": "Banner advert",
+        "channel": "Digital",
+        "index": 0.434,
+        "deviation from mean": -0.073,
+        "category average index": 0.434
+      },
+      {
+        "country": "Italy",
+        "stage": "Selection",
+        "touchpoint": "Product Page retailer website",
+        "channel": "Digital",
+        "index": 0.388,
+        "deviation from mean": -0.119,
+        "category average index": 0.388
+      }
+]
+    
+  
+      
