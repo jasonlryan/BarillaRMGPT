@@ -1,0 +1,65 @@
+{
+  "terms": {
+    "Index": {
+      "definition": "The Index is a normalized value that indicates the effectiveness of a retail media touchpoint in engaging consumers. In this context, a value of 1.000 represents the highest-performing touchpoint, and all other touchpoints will have values less than or equal to 1.000.",
+      "interpretation": "An Index value of 1.000 means that the touchpoint is the most effective at engaging consumers. For example, an Index of 0.800 means that the touchpoint is performing at 80% of the effectiveness of the highest-performing touchpoint.",
+      "examples": {
+        "example1": "If the Shelf touchpoint has an Index of 1.000, it means that it is the highest-performing touchpoint.",
+        "example2": "If another touchpoint has an Index of 0.900, it indicates that it is performing at 90% of the effectiveness of the highest-performing touchpoint."
+      },
+      "calculation": {
+        "formula": "Index = Normalized Respondent Percentage × Normalized Importance Average",
+        "components": {
+          "normalized_respondent_percentage": "Represents how frequently the touchpoint was mentioned by respondents, scaled relative to the maximum respondent percentage for the phase or channel.",
+          "normalized_importance_average": "Shows how important the respondents rated the touchpoint, scaled relative to the maximum importance rating."
+        },
+        "purpose": "The Index gives a single metric that summarizes how important and frequent a touchpoint is compared to others. The higher the index, the more critical that touchpoint is for influencing purchase decisions or user behavior during a specific phase."
+      }
+    },
+    "Deviation from the Mean": {
+      "definition": "Deviation from the Mean shows how much a touchpoint's performance differs from the average performance of all touchpoints.",
+      "interpretation": "A positive percentage indicates that the touchpoint is performing better than average, while a negative percentage indicates it is performing worse.",
+      "examples": {
+        "positive": "+45.8% means that the touchpoint is performing 45.8% better than the average touchpoint.",
+        "negative": "-12.3% means it is underperforming by that percentage."
+      },
+      "calculation": {
+        "formula": "Deviation from Mean = Touchpoint Index − Average Index for Similar Channels",
+        "components": {
+          "touchpoint_index": "The index of the specific touchpoint being analyzed.",
+          "average_index": "The average index value of all touchpoints within the same channel (e.g., digital, offline, or both)."
+        },
+        "purpose": "The Deviation from Mean helps assess whether a touchpoint is over- or under-performing relative to other touchpoints in the same channel."
+      }
+    },
+    "Penetration": {
+      "definition": "In marketing, penetration refers to a market penetration strategy that focuses on increasing the market share of a product or service within an existing market.",
+      "key_aspects": {
+        "price_penetration": "Offering products or services at lower prices than competitors to attract a larger customer base quickly.",
+        "distribution_expansion": "Increasing the availability of the product through wider distribution channels.",
+        "product_promotion": "Aggressive marketing and advertising to raise brand awareness and product visibility.",
+        "customer_retention": "Fostering loyalty among existing customers through rewards, discounts, or improved service."
+      },
+      "goal": "The goal of penetration as a marketing strategy is to capture a larger share of the market and achieve economies of scale, often by capitalizing on existing demand."
+    },
+    "Summary": {
+      "Index_calculation": {
+        "definition": "Index measures the frequency and importance of a touchpoint based on how respondents perceive it.",
+        "calculation": "Index = Normalized Respondent Percentage × Normalized Importance Average",
+        "usefulness": "Index is useful for understanding the absolute strength of a touchpoint in driving consideration or selection."
+      },
+      "Deviation_from_Mean_calculation": {
+        "definition": "Deviation from the Mean measures how a touchpoint performs compared to similar touchpoints in the same channel.",
+        "calculation": "Deviation from Mean = Touchpoint Index − Average Index for Similar Channels",
+        "usefulness": "Deviation from Mean shows whether a touchpoint is over-performing or under-performing within its channel."
+      },
+      "Comparison": {
+        "difference": "Index is an absolute measure based on importance and frequency, while Deviation from Mean is a relative measure comparing a touchpoint’s performance to the average of other touchpoints in the same channel.",
+        "usefulness": {
+          "Index": "Identifies the top touchpoints based on frequency and importance.",
+          "Deviation_from_Mean": "Shows whether a touchpoint is better or worse than its peers within the same channel."
+        }
+      }
+    }
+  }
+}

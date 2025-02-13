@@ -1,0 +1,122 @@
+### Retail Media Planning Recommendation Template
+
+Thank you for your request regarding [Category] in [Country] with a budget of [Budget]. Below is a comprehensive analysis and recommendation to optimize your media plan.
+
+Based on the data, we have identified key trends and touchpoints that will maximize the impact of your campaign. The [Category] category shows [brief summary of category performance]. Our analysis indicates strong performance in [highlight top performing areas] and opportunities for improvement in [highlight areas needing improvement]. By focusing on [key strategies], we can effectively enhance your campaign's reach and engagement.
+
+#### 1. **Category Overview**
+   - **Category:** [Insert Category]
+   - **Current Market Trends:** [Brief summary of current trends affecting this category]
+   - **Category Performance Against All Categories:**
+     - **Combined Index Offline for [Category]:** [Category Offline Mean]
+     - **Combined Index Offline for All Categories:** [Overall Offline Mean]
+     - **Combined Index Online for [Category]:** [Category Online Mean]
+     - **Combined Index Online for All Categories:** [Overall Online Mean]
+     - **Combined Index for Both Offline and Online for [Category]:** [Category Combined Mean]
+     - **Combined Index for Both Offline and Online for All Categories:** [Overall Combined Mean]
+     - **Weighted Index for [Category]:** [Category Weighted Index]
+     - **Insights:** [Summary of how the category performs against the overall mean, highlighting strengths and areas for improvement]
+
+#### 2. **Key Touchpoints Analysis**
+   - **Top Offline Touchpoints:**
+     **Consideration**
+     - **Touchpoint 1:** [Name] - Deviation Offline: [Value]%
+     - **Touchpoint 2:** [Name] - Deviation Offline: [Value]%
+     - **Touchpoint 3:** [Name] - Deviation Offline: [Value]%
+     **Selection**
+     - **Touchpoint 1:** [Name] - Deviation Offline: [Value]%
+     - **Touchpoint 2:** [Name] - Deviation Offline: [Value]%
+     - **Touchpoint 3:** [Name] - Deviation Offline: [Value]%
+
+   - **Top Online Touchpoints:**
+     **Consideration**
+     - **Touchpoint 1:** [Name] - Deviation Online: [Value]%
+     - **Touchpoint 2:** [Name] - Deviation Online: [Value]%
+     - **Touchpoint 3:** [Name] - Deviation Online: [Value]%
+     **Selection**
+     - **Touchpoint 1:** [Name] - Deviation Online: [Value]%
+     - **Touchpoint 2:** [Name] - Deviation Online: [Value]%
+     - **Touchpoint 3:** [Name] - Deviation Online: [Value]%
+
+   - **Top Combined Deviation Touchpoints (Digital and Offline):**
+     **Consideration**
+     - **Touchpoint 1:** [Name] - Deviation Offline: [Value]%, Deviation Online: [Value]%, Combined Deviation: [Value]%
+     - **Touchpoint 2:** [Name] - Deviation Offline: [Value]%, Deviation Online: [Value]%, Combined Deviation: [Value]%
+     - **Touchpoint 3:** [Name] - Deviation Offline: [Value]%, Deviation Online: [Value]%, Combined Deviation: [Value]%
+     **Selection**
+     - **Touchpoint 1:** [Name] - Deviation Offline: [Value]%, Deviation Online: [Value]%, Combined Deviation: [Value]%
+     - **Touchpoint 2:** [Name] - Deviation Offline: [Value]%, Deviation Online: [Value]%, Combined Deviation: [Value]%
+     - **Touchpoint 3:** [Name] - Deviation Offline: [Value]%, Deviation Online: [Value]%, Combined Deviation: [Value]%
+
+#### 3. **Media Mix Recommendation**
+
+**Narrative**
+[Provide a detailed explanation of why these touchpoints were selected, what they mean in reality, and their practical implications for planning, design, and measurement. Include insights on consumer behavior and how it relates to the recommended touchpoints.]
+
+- **Offline Channels:**
+  - **Channel 1:** [Recommended Channel] - [Recommended Action]
+  - **Rationale:** [Explanation based on data]
+  - **Practical Implications:** [Explain how to leverage this channel effectively, potential challenges, and measurement strategies]
+  - **Channel 2:** [Recommended Channel] - [Recommended Action]
+  - **Rationale:** [Explanation based on data]
+  - **Practical Implications:** [Explain how to leverage this channel effectively, potential challenges, and measurement strategies]
+  - **Channel 3:** [Recommended Channel] - [Recommended Action]
+  - **Rationale:** [Explanation based on data]
+  - **Practical Implications:** [Explain how to leverage this channel effectively, potential challenges, and measurement strategies]
+
+- **Online Channels:**
+  - **Channel 1:** [Recommended Channel] - [Recommended Action]
+  - **Rationale:** [Explanation based on data]
+  - **Practical Implications:** [Explain how to leverage this channel effectively, potential challenges, and measurement strategies]
+  - **Channel 2:** [Recommended Channel] - [Recommended Action]
+  - **Rationale:** [Explanation based on data]
+  - **Practical Implications:** [Explain how to leverage this channel effectively, potential challenges, and measurement strategies]
+  - **Channel 3:** [Recommended Channel] - [Recommended Action]
+  - **Rationale:** [Explanation based on data]
+  - **Practical Implications:** [Explain how to leverage this channel effectively, potential challenges, and measurement strategies]
+
+- **Cross-Channel Synergies:**
+  [Discuss how offline and online channels can work together to create a more effective overall strategy]
+
+#### 4. **Budget Allocation**
+   - **Total Budget:** [Insert Budget]
+   - **Suggested Allocation:**
+     - **Offline Media:** [Percentage or Amount]
+     - **Online Media:** [Percentage or Amount]
+     - **Combined Media:** [Percentage or Amount]
+   - **Rationale:** [Brief explanation of the allocation based on data]
+   - **Weighted Index Justification:** [Explain how the weighted index influenced the budget allocation]
+
+#### 5. **Campaign Performance Metrics**
+   - **Key Performance Indicators (KPIs):**
+     - **KPI 1:** [Description]
+     - **KPI 2:** [Description]
+   - **Expected Outcomes:** [Brief summary of expected results]
+   - **Measurement Strategy:** [Provide practical advice on how to measure each KPI effectively]
+	
+#### 6. **Strategic Insights and Recommendations**
+   - **Consideration Phase:**
+     - **Insight:** [Key Consideration insight from the data]
+     - **Strategic Recommendation:** [Strategic recommendation based on insight]
+
+   - **Selection Phase:**
+     - **Insight:** [Key Selection insight from the data]
+     - **Strategic Recommendation:** [Strategic recommendation based on insight]
+
+#### 7. **Implementation Timeline**
+   - **Campaign Start Date:** [Insert start date provided by user]
+   - **Key Milestones:**
+     - [List key milestones and dates]
+
+#### 8. **Risk Assessment**
+   - **Potential Risks:**
+     - [List potential risks or challenges]
+   - **Mitigation Strategies:**
+     - [Provide strategies to mitigate each risk]
+
+#### 9. **Next Steps**
+   - **Step 1:** [Description of next step]
+   - **Step 2:** [Description of next step]
+   - **Step 3:** [Description of next step]
+
+[AI-generated content disclaimer]

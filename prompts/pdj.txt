@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Slides>
+    <Slide number="1">
+        <Title>The People Decision Journey - An Introductory Guide</Title>
+        <Details>
+            <Created_by>N. Howell, M. Mastroianni &amp; R. Laksmono</Created_by>
+            <Version>September 2023</Version>
+        </Details>
+    </Slide>
+
+    <Slide number="2">
+        <Title>Contents</Title>
+        <Details>
+            <Items>
+                <Item>WHY we use the People Decision Journey</Item>
+                <Item>WHAT is the People Decision Journey</Item>
+                <Item>HOW do we create and use the People Decision Journey</Item>
+            </Items>
+        </Details>
+    </Slide>
+
+    <Slide number="3">
+        <Title>WHY We Use the People Decision Journey</Title>
+        <Details/>
+    </Slide>
+
+    <Slide number="4">
+        <Title>An Important Insights Tool</Title>
+        <Details>
+            <Main_Content>
+                <ONE_Segmentation>
+                    <SubItem>Designed to help make decisions on where to play, how to win, and what to do.</SubItem>
+                    <SubItem>Focuses on precise targeting of brands and sub-brands to achieve strategic priorities.</SubItem>
+                </ONE_Segmentation>
+                <Purpose_of_People_Decision_Journeys>
+                    <SubItem>Help align efforts towards achieving Bull's Eye and Footprint targets.</SubItem>
+                    <SubItem>Encourage thinking about actionable strategies to win over target audiences.</SubItem>
+                </Purpose_of_People_Decision_Journeys>
+                <Reference>Link to ONE Segmentation on SharePoint.</Reference>
+            </Main_Content>
+        </Details>
+    </Slide>
+
+    <Slide number="5">
+        <Title>Why Map the Journey?</Title>
+        <Details>
+            <Main_Points>
+                <Item>Encourages team to adopt the target's perspective.</Item>
+                <Item>Captures behavior towards the category and brand.</Item>
+                <Item>Provides an omnichannel perspective.</Item>
+                <Item>Identifies drivers to leverage and barriers to overcome.</Item>
+                <Item>Supports cross-functional collaboration.</Item>
+                <Item>Focuses on impactful touchpoints.</Item>
+                <Item>Integrates retailer perspectives.</Item>
+            </Main_Points>
+        </Details>
+    </Slide>
+
+    <Slide number="6">
+        <Title>WHAT is the People Decision Journey</Title>
+        <Details/>
+    </Slide>
+
+    <Slide number="7">
+        <Title/>
+        <Details>
+            <Subheadings_and_Descriptions>
+                <Digital_Users>How people are connected to digital platforms and touchpoints.</Digital_Users>
+                <Consumers>People's attitudes and behaviors when consuming pasta.</Consumers>
+                <Shoppers>How people shop offline and online, and the shopper missions they pursue.</Shoppers>
+                <Media_Audience>How people consume media and relevant touchpoints.</Media_Audience>
+            </Subheadings_and_Descriptions>
+            <Core_Definition_of_PDJ>
+                <Item>Describes steps people take when deciding to buy or not buy categories or brands.</Item>
+                <Item>The term 'People' is used to highlight their constant identity across planning, shopping, and consumption modes.</Item>
+            </Core_Definition_of_PDJ>
+        </Details>
+    </Slide>
+
+    <Slide number="8">
+        <Title/>
+        <Details>
+            <Stages_of_the_Journey>
+                <Awareness>Passive contact with the category or brand.</Awareness>
+                <Consideration>Options (brands/products) are evaluated based on awareness, knowledge, or experience.</Consideration>
+                <Purchase>People are ready to buy (omnichannel), seeking ease in the process.</Purchase>
+                <Experience>Post-purchase, people use the product and connect with the brand.</Experience>
+            </Stages_of_the_Journey>
+            <Visual_Description>A flowchart-like structure visually represents the journey.</Visual_Description>
+        </Details>
+    </Slide>
+
+    <Slide number="9">
+        <Title>HOW to Create and Use the People Decision Journey</Title>
+        <Details/>
+    </Slide>
+
+    <Slide number="10">
+        <Title/>
+        <Details>
+            <Main_Body_Text>
+                <Item>PDJ is a tool for understanding behaviors and aligning actions accordingly.</Item>
+                <Item>Templates provided to ensure consistency and collaboration.</Item>
+            </Main_Body_Text>
+        </Details>
+    </Slide>
+
+    <Slide number="11">
+        <Title/>
+        <Details>
+            <Steps>
+                <Step_1:_Map_Behavior>
+                    <Objective>Understand what is happening at each stage of the decision-making process.</Objective>
+                    <Data_Sources>Integrated People Profile, dedicated PDJ study, and additional information.</Data_Sources>
+                    <Key_Focus_Areas>
+                        <Item>What people do.</Item>
+                        <Item>Why, when, where, and how they do it.</Item>
+                        <Item>Identifying barriers and touchpoints.</Item>
+                    </Key_Focus_Areas>
+                </Step_1:_Map_Behavior>
+                <Step_2:_Define_Implications>
+                    <Objective>Derive actionable steps based on behavior mapping to meet business objectives.</Objective>
+                    <Focus_Areas>
+                        <Item>Create demand for the category/brand.</Item>
+                        <Item>Convert demand to the specific brand.</Item>
+                    </Focus_Areas>
+                    <Outputs>
+                        <Item>Specific activities for targets.</Item>
+                        <Item>Efficient allocation of resources (e.g., budget).</Item>
+                    </Outputs>
+                    <Diagram>
+                        <Item>Box 1: Behavior Mapping (What do people do?)</Item>
+                        <Item>Box 2: Implications (What we need to do?)</Item>
+                    </Diagram>
+                </Step_2:_Define_Implications>
+            </Steps>
+        </Details>
+    </Slide>
+
+    <Slide number="12">
+        <Title>Behavior Mapping</Title>
+        <Details>
+            <Stages>
+                <Awareness>
+                    <SubItem>Passive contact with the category or brand.</SubItem>
+                    <SubItem>How are they living their lives around food?</SubItem>
+                    <SubItem>What are their needs and pain points?</SubItem>
+                </Awareness>
+                <Consideration>
+                    <SubItem>How do they gather information?</SubItem>
+                </Consideration>
+                <Purchase>
+                    <SubItem>Where and how do they purchase?</SubItem>
+                </Purchase>
+                <Experience>
+                    <SubItem>How do they prepare it?</SubItem>
+                </Experience>
+            </Stages>
+            <Visual>Four connected boxes for Awareness, Consideration, Purchase, and Experience.</Visual>
+        </Details>
+    </Slide>
+
+    <Slide number="13">
+        <Title>Implications</Title>
+        <Details>
+            <Create_Demand>
+                <Item>Inspire consideration.</Item>
+                <Item>Address barriers.</Item>
+            </Create_Demand>
+            <Convert_Demand>
+                <Item>Motivate purchase.</Item>
+                <Item>Emphasize actionable touchpoints.</Item>
+            </Convert_Demand>
+        </Details>
+    </Slide>
+
+    <Slide number="14">
+        <Title>Tips for Journey Mapping</Title>
+        <Details>
+            <Points>
+                <Item>Map journeys per target (Bull's Eye and Footprint).</Item>
+                <Item>Use a cross-functional team.</Item>
+                <Item>Proceed step by step.</Item>
+                <Item>Write in first person; avoid business jargon.</Item>
+                <Item>Address knowledge gaps.</Item>
+                <Item>Update the journey over time.</Item>
+            </Points>
+        </Details>
+    </Slide>
+
+    <Slide number="15">
+        <Title>Behavioral Mapping Framework</Title>
+        <Details>
+            <Stages>
+                <Item>Buy</Item>
+                <Item>Aware</Item>
+                <Item>Consider</Item>
+                <Item>Experience</Item>
+            </Stages>
+            <Visual_Description>A simple diagram with four sequential boxes labeled Buy → Aware → Consider → Experience.</Visual_Description>
+        </Details>
+    </Slide>
+
+    <Slide number="16">
+        <Title>Implications Framework</Title>
+        <Details>
+            <Focus_Areas>
+                <Item>Creating and converting demand.</Item>
+                <Item>Emphasizing target-specific actions.</Item>
+            </Focus_Areas>
+        </Details>
+    </Slide>
+
+    <Slide number="17">
+        <Title>Framework for Observations</Title>
+        <Details>
+            <Questions>
+                <Item>What have you observed?</Item>
+                <Item>Why is this happening?</Item>
+                <Item>So What?</Item>
+            </Questions>
+            <Visual>Placeholder sections for brand logo, country, and storytelling headline.</Visual>
+        </Details>
+    </Slide>
+
+    <Slide number="18">
+        <Title>Examples of PDJ Use Cases</Title>
+        <Details>
+            <Items>
+                <Item>Pasta</Item>
+                <Item>WASA</Item>
+                <Item>Pesto</Item>
+                <Item>Red Sauces</Item>
+                <Item>Baiocchi</Item>
+                <Item>Harry's</Item>
+            </Items>
+        </Details>
+    </Slide>
+
+    <Slide number="19">
+        <Title/>
+        <Details/>
+    </Slide>
+</Slides>

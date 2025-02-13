@@ -1,0 +1,617 @@
+[
+    {
+        "stage": "Consideration",
+        "touchpoint": "Brand's website",
+        "desired_outcome_and_role": "Drive conversion through engagement. Acts as the central hub for brand interaction, retargeting, and content personalization, guiding users deeper into the decision journey.",
+        "kpi": ["CTR", "DPVR (Product Detail Page Views)", "Conversion Rate"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "E-mail newsletter",
+        "desired_outcome_and_role": "Increase repeat engagement and loyalty. Personalized communication that nurtures leads, keeping consumers engaged with tailored offers and exclusive content.",
+        "kpi": ["Open Rate", "CTR", "Conversion Rate"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Experts/ influencers",
+        "desired_outcome_and_role": "Boost trust and credibility. Leverages influencers’ established audience trust, creating authentic product endorsements that lead to increased awareness and consideration.",
+        "kpi": ["Engagement Rate (likes, comments, shares)", "DPVR", "Conversion Rate"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Friends/ family",
+        "desired_outcome_and_role": "Amplify word-of-mouth marketing. Trusted personal recommendations drive strong credibility and brand preference, reinforced by digital campaigns for further reach.",
+        "kpi": ["Referral Traffic", "DPVR"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Loyalty card",
+        "desired_outcome_and_role": "Foster repeat purchases and loyalty. Encourages ongoing engagement through rewards and personalized offers, integrating both digital and offline experiences.",
+        "kpi": ["Repeat Purchase Rate", "ROAS (Return on Advertising Spend)"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Magazine",
+        "desired_outcome_and_role": "Create brand familiarity in targeted demographics. Leverages traditional offline media to reinforce brand messaging to specific, engaged reader bases.",
+        "kpi": ["Impressions", "Target Audience Reach", "DPVR"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Nutritional App",
+        "desired_outcome_and_role": "Target health-conscious consumers. Provides product information that aligns with dietary goals, encouraging brand trust and linking to personalized promotions or offers.",
+        "kpi": ["DPVR", "CTR", "Conversion Rate"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Ooh advert",
+        "desired_outcome_and_role": "Build mass awareness and reach. Increases brand visibility through large-scale outdoor campaigns, complementing digital channels for full-funnel engagement.",
+        "kpi": ["Impressions", "Target Audience Reach", "Brand Search Uplift"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Physical Store",
+        "desired_outcome_and_role": "Enhance product trial and decision-making. Offers in-person interaction with the product, fostering an informed decision supported by digital touchpoints.",
+        "kpi": ["Traffic Store Visits", "Product Trial Rate", "Interactions Direct Contacts"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Product display",
+        "desired_outcome_and_role": "Encourage impulse purchases. Prominently positioned in-store displays attract attention and highlight key product benefits, driving quick purchase decisions.",
+        "kpi": ["Interactions Direct Contacts", "Conversion Rate"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Promotions site",
+        "desired_outcome_and_role": "Drive immediate traffic through deals. Highlights time-sensitive promotions that capture interest, often linking to email and social channels to maximize reach.",
+        "kpi": ["CTR", "Sales iROAS", "Conversion Rate"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Retailer circular",
+        "desired_outcome_and_role": "Reach mass audiences with offers. Printed media delivers targeted promotions, connecting offline engagement with in-store loyalty programs for consistent messaging.",
+        "kpi": ["Impressions", "Households Reached", "Sales Uplift"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Retailer promotion online",
+        "desired_outcome_and_role": "Drive consideration through digital offers. Showcases promotions that prompt action, integrating well with online shopping experiences to increase conversion likelihood.",
+        "kpi": ["CTR", "Conversion Rate", "CPC/CPM"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Retailer's advert",
+        "desired_outcome_and_role": "Maximize reach through cross-channel presence. Offers exposure across both offline and online, guiding traffic to promotional platforms like websites or stores.",
+        "kpi": ["Impressions (both online & offline)", "Conversion Rate", "ROAS"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Retailer's App",
+        "desired_outcome_and_role": "Engage users with personalized offers. Offers a convenient mobile platform to engage consumers with relevant promotions, driving conversions and repeat purchases.",
+        "kpi": ["App Engagement (sessions, clicks)", "Conversion Rate", "Add to Basket Rate"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Retailer's Magazine",
+        "desired_outcome_and_role": "Build trust through curated content. Showcases products and brand stories in a trusted format, engaging a targeted readership with in-depth product features.",
+        "kpi": ["Impressions", "DPVR", "CTR"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Retailer's website",
+        "desired_outcome_and_role": "Drive product discovery and conversion. Central point for product research, reviews, and purchasing, making it a key conversion driver for digital shoppers.",
+        "kpi": ["CTR", "Conversion Rate", "Sales iROAS"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Sampling",
+        "desired_outcome_and_role": "Boost product trial and trust. Direct consumer interaction through free samples increases brand exposure and encourages purchase through first-hand experience.",
+        "kpi": ["Product Trial Rate", "Conversion Rate", "Product Feedback Scores"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Search engine",
+        "desired_outcome_and_role": "Increase visibility and discovery. Ensures consumers can easily find the brand through optimized SEO or paid search, driving traffic to product pages or websites.",
+        "kpi": ["Share of Search", "Brand Search Uplift", "CTR"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Shopping List",
+        "desired_outcome_and_role": "Directly influence pre-shopping decisions. Integrates into the consumer’s preparation phase, keeping the brand top-of-mind through list-making apps and digital platforms.",
+        "kpi": ["App Engagement (saves, list additions)", "Conversion Rate"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Social networks",
+        "desired_outcome_and_role": "Boost engagement and awareness. Leverages viral content and social proof to engage with consumers, creating a platform for product discovery and discussion.",
+        "kpi": ["Engagement Rate (likes, comments, shares)", "CTR", "Conversion Rate"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Sustainability App",
+        "desired_outcome_and_role": "Appeal to eco-conscious consumers. Engages users who prioritize sustainability, reinforcing brand values and providing personalized product suggestions based on user needs.",
+        "kpi": ["App Engagement (sessions, clicks)", "DPVR", "Conversion Rate"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Tv advert",
+        "desired_outcome_and_role": "Increase mass brand awareness. Utilizes broad-reach media to deliver brand messages at scale, often complemented by digital channels for cross-platform engagement.",
+        "kpi": ["Impressions", "Target Audience Reach", "Brand Search Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Aisle",
+        "desired_outcome_and_role": "Drive immediate in-store purchases. Directs consumers toward product placement and triggers impulse buying at the point of decision-making.",
+        "kpi": ["Traffic Store Visits", "Conversion Rate", "Product Trial Rate"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Banner advert",
+        "desired_outcome_and_role": "Encourage clicks and conversions. Digital banners create opportunities for consumers to immediately interact with the brand by leading them to product pages or promotions.",
+        "kpi": ["CTR", "Conversion Rate", "CPC/CPM"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Biscuit category page",
+        "desired_outcome_and_role": "Facilitate product comparison and selection. Provides category-wide exposure to brands, helping consumers make informed product choices.",
+        "kpi": ["DPVR (Product Detail Page Views)", "CTR", "Conversion Rate"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Biscuit product page",
+        "desired_outcome_and_role": "Encourage purchase by showcasing product benefits. Offers detailed product information, images, and reviews to support buying decisions.",
+        "kpi": ["DPVR", "Add to Basket Rate", "Conversion Rate"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Branded counter display",
+        "desired_outcome_and_role": "Boost brand visibility in-store. A prominent location at checkout encourages last-minute purchases and reinforces brand presence.",
+        "kpi": ["Conversion Rate", "Sales Uplift", "Impressions"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Check-out page",
+        "desired_outcome_and_role": "Drive final conversion online. Reinforces the purchase decision by minimizing distractions and offering a seamless checkout process.",
+        "kpi": ["Conversion Rate", "Abandonment Rate", "Add to Basket Rate"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Complementary goods",
+        "desired_outcome_and_role": "Increase basket size with cross-sells. Displays complementary products alongside the primary selection to encourage additional purchases.",
+        "kpi": ["Add to Basket Rate", "Conversion Rate", "ROAS"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Complementary goods page",
+        "desired_outcome_and_role": "Guide consumers to related products. Online product suggestions designed to increase the cart value by promoting complementary items.",
+        "kpi": ["CTR", "Add to Basket Rate", "Conversion Rate"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Delivery slot page",
+        "desired_outcome_and_role": "Ensure timely fulfillment. Helps consumers plan their purchases around available delivery slots, enhancing convenience and reducing friction.",
+        "kpi": ["Conversion Rate", "CTR", "Sales iROAS"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Digital coupon",
+        "desired_outcome_and_role": "Drive action through discounts. Immediate offers incentivize consumers to make a purchase, leading to quick conversions both in-store and online.",
+        "kpi": ["Redemption Rate", "Conversion Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Favourites page",
+        "desired_outcome_and_role": "Encourage repeat purchases. Allows users to quickly reorder products they have previously selected, streamlining the shopping experience.",
+        "kpi": ["Repeat Purchase Rate", "Conversion Rate"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Friends/ family",
+        "desired_outcome_and_role": "Capitalize on word-of-mouth recommendations. Encourages social proof, driving purchase decisions through trusted personal endorsements.",
+        "kpi": ["Referral Traffic", "Conversion Rate"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Gondola end",
+        "desired_outcome_and_role": "Increase visibility for quick purchasing. Located in high-traffic areas of stores, gondola ends boost product prominence and drive impulse buys.",
+        "kpi": ["Conversion Rate", "Sales Uplift", "Product Trial Rate"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "In app advert",
+        "desired_outcome_and_role": "Drive in-app purchases. Promotes products within retailer or brand apps, encouraging immediate purchase decisions through targeted offers.",
+        "kpi": ["CTR", "Conversion Rate", "App Engagement"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "In-store screen",
+        "desired_outcome_and_role": "Engage customers at the point of sale. Interactive or static screens in-store provide product information or offers, guiding purchase decisions.",
+        "kpi": ["Impressions", "Engagement Rate", "Conversion Rate"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Loyalty card",
+        "desired_outcome_and_role": "Encourage repeat purchases. Consumers are more likely to choose products aligned with their loyalty programs due to the potential for rewards or discounts.",
+        "kpi": ["Repeat Purchase Rate", "Sales Uplift", "ROAS"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "On pack promotion",
+        "desired_outcome_and_role": "Encourage immediate purchase with on-pack offers. Promotes discounts or incentives right on the product packaging to drive instant conversions.",
+        "kpi": ["Redemption Rate", "Conversion Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Online promotions page",
+        "desired_outcome_and_role": "Drive conversion with promotional offers. Highlights time-limited deals that encourage users to make quick purchase decisions.",
+        "kpi": ["CTR", "Conversion Rate", "Sales iROAS"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Packaging",
+        "desired_outcome_and_role": "Enhance shelf appeal to drive sales. Attractive, informative packaging grabs attention and encourages consumers to pick up the product for further consideration.",
+        "kpi": ["Conversion Rate", "Product Trial Rate"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Physical Store",
+        "desired_outcome_and_role": "Facilitate product experience. Being in-store allows consumers to physically interact with the product, which can significantly increase conversion likelihood.",
+        "kpi": ["Traffic Store Visits", "Conversion Rate", "Product Trial Rate"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Product display",
+        "desired_outcome_and_role": "Boost product visibility and encourage selection. Strategic placement in-store to maximize exposure and trigger purchasing decisions.",
+        "kpi": ["Conversion Rate", "Sales Uplift", "Interactions Direct Contacts"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Product suggestion",
+        "desired_outcome_and_role": "Increase basket size with personalized recommendations. Online suggestions for related products prompt consumers to add more items to their carts.",
+        "kpi": ["CTR", "Add to Basket Rate", "Conversion Rate"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Promo stand",
+        "desired_outcome_and_role": "Capture consumer attention with promotional offers. Stand-alone displays in-store highlight deals or discounts, driving impulse buys.",
+        "kpi": ["Conversion Rate", "Sales Uplift", "Product Trial Rate"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Promotions Aisle",
+        "desired_outcome_and_role": "Highlight deals and promotions to drive sales. Dedicated aisle space for promotional products encourages consumers to purchase discounted or featured items.",
+        "kpi": ["Conversion Rate", "Sales Uplift", "Product Trial Rate"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Retailer circular",
+        "desired_outcome_and_role": "Promote offers and drive store traffic. Printed media that targets households with time-sensitive promotions to encourage store visits and purchases.",
+        "kpi": ["Impressions", "Households Reached", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Retailer promotion online",
+        "desired_outcome_and_role": "Drive online purchases with promotional offers. Integrates promotions directly into the consumer's digital shopping experience, increasing conversion rates.",
+        "kpi": ["CTR", "Conversion Rate", "Sales iROAS"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Sampling",
+        "desired_outcome_and_role": "Encourage trial and purchase. Free samples, either in-store or sent directly to consumers, drive trial and increase conversion likelihood.",
+        "kpi": ["Product Trial Rate", "Conversion Rate"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Search Box",
+        "desired_outcome_and_role": "Enable quick discovery of specific products. Online search functionality allows consumers to locate products easily and proceed with purchasing.",
+        "kpi": ["Search Click-through Rate", "Conversion Rate", "Add to Basket Rate"]
+    },
+{
+        "stage": "Selection",
+        "touchpoint": "Search engine",
+        "desired_outcome_and_role": "Drive traffic to product pages. Optimized search ads increase visibility, helping consumers quickly find and select the product online.",
+        "kpi": ["CTR", "Conversion Rate", "Share of Search"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Shelf",
+        "desired_outcome_and_role": "Encourage product selection in-store. Well-organized and prominent shelf placement can significantly increase the likelihood of product discovery and purchase.",
+        "kpi": ["Conversion Rate", "Product Trial Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Shelf communication",
+        "desired_outcome_and_role": "Guide decision-making at the shelf. On-shelf messaging helps consumers navigate product features, prices, and promotions, influencing their purchase decisions.",
+        "kpi": ["Engagement Rate", "Conversion Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Traditional coupon",
+        "desired_outcome_and_role": "Incentivize purchase through savings. Physical coupons encourage consumers to redeem them for discounts, boosting conversion rates.",
+        "kpi": ["Redemption Rate", "Conversion Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Window poster",
+        "desired_outcome_and_role": "Increase foot traffic and product awareness. Prominent posters on store windows attract attention, informing consumers of promotions and encouraging them to visit the store.",
+        "kpi": ["Impressions", "Foot Traffic", "Conversion Rate"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Family",
+        "desired_outcome_and_role": "Increase sales through trusted family recommendations. Family endorsements reduce hesitation, driving higher intent to purchase.",
+            "kpi": ["Referral Traffic", "Sales Uplift"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Friends",
+        "desired_outcome_and_role": "Increase product trial through peer recommendations. Positive feedback from friends drives higher likelihood of purchase.",
+        "kpi": ["Referral Traffic", "Conversion Rate"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "e-Commerce Platform",
+        "desired_outcome_and_role": "Maximize product visibility and conversions by ensuring easy access to product details and purchase options.",
+        "kpi": ["CTR", "Conversion Rate", "Sales iROAS"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Event",
+        "desired_outcome_and_role": "Drive immediate purchase consideration through direct interaction with products at events.",
+        "kpi": ["Engagement Rate", "Footfall", "Conversion Rate"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Food Blog",
+        "desired_outcome_and_role": "Boost product sales by securing credible, third-party endorsements that influence purchasing decisions.",
+        "kpi": ["Referral Traffic", "Sales Uplift", "CTR"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Check-out Counter",
+        "desired_outcome_and_role": "Increase last-minute sales by positioning products for impulse buying at checkout.",
+        "kpi": ["Conversion Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "In-store Poster",
+        "desired_outcome_and_role": "Drive purchase decisions by communicating product features and promotional offers in-store.",
+        "kpi": ["Impressions", "Conversion Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Pop-up message",
+        "desired_outcome_and_role": "Increase conversions by offering limited-time promotions to encourage immediate purchase online.",
+        "kpi": ["CTR", "Conversion Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Online store",
+        "desired_outcome_and_role": "Maximize product purchase by streamlining the online shopping experience with easy access to product details and checkout.",
+        "kpi": ["Conversion Rate", "AddToBasketVsBasketAbandonment"]
+    },
+    {
+    "stage": "Consideration",
+    "touchpoint": "Recipes Website",
+    "desired_outcome_and_role": "Increase product sales by driving consumers to add items to their carts via recipe-driven product placements.",
+    "kpi": ["Conversion Rate", "Sales Uplift", "Add to Basket Rate"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "House Organ",
+        "desired_outcome_and_role": "Drive incremental sales from existing customers by offering exclusive content that encourages repeat purchases.",
+        "kpi": ["Repeat Purchase Rate", "Customer Retention", "Sales Uplift"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Promo aggregator",
+        "desired_outcome_and_role": "Generate immediate sales by driving traffic to time-sensitive promotions, pushing customers to purchase.",
+        "kpi": ["CTR", "Conversion Rate", "Sales iROAS"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Shopping centre billboards",
+        "desired_outcome_and_role": "Increase foot traffic and sales in-store by attracting nearby shoppers with promotional ads.",
+        "kpi": ["Foot Traffic", "Store Visit Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Car park banner",
+        "desired_outcome_and_role": "Drive immediate foot traffic into the store from parking areas, resulting in sales uplift.",
+        "kpi": ["Impressions", "Foot Traffic", "Sales Uplift"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Newspaper/ magazine article",
+        "desired_outcome_and_role": "Increase product awareness and credibility through editorial content that encourages product consideration.",
+        "kpi": ["Impressions", "Sales Uplift", "Target Audience Reach"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Food Website/ Blog",
+        "desired_outcome_and_role": "Boost product sales by securing credible, third-party endorsements that influence purchasing decisions.",
+        "kpi": ["Referral Traffic", "Sales Uplift", "CTR"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Store staff",
+        "desired_outcome_and_role": "Drive conversion at the point of sale through staff recommendations and product knowledge.",
+        "kpi": ["Conversion Rate", "Product Trial Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Specialised press",
+        "desired_outcome_and_role": "Target niche audiences to drive sales of specialized or premium products through targeted publications.",
+        "kpi": ["Impressions", "Conversion Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Video sharing platform",
+        "desired_outcome_and_role": "Increase product discovery and drive traffic to brand-owned channels by leveraging video content.",
+        "kpi": ["Video Completion Rate", "CTR", "Conversion Rate"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Push notification",
+        "desired_outcome_and_role": "Drive immediate online purchases through time-sensitive push notifications promoting deals or discounts.",
+        "kpi": ["CTR", "Conversion Rate", "Sales iROAS"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Retailer's SMS",
+        "desired_outcome_and_role": "Encourage repeat purchases through personalized SMS offers that drive customers back to the store or online platform.",
+        "kpi": ["CTR", "Repeat Purchase Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Retailer's email/ newsletter",
+        "desired_outcome_and_role": "Drive traffic to the retailer’s site and increase conversions through personalized email campaigns.",
+        "kpi": ["Open Rate", "CTR", "Conversion Rate"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "In-store radio",
+        "desired_outcome_and_role": "Increase in-store sales by promoting products and offers during peak shopping hours via in-store radio.",
+        "kpi": ["Impressions", "Conversion Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Shelf Communication material",
+        "desired_outcome_and_role": "Boost sales by guiding customers to make informed decisions at the shelf through promotional signage.",
+        "kpi": ["Engagement Rate", "Conversion Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Shelf strip",
+        "desired_outcome_and_role": "Increase product visibility and drive immediate purchase decisions at the shelf level.",
+        "kpi": ["Conversion Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Crowner",
+        "desired_outcome_and_role": "Increase sales by driving impulse purchases through high-visibility promotional signage.",
+        "kpi": ["Impressions", "Product Trial Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "FSDU/ Expo",
+        "desired_outcome_and_role": "Increase sales through direct consumer engagement and sampling, which leads to purchase.",
+        "kpi": ["Product Trial Rate", "Conversion Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Trolley panel",
+        "desired_outcome_and_role": "Increase in-store sales by keeping promotional offers in front of consumers throughout their shopping journey.",
+        "kpi": ["Impressions", "Sales Uplift", "Conversion Rate"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Recipe Leaflet/ Display",
+        "desired_outcome_and_role": "Drive product sales by inspiring shoppers to add ingredients to their baskets through recipe suggestions.",
+        "kpi": ["Add to Basket Rate", "Conversion Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Security shrouds",
+        "desired_outcome_and_role": "Increase overall sales by minimizing product theft while ensuring availability for purchase.",
+        "kpi": ["Shrinkage Reduction", "Conversion Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Floor graphics",
+        "desired_outcome_and_role": "Drive in-store sales by directing consumers to promotions or featured products.",
+        "kpi": ["Engagement Rate", "Conversion Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Comparison engine",
+        "desired_outcome_and_role": "Increase conversions by guiding consumers to purchase the best product for their needs.",
+        "kpi": ["Conversion Rate", "CTR", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Promo page",
+        "desired_outcome_and_role": "Increase online conversions by showcasing time-sensitive promotions and deals.",
+        "kpi": ["CTR", "Conversion Rate", "Sales iROAS"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Check-out and delivery page",
+        "desired_outcome_and_role": "Boost online sales by optimizing the checkout process to minimize abandonment.",
+        "kpi": ["Conversion Rate", "Abandonment Rate", "Add to Basket Rate"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Purchase history/ saved list",
+        "desired_outcome_and_role": "Increase repeat purchases by encouraging consumers to repurchase previously selected items.",
+        "kpi": ["Repeat Purchase Rate", "Conversion Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Brand store",
+        "desired_outcome_and_role": "Increase brand sales by facilitating product discovery and providing a streamlined purchase path on digital platforms.",
+        "kpi": ["CTR", "Conversion Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Click-to-buy button",
+        "desired_outcome_and_role": "Boost sales by allowing immediate product purchase with a one-click option on digital platforms.",
+        "kpi": ["Add to Basket Rate", "Conversion Rate", "CTR"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Online store banner",
+        "desired_outcome_and_role": "Increase sales by directing customers to promotional offers or featured products.",
+        "kpi": ["CTR", "Conversion Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Consumers' ratings and reviews",
+        "desired_outcome_and_role": "Boost conversions by providing social proof that reassures potential buyers.",
+        "kpi": ["Engagement Rate", "Conversion Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Pasta Category Banner",
+        "desired_outcome_and_role": "Drive sales within the pasta category by promoting featured products",
+        "kpi": ["CTR", "Conversion Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Product Page retailer website",
+        "desired_outcome_and_role": "Increase online sales by providing detailed product information and facilitating easy checkout.",
+        "kpi": ["DPVR (Product Detail Page Views)", "Add to Basket Rate", "Conversion Rate"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Aisle fin",
+        "desired_outcome_and_role": "Boost in-store sales by increasing product visibility and encouraging impulse purchases.",
+        "kpi": ["Conversion Rate", "Product Trial Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Header board",
+        "desired_outcome_and_role": "Increase sales by promoting key products or offers through high-visibility signage at the shelf.",
+        "kpi": ["Impressions", "Conversion Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Free standing display unit",
+        "desired_outcome_and_role": "Boost product visibility and encourage impulse buying through prominent in-store displays.",
+        "kpi": ["Impressions", "Conversion Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Selection",
+        "touchpoint": "Shelf barker",
+        "desired_outcome_and_role": "Drive in-store conversions by drawing attention to specific products or promotions at the shelf level.",
+        "kpi": ["Engagement Rate", "Conversion Rate", "Sales Uplift"]
+    },
+    {
+        "stage": "Consideration",
+        "touchpoint": "Food App",
+        "desired_outcome_and_role": "Increase sales by integrating brand products into recipe discovery, meal planning, or food delivery apps, leading to product purchases through in-app promotions or links to retailer platforms.",
+        "kpi": ["App Engagement Rate", "Conversion Rate", "Sales Uplift"]
+    }
+]
+
+
+

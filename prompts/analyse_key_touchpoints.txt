@@ -1,0 +1,147 @@
+import pandas as pd
+import json
+
+# Load the dataset from structured_data.txt
+file_path = '/mnt/data/structured_data.txt'
+category = 'Biscuits'
+
+def load_and_verify_data(file_path, category):
+    try:
+        with open(file_path, 'r') as file:
+            data = json.load(file)
+
+        # Flatten the data into a DataFrame
+        records = []
+        for country, phases in data.items():
+            for phase, touchpoints in phases.items():
+                for touchpoint, metrics in touchpoints.items():
+                    records.append({
+                        'Country': country,
+                        'Phase': phase,
+                        'Touchpoint': touchpoint,
+                        'Channel': metrics['Channel'],
+                        'Combined Index Offline': metrics['max_norm_resp%'] if metrics['Channel'] == 'O' else 0,
+                        'Combined Index Online': metrics['max_norm_resp%'] if metrics['Channel'] == 'D' else 0,
+                        'Weighted Aggregated Combined Index': metrics['max_nor_imp_avg']
+                    })
+
+        df = pd.DataFrame(records)
+
+        if category not in df['Touchpoint'].unique():
+            raise ValueError(f"Category '{category}' not found in the data")
+        
+        return df
+    except Exception as e:
+        raise ValueError(f"Error loading data: {e}")
+
+# Load and verify the data
+data = load_and_verify_data(file_path, category)
+
+def calculate_weighted_index(offline_index, online_index, offline_weight=0.7, online_weight=0.3):
+    return (offline_index * offline_weight) + (online_index * online_weight)
+
+def analyze_touchpoints(data, category):
+    # Filter dataset for the stated category
+    category_data = data[data['Touchpoint'] == category].copy()
+
+    if category_data.empty:
+        raise ValueError(f"No data found for the specified category '{category}'")
+
+    # Calculate Mean Indices
+    mean_offline = category_data['Combined Index Offline'].mean()
+    mean_online = category_data['Combined Index Online'].mean()
+    mean_combined = category_data['Weighted Aggregated Combined Index'].mean()
+
+    # Calculate Overall Mean Indices for All Categories
+    overall_mean_offline = data['Combined Index Offline'].mean()
+    overall_mean_online = data['Combined Index Online'].mean()
+    overall_mean_combined = data['Weighted Aggregated Combined Index'].mean()
+
+    # Calculate Deviation from Mean as Percentages
+    category_data['Deviation Offline %'] = ((category_data['Combined Index Offline'] - mean_offline) / mean_offline) * 100
+    category_data['Deviation Online %'] = ((category_data['Combined Index Online'] - mean_online) / mean_online) * 100
+    category_data['Deviation Combined %'] = ((category_data['Weighted Aggregated Combined Index'] - mean_combined) / mean_combined) * 100
+
+    # Calculate Weighted Index
+    category_data['Weighted Index'] = calculate_weighted_index(
+        category_data['Combined Index Offline'],
+        category_data['Combined Index Online']
+    )
+
+    # Identify Top Touchpoints
+    ## Exclusively Offline Touchpoints
+    offline_consideration = category_data[
+        (category_data['Phase'] == 'Consideration') & 
+        (category_data['Channel'] == 'O') & 
+        (category_data['Deviation Offline %'] > 0)
+    ].sort_values(by='Deviation Offline %', ascending=False).head(3)
+
+    offline_selection = category_data[
+        (category_data['Phase'] == 'Selection') & 
+        (category_data['Channel'] == 'O') & 
+        (category_data['Deviation Offline %'] > 0)
+    ].sort_values(by='Deviation Offline %', ascending=False).head(3)
+
+    ## Exclusively Online Touchpoints
+    online_consideration = category_data[
+        (category_data['Phase'] == 'Consideration') & 
+        (category_data['Channel'] == 'D') & 
+        (category_data['Deviation Online %'] > 0)
+    ].sort_values(by='Deviation Online %', ascending=False).head(3)
+
+    online_selection = category_data[
+        (category_data['Phase'] == 'Selection') & 
+        (category_data['Channel'] == 'D') & 
+        (category_data['Deviation Online %'] > 0)
+    ].sort_values(by='Deviation Online %', ascending=False).head(3)
+
+    ## Combined Touchpoints (both Digital and Offline)
+    combined_consideration = category_data[
+        (category_data['Phase'] == 'Consideration') & 
+        (category_data['Channel'] == 'OD') & 
+        (category_data['Deviation Combined %'] > 0)
+    ].sort_values(by='Deviation Combined %', ascending=False).head(3)
+
+    combined_selection = category_data[
+        (category_data['Phase'] == 'Selection') & 
+        (category_data['Channel'] == 'OD') & 
+        (category_data['Deviation Combined %'] > 0)
+    ].sort_values(by='Deviation Combined %', ascending=False).head(3)
+
+    # Generate Output Tables
+    offline_table_consideration = offline_consideration[['Touchpoint', 'Phase', 'Deviation Offline %']]
+    offline_table_selection = offline_selection[['Touchpoint', 'Phase', 'Deviation Offline %']]
+    online_table_consideration = online_consideration[['Touchpoint', 'Phase', 'Deviation Online %']]
+    online_table_selection = online_selection[['Touchpoint', 'Phase', 'Deviation Online %']]
+    combined_table_consideration = combined_consideration[['Touchpoint', 'Phase', 'Deviation Combined %']]
+    combined_table_selection = combined_selection[['Touchpoint', 'Phase', 'Deviation Combined %']]
+
+    # Provide Strategic Insights
+    insights = {
+        "Category": category,
+        "Combined Index Offline for Category": mean_offline,
+        "Combined Index Offline for All Categories": overall_mean_offline,
+        "Combined Index Online for Category": mean_online,
+        "Combined Index Online for All Categories": overall_mean_online,
+        "Combined Index for Both Offline and Online for Category": mean_combined,
+        "Combined Index for Both Offline and Online for All Categories": overall_mean_combined,
+        "Weighted Index for Category": category_data['Weighted Index'].mean(),
+        "Insights": f"The '{category}' category performs {mean_offline:.2f} compared to the overall mean of {overall_mean_offline:.2f} in offline touchpoints, {mean_online:.2f} compared to the overall mean of {overall_mean_online:.2f} in online touchpoints, and {mean_combined:.2f} compared to the overall mean of {overall_mean_combined:.2f} in combined touchpoints. The weighted index for the category is {category_data['Weighted Index'].mean():.2f}. Focused efforts on enhancing these touchpoints can help improve overall campaign effectiveness."
+    }
+
+    return (offline_table_consideration, offline_table_selection, 
+            online_table_consideration, online_table_selection, 
+            combined_table_consideration, combined_table_selection, insights)
+
+# Analyze key touchpoints
+offline_consideration, offline_selection, online_consideration, online_selection, combined_consideration, combined_selection, insights = analyze_touchpoints(data, category)
+
+import ace_tools as tools
+tools.display_dataframe_to_user(name="Top Offline Consideration Touchpoints", dataframe=offline_consideration)
+tools.display_dataframe_to_user(name="Top Offline Selection Touchpoints", dataframe=offline_selection)
+tools.display_dataframe_to_user(name="Top Online Consideration Touchpoints", dataframe=online_consideration)
+tools.display_dataframe_to_user(name="Top Online Selection Touchpoints", dataframe=online_selection)
+tools.display_dataframe_to_user(name="Top Combined Consideration Touchpoints", dataframe=combined_consideration)
+tools.display_dataframe_to_user(name="Top Combined Selection Touchpoints", dataframe=combined_selection)
+
+insights

@@ -1,0 +1,56 @@
+Italy:
+  Consideration:
+    Physical Store: {'Channel': 'O', 'index': '0.963', 'dfm_by_chnl': '0.416', 'all_avge_index': '0.963'}
+    Family: {'Channel': 'OD', 'index': '0.943', 'dfm_by_chnl': '0.407', 'all_avge_index': '0.943'}
+    Shopping List: {'Channel': 'D', 'index': '0.765', 'dfm_by_chnl': '0.257', 'all_avge_index': '0.765'}
+    Retailer circular: {'Channel': 'O', 'index': '0.752', 'dfm_by_chnl': '0.204', 'all_avge_index': '0.752'}
+    Sampling: {'Channel': 'O', 'index': '0.638', 'dfm_by_chnl': '0.09', 'all_avge_index': '0.638'}
+    Tv advert: {'Channel': 'O', 'index': '0.58', 'dfm_by_chnl': '0.032', 'all_avge_index': '0.58'}
+    Retailer's website: {'Channel': 'D', 'index': '0.599', 'dfm_by_chnl': '0.09', 'all_avge_index': '0.599'}
+    Loyalty card: {'Channel': 'OD', 'index': '0.598', 'dfm_by_chnl': '0.062', 'all_avge_index': '0.598'}
+    Retailer's advert: {'Channel': 'D', 'index': '0.525', 'dfm_by_chnl': '0.016', 'all_avge_index': '0.525'}
+    Friends: {'Channel': 'OD', 'index': '0.519', 'dfm_by_chnl': '-0.017', 'all_avge_index': '0.519'}
+    Social networks: {'Channel': 'D', 'index': '0.484', 'dfm_by_chnl': '-0.025', 'all_avge_index': '0.484'}
+    Ooh advert: {'Channel': 'O', 'index': '0.483', 'dfm_by_chnl': '-0.065', 'all_avge_index': '0.483'}
+    Magazine: {'Channel': 'O', 'index': '0.459', 'dfm_by_chnl': '-0.089', 'all_avge_index': '0.459'}
+    Promotions site: {'Channel': 'D', 'index': '0.495', 'dfm_by_chnl': '-0.014', 'all_avge_index': '0.495'}
+    Search engine: {'Channel': 'D', 'index': '0.495', 'dfm_by_chnl': '-0.014', 'all_avge_index': '0.495'}
+    Brand's website: {'Channel': 'D', 'index': '0.491', 'dfm_by_chnl': '-0.018', 'all_avge_index': '0.491'}
+    e-Commerce Platform: {'Channel': 'D', 'index': '0.509', 'dfm_by_chnl': '0.0', 'all_avge_index': '0.509'}
+    Event: {'Channel': 'O', 'index': '0.447', 'dfm_by_chnl': '-0.101', 'all_avge_index': '0.447'}
+    Food Blog: {'Channel': 'D', 'index': '0.439', 'dfm_by_chnl': '-0.07', 'all_avge_index': '0.439'}
+    E-mail newsletter: {'Channel': 'D', 'index': '0.47', 'dfm_by_chnl': '-0.039', 'all_avge_index': '0.47'}
+  Selection:
+    Aisle: {'Channel': 'O', 'index': '0.964', 'dfm_by_chnl': '0.416', 'all_avge_index': '0.964'}
+    Packaging: {'Channel': 'O', 'index': '0.893', 'dfm_by_chnl': '0.345', 'all_avge_index': '0.893'}
+    Shelf: {'Channel': 'O', 'index': '0.765', 'dfm_by_chnl': '0.217', 'all_avge_index': '0.765'}
+    Retailer circular: {'Channel': 'O', 'index': '0.616', 'dfm_by_chnl': '0.068', 'all_avge_index': '0.616'}
+    Promotions Aisle: {'Channel': 'O', 'index': '0.573', 'dfm_by_chnl': '0.025', 'all_avge_index': '0.573'}
+    Loyalty card: {'Channel': 'OD', 'index': '0.593', 'dfm_by_chnl': '0.057', 'all_avge_index': '0.593'}
+    On pack promotion: {'Channel': 'O', 'index': '0.579', 'dfm_by_chnl': '0.031', 'all_avge_index': '0.579'}
+    Product display: {'Channel': 'O', 'index': '0.522', 'dfm_by_chnl': '-0.026', 'all_avge_index': '0.522'}
+    Check-out Counter: {'Channel': 'O', 'index': '0.534', 'dfm_by_chnl': '-0.014', 'all_avge_index': '0.534'}
+    Promo stand: {'Channel': 'O', 'index': '0.545', 'dfm_by_chnl': '-0.003', 'all_avge_index': '0.545'}
+    Complementary goods: {'Channel': 'O', 'index': '0.494', 'dfm_by_chnl': '-0.054', 'all_avge_index': '0.494'}
+    Digital coupon: {'Channel': 'D', 'index': '0.563', 'dfm_by_chnl': '0.054', 'all_avge_index': '0.563'}
+    Gondola end: {'Channel': 'O', 'index': '0.487', 'dfm_by_chnl': '-0.061', 'all_avge_index': '0.487'}
+    Friends/ family: {'Channel': 'OD', 'index': '0.492', 'dfm_by_chnl': '-0.044', 'all_avge_index': '0.492'}
+    Shelf communication: {'Channel': 'O', 'index': '0.461', 'dfm_by_chnl': '-0.086', 'all_avge_index': '0.461'}
+    In-store Poster: {'Channel': 'O', 'index': '0.404', 'dfm_by_chnl': '-0.144', 'all_avge_index': '0.404'}
+    Sampling: {'Channel': 'O', 'index': '0.484', 'dfm_by_chnl': '-0.064', 'all_avge_index': '0.484'}
+    In-store screen: {'Channel': 'O', 'index': '0.421', 'dfm_by_chnl': '-0.127', 'all_avge_index': '0.421'}
+    Biscuit category page: {'Channel': 'D', 'index': '0.479', 'dfm_by_chnl': '-0.03', 'all_avge_index': '0.479'}
+    Nutritional App: {'Channel': 'D', 'index': '0.455', 'dfm_by_chnl': '-0.054', 'all_avge_index': '0.455'}
+    Favourites page: {'Channel': 'D', 'index': '0.466', 'dfm_by_chnl': '-0.043', 'all_avge_index': '0.466'}
+    Biscuit product page: {'Channel': 'D', 'index': '0.475', 'dfm_by_chnl': '-0.034', 'all_avge_index': '0.475'}
+    Online promotions page: {'Channel': 'D', 'index': '0.497', 'dfm_by_chnl': '-0.012', 'all_avge_index': '0.497'}
+    e-Commerce Platform: {'Channel': 'D', 'index': '0.45', 'dfm_by_chnl': '-0.059', 'all_avge_index': '0.45'}
+    Search Box: {'Channel': 'D', 'index': '0.461', 'dfm_by_chnl': '-0.048', 'all_avge_index': '0.461'}
+    Delivery slot page: {'Channel': 'D', 'index': '0.448', 'dfm_by_chnl': '-0.061', 'all_avge_index': '0.448'}
+    Online store: {'Channel': 'D', 'index': '0.434', 'dfm_by_chnl': '-0.075', 'all_avge_index': '0.434'}
+    Search engine: {'Channel': 'D', 'index': '0.458', 'dfm_by_chnl': '-0.051', 'all_avge_index': '0.458'}
+    In app advert: {'Channel': 'D', 'index': '0.444', 'dfm_by_chnl': '-0.065', 'all_avge_index': '0.444'}
+    Pop-up message: {'Channel': 'D', 'index': '0.432', 'dfm_by_chnl': '-0.077', 'all_avge_index': '0.432'}
+    Banner advert: {'Channel': 'D', 'index': '0.384', 'dfm_by_chnl': '-0.125', 'all_avge_index': '0.384'}
+    Check-out page: {'Channel': 'D', 'index': '0.419', 'dfm_by_chnl': '-0.09', 'all_avge_index': '0.419'}
+

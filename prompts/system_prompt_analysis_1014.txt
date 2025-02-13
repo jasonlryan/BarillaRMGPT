@@ -1,0 +1,70 @@
+Here’s a systematic step-by-step breakdown of how the prompt should theoretically handle a query:
+
+Step 1: Query Parsing and Initial Analysis
+Expected Function: The AI’s first task is to break down the query to identify essential elements like product category, country, and any specific data types (e.g., triggers, occasions, touchpoints).
+
+Internal Process:
+
+Extract keywords or terms related to the data source (e.g., "biscuits" or "purchase triggers").
+Check for category-country pairs, along with specific data requests.
+Debug Log: "DEBUG: Parsed Category: [Category], Parsed Country: [Country], Parsed Data Type: [Data Type]"
+Common Pitfall: If the assistant misidentifies the data type or fails to locate all necessary components in the query, it may route to an incorrect data source. This is an early checkpoint to flag incomplete or ambiguous parsing.
+
+Step 2: Data Source Identification
+Expected Function: Based on parsed information, the AI should select the correct data file(s) from which to pull information (e.g., touchpoints from pasta_data.json or triggers from biscuits_trigger_occasion.json).
+
+Internal Process:
+
+Match the identified category and data type with available files.
+Prioritize specific files over general files (e.g., choosing biscuits_trigger_occasion.json over biscuits_data.json if triggers or occasions are requested).
+Debug Log: "DEBUG: Identified Data Source(s) for Category: [Category] and Data Type: [Data Type]"
+Common Pitfall: If the query includes multiple elements (e.g., touchpoints and occasions) or lacks specificity, the assistant might select data files inaccurately or inconsistently. Clarifying priority and hierarchy in data sources can mitigate this issue.
+
+Step 3: Data Availability Verification
+Expected Function: Confirm that data exists for the parsed category-country pair within the identified data source.
+
+Internal Process:
+
+Run a check to ensure the category-country combination is present in the data file.
+If absent, trigger fallback options (e.g., offer average values across countries or alternative categories).
+Debug Log: "DEBUG: Data available for Category: [Category] in Country: [Country]: [Yes/No]"
+Common Pitfall: Without a thorough verification mechanism, the assistant might proceed with partial or inaccurate data. Adding a layer that validates specific fields within the data source could enhance accuracy.
+
+Step 4: Data Retrieval
+Expected Function: Pull precise data points from the selected data file(s) and confirm the data format (e.g., percentages in biscuits_trigger_occasion.json).
+
+Internal Process:
+
+Execute a lookup for the specific fields in the file based on the query’s focus (e.g., retrieve net relative percentages for purchase triggers in biscuits_trigger_occasion.json).
+Apply any formatting transformations as required by the prompt (e.g., multiplying net relative values by 100 to present as percentages).
+Debug Log: "DEBUG: Retrieved Data for [Category] in [Country] with Data Type: [Data Type]"
+Common Pitfall: Inaccuracies can arise if the assistant fails to apply the appropriate transformation or overlook data context (e.g., presenting values without converting them to percentages). Ensuring specific instructions for each data type helps prevent these issues.
+
+Step 5: Fallback Handling (If Necessary)
+Expected Function: If data is unavailable for the requested category-country pair, provide alternative options or communicate the lack of data.
+
+Internal Process:
+
+Evaluate fallback actions, such as calculating averages across available countries for the category or suggesting alternative categories/countries.
+Debug Log: "DEBUG: No data available. Offering fallback options: Available Countries: [Countries], Available Categories: [Categories]"
+Common Pitfall: If the fallback mechanism is not comprehensive, the assistant may return generic data that doesn’t fully address the query’s intent. A robust set of alternative data retrieval methods helps avoid this.
+
+Step 6: Response Preparation
+Expected Function: Format the response accurately according to the type of data (e.g., percentages, markdown tables) and ensure it is consistent with Barilla’s standards.
+
+Internal Process:
+
+Organize the retrieved data into the appropriate format.
+Ensure percentages and other values are labeled and calculated correctly.
+Debug Log: "DEBUG: Response construction successful."
+Common Pitfall: If any earlier step provided incorrect data, this final stage will reflect those inaccuracies. Implementing thorough data validation before response formatting can enhance final accuracy.
+
+Step 7: Final Verification and Output
+Expected Function: Perform a final check to confirm data accuracy and formatting consistency before presenting the response.
+
+Internal Process:
+
+Re-run checks for correct data values, source integrity, and calculation formats.
+Ensure percentage calculations, deviations, and channel categories match prompt requirements.
+Debug Log: "DEBUG: Final Verification Complete."
+Common Pitfall: The assistant may omit critical data elements or misrepresent formats if the verification process is not exhaustive. A final comparison against the prompt’s instructions (e.g., percent format checks) helps reduce these risks.

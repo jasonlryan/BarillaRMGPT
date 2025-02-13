@@ -1,0 +1,125 @@
+{
+    "framework_name": "People Decision Journey",
+    "version": "September 2023",
+    "authors": ["N. Howell", "M. Mastroianni", "R. Laksmono"],
+    "audience_perspectives": {
+        "digital_users": "How people are connected to digital platforms and touchpoints",
+        "consumers": "People's attitudes and behaviors when consuming pasta",
+        "shoppers": "How people shop offline and online, and the shopper missions they pursue",
+        "media_audience": "How people consume media and relevant touchpoints"
+    },
+    "journey_stages": {
+        "awareness": {
+            "description": "Passive contact with the category or brand",
+            "key_questions": [
+                "How are they living their lives around food?",
+                "What are their needs and pain points?"
+            ]
+        },
+        "consideration": {
+            "description": "Options evaluation based on awareness, knowledge, or experience",
+            "key_questions": [
+                "How do they gather information?",
+                "What influences their decision-making process?"
+            ]
+        },
+        "purchase": {
+            "description": "Ready to buy (omnichannel)",
+            "key_questions": [
+                "Where and how do they purchase?",
+                "What drives their purchase decision?"
+            ]
+        },
+        "experience": {
+            "description": "Post-purchase product use and brand connection",
+            "key_questions": [
+                "How do they prepare/use it?",
+                "What determines their satisfaction?"
+            ]
+        }
+    },
+    "implementation_approach": {
+        "step_1_map_behavior": {
+            "objective": "Understand what is happening at each stage of the decision-making process",
+            "data_sources": [
+                "Integrated People Profile",
+                "Dedicated PDJ study",
+                "Additional information"
+            ],
+            "key_focus_areas": [
+                "What people do",
+                "Why, when, where, and how they do it",
+                "Identifying barriers and touchpoints"
+            ]
+        },
+        "step_2_define_implications": {
+            "objective": "Derive actionable steps based on behavior mapping to meet business objectives",
+            "focus_areas": {
+                "create_demand": {
+                    "description": "Create demand for the category/brand",
+                    "actions": [
+                        "Inspire consideration",
+                        "Address barriers"
+                    ]
+                },
+                "convert_demand": {
+                    "description": "Convert demand to the specific brand",
+                    "actions": [
+                        "Motivate purchase",
+                        "Emphasize actionable touchpoints"
+                    ]
+                }
+            },
+            "outputs": [
+                "Specific activities for targets",
+                "Efficient allocation of resources (e.g., budget)"
+            ]
+        }
+    },
+    "best_practices": {
+        "journey_mapping_tips": [
+            "Map journeys per target (Bull's Eye and Footprint)",
+            "Use a cross-functional team",
+            "Proceed step by step",
+            "Write in first person; avoid business jargon",
+            "Address knowledge gaps",
+            "Update the journey over time"
+        ],
+        "key_benefits": [
+            "Encourages team to adopt the target's perspective",
+            "Captures behavior towards the category and brand",
+            "Provides an omnichannel perspective",
+            "Identifies drivers to leverage and barriers to overcome",
+            "Supports cross-functional collaboration",
+            "Focuses on impactful touchpoints",
+            "Integrates retailer perspectives"
+        ]
+    },
+    "observation_framework": {
+        "key_questions": [
+            "What have you observed?",
+            "Why is this happening?",
+            "So What?"
+        ]
+    },
+    "messaging_framework": {
+        "principles": [
+            {
+                "principle": "Focus on Emotional Resonance",
+                "description": "Craft messages that tap into emotions and experiences"
+            },
+            {
+                "principle": "Simplicity is Key",
+                "description": "Keep messaging clear and concise"
+            },
+            {
+                "principle": "Align with Consumer Insights",
+                "description": "Reflect consumer behavior and preferences"
+            },
+            {
+                "principle": "Use Human Truths",
+                "description": "Incorporate universal human truths"
+            }
+        ]
+    }
+}

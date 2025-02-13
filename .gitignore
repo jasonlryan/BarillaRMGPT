@@ -6,9 +6,7 @@
 
 # Ignore directories
 temp_backup/
-scripts/
 not_used/
-prompts/
 outputs/
 __pycache__/
 flask_session/

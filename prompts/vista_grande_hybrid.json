@@ -1,0 +1,134 @@
+{
+    "metadata": {
+        "study_name": "Vista Grande Barilla CCA Report",
+        "date": "2024-01-25",
+        "geography": "United States",
+        "category": "Pasta",
+        "methodology": {
+            "type": "Category Choice Architecture®",
+            "sample_size": 4013,
+            "respondent_criteria": {
+                "purchase_history": "Past year purchaser of dry pasta",
+                "shopping_responsibility": "Primary or shared grocery shopping responsibility"
+            },
+            "coverage": {
+                "retailers": 77,
+                "brands": 57,
+                "products": 557
+            },
+            "data_collection": "15-minute web-based / mobile online survey with shopping simulation"
+        },
+        "data_limitations": [
+            "US market only",
+            "Specific to pasta category",
+            "Online survey respondents only"
+        ],
+        "last_updated": "2024-01-25",
+        "version": "1.0"
+    },
+    "insights": {
+      "study_overview": {
+        "background": "Barilla is a 145-year-old family-owned food company leading the pasta category in the US. Vista Grande conducted this study to develop assortment and merchandising strategies using the Category Choice Architecture® framework.",
+        "objectives": {
+          "who": "Understand today's pasta shoppers, emphasizing attitudinal dimensions.",
+          "why": "Explore reasons for pasta shopping, focusing on occasions and drivers.",
+          "where": "Identify where shoppers go for their pasta needs and why.",
+          "how": "Analyze how shoppers want the assortment, focusing on attributes, navigation, and consideration sets.",
+          "what": "Understand tradeoffs shoppers are willing to make, emphasizing substitutions."
+        }
+      },
+      "key_findings": {
+        "dominance": "Dry pasta dominates with 81% of shoppers purchasing it monthly or more.",
+        "generational_trends": "Millennials and Gen Z prefer a broader set of pasta types, including Better-for-You options.",
+        "channel_preferences": {
+          "in_store": "Grocery stores account for 62% of shopping trips; Walmart is next at 28%.",
+          "online": "11% of shoppers buy pasta online, driven by convenience and delivery speed."
+        },
+        "product_preferences": {
+          "top_types": "Spaghetti (70%), Elbows (54%), and Penne (50%) are the most purchased shapes.",
+          "better_for_you": "41% of shoppers purchase Better-for-You pasta monthly or more, including gluten-free and legume-based options."
+        },
+        "regional_trends": {
+          "northeast": "Ziti (46%) and Rigatoni (44%) are particularly popular in the Northeast."
+        },
+        "shopping_motivations": {
+          "common_drivers": ["Taste", "Quality", "Price", "Brand trust"],
+          "better_for_you": "23% of shoppers prioritize healthier options."
+        },
+        "retailer_specific_insights": {
+          "grocery": "Grocery shoppers prioritize convenience, competitive pricing, and variety.",
+          "walmart": "Walmart shoppers are price-sensitive and value convenience for broader grocery shopping.",
+          "natural": "Natural channel shoppers look for organic products and innovative pasta options."
+        }
+      },
+      "practical_implications": {
+        "pricing": "Price-sensitive shoppers dominate Walmart and Club channels, suggesting competitive promotions.",
+        "health_focus": "Younger shoppers' preference for health-focused products highlights opportunities for Better-for-You campaigns.",
+        "regional_focus": "Ziti and Rigatoni are key shapes for regional campaigns in the Northeast."
+      }
+    },
+    "raw_data": {
+      "purchase_behavior": {
+        "frequency": {
+          "weekly_or_more": 21,
+          "monthly": 44
+        },
+        "types": {
+          "dry_pasta": 60,
+          "fresh_pasta": 35,
+          "frozen_pasta": 28
+        }
+      },
+      "channels": {
+        "grocery": 62,
+        "walmart": 28,
+        "club": 5,
+        "target": 2,
+        "natural": 2,
+        "online": 1
+      },
+      "online_preferences": {
+        "pickup": 42,
+        "delivery": 58,
+        "delivery_services": {
+          "retailer": 60,
+          "instacart": 22,
+          "doordash": 9,
+          "uber": 4,
+          "shipt": 1,
+          "other": 4
+        }
+      },
+      "motivations": {
+        "top_drivers": {
+          "quality": 39,
+          "taste": 37,
+          "brand_trust": 35,
+          "value": 30,
+          "shape_variety": 29,
+          "flavor": 24,
+          "health": 23
+        }
+      },
+      "product_preferences": {
+        "top_shapes": {
+          "spaghetti": 70,
+          "elbows": 54,
+          "penne": 50
+        },
+        "better_for_you": {
+          "gluten_free": 14,
+          "veggie_pasta": 15,
+          "legume_pasta": 11
+        }
+      },
+      "regional_preferences": {
+        "northeast": {
+          "ziti": 46,
+          "rigatoni": 44,
+          "fettuccine": 34
+        }
+      }
+    }
+  }
+  

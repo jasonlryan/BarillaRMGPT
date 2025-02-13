@@ -1,0 +1,99 @@
+{
+    "touchpoint_taxonomy": {
+      "in_store_touchpoints": {
+        "category_description": "Physical Store: Includes any touchpoint related to the physical retail environment.",
+        "touchpoints": [
+          "Store visit",
+          "Aisle",
+          "Shelf",
+          "Product Display",
+          "Promo Stand",
+          "Gondola End",
+          "Sampling",
+          "In-Store Screen",
+          "Window Poster",
+          "Trolley panel"
+        ]
+      },
+      "digital_touchpoints": {
+        "category_description": "Online Presence: Touchpoints that are primarily online.",
+        "touchpoints": [
+          "Brand's Website",
+          "Retailer's Website",
+          "Retailer’s App",
+          "Online Store",
+          "Search Engine",
+          "Social Networks",
+          "Digital Coupon",
+          "Online deal/promotion",
+          "On-line advert",
+          "In App Advert",
+          "Retailer Online Promo",
+          "Online Promotions Page",
+          "E-mail Newsletter",
+          "Nutritional App",
+          "Sustainability App"
+        ]
+      },
+      "promotional_touchpoints": {
+        "category_description": "Promotions: Touchpoints related to promotional activities, both offline and online.",
+        "touchpoints": [
+          "Promotion",
+          "On Pack Promotion",
+          "Promotions Aisle",
+          "Promotions Site",
+          "Retailer Circular",
+          "Retailer Leaflet",
+          "Retailer Promo Online",
+          "Retailer Promotion Online",
+          "Retailer Ad",
+          "Retailer's Advert"
+        ]
+      },
+      "media_touchpoints": {
+        "category_description": "Traditional and Digital Media: Includes any media-related touchpoints.",
+        "touchpoints": [
+          "TV Advert",
+          "Magazine",
+          "Newspaper/magazine advert",
+          "Newspaper/magazine article",
+          "Billboard advert",
+          "OOH Advert"
+        ]
+      },
+      "personal_recommendation_touchpoints": {
+        "category_description": "Recommendations and Influencers: Touchpoints involving personal and influencer recommendations.",
+        "touchpoints": [
+          "Friends/Family",
+          "Experts/Influencers"
+        ]
+      },
+      "pos_touchpoints": {
+        "category_description": "POS Communication: Touchpoints at the point of sale.",
+        "touchpoints": [
+          "Shelf Communication",
+          "Product Display",
+          "Retailer's Magazine"
+        ]
+      },
+      "functional_utility_touchpoints": {
+        "category_description": "Utilities: Functional touchpoints aiding the shopping experience.",
+        "touchpoints": [
+          "Shopping List",
+          "Delivery Slot Page",
+          "Search Box",
+          "Complementary Goods Page",
+          "Favourites Page"
+        ]
+      },
+      "specialty_unique_touchpoints": {
+        "category_description": "Specialty: Unique touchpoints specific to certain product categories or special promotional activities.",
+        "touchpoints": [
+          "Cupboard/fridge",
+          "Recipe",
+          "Gift with purchase"
+        ]
+      }
+    }
+  }
+  

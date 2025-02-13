@@ -1,0 +1,138 @@
+{
+  "metadata": {
+    "country": "United States",
+    "last_updated": "2024-01",
+    "data_source": "Vista Grande Purchase Decision Research",
+    "scope": "Pasta category purchase decisions across major US retail channels"
+  },
+  "PurchaseDecisionHierarchy": {
+    "channels": {
+      "Grocery": {
+        "description": "In-store grocery shoppers prioritize variety and shapes of pasta over other attributes.",
+        "rankings": [
+          "Pasta Shape/Variety",
+          "Pasta Type",
+          "Price Tier",
+          "Brand",
+          "Package Size",
+          "Package Type",
+          "Pasta Color or Flavor",
+          "Domestic vs Imported"
+        ]
+      },
+      "Natural": {
+        "description": "Natural food stores attract shoppers focused on health-oriented pasta options.",
+        "rankings": [
+          "Pasta Shape/Variety",
+          "Pasta Type",
+          "Brand",
+          "Price Tier",
+          "Pasta Color or Flavor",
+          "Package Size",
+          "Package Type",
+          "Domestic vs Imported"
+        ]
+      },
+      "Online": {
+        "description": "Online shoppers prioritize brand and convenience-related attributes.",
+        "rankings": [
+          "Brand",
+          "Pasta Type",
+          "Pasta Shape/Variety",
+          "Price Tier",
+          "Package Size",
+          "Package Type",
+          "Pasta Color or Flavor",
+          "Domestic vs Imported"
+        ]
+      },
+      "Club": {
+        "description": "Club stores emphasize bulk buying, so price and package size are more critical.",
+        "rankings": [
+          "Pasta Shape/Variety",
+          "Pasta Type",
+          "Price Tier",
+          "Package Size",
+          "Brand",
+          "Package Type",
+          "Pasta Color or Flavor",
+          "Domestic vs Imported"
+        ]
+      },
+      "Target": {
+        "description": "Target shoppers align with grocery preferences but with more emphasis on price.",
+        "rankings": [
+          "Pasta Shape/Variety",
+          "Pasta Type",
+          "Price Tier",
+          "Brand",
+          "Package Size",
+          "Package Type",
+          "Pasta Color or Flavor",
+          "Domestic vs Imported"
+        ]
+      },
+      "Walmart": {
+        "description": "Walmart shoppers focus heavily on price and brand recognition.",
+        "rankings": [
+          "Pasta Shape/Variety",
+          "Price Tier",
+          "Pasta Type",
+          "Brand",
+          "Package Size",
+          "Package Type",
+          "Pasta Color or Flavor",
+          "Domestic vs Imported"
+        ]
+      },
+      "NET": {
+        "description": "An aggregate view of all channels, showing the general trends across shopping behaviors.",
+        "rankings": [
+          "Pasta Shape/Variety",
+          "Pasta Type",
+          "Price Tier",
+          "Brand",
+          "Package Size",
+          "Package Type",
+          "Pasta Color or Flavor",
+          "Domestic vs Imported"
+        ]
+      }
+    },
+    "attributes": {
+      "Pasta Shape/Variety": {
+        "definition": "Different shapes of pasta, such as spaghetti, penne, fusilli, etc.",
+        "use_case": "Highly appealing in visual advertising and in-store displays."
+      },
+      "Pasta Type": {
+        "definition": "Categories of pasta like whole grain, gluten-free, or traditional.",
+        "use_case": "Targeted for health-conscious consumers or dietary preferences."
+      },
+      "Price Tier": {
+        "definition": "The pricing category of the product, such as budget, mid-range, or premium.",
+        "use_case": "Critical for promotional campaigns and price-sensitive shoppers."
+      },
+      "Brand": {
+        "definition": "The specific pasta brand (e.g., Barilla, De Cecco).",
+        "use_case": "Drives online and in-store trust and loyalty campaigns."
+      },
+      "Package Size": {
+        "definition": "The quantity/weight of the pasta (e.g., 500g, 1kg).",
+        "use_case": "Important for bulk shoppers or value-focused campaigns."
+      },
+      "Package Type": {
+        "definition": "The style of the packaging, such as box or bag.",
+        "use_case": "Relevant for sustainability messaging or convenience-focused shoppers."
+      },
+      "Pasta Color or Flavor": {
+        "definition": "Variations like spinach pasta, tricolor pasta, or flavored options.",
+        "use_case": "Used to appeal to adventurous or niche shoppers."
+      },
+      "Domestic vs Imported": {
+        "definition": "Whether the pasta is produced domestically or imported.",
+        "use_case": "Useful for campaigns focusing on local pride or premium imported products."
+      }
+    }
+  }
+}
+  
