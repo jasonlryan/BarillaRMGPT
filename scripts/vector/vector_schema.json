@@ -1,7 +1,29 @@
 {
   "version": "1.0",
-  "vectorFiles": {
-    "biscuits_data.json": {
+  "definitions": {
+    "triggers": {
+      "description": "Purchase triggers are events or motivations that prompt a consumer to buy a product.",
+      "examples": ["I was making plans for what snacks were needed", "I was asked to buy it by someone in my household"]
+    },
+    "occasions": {
+      "description": "Consumption occasions are specific times or events when a product is typically consumed.",
+      "examples": ["With Coffee", "During a party"]
+    },
+    "needs": {
+      "description": "Consumer needs are the underlying motivations or requirements that drive product purchases.",
+      "examples": ["Need for convenience", "Desire for a healthy snack"]
+    },
+    "inspiration": {
+      "description": "Inspiration sources are influences that encourage consumers to try or purchase a product.",
+      "examples": ["Saw a recipe online", "Recommended by a friend"]
+    },
+    "pairings": {
+      "description": "Pairings are combinations of products that are commonly consumed together.",
+      "examples": ["With Tea", "With Cheese"]
+    }
+  },
+    "vectorFiles": {
+     "biscuits_data.json": {
       "description": "Biscuit touchpoint performance data",
       "structure": {
         "country": "string",
@@ -13,34 +35,6 @@
         "category average index": "decimal"
       },
       "markets": ["France", "Germany", "Greece"],
-      "dataConsistency": "Complete data across all markets"
-    },
-    "biscuits_trigger_occasion.json": {
-      "description": "Combined biscuit purchase triggers and consumption occasions",
-      "sections": {
-        "jrn_trigger": {
-          "description": "Purchase trigger data",
-          "structure": {
-            "trigger_text": {
-              "France": "decimal (0-1)",
-              "Germany": "decimal (0-1)",
-              "Greece": "decimal (0-1)",
-              "net_relative": "decimal (0-1)"
-            }
-          }
-        },
-        "ctm_occasion_in_mind": {
-          "description": "Consumption occasion data",
-          "structure": {
-            "occasion_text": {
-              "France": "decimal (0-1)",
-              "Germany": "decimal (0-1)",
-              "Greece": "decimal (0-1)",
-              "net_relative": "decimal (0-1)"
-            }
-          }
-        }
-      },
       "dataConsistency": "Complete data across all markets"
     },
     "biscuits_trigger.json": {
@@ -398,25 +392,119 @@
       },
       "markets": ["Italy"],
       "dataConsistency": "Complete pairing data for Italian market"
+    },
+    "us_vista_grande_data.json": {
+      "description": "Vista Grande Category Choice Architecture® study data for US pasta market",
+      "structure": {
+        "slides": {
+          "type": "array",
+          "items": {
+            "slideNumber": "integer",
+            "title": "string",
+            "text": "string",
+            "charts": {
+              "type": "array",
+              "items": {
+                "chartTitle": "string",
+                "sampleSize": "integer|null",
+                "data": "object"
+              }
+            }
+          }
+        }
+      },
+      "metadata": {
+        "studyDate": "2024-01-25",
+        "sampleSize": 4013,
+        "methodology": "Category Choice Architecture®",
+        "coverage": {
+          "retailers": 77,
+          "brands": 57,
+          "products": 557
+        },
+        "geographicGranularity": {
+          "available": ["national", "region"],
+          "regions": ["Northeast", "Midwest", "South", "West"],
+          "stateLevel": false,
+          "cityLevel": false
+        }
+      },
+      "dataTypes": {
+        "demographics": ["age", "income", "population_density", "region"],
+        "behaviors": ["purchase_frequency", "consumption_frequency", "channel_preference"],
+        "attitudes": ["brand_loyalty", "purchase_motivations", "decision_hierarchies"],
+        "product": ["pasta_types", "shapes", "brands"]
+      },
+      "relationships": {
+        "complementsData": [
+          "pasta_data.json",
+          "pasta_trigger.json",
+          "pasta_occasion.json",
+          "pasta_needs.json"
+        ]
+      },
+      "dataConsistency": "Complete US market data with demographic breakdowns",
+      "validationRules": {
+        "geographicQueries": {
+          "allowedLevels": ["national", "region"],
+          "rejectStateQueries": true,
+          "rejectCityQueries": true,
+          "responseOnInvalidQuery": "Data is only available at national and regional (Northeast, Midwest, South, West) levels. State and city-level data is not available."
+        }
+      }
     }
   },
-  "commonDataRules": {
-    "percentageHandling": "All percentage values are converted to decimals",
-    "missingData": "Excluded from output (no zero/null values)",
-    "validation": "Empty or invalid values are skipped during processing",
-    "decimalPrecision": "Original precision maintained from source data"
-  },
-  "aiInstructions": {
-    "dataUsage": [
-      "Always check _instructions section when present for file-specific handling rules",
-      "Respect market-specific data limitations and inconsistencies",
-      "Do not assume zero values for missing data points",
-      "Maintain awareness of market coverage differences between files"
-    ],
-    "dataInterpretation": [
-      "Consider market-specific context when analyzing triggers",
-      "Account for varying market coverage when comparing across categories",
-      "Note that some metrics are relative to category averages"
-    ]
+    "commonDataRules": {
+       "percentageHandling": "All percentage values are converted to decimals", 
+       "missingData": "Excluded from output (no zero/null values)",
+        "validation": "Empty or invalid values are skipped during processing",
+        "decimalPrecision": "Original precision maintained from source data"
+    },
+      "aiInstructions": {
+        "dataUsage": [
+         "Always check _instructions section when present for file-specific handling rules",
+         "Respect market-specific data limitations and inconsistencies",
+         "Do not assume zero values for missing data points",
+         "Maintain awareness of market coverage differences between files"
+        ],
+     "dataInterpretation": [
+        "Consider market-specific context when analyzing triggers",
+        "Account for varying market coverage when comparing across categories",
+        "Note that some metrics are relative to category averages"
+       ]
+   },
+  "validationRules": {
+    "geographic": {
+      "enforceGranularity": true,
+      "allowedLevels": {
+        "national": true,
+        "region": true,
+        "state": false,
+        "city": false,
+        "county": false
+      },
+      "requiredValidation": {
+        "beforeQuery": [
+          "Check geographic level in query against allowedLevels",
+          "If level not allowed, return rejection message immediately",
+          "Do not proceed with data lookup until geographic validation passes"
+        ],
+        "duringResponse": [
+          "Must explicitly state geographic level of data being provided",
+          "Must include geographic scope disclaimer in response",
+          "Cannot mix data from different geographic levels without explicit labeling"
+        ],
+        "rejectionResponses": {
+          "state": "This data is not available at the state level. The Vista Grande study only provides insights at national and regional levels (Northeast, Midwest, South, West). Would you like me to share the relevant regional data instead?",
+          "city": "This data is not available at the city level. The Vista Grande study only provides insights at national and regional levels (Northeast, Midwest, South, West). Would you like me to share the relevant regional data instead?",
+          "county": "This data is not available at the county level. The Vista Grande study only provides insights at national and regional levels (Northeast, Midwest, South, West). Would you like me to share the relevant regional data instead?"
+        }
+      },
+      "responseTemplates": {
+        "offerRegionalAlternative": "While we don't have data for [State], I can provide insights for the [Region] region where [State] is located. Would you like to see that data instead?",
+        "nationalDataDisclaimer": "Note: The following insights are based on national-level data and may not reflect specific conditions in [Location].",
+        "multiLevelData": "This response includes both national-level trends ([NationalMetric]) and regional data for [Region] ([RegionalMetric]). Each insight is explicitly labeled with its geographic scope."
+      }
+    }
   }
-} 
+}

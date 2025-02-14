@@ -1,0 +1,29 @@
+I can see the issue. The problem appears to be in how the markdown list items are being rendered. The CSS shows that ordered lists (ol) are using CSS counters for numbering
+
+.markdown-container ol {
+  margin: 1rem 0;
+  list-style: none;
+  counter-reset: item;
+}
+
+.markdown-container ol li {
+  counter-increment: item;
+}
+
+.markdown-container ol li::before {
+  content: counter(item) ".";
+  color: rgb(250, 204, 21);
+  position: absolute;
+  left: 0;
+  font-weight: bold;
+}
+
+
+The issue is likely occurring because:
+The list is being interrupted by sub-items that contain percentages
+These sub-items are being treated as new list items, causing the counter to increment
+The CSS counter is continuing to increment even when there are nested or interrupted list items
+To fix this, we should:
+Modify the CSS to handle nested lists correctly
+Add proper nesting in the markdown output
+Would you like me to propose the CSS changes to fix this numbering issue?

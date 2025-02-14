@@ -5,9 +5,9 @@
 .env.development
 
 # Ignore directories
+python/
 temp_backup/
 not_used/
-outputs/
 __pycache__/
 flask_session/
 /tmp/

@@ -1,0 +1,1435 @@
+{
+    "metadata": {
+        "geographicCoverage": {
+            "scope": "United States",
+            "granularity": {
+                "available": ["national", "region"],
+                "regions": ["Northeast", "Midwest", "South", "West"],
+                "unavailable": ["state", "city", "county"],
+                "validationMessage": "This study only provides data at national and regional levels. State, city, and county-level data is not available."
+            }
+        }
+    },
+    "slides": [
+      {
+        "slideNumber": 1,
+        "title": "REPORT Pasta Category",
+        "text": "S E E  T H E  B I G  P I C T U R E\nA holistic shopper framework of category choice perception\n\nCategory Choice Architecture®\n©Vista Grande, All rights reserved. The contents, or parts thereof, may not be reproduced in any form without written permission.\n\n01.25.24",
+        "charts": []
+      },
+      {
+        "slideNumber": 2,
+        "title": "Contents",
+        "text": "Study Overview\nResults\nWho is the Shopper?\nWhere are they Shopping?\nWhy are they Shopping?\nHow are they Shopping?\nExecutive Summary\nCategory Choice Analyzer",
+        "charts": []
+      },
+      {
+        "slideNumber": 3,
+        "title": "Study Overview",
+        "text": "Background\n\n• Barilla is a family-owned, 145-year-old international food company with an iconic brand and leading category share of pasta in the US.\n• Barilla is looking to approach the Pasta aisle with fresh eyes and contemporized insights to support new hypotheses on assortment and merchandising strategies.\n• Vista Grande has a suite of services, underpinned by its flagship Category Choice Architecture® framework, to cover the full spectrum of Barilla's needs while being a consultative thinking partner on how to activate the key insights and quantify their potential benefits.",
+        "charts": []
+      },
+      {
+        "slideNumber": 4,
+        "title": "",
+        "text": "Objectives / Approach\n\nVista Grande's Category Choice Architecture® framework was leveraged to gain insights into the following areas:\n• How do shoppers desire the broad assortment of products? (Emphasis on key attributes, orientation, navigation, consideration sets)\n• Who are today's pasta shoppers? (Emphasis on attitudinal dimensions)\n• Why do they shop for pasta? (Emphasis on occasions for use and purchase drivers)\n• Where do they shop to satisfy their need? (Emphasis on retailer, channel and reasons why)\n• What tradeoffs are shoppers willing and unwilling to make? (Emphasis on substitution)\n\nAdditionally, the solution includes channel-specific Purchase Decision Hierarchies, Category Demand Structures, and a cloud-based Choice Analyzer dashboard.",
+        "charts": []
+      },
+      {
+        "slideNumber": 5,
+        "title": "Objectives / Approach",
+        "text": "• Category Choice Architecture® is applied with a broad lens covering all types of pasta products for leading Mass, Club, Grocery, Natural, Discount, and eCommerce retailers.\n• Deliverables include channel-specific Purchase Decision Hierarchies, Decision Trees, and a Choice Analyzer dashboard, enabling hypothesis generation and compelling merchandising strategies.",
+        "charts": []
+      },
+      {
+        "slideNumber": 6,
+        "title": "Research Design",
+        "text": "The study was designed for coverage of key targets, channels, and categories:\n• Channels: Mass, Club, Grocery, Natural, Discount, and eCommerce with Purchase Decision Hierarchies and Decision Trees for leading retailers/channels.\n• Target: Past year purchasers of dry pasta and individuals with primary or shared grocery shopping responsibility.\n• Sample: N = 4,013 respondents with representative demographics.\n• Method: 15-minute web-based/mobile survey featuring a Category Choice Architecture® shopping simulation.\n• Coverage: 77 retailers, 57 brands, and 557 products.",
+        "charts": []
+      },
+      {
+        "slideNumber": 7,
+        "title": "Contextual Shopping Simulation",
+        "text": "This slide describes a 15-minute primary research survey simulating the full customer journey. Steps include:\n• Picking a retailer and stating why it was selected.\n• Selecting attributes to form a consideration set.\n• Adding products to the cart and checking out.\n• Explaining purchase rationale including intended usage.\n• Selecting substitutes if the original choice is unavailable.",
+        "charts": []
+      },
+      {
+        "slideNumber": 8,
+        "title": "Retailer Coverage",
+        "text": "The simulation covers 77 retailers, ensuring a comprehensive view of the channels where consumers shop for dry pasta.",
+        "charts": []
+      },
+      {
+        "slideNumber": 9,
+        "title": "Product / Brand Coverage",
+        "text": "A total of 557 products across 57 brands were evaluated, providing deep insights into the product and brand landscape in the pasta category.",
+        "charts": []
+      },
+      {
+        "slideNumber": 10,
+        "title": "Who is the Shopper? Category Overview",
+        "text": "An overview of consumer behavior in the dry pasta category, setting the stage for detailed shopper insights in subsequent slides.",
+        "charts": []
+      },
+      {
+        "slideNumber": 12,
+        "title": "",
+        "text": "Dry Pasta is purchased with high frequency with over 3 in 5 doing so monthly and 1 in 5 purchasing weekly.\nS4. Over the last year, about how often did you purchase the following items? Please answer for each row.\nAbout two-thirds ever purchase fresh/refrigerated or frozen pasta, most monthly or less often.\nSample Size: N = 4,013",
+        "charts": [
+          {
+            "chartTitle": "Past Year Purchase Frequency by Pasta Type",
+            "sampleSize": 4013,
+            "data": {
+              "Dry Pasta": {
+                "Weekly or more": "21%",
+                "Once or twice a month": "44%",
+                "Every few months": "28%",
+                "Once or twice a year": "7%",
+                "Never": "0%"
+              },
+              "Fresh/Refrigerated Pasta": {
+                "Weekly or more": "9%",
+                "Once or twice a month": "19%",
+                "Every few months": "19%",
+                "Once or twice a year": "16%",
+                "Never": "37%"
+              },
+              "Frozen Pasta": {
+                "Weekly or more": "8%",
+                "Once or twice a month": "18%",
+                "Every few months": "20%",
+                "Once or twice a year": "15%",
+                "Never": "37%"
+              }
+            }
+          },
+          {
+            "chartTitle": "Past Year Purchase Frequency of Pasta Type – Purchase Overlap",
+            "sampleSize": 4013,
+            "data": {
+              "Dry Pasta Only": "33%",
+              "Fresh Pasta Only": "2%",
+              "Frozen Pasta Only": "3%",
+              "Dry Pasta + Fresh Pasta": "9%",
+              "Dry Pasta + Frozen Pasta": "7%",
+              "Fresh Pasta + Frozen Pasta": "1%",
+              "Buys All Three": "16%"
+            }
+          }
+        ]
+      },
+      {
+        "slideNumber": 13,
+        "title": "Frequency of Eating Store Bought Dry Pasta at Home",
+        "text": "Over half of respondents eat store-bought dry pasta weekly or more often, with Millennials consuming it more frequently than Boomers.\nB3. How often do you eat store-bought dry pasta at home? (Categories: Multiple times a week, Once a week, A few times a month, Every few months, Less frequently.)\nOverall Sample Size: N = 4,013",
+        "charts": [
+          {
+            "chartTitle": "Frequency of Eating Store Bought Dry Pasta at Home",
+            "sampleSize": 4013,
+            "data": {
+              "Overall": {
+                "Multiple times a week": "21%",
+                "Once a week": "37%",
+                "A few times a month": "37%",
+                "Every few months": "5%",
+                "Less frequently": "1%"
+              },
+              "By Age Group": {
+                "18-26 (Gen Z)": {
+                  "Multiple times a week": "21%",
+                  "Once a week": "37%",
+                  "A few times a month": "37%",
+                  "Every few months": "5%",
+                  "Less frequently": "1%"
+                },
+                "27-34 (Younger Millennials)": {
+                  "Multiple times a week": "24%",
+                  "Once a week": "38%",
+                  "A few times a month": "31%",
+                  "Every few months": "6%",
+                  "Less frequently": "1%"
+                },
+                "35-42 (Older Millennials)": {
+                  "Multiple times a week": "23%",
+                  "Once a week": "38%",
+                  "A few times a month": "31%",
+                  "Every few months": "7%",
+                  "Less frequently": "1%"
+                },
+                "43-58 (Gen X)": {
+                  "Multiple times a week": "20%",
+                  "Once a week": "33%",
+                  "A few times a month": "35%",
+                  "Every few months": "11%",
+                  "Less frequently": "2%"
+                },
+                "59+ (Boomers)": {
+                  "Multiple times a week": "12%",
+                  "Once a week": "29%",
+                  "A few times a month": "42%",
+                  "Every few months": "15%",
+                  "Less frequently": "2%"
+                }
+              },
+              "Column Sample Sizes": {
+                "18-26": "402",
+                "27-34": "494",
+                "35-42": "634",
+                "43-58": "1,116",
+                "59+": "1,367"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slideNumber": 14,
+        "title": "How much do you like Dry Pasta? (5-star scale)",
+        "text": "Consumer affinity for dry pasta is very high. Overall rating: 4.56. Breakdown by age: 18–26: 4.53, 27–34: 4.61, 35–42: 4.56, 43–58: 4.50, 59+: 4.59. Regional breakdown: South: 4.57, Northeast: 4.54, West: 4.58, Midwest: 4.52. Gender: Female: 4.58, Male: 4.58.\nSample Size: N = 4,013",
+        "charts": [
+          {
+            "chartTitle": "Dry Pasta Liking (5-Star Scale)",
+            "sampleSize": 4013,
+            "data": {
+              "Overall": 4.56,
+              "byAge": {
+                "18-26 (Gen Z)": 4.53,
+                "27-34 (Younger Millennials)": 4.61,
+                "35-42 (Older Millennials)": 4.56,
+                "43-58 (Gen X)": 4.50,
+                "59+ (Boomers)": 4.59
+              },
+              "byRegion": {
+                "South": 4.57,
+                "Northeast": 4.54,
+                "West": 4.58,
+                "Midwest": 4.52
+              },
+              "byGender": {
+                "Female": 4.58,
+                "Male": 4.58
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slideNumber": 15,
+        "title": "Pasta Type Purchase Frequency",
+        "text": "This slide shows the percentage of respondents who purchase various types of dry pasta every month or more frequently. Regular white pasta is the dominant choice, followed by Better For You (NET) varieties. Younger shoppers (Gen Z and Millennials) purchase a broader range of pasta types compared to older shoppers.\nB4. Over the last year, about how often did you purchase each of the following types of dry pasta? Sample Size: N = 4,013",
+        "charts": [
+          {
+            "chartTitle": "Pasta Type Purchase Frequency (Monthly or More)",
+            "sampleSize": 4013,
+            "data": [
+              {
+                "name": "Regular white pasta",
+                "overall": "60%",
+                "byAge": {
+                  "18-26 (Gen Z)": "65%",
+                  "27-34 (Younger Millennials)": "68%",
+                  "35-42 (Older Millennials)": "67%",
+                  "43-58 (Gen X)": "62%",
+                  "59+ (Boomers)": "49%"
+                }
+              },
+              {
+                "name": "Better For You (NET)",
+                "overall": "41%",
+                "byAge": {
+                  "18-26 (Gen Z)": "60%",
+                  "27-34 (Younger Millennials)": "58%",
+                  "35-42 (Older Millennials)": "50%",
+                  "43-58 (Gen X)": "37%",
+                  "59+ (Boomers)": "27%"
+                }
+              },
+              {
+                "name": "Whole wheat pasta",
+                "overall": "23%",
+                "byAge": {
+                  "18-26 (Gen Z)": "30%",
+                  "27-34 (Younger Millennials)": "33%",
+                  "35-42 (Older Millennials)": "31%",
+                  "43-58 (Gen X)": "21%",
+                  "59+ (Boomers)": "15%"
+                }
+              },
+              {
+                "name": "Pasta with added protein",
+                "overall": "20%",
+                "byAge": {
+                  "18-26 (Gen Z)": "33%",
+                  "27-34 (Younger Millennials)": "35%",
+                  "35-42 (Older Millennials)": "31%",
+                  "43-58 (Gen X)": "17%",
+                  "59+ (Boomers)": "8%"
+                }
+              },
+              {
+                "name": "Pasta with added fiber",
+                "overall": "17%",
+                "byAge": {
+                  "18-26 (Gen Z)": "25%",
+                  "27-34 (Younger Millennials)": "29%",
+                  "35-42 (Older Millennials)": "27%",
+                  "43-58 (Gen X)": "14%",
+                  "59+ (Boomers)": "9%"
+                }
+              },
+              {
+                "name": "Pasta made from veggies",
+                "overall": "15%",
+                "byAge": {
+                  "18-26 (Gen Z)": "23%",
+                  "27-34 (Younger Millennials)": "28%",
+                  "35-42 (Older Millennials)": "22%",
+                  "43-58 (Gen X)": "12%",
+                  "59+ (Boomers)": "7%"
+                }
+              },
+              {
+                "name": "Gluten-free pasta",
+                "overall": "14%",
+                "byAge": {
+                  "18-26 (Gen Z)": "19%",
+                  "27-34 (Younger Millennials)": "25%",
+                  "35-42 (Older Millennials)": "18%",
+                  "43-58 (Gen X)": "13%",
+                  "59+ (Boomers)": "7%"
+                }
+              },
+              {
+                "name": "Legume pasta",
+                "overall": "11%",
+                "byAge": {
+                  "18-26 (Gen Z)": "18%",
+                  "27-34 (Younger Millennials)": "20%",
+                  "35-42 (Older Millennials)": "17%",
+                  "43-58 (Gen X)": "9%",
+                  "59+ (Boomers)": "5%"
+                }
+              },
+              {
+                "name": "Oven cuts",
+                "overall": "22%",
+                "byAge": {
+                  "18-26 (Gen Z)": "31%",
+                  "27-34 (Younger Millennials)": "35%",
+                  "35-42 (Older Millennials)": "27%",
+                  "43-58 (Gen X)": "22%",
+                  "59+ (Boomers)": "11%"
+                }
+              },
+              {
+                "name": "Quick Cook pasta",
+                "overall": "18%",
+                "byAge": {
+                  "18-26 (Gen Z)": "31%",
+                  "27-34 (Younger Millennials)": "30%",
+                  "35-42 (Older Millennials)": "26%",
+                  "43-58 (Gen X)": "16%",
+                  "59+ (Boomers)": "7%"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "slideNumber": 16,
+        "title": "Pasta Shapes / Cuts Purchased in Past Year",
+        "text": "Indexes higher than Total / Net and indexes lower than Total / Net.\nSpaghetti, elbows, and penne are the most frequently purchased shapes in the past year. Younger shoppers buy a variety of shapes, and regional preferences are noted, especially in the Northeast.",
+        "charts": [
+          {
+            "chartTitle": "Pasta Shapes/Cuts Purchased (Overall)",
+            "sampleSize": 4013,
+            "data": {
+              "Spaghetti": "70%",
+              "Elbows": "54%",
+              "Penne": "50%",
+              "Thin Spaghetti": "43%",
+              "Lasagna": "41%",
+              "Angel Hair": "40%",
+              "Fettuccine": "38%",
+              "Rigatoni": "32%",
+              "Linguine": "28%",
+              "Ziti": "25%",
+              "Medium Shells": "25%",
+              "Farfalle/Bowtie/Butterfly": "22%",
+              "Tortellini/Tortelloni": "18%",
+              "Jumbo Shells": "17%",
+              "Gnocchi": "11%",
+              "Manicotti": "10%",
+              "Orzo": "9%",
+              "Mostaccioli": "6%",
+              "Cellentani/Cavatappi": "4%",
+              "Pastina": "4%",
+              "Bucatini": "4%",
+              "Ditalini/Salad Mac": "4%",
+              "Fideo": "3%",
+              "Campanelle": "3%",
+              "Other": "2%"
+            }
+          },
+          {
+            "chartTitle": "Pasta Shapes/Cuts by Age Group",
+            "sampleSize": 4013,
+            "data": {
+              "18-26 (Gen Z)": {
+                "Spaghetti": "70%",
+                "Elbows": "50%",
+                "Penne": "55%",
+                "Thin Spaghetti": "35%",
+                "Lasagna": "40%",
+                "Angel Hair": "39%",
+                "Fettuccine": "49%",
+                "Rigatoni": "34%",
+                "Linguine": "27%",
+                "Ziti": "22%",
+                "Medium Shells": "22%",
+                "Farfalle/Bowtie/Butterfly": "20%",
+                "Tortellini/Tortelloni": "27%",
+                "Jumbo Shells": "23%",
+                "Gnocchi": "17%",
+                "Manicotti": "9%",
+                "Orzo": "9%",
+                "Mostaccioli": "6%",
+                "Cellentani/Cavatappi": "5%",
+                "Pastina": "7%",
+                "Bucatini": "4%",
+                "Ditalini/Salad Mac": "4%",
+                "Fideo": "6%",
+                "Campanelle": "2%",
+                "Other": "1%"
+              },
+              "27-34 (Younger Millennials)": {
+                "Spaghetti": "70%",
+                "Elbows": "48%",
+                "Penne": "55%",
+                "Thin Spaghetti": "36%",
+                "Lasagna": "40%",
+                "Angel Hair": "35%",
+                "Fettuccine": "41%",
+                "Rigatoni": "36%",
+                "Linguine": "32%",
+                "Ziti": "25%",
+                "Medium Shells": "26%",
+                "Farfalle/Bowtie/Butterfly": "24%",
+                "Tortellini/Tortelloni": "24%",
+                "Jumbo Shells": "21%",
+                "Gnocchi": "18%",
+                "Manicotti": "11%",
+                "Orzo": "12%",
+                "Mostaccioli": "4%",
+                "Cellentani/Cavatappi": "7%",
+                "Pastina": "6%",
+                "Bucatini": "6%",
+                "Ditalini/Salad Mac": "4%",
+                "Fideo": "4%",
+                "Campanelle": "5%",
+                "Other": "1%"
+              },
+              "35-42 (Older Millennials)": {
+                "Spaghetti": "74%",
+                "Elbows": "54%",
+                "Penne": "54%",
+                "Thin Spaghetti": "42%",
+                "Lasagna": "46%",
+                "Angel Hair": "40%",
+                "Fettuccine": "45%",
+                "Rigatoni": "35%",
+                "Linguine": "30%",
+                "Ziti": "26%",
+                "Medium Shells": "26%",
+                "Farfalle/Bowtie/Butterfly": "25%",
+                "Tortellini/Tortelloni": "23%",
+                "Jumbo Shells": "18%",
+                "Gnocchi": "13%",
+                "Manicotti": "10%",
+                "Orzo": "10%",
+                "Mostaccioli": "4%",
+                "Cellentani/Cavatappi": "5%",
+                "Pastina": "6%",
+                "Bucatini": "6%",
+                "Ditalini/Salad Mac": "4%",
+                "Fideo": "4%",
+                "Campanelle": "4%",
+                "Other": "2%"
+              },
+              "43-58 (Gen X)": {
+                "Spaghetti": "73%",
+                "Elbows": "56%",
+                "Penne": "48%",
+                "Thin Spaghetti": "47%",
+                "Lasagna": "43%",
+                "Angel Hair": "41%",
+                "Fettuccine": "37%",
+                "Rigatoni": "30%",
+                "Linguine": "28%",
+                "Ziti": "27%",
+                "Medium Shells": "28%",
+                "Farfalle/Bowtie/Butterfly": "23%",
+                "Tortellini/Tortelloni": "19%",
+                "Jumbo Shells": "18%",
+                "Gnocchi": "10%",
+                "Manicotti": "10%",
+                "Orzo": "10%",
+                "Mostaccioli": "6%",
+                "Cellentani/Cavatappi": "5%",
+                "Pastina": "3%",
+                "Bucatini": "4%",
+                "Ditalini/Salad Mac": "4%",
+                "Fideo": "3%",
+                "Campanelle": "3%",
+                "Other": "3%"
+              },
+              "59+ (Boomers)": {
+                "Spaghetti": "67%",
+                "Elbows": "56%",
+                "Penne": "47%",
+                "Thin Spaghetti": "45%",
+                "Lasagna": "39%",
+                "Angel Hair": "39%",
+                "Fettuccine": "31%",
+                "Rigatoni": "28%",
+                "Linguine": "26%",
+                "Ziti": "25%",
+                "Medium Shells": "22%",
+                "Farfalle/Bowtie/Butterfly": "19%",
+                "Tortellini/Tortelloni": "11%",
+                "Jumbo Shells": "12%",
+                "Gnocchi": "6%",
+                "Manicotti": "9%",
+                "Orzo": "8%",
+                "Mostaccioli": "6%",
+                "Cellentani/Cavatappi": "2%",
+                "Pastina": "2%",
+                "Bucatini": "3%",
+                "Ditalini/Salad Mac": "4%",
+                "Fideo": "1%",
+                "Campanelle": "2%",
+                "Other": "3%"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slideNumber": 17,
+        "title": "How Will This Product Be Used?",
+        "text": "P5. How will this product be used? Select All That Apply (N = 6,227).\nOverall usage:\n• As a main dish/center of plate item: 87%\n• As a side dish: 21%\n• On or in a salad: 8%\n• In soup/chili: 8%\n• As a snack: 3%\nA detailed table shows usage breakdown by specific pasta shapes.",
+        "charts": [
+          {
+            "chartTitle": "Usage by Pasta Shape",
+            "sampleSize": 6227,
+            "data": {
+              "Overall Usage": {
+                "As a main dish/center of plate item": "87%",
+                "As a side dish": "21%",
+                "On or in a salad": "8%",
+                "In soup/chili": "8%",
+                "As a snack": "3%"
+              },
+              "By Shape Example": {
+                "Spaghetti": {
+                  "As a main dish/center of plate item": "95%",
+                  "As a side dish": "11%",
+                  "On or in a salad": "3%",
+                  "In soup/chili": "4%",
+                  "As a snack": "2%"
+                },
+                "Penne": {
+                  "As a main dish/center of plate item": "90%",
+                  "As a side dish": "24%",
+                  "On or in a salad": "10%",
+                  "In soup/chili": "7%",
+                  "As a snack": "3%"
+                },
+                "Elbows/Macaroni": {
+                  "As a main dish/center of plate item": "73%",
+                  "As a side dish": "41%",
+                  "On or in a salad": "16%",
+                  "In soup/chili": "18%",
+                  "As a snack": "2%"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slideNumber": 18,
+        "title": "Where are they Shopping?",
+        "text": "This slide introduces the topic of where shoppers go to purchase dry pasta, serving as a heading for the section.",
+        "charts": []
+      },
+      {
+        "slideNumber": 19,
+        "title": "",
+        "text": "No data was provided in the extracted text for Slide 19.",
+        "charts": []
+      },
+      {
+        "slideNumber": 20,
+        "title": "",
+        "text": "For the research 'shopping trip,' nearly all chose either a grocery store or Walmart, with Walmart skewing highest in the South.\nR4. On this upcoming trip, where will you shop for dry pasta? Select one retailer.\nSample Size: N = 4,013",
+        "charts": [
+          {
+            "chartTitle": "Channel Selected For Shopping Trip",
+            "sampleSize": 4013,
+            "data": {
+              "Overall": {
+                "Grocery": "62%",
+                "Walmart": "28%",
+                "Club": "5%",
+                "Target": "2%",
+                "Natural": "2%",
+                "Online": "1%"
+              },
+              "By Age Group": {
+                "18-26 (Gen Z)": {
+                  "Grocery": "53%",
+                  "Walmart": "37%",
+                  "Club": "4%",
+                  "Target": "3%",
+                  "Natural": "1%",
+                  "Online": "2%"
+                },
+                "27-34 (Younger Millennials)": {
+                  "Grocery": "58%",
+                  "Walmart": "30%",
+                  "Club": "5%",
+                  "Target": "5%",
+                  "Natural": "2%",
+                  "Online": "1%"
+                },
+                "35-42 (Older Millennials)": {
+                  "Grocery": "59%",
+                  "Walmart": "29%",
+                  "Club": "5%",
+                  "Target": "3%",
+                  "Natural": "2%",
+                  "Online": "1%"
+                },
+                "43-58 (Gen X)": {
+                  "Grocery": "63%",
+                  "Walmart": "27%",
+                  "Club": "5%",
+                  "Target": "2%",
+                  "Natural": "2%",
+                  "Online": "1%"
+                },
+                "59+ (Boomers)": {
+                  "Grocery": "68%",
+                  "Walmart": "25%",
+                  "Club": "4%",
+                  "Target": "1%",
+                  "Natural": "1%",
+                  "Online": "1%"
+                }
+              },
+              "By Region": {
+                "Northeast": {
+                  "Grocery": "69%",
+                  "Walmart": "19%",
+                  "Club": "4%",
+                  "Target": "3%",
+                  "Natural": "3%",
+                  "Online": "2%"
+                },
+                "Midwest": {
+                  "Grocery": "63%",
+                  "Walmart": "29%",
+                  "Club": "4%",
+                  "Target": "3%",
+                  "Natural": "1%",
+                  "Online": "1%"
+                },
+                "South": {
+                  "Grocery": "57%",
+                  "Walmart": "37%",
+                  "Club": "3%",
+                  "Target": "2%",
+                  "Natural": "1%",
+                  "Online": "1%"
+                },
+                "West": {
+                  "Grocery": "65%",
+                  "Walmart": "21%",
+                  "Club": "8%",
+                  "Target": "2%",
+                  "Natural": "2%",
+                  "Online": "1%"
+                }
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slideNumber": 27,
+        "title": "Purchase Motivations By Brand",
+        "text": "This slide shows the competitive landscape of brand purchase motivations. It details which brands are most trusted and chosen by consumers, highlighting factors such as high quality, texture, authenticity, and premium positioning. It also presents data on the percentage of respondents who substitute a product with the same brand.",
+        "charts": [
+          {
+            "chartTitle": "Brand Loyalty – Percentage Substituted",
+            "sampleSize": null,
+            "data": {
+              "American Beauty": "28%",
+              "Prince": "33%",
+              "Skinner": "33%",
+              "San Giorgio": "36%",
+              "Creamette": "38%",
+              "No Yolks": "39%",
+              "Mueller's": "41%",
+              "Ronzoni": "45%",
+              "Banza": "50%",
+              "Rao's Homemade": "55%",
+              "Store Brand": "61%",
+              "Private Label (NET)": "62%",
+              "Great Value": "63%",
+              "Barilla": "72%",
+              "De Cecco": "74%",
+              "Good & Gather": "78%"
+            }
+          }
+        ]
+      },
+      {
+        "slideNumber": 28,
+        "title": "Product Specific Purchase Motivations by Domestic vs Imported",
+        "text": "This slide compares purchase motivations when choosing domestic versus imported pasta. Consumers select imported pasta for reasons like high quality, authentic taste, and premium attributes, while domestic options are chosen for their value proposition.",
+        "charts": [
+          {
+            "chartTitle": "Purchase Motivations by Origin",
+            "sampleSize": 2656,
+            "data": {
+              "Domestic": {
+                "Good value": "53%",
+                "Tastes great": "36%",
+                "Shape / variety I like": "35%",
+                "From a brand I trust": "35%",
+                "Right size package for me/my family": "32%"
+              },
+              "Imported": {
+                "Good value": "55%",
+                "Tastes great": "33%",
+                "Shape / variety I like": "36%",
+                "From a brand I trust": "37%",
+                "High quality": "38%"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slideNumber": 29,
+        "title": "Previously Purchased vs. First Time Purchasing",
+        "text": "Over half of consumers make a specific product choice at the shelf, indicating strong in-store activation potential. Most consumers have previously purchased the product, while a smaller segment are first-time buyers or unsure.",
+        "charts": [
+          {
+            "chartTitle": "Purchase History Breakdown",
+            "sampleSize": 6227,
+            "data": {
+              "Previously purchased": "79%",
+              "Never purchased before": "17%",
+              "Not sure": "5%"
+            }
+          }
+        ]
+      },
+      {
+        "slideNumber": 30,
+        "title": "Planned vs. Impulse Purchase of Product",
+        "text": "This slide examines the nature of the purchase decision. The majority of respondents plan their purchase—either with a specific product in mind or just a product type—while a small fraction make impulse or unplanned purchases.",
+        "charts": [
+          {
+            "chartTitle": "Purchase Decision Type",
+            "sampleSize": 6227,
+            "data": {
+              "Specific product in mind before going to store": "44%",
+              "Type of product in mind, but not specific product": "50%",
+              "Impulse/unplanned": "5%"
+            }
+          }
+        ]
+      },
+      {
+        "slideNumber": 31,
+        "title": "Summary of Purchase Motivations by Price/Quality Tier",
+        "text": "This slide summarizes key purchase motivations across different price/quality segments. Premium shoppers tend to value high quality, taste, and brand trust; mainstream shoppers focus on good value and preferred attributes; and value shoppers emphasize practical considerations like price and package size.",
+        "charts": [
+          {
+            "chartTitle": "Top Motivations by Price/Quality Tier",
+            "sampleSize": 2656,
+            "data": {
+              "Premium": {
+                "leadingMotivations": [
+                  "High quality",
+                  "Tastes great",
+                  "From a brand I trust",
+                  "Right size package for me/my family"
+                ],
+                "otherCommonMotivations": [
+                  "Shape / variety I like",
+                  "Flavor I like",
+                  "Convenient package",
+                  "Product I feel good about serving",
+                  "Appealing texture"
+                ]
+              },
+              "Mainstream": {
+                "leadingMotivations": [
+                  "From a brand I trust",
+                  "Tastes great",
+                  "Good value",
+                  "Shape / variety I like",
+                  "Right size package for me/my family"
+                ],
+                "otherCommonMotivations": [
+                  "High quality",
+                  "Like the size of the individual noodles",
+                  "Something everyone likes",
+                  "Convenient package"
+                ]
+              },
+              "Value": {
+                "leadingMotivations": [
+                  "Good value",
+                  "Shape / variety I like",
+                  "Right size package for me/my family",
+                  "Tastes great"
+                ],
+                "otherCommonMotivations": [
+                  "From a brand I trust",
+                  "Quick to prepare",
+                  "Something everyone likes"
+                ]
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slideNumber": 36,
+        "title": "Two Views of Shopper Decision Trees",
+        "text": "This slide presents two complementary views of shopper decision trees covering assortment strategies, competitive set identification, incrementality, SKU rationalization, and shopper marketing strategies. It highlights the two main components: NAVIGATION and SUBSTITUTION.",
+        "charts": []
+      },
+      {
+        "slideNumber": 37,
+        "title": "Primary Lens for Shopping Dry Pasta",
+        "text": "The primary lens for shopping dry pasta is through Shape/Variety, followed by Pasta Type and then Price Tier (Value, Mainstream, Premium). Brand is the fourth attribute. Additional filters include Package Size, Package Type, Pasta Color/Flavor, and Domestic vs Imported.",
+        "charts": [
+          {
+            "chartTitle": "Saliency Scores for Navigation Attributes",
+            "sampleSize": 6227,
+            "data": {
+              "Primary Pasta Shape/Variety": "61.7",
+              "Pasta Type": "47.0",
+              "Price Tier": "44.5",
+              "Brand": "33.6",
+              "Package Size": "29.4",
+              "Package Type": "23.5",
+              "Pasta Color or Flavor": "18.4",
+              "Domestic vs Imported": "15.8"
+            }
+          }
+        ]
+      },
+      {
+        "slideNumber": 38,
+        "title": "Decision Hierarchies Overview",
+        "text": "Decision hierarchies differ based on the product purchased. For Mainstream, Premium, and Imported products, Brand plays a more prominent role; for Value items, Price is dominant; and for Premium products, Pasta Type is prioritized. The chart below summarizes the hierarchy by Price Tier and Domestic vs Imported.",
+        "charts": [
+          {
+            "chartTitle": "Purchase Decision Hierarchies by Price Tier and Domestic/Imported",
+            "sampleSize": 6227,
+            "data": [
+              {
+                "priceTier": "Mainstream",
+                "domestic": {
+                  "primary": "Pasta Shape/Variety",
+                  "secondary": "Brand",
+                  "tertiary": "Pasta Type",
+                  "quaternary": "Price Tier"
+                },
+                "imported": {
+                  "primary": "Pasta Shape/Variety",
+                  "secondary": "Brand",
+                  "tertiary": "Price Tier",
+                  "quaternary": "Pasta Type"
+                }
+              },
+              {
+                "priceTier": "Premium",
+                "domestic": {
+                  "primary": "Pasta Shape/Variety",
+                  "secondary": "Pasta Type",
+                  "tertiary": "Brand",
+                  "quaternary": "Price Tier"
+                },
+                "imported": {
+                  "primary": "Pasta Shape/Variety",
+                  "secondary": "Brand",
+                  "tertiary": "Pasta Type",
+                  "quaternary": "Price Tier"
+                }
+              },
+              {
+                "priceTier": "Value",
+                "domestic": {
+                  "primary": "Pasta Shape/Variety",
+                  "secondary": "Price Tier",
+                  "tertiary": "Brand",
+                  "quaternary": "Pasta Type"
+                },
+                "imported": {
+                  "primary": "Pasta Shape/Variety",
+                  "secondary": "Price Tier",
+                  "tertiary": "Brand",
+                  "quaternary": "Pasta Type"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "slideNumber": 39,
+        "title": "Purchase Decision Hierarchies by Age",
+        "text": "This slide breaks down purchase decision hierarchies across age groups. All age groups use Pasta Shape/Variety as the primary filter, but younger shoppers (Gen Z and Younger Millennials) place greater emphasis on Price Tier, whereas older shoppers (Older Millennials, Gen X, Boomers) prioritize Pasta Type as the secondary filter. Additional filters such as Brand, Package Size, Package Type, and Domestic vs Imported are also considered.",
+        "charts": [
+          {
+            "chartTitle": "Purchase Decision Hierarchies by Age",
+            "sampleSize": 6227,
+            "data": {
+              "18-26 (Gen Z)": {
+                "Primary": "Pasta Shape/Variety",
+                "Secondary": "Price Tier",
+                "Tertiary": "Pasta Type",
+                "Additional": "Brand, Package Size, Package Type, Domestic vs Imported"
+              },
+              "27-34 (Younger Millennials)": {
+                "Primary": "Pasta Shape/Variety",
+                "Secondary": "Price Tier",
+                "Tertiary": "Pasta Type",
+                "Additional": "Brand, Package Size, Package Type, Domestic vs Imported"
+              },
+              "35-42 (Older Millennials)": {
+                "Primary": "Pasta Shape/Variety",
+                "Secondary": "Pasta Type",
+                "Tertiary": "Price Tier",
+                "Additional": "Brand, Package Size, Package Type, Domestic vs Imported"
+              },
+              "43-58 (Gen X)": {
+                "Primary": "Pasta Shape/Variety",
+                "Secondary": "Pasta Type",
+                "Tertiary": "Price Tier",
+                "Additional": "Brand, Package Size, Package Type, Domestic vs Imported"
+              },
+              "59+ (Boomers)": {
+                "Primary": "Pasta Shape/Variety",
+                "Secondary": "Pasta Type",
+                "Tertiary": "Price Tier",
+                "Additional": "Brand, Package Size, Package Type, Domestic vs Imported"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slideNumber": 40,
+        "title": "Top Attribute Considerations",
+        "text": "This slide details the top attribute considerations when shopping for dry pasta. Overall, 'Pasta Shape/Variety' is the highest considered attribute at 74%, followed by 'Routine/Regular (NET)' at 72%. Additional considerations include 'Oven/Baked (NET)' at 18% and 'Creative (NET)' at 16%. The slide then lists specific pasta types with their respective consideration percentages.",
+        "charts": [
+          {
+            "chartTitle": "Top Attribute Considerations for Dry Pasta",
+            "sampleSize": 6227,
+            "data": {
+              "Overall Attributes": {
+                "Pasta Shape/Variety": "74%",
+                "Routine/Regular (NET)": "72%",
+                "Oven/Baked (NET)": "18%",
+                "Creative (NET)": "16%"
+              },
+              "Specific Pasta Types": {
+                "Spaghetti": "42%",
+                "Penne": "25%",
+                "Elbows/Macaroni": "23%",
+                "Angel Hair": "19%",
+                "Fettuccine": "16%",
+                "Rotini": "15%",
+                "Lasagna": "14%",
+                "Linguine": "13%",
+                "Rigatoni": "12%",
+                "Egg Noodles": "12%",
+                "Shell": "10%",
+                "Ziti": "10%",
+                "Spiral": "8%",
+                "Farfalle/Bowtie/Butterfly": "8%",
+                "Medium Shells": "6%",
+                "Jumbo Shells": "5%",
+                "Tortellini/Tortelloni": "5%"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slideNumber": 41,
+        "title": "While Brand is only a tertiary attribute overall, Barilla is the overwhelmingly most considered brand nationally",
+        "text": "This slide indicates that although shoppers primarily rely on factors such as Pasta Shape/Variety, Price Tier, and Pasta Type, when brand is considered it overwhelmingly favors Barilla on a national level. Detailed numeric data for this slide was not provided in the extract.",
+        "charts": []
+      },
+      {
+        "slideNumber": 42,
+        "title": "Brand Consideration by Region",
+        "text": "When seeking out specific brands, Barilla is the clear leader, while secondary brand preferences vary by region. The chart below provides a regional breakdown of brand consideration percentages among respondents.",
+        "charts": [
+          {
+            "chartTitle": "Brand Consideration by Region",
+            "sampleSize": 730,
+            "data": {
+              "Northeast": {
+                "Barilla": "25%",
+                "Ronzoni": "12%",
+                "De Cecco": "9%",
+                "San Giorgio": "8%",
+                "Private Label (NET)": "6%"
+              },
+              "Midwest": {
+                "Barilla": "21%",
+                "Ronzoni": "10%",
+                "De Cecco": "8%",
+                "San Giorgio": "7%",
+                "Private Label (NET)": "5%"
+              },
+              "South": {
+                "Barilla": "24%",
+                "Ronzoni": "9%",
+                "De Cecco": "7%",
+                "San Giorgio": "6%",
+                "Private Label (NET)": "4%"
+              },
+              "West": {
+                "Barilla": "20%",
+                "Ronzoni": "8%",
+                "De Cecco": "6%",
+                "San Giorgio": "5%",
+                "Private Label (NET)": "3%"
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slideNumber": 43,
+        "title": "Brand Loyalty and Substitution",
+        "text": "X1. Please select up to 3 products you might substitute if your original choice were unavailable. This slide presents two sets of data: the first shows the percentage of respondents who substituted with the same brand, and the second shows the percentage who substituted with a Barilla product when their first choice was unavailable. The data highlights that Barilla is a leader in both brand loyalty and substitution.",
+        "charts": [
+          {
+            "chartTitle": "Brand Loyalty – Percentage Who Substituted a Product of Same Brand",
+            "sampleSize": null,
+            "data": {
+              "American Beauty": "28%",
+              "Prince": "33%",
+              "Skinner": "33%",
+              "San Giorgio": "36%",
+              "Creamette": "38%",
+              "No Yolks": "39%",
+              "Mueller's": "41%",
+              "Ronzoni": "45%",
+              "Banza": "50%",
+              "Rao's Homemade": "55%",
+              "Store Brand": "61%",
+              "Private Label (NET)": "62%",
+              "Great Value": "63%",
+              "Barilla": "72%",
+              "De Cecco": "74%",
+              "Good & Gather": "78%"
+            }
+          },
+          {
+            "chartTitle": "Selected Brand but then Substituted (Barilla)",
+            "sampleSize": null,
+            "data": {
+              "No Yolks": "0%",
+              "Rao's Homemade": "1%",
+              "De Cecco": "3%",
+              "La Moderna": "7%",
+              "Skinner": "9%",
+              "Good & Gather": "12%",
+              "Great Value": "13%",
+              "American Beauty": "14%",
+              "Private Label (NET)": "14%",
+              "Store Brand": "16%",
+              "Prince": "19%",
+              "Creamette": "20%",
+              "San Giorgio": "20%",
+              "Mueller's": "22%",
+              "Ronzoni": "23%",
+              "Banza": "36%"
+            }
+          }
+        ]
+      },
+      {
+        "slideNumber": 55,
+        "title": "Executive Summary",
+        "text": "In a crowded dry pasta marketplace, Barilla stands alone as the clear category leader. However, there are opportunities for continued growth. Pasta is ubiquitous with high purchase frequency – over half of consumers eat store-bought pasta weekly or more often. Regular white pasta remains dominant, but many are open to alternatives like whole wheat and pasta with added protein, especially among Gen Z and Millennials.\nIMPLICATION: Continue to stock traditional products and focus on younger consumers to establish Barilla as a leader in the Better For You space.",
+        "charts": []
+      },
+      {
+        "slideNumber": 56,
+        "title": "Executive Summary (cont'd)",
+        "text": "Dry pasta is purchased through many channels, with Grocery and Walmart as the dominant retailers. Online shopping is chosen by only about 1 in 10 consumers, emphasizing the importance of the in-store experience. IMPLICATION: Engage Grocery and Walmart with data reinforcing Barilla's in-store leadership, while also considering an online strategy. Additionally, most consumers make a specific product choice at the shelf, highlighting in-store activation opportunities.\nIMPLICATION: Use pricing, promotion, packaging, and brand messaging to activate in-store shoppers.",
+        "charts": []
+      },
+      {
+        "slideNumber": 58,
+        "title": "Sample Composition",
+        "text": "Large, diverse sample (N = 4,013) allows for comparisons across key demographics. The slide details age distribution, income, population density, and geographic region.",
+        "charts": [
+          {
+            "chartTitle": "Age Distribution",
+            "sampleSize": 4013,
+            "data": {
+              "Gen Z (18–26)": "50%",
+              "Younger Millennials (27–34)": "49%",
+              "Older Millennials (35–42)": "10%",
+              "Gen X (43–58)": "12%",
+              "Boomers (59+)": "16%"
+            }
+          },
+          {
+            "chartTitle": "Income Distribution",
+            "sampleSize": 4013,
+            "data": {
+              "Less than $50,000": "39%",
+              "$50,000 to $74,999": "23%",
+              "$75,000 to $99,999": "15%",
+              "$100,000 or $149,999": "14%",
+              "More than $150,000": "10%"
+            }
+          },
+          {
+            "chartTitle": "Population Density",
+            "sampleSize": 4013,
+            "data": {
+              "Suburban": "54%",
+              "Urban": "24%",
+              "Rural": "22%"
+            }
+          },
+          {
+            "chartTitle": "Geographic Region",
+            "sampleSize": 4013,
+            "data": {
+              "Northeast": "18%",
+              "South": "35%",
+              "Midwest": "22%",
+              "West": "24%"
+            }
+          }
+        ]
+      },
+      {
+        "slideNumber": 59,
+        "title": "Annual Purchase Frequency of Dry Pasta Types",
+        "text": "After regular white pasta, whole wheat, pasta with added protein, and oven cuts are bought most frequently on an annual basis. Pasta types like legume, gluten-free, and quick cook are bought less frequently, with less than half of respondents purchasing them in the past year.",
+        "charts": [
+          {
+            "chartTitle": "Purchase Frequency of Dry Pasta Types (Annual)",
+            "sampleSize": 4013,
+            "data": {
+              "Regular white pasta": "60%",
+              "Whole wheat pasta": "23%",
+              "Pasta with added protein": "20%",
+              "Oven cuts": "22%",
+              "Pasta made from veggies": "17%",
+              "Pasta with added fiber": "15%",
+              "Quick Cook pasta": "18%",
+              "Legume pasta": "11%",
+              "Gluten-free pasta": "14%"
+            }
+          }
+        ]
+      },
+      {
+        "slideNumber": 60,
+        "title": "Important Factors When Buying Dry Pasta",
+        "text": "This slide presents the factors influencing the purchase of dry pasta. Consumers rank factors by importance when choosing their top three considerations. The data reveals that the best deal from a price/value perspective is the singular most important factor, followed by taste, household preference, cooking performance, and nutritional/quality attributes. Two charts are provided: one summarizing the top three factors overall and a detailed ranking table of factors across first, second, and third choices.",
+        "charts": [
+          {
+            "chartTitle": "Top Factors When Buying Dry Pasta",
+            "sampleSize": 4013,
+            "data": {
+              "Most Important Factor": {
+                "Best deal from a price/value perspective": "23%"
+              },
+              "Second Most Important Factors": {
+                "Something that I know will taste great": "17%",
+                "Something everyone in the household likes": "13%"
+              }
+            }
+          },
+          {
+            "chartTitle": "Detailed Ranking of Important Factors When Buying Dry Pasta",
+            "sampleSize": 4013,
+            "data": [
+              {
+                "factor": "Best deal from a price/value perspective",
+                "Rank 1": "23%",
+                "Rank 2": "",
+                "Rank 3": ""
+              },
+              {
+                "factor": "Something that I know will taste great",
+                "Rank 1": "17%",
+                "Rank 2": "16%",
+                "Rank 3": "15%"
+              },
+              {
+                "factor": "Something everyone in the household likes",
+                "Rank 1": "13%",
+                "Rank 2": "12%",
+                "Rank 3": "16%"
+              },
+              {
+                "factor": "Cooks up perfectly every time with ease",
+                "Rank 1": "10%",
+                "Rank 2": "11%",
+                "Rank 3": "10%"
+              },
+              {
+                "factor": "Cooks up quickly",
+                "Rank 1": "13%",
+                "Rank 2": "12%",
+                "Rank 3": "12%"
+              },
+              {
+                "factor": "Something that is healthier/nutritious",
+                "Rank 1": "6%",
+                "Rank 2": "10%",
+                "Rank 3": "8%"
+              },
+              {
+                "factor": "Something that can be used in a variety of ways",
+                "Rank 1": "7%",
+                "Rank 2": "7%",
+                "Rank 3": "6%"
+              },
+              {
+                "factor": "Something with the highest quality, gourmet taste",
+                "Rank 1": "7%",
+                "Rank 2": "9%",
+                "Rank 3": "9%"
+              },
+              {
+                "factor": "Unique and different varieties",
+                "Rank 1": "4%",
+                "Rank 2": "3%",
+                "Rank 3": "3%"
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "slideNumber": 61,
+        "title": "Most Important Factor When Buying Dry Pasta",
+        "text": "This slide confirms that across all age groups, the singular most important factor when buying Dry Pasta is obtaining the best deal from a price/value perspective. It also provides a detailed ranking of factors as 1st, 2nd, and 3rd choices, along with a breakdown by age group.",
+        "charts": [
+          {
+            "chartTitle": "Detailed Ranking of Important Factors When Buying Dry Pasta",
+            "sampleSize": 4013,
+            "data": [
+              {
+                "factor": "Best deal from a price/value perspective",
+                "Rank 1": "23%",
+                "Rank 2": "",
+                "Rank 3": ""
+              },
+              {
+                "factor": "Something that I know will taste great",
+                "Rank 1": "17%",
+                "Rank 2": "16%",
+                "Rank 3": "15%"
+              },
+              {
+                "factor": "Something everyone in the household likes",
+                "Rank 1": "13%",
+                "Rank 2": "12%",
+                "Rank 3": "16%"
+              },
+              {
+                "factor": "Cooks up perfectly every time with ease",
+                "Rank 1": "10%",
+                "Rank 2": "11%",
+                "Rank 3": "10%"
+              },
+              {
+                "factor": "Cooks up quickly",
+                "Rank 1": "13%",
+                "Rank 2": "12%",
+                "Rank 3": "12%"
+              },
+              {
+                "factor": "Something that is healthier/nutritious",
+                "Rank 1": "6%",
+                "Rank 2": "10%",
+                "Rank 3": "8%"
+              },
+              {
+                "factor": "Something that can be used in a variety of ways",
+                "Rank 1": "7%",
+                "Rank 2": "7%",
+                "Rank 3": "6%"
+              },
+              {
+                "factor": "Something with the highest quality, gourmet taste",
+                "Rank 1": "7%",
+                "Rank 2": "9%",
+                "Rank 3": "9%"
+              },
+              {
+                "factor": "Unique and different varieties",
+                "Rank 1": "4%",
+                "Rank 2": "3%",
+                "Rank 3": "3%"
+              }
+            ]
+          },
+          {
+            "chartTitle": "Best Deal/Value Importance by Age Group",
+            "sampleSize": 4013,
+            "data": {
+              "Overall": {
+                "Best deal from a price/value perspective": "23%"
+              },
+              "byAge": {
+                "18-26 (Gen Z)": "23%",
+                "27-34 (Younger Millennials)": "20%",
+                "35-42 (Older Millennials)": "20%",
+                "43-58 (Gen X)": "22%",
+                "59+ (Boomers)": "22%"
+              },
+              "sampleSizes": {
+                "18-26": 402,
+                "27-34": 494,
+                "35-42": 634,
+                "43-58": 1116,
+                "59+": 1367
+              }
+            }
+          }
+        ]
+      },
+      {
+        "slideNumber": 62,
+        "title": "Channel of Dry Pasta Purchase in Past Year",
+        "text": "Nearly all shoppers purchased Dry Pasta at grocery in the last year, with over half also shopping at Walmart, and Club being the third most common channel. This slide presents overall purchase percentages and breakdowns by age group and region.",
+        "charts": [
+          {
+            "chartTitle": "Overall Channel Purchase Percentages",
+            "sampleSize": 4013,
+            "data": {
+              "Grocery": "88%",
+              "Walmart": "55%",
+              "Club": "21%",
+              "Target": "18%",
+              "Natural": "11%",
+              "Online": "8%"
+            }
+          },
+          {
+            "chartTitle": "Channel Purchase by Age Group",
+            "sampleSize": 4013,
+            "data": {
+              "18-26 (Gen Z)": {
+                "Grocery": "86%",
+                "Walmart": "69%",
+                "Club": "29%",
+                "Target": "32%",
+                "Natural": "11%",
+                "Online": "11%"
+              },
+              "27-34 (Younger Millennials)": {
+                "Grocery": "90%",
+                "Walmart": "63%",
+                "Club": "29%",
+                "Target": "29%",
+                "Natural": "15%",
+                "Online": "12%"
+              },
+              "35-42 (Older Millennials)": {
+                "Grocery": "89%",
+                "Walmart": "62%",
+                "Club": "27%",
+                "Target": "29%",
+                "Natural": "14%",
+                "Online": "12%"
+              },
+              "43-58 (Gen X)": {
+                "Grocery": "88%",
+                "Walmart": "55%",
+                "Club": "22%",
+                "Target": "16%",
+                "Natural": "9%",
+                "Online": "8%"
+              },
+              "59+ (Boomers)": {
+                "Grocery": "87%",
+                "Walmart": "44%",
+                "Club": "13%",
+                "Target": "32%",
+                "Natural": "10%",
+                "Online": "6%"
+              }
+            }
+          },
+          {
+            "chartTitle": "Channel Purchase by Region",
+            "sampleSize": 4013,
+            "data": {
+              "Northeast": {
+                "Grocery": "92%",
+                "Walmart": "45%",
+                "Club": "22%",
+                "Target": "20%",
+                "Natural": "11%",
+                "Online": "10%"
+              },
+              "Midwest": {
+                "Grocery": "88%",
+                "Walmart": "57%",
+                "Club": "18%",
+                "Target": "16%",
+                "Natural": "8%",
+                "Online": "6%"
+              },
+              "South": {
+                "Grocery": "86%",
+                "Walmart": "66%",
+                "Club": "18%",
+                "Target": "16%",
+                "Natural": "8%",
+                "Online": "8%"
+              },
+              "West": {
+                "Grocery": "89%",
+                "Walmart": "44%",
+                "Club": "13%",
+                "Target": "8%",
+                "Natural": "9%",
+                "Online": "9%"
+              }
+            }
+          }
+        ]
+      }
+    ]
+  }
+  

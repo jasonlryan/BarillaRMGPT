@@ -1,0 +1,29 @@
+. Cross-Category Comparison Query
+"Compare the effectiveness of digital touchpoints between pasta and sauce categories in the French market, focusing on the awareness stage."
+(This will test integration between pasta_data.json, redsauce_data.json, and touchpoint validation)
+Market-Specific Trigger Analysis
+"What are the top 3 purchase triggers for dry snacks in Italy, and how do they compare to biscuit triggers in the same market?"
+(Tests drysnacks_trigger.json and biscuits_trigger.json integration)
+Multi-Market Channel Performance
+"Show me the best performing offline channels for pasta products across Germany, France, and Switzerland, sorted by index value."
+(Leverages pasta_data.json with multi-market analysis)
+Sauce Category Consumer Needs
+"What are the primary consumer needs driving pesto sauce purchases in Italy compared to red sauce, and which touchpoints best address these needs?"
+(Tests integration between redsauce_pesto_meatsauce_needs.json and respective sauce data files)
+Purchase Journey Analysis
+"Analyze the pasta purchase journey in Turkey, highlighting unique triggers and comparing them to core markets like France and Germany."
+(Tests pasta_trigger.json with market-specific variations)
+Cross-Category Occasion Mapping
+"What are the common consumption occasions between biscuits in Greece and dry snacks in Italy? How do the touchpoint effectiveness scores compare?"
+(Tests biscuits_occasion.json and drysnacks_pairing.json)
+Market Coverage Deep Dive
+"For meat sauce category, compare the performance of all available touchpoints between France and Italy, highlighting the most effective channels in each market."
+(Tests meatsauce_data.json with limited market coverage)
+Inspiration Source Analysis
+"What are the top recipe inspiration sources for pasta in Switzerland, and how do they differ from other markets? Include any unique Swiss categories."
+(Tests pasta_inspiration.json with Swiss-specific mappings)
+9. Category Needs Correlation
+"Show me correlations between pasta needs in Australia and biscuit needs in France, focusing on touchpoints that address similar consumer motivations."
+(Tests cross-category analysis between pasta_needs.json and biscuits data)
+Channel Optimization Query
+"For the Italian market, what are the most effective digital touchpoints across red sauce, pesto sauce, and dry snacks categories? Include deviation from mean for each touchpoint."
