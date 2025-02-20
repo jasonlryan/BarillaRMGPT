@@ -1,0 +1,280 @@
+{
+    "framework_overview": {
+      "description": "This guide outlines 8 distinct but interconnected growth levers that drive penetration growth for Barilla. Each lever represents a strategic area of commercial excellence and can be used to unify consumer marketing, trade marketing, e-commerce, and sales toward building brands profitably. The levers encourage holistic thinking, from assessing past performance to setting strategic and annual plans, and ongoing performance tracking. Underpinning all 8 levers is profit optimization, ensuring that each lever is deployed sustainably and profitably.",
+      "demand_creation_vs_conversion": {
+        "demand_creation": {
+          "focus": "Building a strong brand over time, increasing relevance and reputation.",
+          "goal": "Ensuring the brand comes to mind when consumers consider purchases, standing out from competitors.",
+          "key_point": "People must be able to recognize the brand, attach meaning to it, and place it in their mental shortlist."
+        },
+        "demand_conversion": {
+          "focus": "Turning latent demand into actual purchases (triggering current sales).",
+          "goal": "Making the brand available in the right channels, formats, with compelling visibility and purchase triggers.",
+          "key_point": "Activities should maximize return while ensuring availability, ease of purchase, and strong presence."
+        }
+      },
+      "profit_optimisation": {
+        "importance": "Ensures sustainability of any demand creation or conversion efforts by delivering value (profit or market share).",
+        "responsibility": "Not solely finance; every commercial marketing role impacts sales, revenue, and profits. Building brand profitably is a collective responsibility."
+      }
+    },
+    "lever_1_strong_brand_foundations": {
+      "focus": "The power of a brand derived from its positioning, recognizability, shelf impact, and consumer presence. Also includes consumer creative approach.",
+      "rationale": "Clear, compelling brand foundations ensure meaningfulness, difference, and salience, driving brand power and penetration.",
+      "key_elements": {
+        "brand_foundations": {
+          "definition": "What we want the brand to stand for in people’s hearts and minds, offering compelling benefits that connect emotionally and align with consumer values."
+        },
+        "kantar_key_characteristics": {
+          "meaningfulness": "Meeting people’s needs and being liked.",
+          "difference": "Uniqueness, standing apart from competition.",
+          "salience": "Quickly comes to mind."
+        },
+        "brand_power_score": "The combination of meaningfulness, difference, and salience. Increasing Brand Power is the ultimate goal of this lever."
+      },
+      "benefits_of_strong_brand_foundations": [
+        "Capture more volume by attracting new users.",
+        "Command a price premium.",
+        "Gain a larger share of value in the market."
+      ],
+      "collaboration_with_agencies": "Essential to firmly establish brand foundations and bring them to life via breakthrough ideas and campaigns.",
+      "ehrenberg_bass_research": {
+        "distinctive_assets": "Shapes, colors, sounds, fonts, packaging, endorsements, etc.",
+        "importance": "Continuously reinforce these unique brand elements to ensure easy recognition on shelf and memorability."
+      }
+    },
+    "lever_2_superior_products": {
+      "focus": "Ensuring both perceived and actual product quality are superior (or at least equal) to competition.",
+      "rationale": {
+        "product_superiority_importance": "A key driver of market performance, influencing brand premium potential, loyalty, and word-of-mouth.",
+        "superiority_builds_equity": "Demonstrating credible, superior product performance increases the likelihood that consumers will choose our brand over competitors."
+      },
+      "key_principles": [
+        "Superiority must be believable and proven through credible 'Reasons to Believe' (RTBs).",
+        "Product or packaging upgrades, recipe renovations, or sustainability initiatives can refresh a brand’s ability to deliver high quality.",
+        "Delighting consumers with great taste, quality, and sustainable sourcing drives repeat purchase and loyalty.",
+        "Continuous improvement of the brand experience secures both short and long-term brand success."
+      ],
+      "examples_of_application": [
+        "Product and packaging upgrades",
+        "Sustainability initiatives for the product",
+        "Recipe renovations for improved performance",
+        "Test-and-learn approach to product development"
+      ],
+      "key_tool_template": "Product Architecture",
+      "what_to_measure": [
+        "North Star KPI: Product Advisor Score",
+        "R&D Preference Mapping",
+        "Great tasting measure in BHT?"
+      ],
+      "how_to_measure": [
+        "Product Advisor methodology",
+        "R&D Preference Mapping",
+        "Great tasting measure in BHT"
+      ]
+    },
+    "lever_3_incremental_innovation": {
+      "focus": "Driving brand portfolio expansion by introducing meaningful innovations that create new usage occasions, attract new consumers, or trade up value.",
+      "key_statement": "Brands perceived to be meaningfully different and demonstrate innovative behaviors grow at double the rate of those that are meaningfully different alone.",
+      "rationale": {
+        "innovation_as_growth_driver": "Innovation keeps brands relevant to new audiences or sustains the brand’s role among existing consumers, adding incremental value rather than duplicating current offerings.",
+        "meaningful_difference": "Ensures incremental (vs. cannibalized) volume by genuinely introducing something new—whether in product, packaging, or usage occasion."
+      },
+      "examples_of_application": [
+        "Concept development and testing",
+        "NPD (New Product Development) launch",
+        "New packaging solutions",
+        "Repositioning products for new usage occasions"
+      ],
+      "key_tools_templates": [
+        "Innovation Activation profiles",
+        "Phase & Gate processes"
+      ],
+      "what_to_measure": [
+        "North Star KPI: Nielsen | Innovation Impact measure",
+        "Incremental Value Market Share",
+        "Cannibalisation Impact",
+        "Category value growth"
+      ],
+      "how_to_measure": [
+        "Nielsen new products tracker",
+        "Feigenaffe",
+        "Observancy analysis"
+      ]
+    },
+    "lever_4_activation_at_scale": {
+      "focus": "Covers all commercial activation, bridging Demand Creation and Demand Conversion. Ensures integrated marketing, trade, and sales activities in and out of store for optimal impact.",
+      "rationale": {
+        "brand_building_and_sales_activation": "Brand activation involves both long-term brand-building (investing in mental availability) and short-term promotional bursts (driving immediate transactions). The most effective campaigns combine both.",
+        "omnichannel_coordination": "Activities must be coordinated across the entire path to purchase—digital and physical—covering e-commerce, retail media, in-store displays, etc."
+      },
+      "examples_of_application": [
+        "Media agency fees",
+        "ATL / traditional media (TV, OOH, press)",
+        "Digital marketing (social, search, content, CRM, programmatic, etc.)",
+        "Value promotions, cross-campaign synergy",
+        "In-store point of sale (POS) materials",
+        "Consumer PR",
+        "Influencer marketing"
+      ],
+      "key_tool_template": "Integrated Activation Brief / ICP",
+      "what_to_measure": {
+        "north_star_kpi": "MMM/ROI",
+        "additional_measures": [
+          "Brand health ‘Pulse’",
+          "Demand FirePower",
+          "Retailer-level analysis",
+          "Integrated search analysis",
+          "Category share",
+          "Consumer engagement metrics",
+          "E-commerce sales"
+        ]
+      },
+      "how_to_measure": [
+        "Marketing Mix Modelling",
+        "Panel data",
+        "Digital analytics",
+        "Surveys (brand tracking)",
+        "Others"
+      ]
+    },
+    "lever_5_right_assortment": {
+      "focus": "Maximize effectiveness of the assortment range in each store type by adapting to shopper needs and prioritizing lead selling SKUs.",
+      "rationale": {
+        "shopper_missions_and_sku_availability": "Shoppers often have a specific product in mind. Missing SKUs lead to lost sales and can impact brand loyalty. The right formats and sizes must align with each store environment’s shopper missions."
+      },
+      "examples_of_application": [
+        "New SKU (size, weight, format) primary and secondary placement",
+        "Planogram design / adjacency",
+        "Non-promotional brand packs tied in with brand portfolio",
+        "Upsized / downsized packs to meet specific store needs"
+      ],
+      "key_tool_template": "None",
+      "what_to_measure": {
+        "north_star_kpi": "Assortment profiles",
+        "other_measures": [
+          "Nielsen (or IRI) 'Assortment tool'",
+          "People Decision Journey",
+          "Must Stock SKUs",
+          "Distribution / Rotation SKUs performance"
+        ]
+      },
+      "how_to_measure": [
+        "Retailer Sales Data (Syndicated)",
+        "Planogram Tools",
+        "People Decision Journey",
+        "Observational store checks",
+        "Others"
+      ]
+    },
+    "lever_6_availability_and_visibility": {
+      "focus": "Covers the two most important drivers of physical availability: being present in distribution (availability) and ensuring high visibility and impactful displays (off-shelf displays).",
+      "rationale": {
+        "core_principle": "Even if demand is created, if products are not readily available or visible, the potential sale will be lost.",
+        "physical_availability_impact": "Optimizing availability and visibility ensures that shoppers can easily find and choose the product, converting latent demand into actual purchase."
+      },
+      "examples_of_application": [
+        "Initiatives to build distribution coverage in key retail channels",
+        "Secondary placements (off-shelf, gondola ends, promotional aisles)",
+        "Optimizing shelf layouts and planograms",
+        "Placement of Point of Purchase material (signage, stands)",
+        "Display set-ups in online and offline channels"
+      ],
+      "key_tool_template": "Digital Shelf Tool",
+      "what_to_measure": {
+        "north_star_kpi": "Share of Shelf Index",
+        "growth_measures": [
+          "Retail distribution levels",
+          "POS compliance",
+          "Visibility or share of shelf",
+          "# Extra displays"
+        ]
+      },
+      "how_to_measure": [
+        "Nielsen (or IRI) distribution data",
+        "Packaging ‘on-shelf’ research",
+        "Internal Sales Fundamentals"
+      ]
+    },
+    "lever_7_integrated_pricing_and_promotions": {
+      "focus": "Create a positive perception of value compared to competitors (including private label) while maintaining brand equity and profitability.",
+      "rationale": {
+        "pricing_promotion_impact": "Pricing and promotions are straightforward levers to drive penetration. Mismanagement can erode margins or damage brand image. Balancing affordability with brand equity is crucial.",
+        "profitability_balance": "Optimizing price structures and promotional mechanics helps attract new and existing consumers without compromising profitability or diluting brand positioning."
+      },
+      "examples_of_application": [
+        "Price promotional activity (TPR)",
+        "Money-off coupons (online and offline) and redemption tracking",
+        "Retailer and 3rd party coupon sites",
+        "Cross-brand multipacks for new usage occasions",
+        "Bundled price promotions in-aisle or cross-category",
+        "Price visibility in e-commerce environments"
+      ],
+      "key_tool_template": "n/a",
+      "what_to_measure": {
+        "north_star_kpi": "No promo average price / Net Revenue Management (NRM)",
+        "growth_measures": [
+          "Price elasticity",
+          "Promo ROI",
+          "Promotion effectiveness index"
+        ]
+      },
+      "how_to_measure": [
+        "Nielsen IQ",
+        "MMM/ROI analysis",
+        "In-store Sales Fundamentals"
+      ]
+    },
+    "lever_8_win_win_partnerships": {
+      "focus": "Build triple-win partnerships (consumer, customer, Barilla) with key retailers to drive category growth, brand preference, and share development profitably.",
+      "rationale": {
+        "mutual_benefit": "Retailers control shelf access and consumer reach. Collaborative strategies that focus on category growth and brand preference help both Barilla and the retailer succeed.",
+        "shared_value_creation": "Aligning brand initiatives with retailer objectives leverages co-marketing, promotions, and distribution efficiencies for greater collective impact."
+      },
+      "examples_of_application": [
+        "Trade investment",
+        "Data partnerships",
+        "Joint trade plans",
+        "Co-marketing or co-advertising activities",
+        "Customer plane (Joint Business Plan)"
+      ],
+      "key_tool_template": "Customer plane (Joint Business Plan)",
+      "what_to_measure": {
+        "north_star_kpi": "Customer Satisfaction (CSAT) / Customer Collaboration Index",
+        "growth_measures": [
+          "Category value growth in key retailers",
+          "Barilla share within retailer",
+          "Joint promotional ROI"
+        ]
+      },
+      "how_to_measure": [
+        "Customer P&L",
+        "Retailer sales data",
+        "Consumer/shopper panel data",
+        "In-store Sales Fundamentals"
+      ]
+    },
+    "brand_building_blend": {
+      "guiding_statement": "Evidence suggests the following blend for the most effective brand-building:",
+      "recommended_split": {
+        "long_term_share": 60,
+        "short_term_share": 40
+      },
+      "long_term_focus": [
+        "Brand-building for future sales",
+        "Reaching a broad base of new people",
+        "Changing brand perceptions",
+        "Emotional, engaging brand-building",
+        "Repeated exposure over time"
+      ],
+      "short_term_focus": [
+        "Generating immediate sales",
+        "Increasing occasions and spend among existing users",
+        "Rational, persuasive messages",
+        "Information-rich media",
+        "Product availability"
+      ],
+      "overall_note": "Execute creatively, simply, and integrate across multiple channels to ensure share of voice exceeds share of market."
+    }
+  }
+  

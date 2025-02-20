@@ -589,6 +589,66 @@
                     ],
                     "example": "Based on the January 2024 Vista Grande US study (n=4,013), [insight]. This finding is specific to the US market and includes demographic breakdowns by [relevant segments]."
                 }
+            },
+            "pdj_omnichannel": {
+                "file": "france_pdj_omnichannel_report.json",
+                "description": "PDJ methodology and omnichannel behavior insights",
+                "scope": {
+                    "coverage": "Global (20 countries)",
+                    "sample_size": "110,000+ shopping missions",
+                    "focus": "Omnichannel behavior and shopper journey"
+                },
+                "usage_guidelines": [
+                    "Use for understanding shopper journey stages",
+                    "Reference for omnichannel strategy development",
+                    "Source for shopper behavior insights",
+                    "Guide for retailer-specific recommendations"
+                ],
+                "data_limitations": [
+                    "Some insights are Carrefour-specific",
+                    "Category insights limited to specific examples",
+                    "Regional variations may exist",
+                    "Time-specific to research period"
+                ],
+                "response_format": {
+                    "structure": [
+                        "Specify PDJ stage being referenced",
+                        "Include relevant shopper behavior insights",
+                        "Add category-specific context if applicable",
+                        "Note any retailer-specific limitations"
+                    ],
+                    "example": "Based on PDJ analysis across 110,000+ shopping missions, during the [Stage] stage, shoppers primarily engage in [Behavior]. This is particularly evident in [Category] where [Specific Insight]."
+                }
+            },
+            "growth_framework": {
+                "file": "growth_levers.json",
+                "description": "Strategic framework for penetration growth",
+                "scope": {
+                    "coverage": "Global framework",
+                    "levers": 8,
+                    "focus": "Brand building and commercial excellence"
+                },
+                "usage_guidelines": [
+                    "Reference for strategic recommendations",
+                    "Guide for implementation planning",
+                    "Framework for measuring success",
+                    "Source for activation strategies"
+                ],
+                "data_limitations": [
+                    "Framework requires context-specific adaptation",
+                    "KPIs may vary by market/category",
+                    "Implementation details need customization",
+                    "Success metrics require local benchmarking"
+                ],
+                "response_format": {
+                    "structure": [
+                        "Identify relevant growth lever(s)",
+                        "Provide strategic rationale",
+                        "Include implementation guidance",
+                        "Specify measurement approach"
+                    ],
+                    "example": "Applying Growth Lever [X], the recommendation is to [Strategy]. This aligns with [Rationale] and can be measured through [KPIs]."
+                }
             }
         },
         "priority_rules": [
@@ -596,6 +656,16 @@
                 "condition": "US pasta category queries",
                 "action": "Use vista_grande_hybrid.json as primary source",
                 "validation": "Check metadata for relevance and limitations"
+            },
+            {
+                "condition": "Omnichannel strategy queries",
+                "action": "Use pdj_omnichannel as primary source",
+                "validation": "Check market relevance and category applicability"
+            },
+            {
+                "condition": "Strategic planning queries",
+                "action": "Use growth_framework as primary source",
+                "validation": "Verify lever relevance and market context"
             }
         ]
     },

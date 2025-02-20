@@ -1,0 +1,43 @@
+{
+    "source": "France - Customer centric approach CARREFOUR (1).pdf",
+    "research_origin": "Barilla",
+    "executive_summary": "This research outlines a customer-centric approach using the PDJ methodology—based on data from over 110,000 shopping missions across 20 countries—to drive strategic partnership development and category leadership. The study emphasizes that shoppers engage in omnichannel and hybrid behaviors, executing a defined set of key actions (Plan, Learn, Hunt, Compare, Check, Inspire, Navigate) that guide their purchasing decisions. Although some data points reference Carrefour, the overall insights and research belong to Barilla.",
+    "analysis": {
+      "data_driven_insights": "The initiative leverages extensive shopper data (PDJ) to support key customer planning and to establish thought leadership within categories.",
+      "omnichannel_behavior": "Shoppers increasingly exhibit hybrid behaviors, with significant pre-store planning occurring via both digital and physical channels. Retailer websites, for instance, serve as comprehensive planning tools at a ratio of 3:1 compared to pure transactional use.",
+      "shopper_behavior": "The shopper journey is built upon a limited set of recurring actions—such as planning (e.g., making shopping lists), learning (seeking new ideas), hunting (for promotions), comparing options, checking product details, gaining inspiration (recipes/meal ideas), and navigating (finding products)—which vary in prominence depending on category, engagement level, and retailer context.",
+      "touchpoint_relevance": "Not all touchpoints influence decision-making equally. The research dissects the role of various touchpoints (store leaflets, loyalty cards, retailer websites, etc.), showing that many can serve multiple functions (e.g., reminding, simplifying choices, inspiring meal ideas) and offering a comparative analysis across different retailers and categories.",
+      "category_specific_insights": {
+        "soft_breads": {
+          "key_actions": [
+            "Remind me to buy soft breads",
+            "Simplify my decision on what to buy",
+            "Help me choosing between options"
+          ],
+          "demographics": "Focused on shoppers aged 25–34 with specific family sizes; includes insights on meal planning, purchase frequency, and category repertoire."
+        },
+        "condiments": {
+          "key_actions": [
+            "Remind me to buy pasta sauce",
+            "Simplify my decision on what to buy",
+            "Give me an idea for a meal"
+          ],
+          "demographics": "Insights adjusted for a younger segment (e.g., 18–24) and different household sizes, with detailed analysis on meal planning habits and purchase triggers."
+        }
+      },
+      "global_insights": {
+        "scale_of_research": "Data is derived from over 110,000 shopping missions spanning 20 countries, ensuring robust and comprehensive insights.",
+        "dual_perspective": "Shopper data is analyzed both from a category perspective and through a retailer’s lens, facilitating more nuanced activations.",
+        "engaged_shopper_focus": "Engaged shoppers—those who exhibit higher interaction levels and receive disproportionate retail media exposure—are identified as key targets for marketing efforts."
+      }
+    },
+    "methodology": "The PDJ (Shopper Data) approach is used to capture deep shopper insights, providing both quantitative and qualitative data to inform strategy.",
+    "recommendations": [
+      "Tailored Activations: Develop retailer- and category-specific marketing strategies based on high-impact touchpoints identified in the analysis.",
+      "Omnichannel Optimization: Invest in creating seamless integrations between digital and physical channels, particularly enhancing digital planning tools such as retailer websites.",
+      "Engaged Shopper Targeting: Prioritize strategies aimed at the engaged shopper segment, given their higher receptivity to retail media and influence on purchase decisions.",
+      "Refined Shopper Profiling: Utilize the detailed demographic and behavioral insights (as seen in the soft breads and condiments ID cards) to further personalize marketing efforts.",
+      "Accurate Attribution: Ensure that all internal and external communications accurately attribute the research and insights to Barilla, even though Carrefour data points are present."
+    ]
+  }
+  

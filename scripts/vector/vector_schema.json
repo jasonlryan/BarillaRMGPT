@@ -452,6 +452,90 @@
           "responseOnInvalidQuery": "Data is only available at national and regional (Northeast, Midwest, South, West) levels. State and city-level data is not available."
         }
       }
+    },
+    "france_pdj_omnichannel_report.json": {
+      "description": "PDJ (People Decision Journey) methodology insights and omnichannel behavior analysis",
+      "structure": {
+        "source": "string",
+        "research_origin": "string",
+        "executive_summary": "string",
+        "analysis": {
+          "data_driven_insights": "string",
+          "omnichannel_behavior": "string",
+          "shopper_behavior": "string",
+          "touchpoint_relevance": "string",
+          "category_specific_insights": {
+            "type": "object",
+            "properties": {
+              "key_actions": "array",
+              "demographics": "string"
+            }
+          },
+          "global_insights": {
+            "scale_of_research": "string",
+            "dual_perspective": "string",
+            "engaged_shopper_focus": "string"
+          }
+        },
+        "methodology": "string",
+        "recommendations": "array"
+      },
+      "dataTypes": {
+        "shopper_journey": ["planning", "learning", "hunting", "comparing", "checking", "inspiring", "navigating"],
+        "behaviors": ["hybrid", "omnichannel", "digital_planning"],
+        "insights": ["category_specific", "retailer_specific", "global"]
+      },
+      "relationships": {
+        "complementary_files": [
+          "unified_measurement_framework.json",
+          "pdj.json",
+          "touchpoint_taxonomy.json"
+        ]
+      },
+      "usage_guidelines": [
+        "Use for omnichannel strategy development",
+        "Reference for shopper journey mapping",
+        "Source for touchpoint effectiveness analysis"
+      ]
+    },
+    "growth_levers.json": {
+      "description": "Framework defining 8 growth levers for penetration growth",
+      "structure": {
+        "framework_overview": {
+          "description": "string",
+          "demand_creation_vs_conversion": "object",
+          "profit_optimisation": "object"
+        },
+        "levers": {
+          "type": "array",
+          "items": {
+            "focus": "string",
+            "rationale": "object",
+            "key_elements": "object",
+            "examples": "array",
+            "measurements": {
+              "what_to_measure": "array",
+              "how_to_measure": "array"
+            }
+          }
+        }
+      },
+      "dataTypes": {
+        "strategic": ["demand_creation", "demand_conversion", "profit_optimization"],
+        "implementation": ["activation", "innovation", "partnerships"],
+        "measurement": ["kpis", "metrics", "tools"]
+      },
+      "relationships": {
+        "complementary_files": [
+          "unified_measurement_framework.json",
+          "touchpoint_index.json"
+        ]
+      },
+      "usage_guidelines": [
+        "Reference for strategic planning",
+        "Guide for implementation tactics",
+        "Framework for measuring success"
+      ]
     }
   },
     "commonDataRules": {

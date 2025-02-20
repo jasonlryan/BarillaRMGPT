@@ -1,19 +1,147 @@
-. Cross-Category Comparison Query
+1. Cross-Category Comparison Query
 "Compare the effectiveness of digital touchpoints between pasta and sauce categories in the French market, focusing on the awareness stage."
 (This will test integration between pasta_data.json, redsauce_data.json, and touchpoint validation)
-Market-Specific Trigger Analysis
+
+Forensic Breakdown of Steps:
+Query Understanding:
+Identify the key components of the query: "digital touchpoints," "pasta and sauce categories," "French market," and "awareness stage."
+Recognize that this is a comparative analysis across two categories within a specific market and stage.
+2. Data Source Identification:
+Use the system prompt to identify relevant data files:
+pasta_data.json for pasta category touchpoints.
+redsauce_data.json, pestosauce_data.json, and meatsauce_data.json for sauce category touchpoints.
+Ensure these files are referenced in the Data Source Priority Hierarchy for accurate data retrieval.
+3. Market and Stage Filtering:
+Filter data to focus on the French market using the "country" field in each JSON file.
+Further filter to the "awareness stage" using the "stage" field.
+Channel Type Filtering:
+Extract only "Digital" touchpoints by filtering the "channel" field in each data file.
+5. Data Comparison:
+Compare the "index" values for digital touchpoints in both categories to determine effectiveness.
+Use "deviation from mean" to assess relative performance within each category.
+6. Cross-Category Analysis:
+Ensure cross-category relationships are considered, as defined in the vector schema and system prompt.
+Validate that the comparison respects any market-specific rules or data handling instructions.
+7. Result Compilation:
+Compile the results into a coherent response, highlighting the most effective digital touchpoints for each category in the French market during the awareness stage.
+Include any relevant insights or patterns observed during the analysis.
+Validation and Debugging:
+Cross-reference results with the system prompt's validation rules to ensure data accuracy and consistency.
+Use debug messages to verify that the data sources and handling align with the system prompt's instructions.
+9. Response Generation:
+Formulate a clear and concise response based on the compiled data and insights.
+Ensure the response adheres to the system prompt's guidelines for clarity and relevance.
+Effectiveness of the System Prompt:
+Data Source Routing: The system prompt effectively guides the identification of relevant data files and ensures they are properly referenced.
+Filtering and Analysis: The prompt provides clear instructions for filtering data by market, stage, and channel type, facilitating accurate analysis.
+Cross-Category Considerations: The prompt ensures that cross-category relationships and market-specific rules are respected.
+Validation and Debugging: The prompt includes validation rules and debug messages to ensure data accuracy and consistency.
+Response Clarity: The prompt guides the generation of a clear and concise response, adhering to the system's communication standards.
+This breakdown demonstrates how the system prompt effectively routes the assistant through the necessary steps to answer the query accurately and efficiently. If you have any specific areas you'd like me to focus on or further clarify, please let me know!
+
+
+2. Market-Specific Trigger Analysis
 "What are the top 3 purchase triggers for dry snacks in Italy, and how do they compare to biscuit triggers in the same market?"
 (Tests drysnacks_trigger.json and biscuits_trigger.json integration)
-Multi-Market Channel Performance
+
+Forensic Breakdown of Steps:
+1. Query Understanding:
+Identify the key components: "top 3 purchase triggers," "dry snacks," "biscuit triggers," "Italy."
+Recognize that this is a comparative analysis within a single market (Italy) across two product categories.
+2. Data Source Identification:
+Use drysnacks_trigger.json for dry snacks purchase triggers.
+Use biscuits_trigger.json for biscuit purchase triggers.
+Ensure these files are referenced in the Data Source Priority Hierarchy for accurate data retrieval.
+3. Market Filtering:
+Filter data to focus on the Italian market using the "country" field in each JSON file.
+4. Data Extraction:
+Extract the top 3 purchase triggers for dry snacks based on the highest response rates.
+Similarly, extract the top 3 purchase triggers for biscuits.
+5. Data Comparison:
+Compare the response rates of the top triggers between the two categories.
+Analyze any commonalities or differences in the triggers and their effectiveness.
+6. Cross-Category Analysis:
+Ensure cross-category relationships are considered, as defined in the vector schema and system prompt.
+Validate that the comparison respects any market-specific rules or data handling instructions.
+Result Compilation:
+Compile the results into a coherent response, highlighting the top 3 triggers for each category and their comparative effectiveness.
+Include any relevant insights or patterns observed during the analysis.
+Validation and Debugging:
+Cross-reference results with the system prompt's validation rules to ensure data accuracy and consistency.
+Use debug messages to verify that the data sources and handling align with the system prompt's instructions.
+9. Response Generation:
+Formulate a clear and concise response based on the compiled data and insights.
+Ensure the response adheres to the system prompt's guidelines for clarity and relevance.
+
+ZPotential Issues and Improvements:
+Data Completeness: Ensure that the data for both categories is complete and up-to-date. Missing or outdated data could skew the analysis.
+Market-Specific Nuances: Consider any cultural or market-specific nuances that might affect trigger effectiveness in Italy.
+Cross-Category Insights: Look for opportunities to provide deeper insights into why certain triggers are more effective in one category over the other.
+Validation Rules: Ensure that the validation rules in the system prompt are comprehensive enough to catch any discrepancies or errors in the data.
+Debugging Messages: Enhance debugging messages to provide more detailed feedback on data handling and processing steps.
+
+Conclusion:
+The system prompt effectively guides the process by ensuring the correct data files are used, the appropriate filters are applied, and the analysis respects cross-category relationships and market-specific rules. The response will be clear, concise, and aligned with the system's communication standards. If you have any specific data points or insights you'd like to explore further, please let me know!
+
+
+3. Multi-Market Channel Performance
 "Show me the best performing offline channels for pasta products across Germany, France, and Switzerland, sorted by index value."
 (Leverages pasta_data.json with multi-market analysis)
+
+
+Forensic Breakdown of Steps:
+1. Query Understanding:
+Identify the key components: "best performing offline channels," "pasta products," "Germany, France, and Switzerland," "sorted by index value."
+Recognize that this is a multi-market analysis focusing on offline channels.
+2. Data Source Identification:
+Use pasta_data.json for pasta product touchpoints.
+Ensure this file is referenced in the Data Source Priority Hierarchy for accurate data retrieval.
+3. Market Filtering:
+Filter data to include only entries where the "country" field is "Germany," "France," or "Switzerland."
+4. Channel Type Filtering:
+Extract entries where the "channel" field is "Offline."
+5. Data Sorting:
+Sort the filtered data by the "index" value in descending order to identify the best performing channels.
+6. Cross-Market Analysis:
+Ensure cross-market relationships are considered, as defined in the vector schema and system prompt.
+Validate that the analysis respects any market-specific rules or data handling instructions.
+7. Result Compilation:
+Compile the results into a coherent response, highlighting the top offline channels for pasta products in each market.
+Include any relevant insights or patterns observed during the analysis.
+Validation and Debugging:
+Cross-reference results with the system prompt's validation rules to ensure data accuracy and consistency.
+Use debug messages to verify that the data sources and handling align with the system prompt's instructions.
+9. Response Generation:
+Formulate a clear and concise response based on the compiled data and insights.
+Ensure the response adheres to the system prompt's guidelines for clarity and relevance.
+Summary Analysis:
+Germany: Identify the top offline channels based on the highest index values.
+France: Similarly, identify the top offline channels.
+Switzerland: Highlight the best performing offline channels.
+Comparison: Provide insights into which market has the most effective offline channels and why.
+
+ZPotential Issues and Improvements:
+Data Completeness: Ensure that the data for all three markets is complete and up-to-date. Missing or outdated data could skew the analysis.
+Market-Specific Nuances: Consider any cultural or market-specific nuances that might affect channel performance in each market.
+Cross-Market Insights: Look for opportunities to provide deeper insights into why certain channels are more effective in one market over the others.
+Validation Rules: Ensure that the validation rules in the system prompt are comprehensive enough to catch any discrepancies or errors in the data.
+Debugging Messages: Enhance debugging messages to provide more detailed feedback on data handling and processing steps.
+Conclusion:
+The system prompt effectively guides the process by ensuring the correct data files are used, the appropriate filters are applied, and the analysis respects cross-market relationships and market-specific rules. The response will be clear, concise, and aligned with the system's communication standards. If you have any specific data points or insights you'd like to explore further, please let me know!
+
+
+4. 
 Sauce Category Consumer Needs
 "What are the primary consumer needs driving pesto sauce purchases in Italy compared to red sauce, and which touchpoints best address these needs?"
 (Tests integration between redsauce_pesto_meatsauce_needs.json and respective sauce data files)
-Purchase Journey Analysis
+
+
+5. Purchase Journey Analysis
 "Analyze the pasta purchase journey in Turkey, highlighting unique triggers and comparing them to core markets like France and Germany."
 (Tests pasta_trigger.json with market-specific variations)
-Cross-Category Occasion Mapping
+
+
+6. Cross-Category Occasion Mapping
 "What are the common consumption occasions between biscuits in Greece and dry snacks in Italy? How do the touchpoint effectiveness scores compare?"
 (Tests biscuits_occasion.json and drysnacks_pairing.json)
 Market Coverage Deep Dive
