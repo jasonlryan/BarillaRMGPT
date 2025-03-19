@@ -4,6 +4,9 @@
 .env.local
 .env.development
 
+# Ignore Node.js dependencies
+node_modules/
+
 # Ignore directories
 python/
 temp_backup/
@@ -28,4 +31,3 @@ app.yaml
 !README.md
 !user_guide.md
 .DS_Store
-node_modules
