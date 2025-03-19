@@ -40,7 +40,13 @@ export default function ChatInput({
       onChange={onChange}
       onKeyDown={handleKeyDown}
       placeholder={placeholder}
-      className={className}
+      className={`min-h-[44px] px-3 py-2 text-base sm:text-sm ${className}`}
+      rows={1}
+      style={{
+        resize: "none",
+        overflowY: "auto",
+        maxHeight: "120px",
+      }}
       {...filteredProps}
     />
   );
