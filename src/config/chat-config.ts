@@ -51,6 +51,11 @@ export const chatConfig = {
   aboutProject: {
     referenceSources: [
       {
+        title: "Category-Specific Data Files",
+        description: "Specialized data for each product category including triggers, occasions, needs, and purchase behaviors",
+        chatPrompt: "What category-specific data files are available and what insights can they provide?"
+      },
+      {
         title: "Vista Grande Hybrid Study",
         description: "US-specific pasta category research with 4,013 respondents, covering 77 retailers, 57 brands, and 557 products",
         chatPrompt: "Tell me about the Vista Grande Hybrid Study and how it can help with pasta retail media planning."
@@ -66,9 +71,9 @@ export const chatConfig = {
         chatPrompt: "Explain the 8 key levers in the Growth Framework and how they apply to retail media."
       },
       {
-        title: "Category-Specific Data Files",
-        description: "Specialized data for each product category including triggers, occasions, needs, and purchase behaviors",
-        chatPrompt: "What category-specific data files are available and what insights can they provide?"
+        title: "PDJ Framework",
+        description: "A framework mapping consumer behavior across awareness, consideration, purchase, and experience stages",
+        chatPrompt: "Explain the People Decision Journey Framework and how it helps understand consumer decision-making."
       }
     ],
     marketCoverage: [
@@ -142,5 +147,53 @@ export const chatConfig = {
       "Token rate monitoring during response generation",
       "Debounced UI updates to prevent rendering bottlenecks"
     ]
-  }
+  },
+
+  demoScenario: [
+    {
+      title: "Data Exploration",
+      description: "Query available data on dry snacks in Italy, including purchase triggers and pairing behaviors",
+      chatPrompt: "What data do we have about dry snacks in Italy, including purchase triggers and pairing behaviors?"
+    },
+    {
+      title: "Campaign Implications",
+      description: "Understand the implications for retail media planning in the Italian market",
+      chatPrompt: "What does this mean for a targeted retail campaign in Italy?"
+    },
+    {
+      title: "Campaign Brief",
+      description: "Create a detailed campaign brief using insights and touchpoint data",
+      chatPrompt: "Please map out a campaign brief for Dry Snacks in Italy. Draw on these insights, plus touchpoint data for Italy for this category."
+    },
+    {
+      title: "Agency Response",
+      description: "Simulate an agency's response to the campaign brief",
+      chatPrompt: "Reply to this brief as if from an agency."
+    },
+    {
+      title: "Budget Allocation",
+      description: "Develop a data-driven budget breakdown for the campaign",
+      chatPrompt: "Based on the touchpoint data, create a budget breakdown for the campaign."
+    },
+    {
+      title: "Budget Optimization",
+      description: "Optimize a €50,000 budget allocation based on insights and touchpoint data",
+      chatPrompt: "The budget is 50k - how will you allocate this. Base the weightings on insights and touchpoint data."
+    },
+    {
+      title: "Growth Framework",
+      description: "Align the campaign with the Barilla growth levers framework",
+      chatPrompt: "How does this map to the growth levers?"
+    },
+    {
+      title: "Measurement Planning",
+      description: "Develop a measurement framework with key KPIs for campaign success",
+      chatPrompt: "What should the measurement framework look like? What are the key KPIs?"
+    },
+    {
+      title: "Performance Scorecard",
+      description: "Create a comprehensive scorecard for tracking campaign performance",
+      chatPrompt: "Create a scorecard."
+    }
+  ]
 }; 
