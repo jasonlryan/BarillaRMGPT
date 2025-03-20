@@ -14,6 +14,7 @@ import {
   Globe,
   ArrowUp,
   ArrowDown,
+  Coffee,
 } from "lucide-react";
 import axios from "axios";
 import { chatConfig } from "@/config/chat-config";
@@ -501,17 +502,17 @@ export default function BarillaPlannerComponent() {
                             ol: ({
                               node,
                               children,
+                              ordered,
+                              depth,
                               ...props
                             }: {
                               node: any;
                               children: React.ReactNode;
+                              ordered?: boolean;
+                              depth?: number;
                               [key: string]: any;
                             }) => {
-                              // Cast props to any to safely delete optional properties
-                              const safeProps = props as any;
-                              delete safeProps.ordered;
-                              delete safeProps.depth;
-
+                              // Destructure out the ordered and depth props so they don't get passed to the DOM
                               return (
                                 <ol
                                   className="markdown-container ol"
@@ -790,7 +791,45 @@ export default function BarillaPlannerComponent() {
             </div>
           </details>
 
-          {/* Mobile Technical Details section */}
+          {/* Demo Scenario - Mobile */}
+          <details className="bg-blue-800/80 backdrop-blur-lg border-none text-white shadow-lg rounded-lg mt-4">
+            <summary className="p-4 font-bold flex items-center cursor-pointer">
+              <Coffee className="mr-2 h-5 w-5 text-yellow-400" />
+              Demo Scenario
+            </summary>
+            <div className="p-4 pt-0">
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  {chatConfig.demoScenario.map((item, index) => (
+                    <div key={index}>
+                      <Button
+                        variant="ghost"
+                        onClick={() => handleStarterClick(item.chatPrompt)}
+                        disabled={isLoading || isStreaming}
+                        className={`w-full justify-start text-left hover:bg-blue-700/50 text-blue-100 h-auto py-0 px-2 min-h-0 group`}
+                      >
+                        <div className="flex gap-1.5 items-start">
+                          <span className="text-yellow-400 font-bold text-xs flex-shrink-0 mt-0.5">
+                            •
+                          </span>
+                          <span className="flex-1 whitespace-normal">
+                            <span className="text-yellow-400 font-bold group-hover:underline">
+                              {item.title}:
+                            </span>{" "}
+                            <span className="text-blue-100">
+                              {item.description}
+                            </span>
+                          </span>
+                        </div>
+                      </Button>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </details>
+
+          {/* Technical Details - Mobile */}
           <details className="bg-blue-800/80 backdrop-blur-lg border-none text-white shadow-lg rounded-lg mt-4">
             <summary className="p-4 font-bold flex items-center cursor-pointer">
               <Globe className="mr-2 h-5 w-5 text-yellow-400" />
@@ -1027,6 +1066,44 @@ export default function BarillaPlannerComponent() {
                       )}
                     </div>
                   </div>
+                </div>
+              </div>
+            </div>
+          </details>
+
+          {/* Demo Scenario - Desktop */}
+          <details className="bg-blue-800/80 backdrop-blur-lg border-none text-white shadow-lg rounded-lg">
+            <summary className="p-4 font-bold flex items-center cursor-pointer">
+              <Coffee className="mr-2 h-5 w-5 text-yellow-400" />
+              Demo Scenario
+            </summary>
+            <div className="p-4 pt-0">
+              <div className="space-y-4">
+                <div className="space-y-2">
+                  {chatConfig.demoScenario.map((item, index) => (
+                    <div key={index}>
+                      <Button
+                        variant="ghost"
+                        onClick={() => handleStarterClick(item.chatPrompt)}
+                        disabled={isLoading || isStreaming}
+                        className={`w-full justify-start text-left hover:bg-blue-700/50 text-blue-100 h-auto py-0 px-2 min-h-0 group`}
+                      >
+                        <div className="flex gap-1.5 items-start">
+                          <span className="text-yellow-400 font-bold text-xs flex-shrink-0 mt-0.5">
+                            •
+                          </span>
+                          <span className="flex-1 whitespace-normal">
+                            <span className="text-yellow-400 font-bold group-hover:underline">
+                              {item.title}:
+                            </span>{" "}
+                            <span className="text-blue-100">
+                              {item.description}
+                            </span>
+                          </span>
+                        </div>
+                      </Button>
+                    </div>
+                  ))}
                 </div>
               </div>
             </div>
