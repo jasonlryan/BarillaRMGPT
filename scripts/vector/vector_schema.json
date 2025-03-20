@@ -3,27 +3,42 @@
   "definitions": {
     "triggers": {
       "description": "Purchase triggers are events or motivations that prompt a consumer to buy a product.",
-      "examples": ["I was making plans for what snacks were needed", "I was asked to buy it by someone in my household"]
+      "examples": [
+        "I was making plans for what snacks were needed",
+        "I was asked to buy it by someone in my household"
+      ]
     },
     "occasions": {
       "description": "Consumption occasions are specific times or events when a product is typically consumed.",
-      "examples": ["With Coffee", "During a party"]
+      "examples": [
+        "With Coffee",
+        "During a party"
+      ]
     },
     "needs": {
       "description": "Consumer needs are the underlying motivations or requirements that drive product purchases.",
-      "examples": ["Need for convenience", "Desire for a healthy snack"]
+      "examples": [
+        "Need for convenience",
+        "Desire for a healthy snack"
+      ]
     },
     "inspiration": {
       "description": "Inspiration sources are influences that encourage consumers to try or purchase a product.",
-      "examples": ["Saw a recipe online", "Recommended by a friend"]
+      "examples": [
+        "Saw a recipe online",
+        "Recommended by a friend"
+      ]
     },
     "pairings": {
       "description": "Pairings are combinations of products that are commonly consumed together.",
-      "examples": ["With Tea", "With Cheese"]
+      "examples": [
+        "With Tea",
+        "With Cheese"
+      ]
     }
   },
-    "vectorFiles": {
-     "biscuits_data.json": {
+  "vectorFiles": {
+    "biscuits_data.json": {
       "description": "Biscuit touchpoint performance data",
       "structure": {
         "country": "string",
@@ -34,7 +49,11 @@
         "deviation from mean": "decimal",
         "category average index": "decimal"
       },
-      "markets": ["France", "Germany", "Greece"],
+      "markets": [
+        "France",
+        "Germany",
+        "Greece"
+      ],
       "dataConsistency": "Complete data across all markets"
     },
     "biscuits_trigger.json": {
@@ -49,7 +68,11 @@
           }
         }
       },
-      "markets": ["France", "Germany", "Greece"],
+      "markets": [
+        "France",
+        "Germany",
+        "Greece"
+      ],
       "dataConsistency": "Complete data across all markets"
     },
     "biscuits_occasion.json": {
@@ -64,7 +87,11 @@
           }
         }
       },
-      "markets": ["France", "Germany", "Greece"],
+      "markets": [
+        "France",
+        "Germany",
+        "Greece"
+      ],
       "dataConsistency": "Complete data across all markets"
     },
     "pasta_trigger.json": {
@@ -74,17 +101,25 @@
           "description": "string",
           "dataCharacteristics": {
             "marketCoverage": {
-              "core": ["string"],
-              "additional": ["string"]
+              "core": [
+                "string"
+              ],
+              "additional": [
+                "string"
+              ]
             },
             "inconsistencies": {
               "marketSpecific": {
-                "country": ["string"]
+                "country": [
+                  "string"
+                ]
               },
               "missingData": "string"
             },
             "dataHandling": {
-              "rules": ["string"]
+              "rules": [
+                "string"
+              ]
             }
           }
         },
@@ -95,8 +130,18 @@
         }
       },
       "markets": {
-        "core": ["Australia", "France", "Germany", "Greece", "Switzerland", "United States"],
-        "additional": ["Turkey", "Italy"]
+        "core": [
+          "Australia",
+          "France",
+          "Germany",
+          "Greece",
+          "Switzerland",
+          "United States"
+        ],
+        "additional": [
+          "Turkey",
+          "Italy"
+        ]
       },
       "dataInconsistencies": true,
       "handlingRules": [
@@ -117,7 +162,15 @@
         "deviation from mean": "decimal",
         "category average index": "decimal"
       },
-      "markets": ["Australia", "France", "Austria", "Germany", "Greece", "Switzerland", "United States"],
+      "markets": [
+        "Australia",
+        "France",
+        "Austria",
+        "Germany",
+        "Greece",
+        "Switzerland",
+        "United States"
+      ],
       "dataConsistency": "Complete data across all markets"
     },
     "redsauce_data.json": {
@@ -131,7 +184,11 @@
         "deviation from mean": "decimal",
         "category average index": "decimal"
       },
-      "markets": ["France", "Germany", "Italy"],
+      "markets": [
+        "France",
+        "Germany",
+        "Italy"
+      ],
       "dataConsistency": "Complete data across all markets"
     },
     "meatsauce_data.json": {
@@ -145,7 +202,10 @@
         "deviation from mean": "decimal",
         "category average index": "decimal"
       },
-      "markets": ["France", "Italy"],
+      "markets": [
+        "France",
+        "Italy"
+      ],
       "dataConsistency": "Complete data across all markets"
     },
     "pestosauce_data.json": {
@@ -159,7 +219,11 @@
         "deviation from mean": "decimal",
         "category average index": "decimal"
       },
-      "markets": ["France", "Germany", "Italy"],
+      "markets": [
+        "France",
+        "Germany",
+        "Italy"
+      ],
       "dataConsistency": "Complete data across all markets"
     },
     "drysnacks_data.json": {
@@ -173,7 +237,9 @@
         "deviation from mean": "decimal",
         "category average index": "decimal"
       },
-      "markets": ["Italy"],
+      "markets": [
+        "Italy"
+      ],
       "dataConsistency": "Complete data for Italian market"
     },
     "pasta_occasion.json": {
@@ -183,10 +249,14 @@
           "description": "string",
           "dataCharacteristics": {
             "marketCoverage": {
-              "core": ["string"]
+              "core": [
+                "string"
+              ]
             },
             "dataHandling": {
-              "rules": ["string"]
+              "rules": [
+                "string"
+              ]
             }
           }
         },
@@ -201,7 +271,14 @@
           }
         }
       },
-      "markets": ["Australia", "France", "Germany", "Greece", "Switzerland", "United States"],
+      "markets": [
+        "Australia",
+        "France",
+        "Germany",
+        "Greece",
+        "Switzerland",
+        "United States"
+      ],
       "dataConsistency": "Complete data across all markets"
     },
     "pasta_needs.json": {
@@ -211,10 +288,14 @@
           "description": "string",
           "dataCharacteristics": {
             "marketCoverage": {
-              "core": ["string"]
+              "core": [
+                "string"
+              ]
             },
             "dataHandling": {
-              "rules": ["string"]
+              "rules": [
+                "string"
+              ]
             }
           }
         },
@@ -230,7 +311,15 @@
           }
         }
       },
-      "markets": ["Australia", "France", "Germany", "Greece", "Switzerland", "United States", "Turkey"],
+      "markets": [
+        "Australia",
+        "France",
+        "Germany",
+        "Greece",
+        "Switzerland",
+        "United States",
+        "Turkey"
+      ],
       "dataConsistency": "Complete data across all markets"
     },
     "pasta_inspiration.json": {
@@ -240,14 +329,22 @@
           "description": "string",
           "dataCharacteristics": {
             "marketCoverage": {
-              "core": ["string"],
-              "inconsistent": ["string"]
+              "core": [
+                "string"
+              ],
+              "inconsistent": [
+                "string"
+              ]
             },
             "inconsistencies": {
               "marketSpecific": {
                 "Switzerland": {
-                  "uniqueCategories": ["string"],
-                  "missingData": ["string"],
+                  "uniqueCategories": [
+                    "string"
+                  ],
+                  "missingData": [
+                    "string"
+                  ],
                   "mapping": {
                     "source": "string"
                   }
@@ -256,7 +353,9 @@
               "missingData": "string"
             },
             "dataHandling": {
-              "rules": ["string"]
+              "rules": [
+                "string"
+              ]
             }
           }
         },
@@ -272,8 +371,16 @@
         }
       },
       "markets": {
-        "core": ["Australia", "France", "Germany", "Greece", "United States"],
-        "inconsistent": ["Switzerland"]
+        "core": [
+          "Australia",
+          "France",
+          "Germany",
+          "Greece",
+          "United States"
+        ],
+        "inconsistent": [
+          "Switzerland"
+        ]
       },
       "dataInconsistencies": true,
       "handlingRules": [
@@ -285,7 +392,11 @@
     },
     "redsauce_pesto_meatsauce_triggers.json": {
       "description": "Purchase triggers across sauce categories",
-      "categories": ["red sauce", "pesto sauce", "meat sauce"],
+      "categories": [
+        "red sauce",
+        "pesto sauce",
+        "meat sauce"
+      ],
       "structure": {
         "category": "string (red_sauce|pesto_sauce|meat_sauce)",
         "trigger": "string",
@@ -306,12 +417,20 @@
           "relationship_type": "category_touchpoints"
         }
       },
-      "markets": ["France", "Germany", "Italy"],
+      "markets": [
+        "France",
+        "Germany",
+        "Italy"
+      ],
       "dataConsistency": "Complete trigger data across all sauce categories"
     },
     "redsauce_pesto_meatsauce_needs.json": {
       "description": "Consumer needs across sauce categories",
-      "categories": ["red sauce", "pesto sauce", "meat sauce"],
+      "categories": [
+        "red sauce",
+        "pesto sauce",
+        "meat sauce"
+      ],
       "structure": {
         "category": "string (red_sauce|pesto_sauce|meat_sauce)",
         "need": "string",
@@ -335,7 +454,11 @@
           "relationship_type": "category_insights"
         }
       },
-      "markets": ["France", "Germany", "Italy"],
+      "markets": [
+        "France",
+        "Germany",
+        "Italy"
+      ],
       "dataConsistency": "Complete needs data across all sauce categories"
     },
     "drysnacks_trigger.json": {
@@ -345,10 +468,14 @@
           "description": "string",
           "dataCharacteristics": {
             "marketCoverage": {
-              "core": ["string"]
+              "core": [
+                "string"
+              ]
             },
             "dataHandling": {
-              "rules": ["string"]
+              "rules": [
+                "string"
+              ]
             }
           }
         },
@@ -362,7 +489,9 @@
         "performance_data": "drysnacks_data.json",
         "relationship_type": "category_insights"
       },
-      "markets": ["Italy"],
+      "markets": [
+        "Italy"
+      ],
       "dataConsistency": "Complete trigger data for Italian market"
     },
     "drysnacks_pairing.json": {
@@ -372,10 +501,14 @@
           "description": "string",
           "dataCharacteristics": {
             "marketCoverage": {
-              "core": ["string"]
+              "core": [
+                "string"
+              ]
             },
             "dataHandling": {
-              "rules": ["string"]
+              "rules": [
+                "string"
+              ]
             }
           }
         },
@@ -390,8 +523,78 @@
         "trigger_data": "drysnacks_trigger.json",
         "relationship_type": "category_insights"
       },
-      "markets": ["Italy"],
+      "markets": [
+        "Italy"
+      ],
       "dataConsistency": "Complete pairing data for Italian market"
+    },
+    "one_brief.json": {
+      "description": "Barilla standardized marketing brief framework",
+      "structure": {
+        "one_brief": {
+          "this_brief_in_a_bite": "string",
+          "why_are_we_here": {
+            "our_brand_promise": "string",
+            "our_context": "string",
+            "our_objective": "string"
+          },
+          "who_is_this_for": {
+            "target_audience": {
+              "description": "string",
+              "diversity_considerations": "string"
+            },
+            "insight_or_tension": "string",
+            "one_thing_to_remember": "string",
+            "we_do_this_because": "string",
+            "what_success_looks_like": "string"
+          },
+          "what_is_our_ambition": {
+            "ambition_for_this_activity": "string",
+            "expectations": "string",
+            "stakeholders": "string",
+            "geographies": "string",
+            "other_relevant_activity": "string",
+            "legal_and_other_mandatories": "string"
+          },
+          "what_do_we_need_to_keep_in_mind": {
+            "deliverables_guidance": "string",
+            "timeliness": "string",
+            "budget": "string"
+          },
+          "appendix": {
+            "consider_including": "array"
+          }
+        }
+      },
+      "dataTypes": {
+        "strategic": [
+          "brand_promise",
+          "objectives",
+          "target_audience",
+          "insights"
+        ],
+        "operational": [
+          "deliverables",
+          "timelines",
+          "budget",
+          "stakeholders"
+        ],
+        "reference": [
+          "framework_elements",
+          "appendix_documents"
+        ]
+      },
+      "relationships": {
+        "complementary_files": [
+          "pdj.json",
+          "growth_levers.json"
+        ]
+      },
+      "usage_guidelines": [
+        "Reference for creating standardized marketing briefs",
+        "Framework for consistent campaign planning",
+        "Template for briefing creative teams and agencies"
+      ]
     },
     "us_vista_grande_data.json": {
       "description": "Vista Grande Category Choice Architecture® study data for US pasta market",
@@ -423,17 +626,42 @@
           "products": 557
         },
         "geographicGranularity": {
-          "available": ["national", "region"],
-          "regions": ["Northeast", "Midwest", "South", "West"],
+          "available": [
+            "national",
+            "region"
+          ],
+          "regions": [
+            "Northeast",
+            "Midwest",
+            "South",
+            "West"
+          ],
           "stateLevel": false,
           "cityLevel": false
         }
       },
       "dataTypes": {
-        "demographics": ["age", "income", "population_density", "region"],
-        "behaviors": ["purchase_frequency", "consumption_frequency", "channel_preference"],
-        "attitudes": ["brand_loyalty", "purchase_motivations", "decision_hierarchies"],
-        "product": ["pasta_types", "shapes", "brands"]
+        "demographics": [
+          "age",
+          "income",
+          "population_density",
+          "region"
+        ],
+        "behaviors": [
+          "purchase_frequency",
+          "consumption_frequency",
+          "channel_preference"
+        ],
+        "attitudes": [
+          "brand_loyalty",
+          "purchase_motivations",
+          "decision_hierarchies"
+        ],
+        "product": [
+          "pasta_types",
+          "shapes",
+          "brands"
+        ]
       },
       "relationships": {
         "complementsData": [
@@ -446,7 +674,10 @@
       "dataConsistency": "Complete US market data with demographic breakdowns",
       "validationRules": {
         "geographicQueries": {
-          "allowedLevels": ["national", "region"],
+          "allowedLevels": [
+            "national",
+            "region"
+          ],
           "rejectStateQueries": true,
           "rejectCityQueries": true,
           "responseOnInvalidQuery": "Data is only available at national and regional (Northeast, Midwest, South, West) levels. State and city-level data is not available."
@@ -481,9 +712,25 @@
         "recommendations": "array"
       },
       "dataTypes": {
-        "shopper_journey": ["planning", "learning", "hunting", "comparing", "checking", "inspiring", "navigating"],
-        "behaviors": ["hybrid", "omnichannel", "digital_planning"],
-        "insights": ["category_specific", "retailer_specific", "global"]
+        "shopper_journey": [
+          "planning",
+          "learning",
+          "hunting",
+          "comparing",
+          "checking",
+          "inspiring",
+          "navigating"
+        ],
+        "behaviors": [
+          "hybrid",
+          "omnichannel",
+          "digital_planning"
+        ],
+        "insights": [
+          "category_specific",
+          "retailer_specific",
+          "global"
+        ]
       },
       "relationships": {
         "complementary_files": [
@@ -521,9 +768,21 @@
         }
       },
       "dataTypes": {
-        "strategic": ["demand_creation", "demand_conversion", "profit_optimization"],
-        "implementation": ["activation", "innovation", "partnerships"],
-        "measurement": ["kpis", "metrics", "tools"]
+        "strategic": [
+          "demand_creation",
+          "demand_conversion",
+          "profit_optimization"
+        ],
+        "implementation": [
+          "activation",
+          "innovation",
+          "partnerships"
+        ],
+        "measurement": [
+          "kpis",
+          "metrics",
+          "tools"
+        ]
       },
       "relationships": {
         "complementary_files": [
@@ -538,25 +797,25 @@
       ]
     }
   },
-    "commonDataRules": {
-       "percentageHandling": "All percentage values are converted to decimals", 
-       "missingData": "Excluded from output (no zero/null values)",
-        "validation": "Empty or invalid values are skipped during processing",
-        "decimalPrecision": "Original precision maintained from source data"
-    },
-      "aiInstructions": {
-        "dataUsage": [
-         "Always check _instructions section when present for file-specific handling rules",
-         "Respect market-specific data limitations and inconsistencies",
-         "Do not assume zero values for missing data points",
-         "Maintain awareness of market coverage differences between files"
-        ],
-     "dataInterpretation": [
-        "Consider market-specific context when analyzing triggers",
-        "Account for varying market coverage when comparing across categories",
-        "Note that some metrics are relative to category averages"
-       ]
-   },
+  "commonDataRules": {
+    "percentageHandling": "All percentage values are converted to decimals",
+    "missingData": "Excluded from output (no zero/null values)",
+    "validation": "Empty or invalid values are skipped during processing",
+    "decimalPrecision": "Original precision maintained from source data"
+  },
+  "aiInstructions": {
+    "dataUsage": [
+      "Always check _instructions section when present for file-specific handling rules",
+      "Respect market-specific data limitations and inconsistencies",
+      "Do not assume zero values for missing data points",
+      "Maintain awareness of market coverage differences between files"
+    ],
+    "dataInterpretation": [
+      "Consider market-specific context when analyzing triggers",
+      "Account for varying market coverage when comparing across categories",
+      "Note that some metrics are relative to category averages"
+    ]
+  },
   "validationRules": {
     "geographic": {
       "enforceGranularity": true,
