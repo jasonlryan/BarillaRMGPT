@@ -152,8 +152,8 @@ export const chatConfig = {
   demoScenario: [
     {
       title: "Data Exploration",
-      description: "Query available data on dry snacks in Italy, including purchase triggers and pairing behaviors",
-      chatPrompt: "What data do we have about dry snacks in Italy, including purchase triggers and pairing behaviors?"
+      description: "Query available data on sauces in Italy, including purchase triggers and consumer needs",
+      chatPrompt: "What data do we have about sauces in Italy, including purchase triggers and consumer needs?"
     },
     {
       title: "Campaign Implications",
@@ -163,12 +163,12 @@ export const chatConfig = {
     {
       title: "Campaign Brief",
       description: "Create a detailed campaign brief using insights and touchpoint data",
-      chatPrompt: "Please map out a campaign brief for Dry Snacks in Italy. Draw on these insights, plus touchpoint data for Italy for this category."
+      chatPrompt: "Please map out a campaign brief for Sauces in Italy. Draw on these insights, plus touchpoint data for Italy for this category."
     },
     {
       title: "Agency Response",
-      description: "Simulate an agency's response to the campaign brief",
-      chatPrompt: "Reply to this brief as if from an agency."
+      description: "Simulate an agency's creative pitch response to the campaign brief",
+      chatPrompt: "Reply to this brief as if you're a creative agency pitching your innovative ideas. Make it exciting, visual, and engaging - not like a formal letter!"
     },
     {
       title: "Budget Allocation",
